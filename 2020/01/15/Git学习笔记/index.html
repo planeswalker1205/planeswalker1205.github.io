@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style-dark.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/css/highlight-dark.css?v=2.0.4"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><title>Git学习笔记1 | 旅法师Ori</title><meta name="generator" content="Hexo 4.2.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Git学习笔记1</h1><a id="logo" href="/.">旅法师Ori</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Git学习笔记1</h1><div class="post-meta"><a href="/2020/01/15/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#comments" class="comment-count"></a><p><span class="date">Jan 15, 2020</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>Hits</i></i></span></p></div><div class="post-content"><h2 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h2><h3 id="在Linux上安装Git"><a href="#在Linux上安装Git" class="headerlink" title="在Linux上安装Git"></a>在Linux上安装Git</h3><p>首先，您可以试着输入<code>git</code>，看看系统有没有安装Git:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git</span><br><span class="line">The program <span class="string">'git'</span> is currently not installed. You can install it by typing:</span><br><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+
+<p>如果您碰巧用Debian或Ubuntu Linux，通过一条<code>sudo apt-get install git</code>就可以直接完成</p>
+<p>Git的安装。老一点的eDebian或者Ubuntu Linux，要把命令改为<code>sudo apt-get install git-core</code></p>
+<h3 id="在Mac-OS-X上安装Git"><a href="#在Mac-OS-X上安装Git" class="headerlink" title="在Mac OS X上安装Git"></a>在Mac OS X上安装Git</h3><ol>
+<li>安装homebrew，然后通过homebrew安装Git，具体方法参考homebrew的文档:http://<br>brew.sh/</li>
+<li>直接从AppStore安装Xcode，Xcode集成了Git，不过默认没有安装，你需要运行Xcode，选择菜<br>单”Xcode”-&gt;”Preferences”,在弹出窗口找到”Downloads”，选择”Command Line Tools”,<br>点”Install”就可以完成安装。</li>
+</ol>
+<h3 id="在Windows上安装Git"><a href="#在Windows上安装Git" class="headerlink" title="在Windows上安装Git"></a>在Windows上安装Git</h3><p>可以直接从Git官网直接下载安装程序。默认下一步即可。</p>
+<p>在开始菜单里找到”Git”-&gt;”Git Bash”，蹦出一个类似命令行的窗口。就说明Git安装成功！</p>
+<p><strong>安装成功后，还需要最后一步设置:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;Your Name&quot;</span><br><span class="line">$ git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
+<p>由于Git是分布式版本控制系统，所以，每个机器都必须自报家门:你的名字和email地址。</p>
+<blockquote>
+<p><code>--global</code>参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址.</p>
+</blockquote>
+<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><blockquote>
+<p>什么是版本库呢？版本库又名仓库，英文名<strong>repository</strong>，你可以简单的理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改，删除，Git都可以跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以”还原”.</p>
+</blockquote>
+<ol>
+<li>首先，选择一个合适的地方，创建一个空目录:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir learngit</span><br><span class="line">$ cd learngit</span><br><span class="line">$ pwd</span><br><span class="line">&#x2F;Users&#x2F;michael&#x2F;learngit</span><br></pre></td></tr></table></figure>
+<code>pwd</code>命令用于显示当前目录，从上可以看出，这个仓库位于<code>/Users/michael/learngit</code></li>
+</ol>
+<blockquote>
+<p>如果您使用的是Windows系统，为了避免遇到各种各样莫名其妙的问题，请确保目录名(包括父目录)不包含中文。</p>
+</blockquote>
+<ol start="2">
+<li>通过<code>git init</code>命令把这个目录变成Git可以管理的仓库。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository in &#x2F;Users&#x2F;michael&#x2F;learngit&#x2F;. git&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>瞬间Git就把仓库创建好了，而且告诉你是一个空的仓库(empty Git repository),自动生成的一个.git目录千万不要乱动！.git目录默认是隐藏的，使用’ls -ah’命令就可以看到.</p>
+<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><ol>
+<li>编写一个<code>readme.txt</code>文件:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Git is a version control system</span><br><span class="line">Git is free softwware</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注:一定要放到创建的<code>learngit</code>目录下(子目录也可以)，因为这是一个Git仓库，放到其他地方Git是不会找到这个恩建的。而把一个文件放到Git仓库只需要两步。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>使用命令<code>git add</code>告诉Git，要把文件添加到仓库:</li>
+</ul>
+<p><code>git add readme.txt</code></p>
+<p>执行上面的命令，不会有任何显示。这就对了，Unix的哲学:“没有消息就是好消息”，这说明添加成功。</p>
+<ul>
+<li>使用命令<code>git commit</code>告诉Git，把文件提交到仓库:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;wrote a readme file&quot;</span><br><span class="line">[master (root-commit) eaadf4e] wrote a readme file</span><br><span class="line"> 1 file changed, 2 insertions(+)</span><br><span class="line"> create mode 100644 readme.txt</span><br></pre></td></tr></table></figure>
+
+<p>简单解释一下<code>git commit</code>命令，<code>-m</code>后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。</p>
+<p>嫌麻烦不想输入<code>-m &quot;xxx&quot;</code>行不行？确实有办法可以这么干，但是强烈不建议你这么干，因为输入说明对自己对别人阅读都很重要。</p>
+<p><code>git commit</code>命令执行成功后会告诉你，<code>1 file changed</code>：1个文件被改动（我们新添加的readme.txt文件）；<code>2 insertions</code>：插入了两行内容（readme.txt有两行内容）。</p>
+<blockquote>
+<p>为什么将文件提交到仓库需要两步呢，因为<code>git add &lt;file&gt;</code>的命令可以多次使用，最后再<code>git commit</code>一次性提交，非常方便。</p>
+</blockquote>
+<p><strong>当命令出现end结束后，无法退出时，可以直接按q结束</strong></p>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><p>在Git中，我们可以使用<code>git log</code>命令来查看我们提交过的具体版本:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ git log</span><br><span class="line">commit 1094adb7b9b3807259d8cb349e7df1d4d6477073 (HEAD -&gt; master)</span><br><span class="line">Author: Michael Liao &lt;askxuefeng@gmail.com&gt;</span><br><span class="line">Date:   Fri May 18 21:06:15 2018 +0800</span><br><span class="line"></span><br><span class="line">    append GPL</span><br><span class="line"></span><br><span class="line">commit e475afc93c209a690c39c13a46716e8fa000c366</span><br><span class="line">Author: Michael Liao &lt;askxuefeng@gmail.com&gt;</span><br><span class="line">Date:   Fri May 18 21:03:36 2018 +0800</span><br><span class="line"></span><br><span class="line">    add distributed</span><br><span class="line"></span><br><span class="line">commit eaadf4e385e865d25c48e7ca9c8395c3f7dfaef0</span><br><span class="line">Author: Michael Liao &lt;askxuefeng@gmail.com&gt;</span><br><span class="line">Date:   Fri May 18 20:59:18 2018 +0800</span><br><span class="line"></span><br><span class="line">    wrote a readme file</span><br></pre></td></tr></table></figure>
+<p><code>git log</code>命令显示从最近到最远的提交日志。如果嫌输出信息听太多，可以加上<code>--pretty=oneline</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git log --pretty&#x3D;oneline</span><br><span class="line">1094adb7b9b3807259d8cb349e7df1d4d6477073 (HEAD -&gt; master) append GPL</span><br><span class="line">e475afc93c209a690c39c13a46716e8fa000c366 add distributed</span><br><span class="line">eaadf4e385e865d25c48e7ca9c8395c3f7dfaef0 wrote a readme file</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以上输出信息中<code>1094abd...</code>的东西是<code>commid id</code>（版本号）.在Git中，用’HEAD’表示当前版本，也就是最新的提交<code>1094adb...</code>，上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>,也可以写成<code>HEAD~100</code>，表示第100个版本。</p>
+</blockquote>
+<p>如果想要回退版本，那么可以使用<code>git reset --hard HEAD^</code></p>
+<p>查看版本是否被还原 :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat readme.txt</span><br><span class="line">aaaaaaaa</span><br><span class="line">bbbbbbbb</span><br></pre></td></tr></table></figure>
+
+<p>再用<code>git log</code>命令查看版本库的状态，可以看到最新的版本已经看不到了。</p>
+<p>如果你想回退的版本已经没有了，那么只要命令行中还存在<code>1094abd</code>之类的版本号，那么依旧可以回退。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git reset --hard 1094a</span><br></pre></td></tr></table></figure>
+<p>如果你的命令行重新打开了，却还想要回退到之前的某个版本，那么使用命令<code>$ git reflog</code>用来记录你的每一次命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog</span><br><span class="line">e475afc HEAD@&#123;1&#125;: reset: moving to HEAD^</span><br><span class="line">1094adb (HEAD -&gt; master) HEAD@&#123;2&#125;: commit: append GPL</span><br><span class="line">e475afc HEAD@&#123;3&#125;: commit: add distributed</span><br><span class="line">eaadf4e HEAD@&#123;4&#125;: commit (initial): wrote a readme file</span><br></pre></td></tr></table></figure>
+
+<h2 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h2><p>Git中存在着暂存区的概念。</p>
+<p><strong>工作区</strong>指的就是你在电脑里能看到的目录，比如创建的包含<code>.git</code>的文件夹就是一个工作区。</p>
+<p><strong>版本库</strong>工作区中有一个隐藏的目录<code>.git</code>，他不算是工作区，而是Git的版本库。Git的版本库中存放了很多东西，其中，最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的 第一个分支<code>master</code>，以及指向<code>master</code>的一个指针<code>HEAD</code><br><img src="/2020/01/15/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%9A%82%E7%BC%93%E5%8C%BA.jpg" alt="示意图"></p>
+<p>可以用命令试着去比较一下工作区，暂缓区和版本库之间的区别。</p>
+<p><strong>git diff的命令只会比较两区域都存在的文件,如果工作区存在a文件,暂存区不存在a文件,其他都相同,那么git diff也不会打印出任何东西.这是可以使用git status命令比较查看.</strong></p>
+<p><code>git status</code> —查看状态。</p>
+<p><code>git diff</code> —-查看工作区和暂存区差异</p>
+<p><code>git diff --cached</code> —-查看暂存区和仓库的差异</p>
+<p><code>git diff HEAD</code> —-查看工作区和仓库的差异</p>
+<p><code>git add</code>的反向命令<code>git checkout --file</code>，撤销工作区修改，如果修改后还没有放到暂存区，那么就是仓库的最新版本转至工作区。如果已经添加到暂存区，又做了修改，那么撤销修改就是回到添加到暂存区后的状态。</p>
+<p><code>git commit</code>的反向命令<code>git reset HEAD</code>,就是把仓库最新版本转移至暂存区。    </p>
+<blockquote>
+<p><code>git checkout --file</code>命令中的<code>--</code>很重要，没有<code>--</code>，就变成了’切换到另一分支’的命令。</p>
+</blockquote>
+<p>当你不小心把工作区的内容添加到了暂缓区，那么就可以使用<code>git reset HEAD&lt;file&gt;</code>命令把暂存区的修改回退到工作区。当我们使用<code>HEAD</code>时，表示最新的版本。</p>
+<p><code>git reset</code>命令个既可以回退版本。也可以把暂存区的修改回退到工作区。</p>
+<h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><p>一般情况下，通常直接删除没用的文件，或者使用<code>rm</code>命令删了:</p>
+<p><code>$ rm test.txt</code></p>
+<p>这种时候，工作区和版本库就不一致了。可以<code>git status</code>命令 查看状态。</p>
+<p>现在，如果你想要从版本库中删除该文件，那么就是用命令<code>git rm</code>删掉，然后<code>git commit</code></p>
+<p>还有一种情况是删错了，那么直接<code>$ git checkout --test.txt</code></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><code>git checkout file</code>和<code>git reset HEAD file</code></p>
+<ol>
+<li>当你只是单纯的修改了工作区的内容，当发现修改的内容错误时，就可以使用<code>git checkout file</code>回退工作区的内容。</li>
+</ol>
+<blockquote>
+<p>当你的暂存区有对应文件的话，那么回退得版本是暂存区的版本，当暂存区已经提交或没有存在的话，那么回退的版本就是版本库最近一次的版本。(据我自己试验可得，此命令就是把暂存区的内容回退到工作区.)</p>
+</blockquote>
+<ol start="2">
+<li>当你已经把工作区的内容添加到了暂存区，那么你想撤销掉暂存区的内容，就可以使用<code>git reset HEAD file</code>命令，把暂存区的内容撤回到版本库最近一次的版本，然后再使用<code>git checkout file</code>命令把工作区的版本回退到暂存区的最近一次版本。</li>
+</ol>
+<blockquote>
+<p><code>git reset</code>命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。</p>
+</blockquote>
+<ol start="3">
+<li>当你把错误的文件提交到版本库时，参考上面的回退版本。</li>
+</ol>
+<p><strong>本节命令</strong></p>
+<ul>
+<li><p>git设置用户名邮箱:  </p>
+<p>  <code>$ git config --flobal user.name &quot;Your Name&quot;</code></p>
+<p>  <code>$ git config --global user.email &quot;email@ex.com&quot;</code></p>
+</li>
+<li><p>本地创建空目录:</p>
+<p>  <code>$ mkdir emptyPro</code></p>
+</li>
+<li><p>进入创建的目录</p>
+<p>  <code>$ cd emptyPro</code></p>
+</li>
+<li><p>查看当前所在目录</p>
+<p>  <code>$ pwd</code></p>
+</li>
+<li><p>初始化空目录使之成为可以被Git管理的仓库（注意是要在这个目录下）</p>
+<p>  <code>$ git init</code></p>
+</li>
+<li><p>把编写的文件添加到暂存区</p>
+<p>  <code>$ git add one.txt</code></p>
+<p>  <code>$ git add two.txt</code></p>
+</li>
+<li><p>把添加到暂存区的文件全部提交到仓库</p>
+<p>  <code>$ git commit -m &quot;tips&quot;</code></p>
+</li>
+<li><p>查看提交过的版本</p>
+<p>  <code>$ git log</code></p>
+</li>
+<li><p>查看格式化后的版本</p>
+<p>  <code>$ git log --pretty=oneline</code></p>
+</li>
+<li><p>工作区的内容回退一个版本(hard表示HEAD指向目标版本，且工作区和暂存区的内容都要回退到目标版本。)</p>
+<p>  <code>$ git reset --hard HEAD^</code></p>
+</li>
+</ul>
+<ul>
+<li><p>回退两个版本</p>
+<p>  <code>$ git reset --hard HEAD^</code></p>
+</li>
+<li><p>回退到第n个版本</p>
+<p>  <code>$ git reset --hard HEAD~n</code></p>
+</li>
+<li><p>查看文件内容</p>
+<p>  <code>$ cat one.txt</code></p>
+</li>
+<li><p>查看所有变更记录的版本号</p>
+<p>  <code>$ git reglog</code></p>
+</li>
+<li><p>查看状态</p>
+<p>  <code>$ git status</code></p>
+</li>
+<li><p>查看工作区和暂存区差异</p>
+<p>  <code>$ git diff</code></p>
+</li>
+<li><p>查看暂存区和仓库差异</p>
+<p>  <code>$ git diff --cached</code></p>
+</li>
+<li><p>查看工作区和仓库差异</p>
+<p>  <code>$ git diff HEAD</code></p>
+</li>
+<li><p>删除工作区文件</p>
+<p>  <code>$ rm one.txt</code></p>
+</li>
+<li><p>删除暂存区文件夹</p>
+<p>  <code>git rm -r testPro</code></p>
+</li>
+<li><p>删除暂存区文件</p>
+<p>  <code>$ git rm one.txt</code></p>
+</li>
+<li><p>撤销工作区的修改</p>
+<p>  <code>$ git checkout file</code></p>
+</li>
+<li><p>如果有多个分支的话撤销工作区的修改（表示撤销当前工作分支的工作区的修改）</p>
+<p>  <code>$ git checkout HEAD file</code></p>
+</li>
+<li><p>撤销暂存区的修改</p>
+<p>  <code>$ git reset HEAD file</code></p>
+</li>
+<li><p>查看暂存区内容</p>
+<p>  <code>$ git ls-files --stage</code></p>
+</li>
+<li><p>清空(删除)暂存区</p>
+<p>  <code>$ rm .git/index</code></p>
+</li>
+</ul>
+</div><div class="post-copyright"><blockquote><p>Original author: John Doe</p><p>Original link: <a href="http://yoursite.com/2020/01/15/Git学习笔记/">http://yoursite.com/2020/01/15/Git学习笔记/</a></p><p>Copyright Notice: Please indicate the source of the reprint (must retain the author's signature and link)</p></blockquote></div><div class="tags"><a href="/tags/Git/">Git</a></div><div class="post-share"><div class="social-share"><span>Share:</span></div></div><div class="post-nav"><a href="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/" class="pre">Git学习笔记v2</a><a href="/2020/01/11/IDEA%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE%E5%8F%8A%E6%93%8D%E4%BD%9C/" class="next">IDEA基础设置及操作</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">Contents</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git安装"><span class="toc-text">Git安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在Linux上安装Git"><span class="toc-text">在Linux上安装Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在Mac-OS-X上安装Git"><span class="toc-text">在Mac OS X上安装Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在Windows上安装Git"><span class="toc-text">在Windows上安装Git</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建版本库"><span class="toc-text">创建版本库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提交"><span class="toc-text">提交</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#版本回退"><span class="toc-text">版本回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工作区和暂存区"><span class="toc-text">工作区和暂存区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除文件"><span class="toc-text">删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/">Spring Boot学习v1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/">Git学习笔记v2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/15/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Git学习笔记1</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/11/IDEA%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE%E5%8F%8A%E6%93%8D%E4%BD%9C/">IDEA基础设置及操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/08/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">使用hexo搭建个人博客网站</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> Tags</i></div><div class="tagcloud"><a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Intellij-IDEA/" style="font-size: 15px;">Intellij IDEA</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/Spring-Boot/" style="font-size: 15px;">Spring Boot</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 15px;">IntelliJ IDEA</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> Archive</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">5</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> Blogroll</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Site Map</a> |  <a href="/atom.xml">Subscribe to this site</a> |  <a href="/about/">Contact the blogger</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">John Doe.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script></body></html>
