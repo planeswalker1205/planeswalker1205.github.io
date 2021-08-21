@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>03-css | 奇迹师ori</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="MIRACLE,MIRACLE's Blog" />
+  
+  <meta name="description" content="1. 定位1. 定位是一种更加高级的布局手段 2. 通过定位可以将元素摆放到页面任意位置 3. 通过position属性来设置定位 要找到定位原点：top:0;left:0; position可选值：  static： 默认值，元素是静止的，没有开启定位  relative：开启元素相对定位  absolute：开启元素绝对定位  fixed：开启元素固定定位  sticky：开启元素的粘滞位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="03-css">
+<meta property="og:url" content="https://planeswalker1205.github.io/2021/05/02/03-css/index.html">
+<meta property="og:site_name" content="奇迹师ori">
+<meta property="og:description" content="1. 定位1. 定位是一种更加高级的布局手段 2. 通过定位可以将元素摆放到页面任意位置 3. 通过position属性来设置定位 要找到定位原点：top:0;left:0; position可选值：  static： 默认值，元素是静止的，没有开启定位  relative：开启元素相对定位  absolute：开启元素绝对定位  fixed：开启元素固定定位  sticky：开启元素的粘滞位">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-02T14:55:41.000Z">
+<meta property="article:modified_time" content="2021-08-08T12:21:09.995Z">
+<meta property="article:author" content="John miracle">
+<meta property="article:tag" content="web学习">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="vscode">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="奇迹师ori" type="application/atom+xml">
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">MIRACLE&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        MIRACLE&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        个人博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MIRACLE" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-03-css" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      03-css
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2021-05-02
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="1-定位"><a href="#1-定位" class="headerlink" title="1. 定位"></a>1. 定位</h2><p><strong>1. 定位是一种更加高级的布局手段</strong></p>
+<p><strong>2. 通过定位可以将元素摆放到页面任意位置</strong></p>
+<p><strong>3. 通过position属性来设置定位</strong></p>
+<p><em>要找到定位原点：top:0;left:0;</em></p>
+<p>position可选值：</p>
+<ul>
+<li><p>static： 默认值，元素是静止的，没有开启定位</p>
+</li>
+<li><p>relative：开启元素相对定位</p>
+</li>
+<li><p>absolute：开启元素绝对定位</p>
+</li>
+<li><p>fixed：开启元素固定定位</p>
+</li>
+<li><p>sticky：开启元素的粘滞位</p>
+</li>
+</ul>
+<h3 id="01-relative"><a href="#01-relative" class="headerlink" title="01.relative"></a>01.relative</h3><p><strong><font color="green" size="4">feature：</font></strong></p>
+<ol>
+<li><p>元素开启相对定位以后，如果不设置偏移量，元素不会发生任何的改变</p>
+</li>
+<li><p>相对定位是参照于元素在文档流中的位置进行定位的</p>
+</li>
+<li><p>相对定位会提升元素的层级。(如果定位到文档流中的元素的位置，则会覆盖文档流中的元素)</p>
+</li>
+<li><p>相对定位不会使元素脱离文档流</p>
+</li>
+<li><p>相对定位不会改变元素的性质。即块还是块，行内还是行内</p>
+</li>
+</ol>
+<p><strong>偏移量(offset)</strong></p>
+<p>当元素开启了定位以后，可以通过偏移量来设置元素的位置</p>
+<ul>
+<li><p>top</p>
+</li>
+<li><p>bottom</p>
+</li>
+<li><p>left</p>
+</li>
+<li><p>right</p>
+</li>
+</ul>
+<h3 id="02-absolute"><a href="#02-absolute" class="headerlink" title="02.absolute"></a>02.absolute</h3><p><strong>当元素的position属性设置为absolute时，则开启了元素的绝对定位</strong></p>
+<p><strong><font color="green" size="4">feature：</font></strong></p>
+<ol>
+<li><p>元素开启绝对定位以后，如果不设置偏移量，元素的<strong><font color="red">位置</font></strong>不会发生任何的改变</p>
+</li>
+<li><p>开启绝对定位后，元素会从文档流中脱离</p>
+</li>
+<li><p>绝对定位会改变元素的性质，行内变成块。如果不设置元素的宽高，块的宽高被内容撑开。和浮动的性质类似</p>
+</li>
+<li><p>绝对定位会提升元素的一个层级</p>
+</li>
+<li><p>绝对定位元素是相对于其包含块进行定位的。</p>
+</li>
+</ol>
+<p><strong><font color="green">包含块(containing block)：</font></strong></p>
+<p><strong>-</strong> 正常情况下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">包含块就是离当前元素最近的祖先块元素</span><br><span class="line">&lt;div&gt;&lt;div&gt;&lt;&#x2F;div&gt;&lt;&#x2F;div&gt;  &#x2F;&#x2F;外边div是里边div的包含块</span><br><span class="line"></span><br><span class="line">&lt;div&gt;&lt;span&gt;&lt;em&gt;&lt;&#x2F;em&gt;&lt;&#x2F;span&gt;&lt;&#x2F;div&gt; &#x2F;&#x2F;em和span的包含块是div。span不是块，所以em的包含块是div而不是span</span><br></pre></td></tr></table></figure>
+
+<p><strong>-</strong> 开启绝对定位的情况下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">包含块就是离它最近的开启了定位的祖先元素。如果所有的祖先元素都没有开启定位，则根元素就是它的包含块</span><br></pre></td></tr></table></figure>
+
+<p><strong>-</strong>html（根元素，初始包含块）</p>
+<h3 id="03-fixed"><a href="#03-fixed" class="headerlink" title="03.fixed"></a>03.fixed</h3><p><strong>将元素的position属性设置为fixed则开启了元素的固定定位</strong></p>
+<p><strong><font color="green">固定定位也是一种绝对定位，所以固定定位的大部分特点和绝对定位一样</font></strong></p>
+<p><strong><font color="red">唯一不同的是，固定定位永远参照于浏览器得到视口进行定位。</font></strong></p>
+<p><strong>视口：浏览器的可视窗口。</strong></p>
+<p><strong><font color="green">固定定位的元素不会随着网页的滚动条滚动</font></strong></p>
+<h3 id="04-sticky"><a href="#04-sticky" class="headerlink" title="04.sticky"></a>04.sticky</h3><p><strong>将元素的position属性设置为sticky则开启了元素的粘滞定位</strong></p>
+<p><strong><font color="green">粘滞定位和相对定位的特点基本一致。不同的是，粘滞定位可以在元素到达某个位置(top:×px;left:×px;bottom:×px;right:×px;)时将其固定</font></strong></p>
+<p><strong><font color="red">需要考虑兼容性</font></strong></p>
+<h2 id="2-绝对定位元素的位置"><a href="#2-绝对定位元素的位置" class="headerlink" title="2. 绝对定位元素的位置"></a>2. 绝对定位元素的位置</h2><h3 id="01-水平布局"><a href="#01-水平布局" class="headerlink" title="01.水平布局"></a>01.水平布局</h3><p><strong>正常情况下：包含块的水平布局需要满足等式<font color="green">margin-left+border-left+padding-left+width+padding-right+border-right+margin-right</font></strong>.</p>
+<p><strong>而当开启了相对定位的包含块内的子元素开启了绝对定位之后，等式就发生了变化，即：<font color="green">left+margin-left+border-left+padding-left+width+padding-right+border-right+margin-right+right</font><font size="5">  =  </font>包含块的水平宽度</strong></p>
+<p><strong>多出来的left和right就是绝对定位的left和right属性。由于布局是从左往右从上往下的，所以left和right都设置值的话，left会使自身元素移动。</strong></p>
+<p><strong><font color="red">当left设置一个值，且等式没有满足时，就会发生过度约束，如果9个值中没有auto，right的值则不会生效，自动调整right值以使等式满足；如果有auto，则自动调整auto的值以使等式满足</font></strong></p>
+<p><strong><font color="red">left和right的值默认是auto</font></strong></p>
+<blockquote>
+<p>可设置auto的属性：margin；width；left；width</p>
+</blockquote>
+<h3 id="02-垂直布局"><a href="#02-垂直布局" class="headerlink" title="02.垂直布局"></a>02.垂直布局</h3><p><strong>同上，垂直布局的等式也必须要满足：</strong></p>
+<p><strong><font color="green">top/bottom+margin-top/bottom+padding-top/bottom+border-top/bottom+height</font><font size="5">  =  包含块的高度</font></strong></p>
+<h3 id="03-元素的层级"><a href="#03-元素的层级" class="headerlink" title="03. 元素的层级"></a>03. 元素的层级</h3><p>对于开启了定位的元素，可以通过z-index属性来指定元素的层级。z-index需要一个整数作为参数，值越大元素的层级就越高。</p>
+<p><strong>如果元素的层级一样，则优先显示靠下的元素</strong></p>
+<p><strong>祖先元素的层级再高也不会盖住后代元素</strong></p>
+<h2 id="3-图标字体"><a href="#3-图标字体" class="headerlink" title="3. 图标字体"></a>3. 图标字体</h2><p><strong>图标字体(iconfont)：</strong></p>
+<p>在网页中经常需要使用一些图标，可以通过图片来引入图标。但是图片本身比较大并且非常不灵活。</p>
+<p>所以，在使用图标时，我们还可以将图标直接设置为字体，然后通过font-face的形式来对字体进行引入。<strong>这样我们就可以通过使用字体的形式来使用图标。</strong></p>
+<h3 id="01-图标字体库：Font-Awesome"><a href="#01-图标字体库：Font-Awesome" class="headerlink" title="01. 图标字体库：Font Awesome"></a>01. 图标字体库：Font Awesome</h3><p>使用步骤：</p>
+<ol>
+<li><p>下载</p>
+</li>
+<li><p>解压</p>
+</li>
+<li><p>将css和webfonts移动到项目中。（css和webfonts必须要在同一级目录下）</p>
+</li>
+<li><p>将all.css引入到网页中</p>
+</li>
+<li><p>使用图标字体（直接通过类名使用图标字体）</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span> = <span class="string">"fas fa-bell"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span> = <span class="string">"fab fa-accessible-icon"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>通过伪元素设置图标字体</strong></p>
+<ol>
+<li><p>找到要设置图标的元素通过before或者after选中</p>
+</li>
+<li><p>在content中设置字体的编码（文档里可以找到编码）</p>
+</li>
+<li><p>设置字体的样式</p>
+</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">fab</span></span><br><span class="line">font-family:'Font Awesome 5 Brands';</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">fas</span></span><br><span class="line">font-family:'Font Awesome 5 Free';</span><br><span class="line"><span class="selector-tag">font-weight</span><span class="selector-pseudo">:900</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>通过实体使用图标字体</strong></p>
+<p>&amp;#x图标的编码;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span> = <span class="string">"fas"</span>&gt;</span><span class="symbol">&amp;#xf0f3;</span><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="02-图标字体库：iconfont"><a href="#02-图标字体库：iconfont" class="headerlink" title="02. 图标字体库：iconfont"></a>02. 图标字体库：iconfont</h3><p>阿里的。更加灵活</p>
+<p>版权问题不是很清晰</p>
+<h2 id="4-font"><a href="#4-font" class="headerlink" title="4. font"></a>4. font</h2><p>font可以设置字体相关的所有属性。</p>
+<p>语法：</p>
+<p><code>font:字体大小/行高 字体族</code></p>
+<p>行高可以省略不写，如果不写会使用默认值。如果前面设置了行高会覆盖。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font: 50px 'Times new Roman',Times,serif;</span><br></pre></td></tr></table></figure>
+
+<h3 id="文本的样式"><a href="#文本的样式" class="headerlink" title="文本的样式"></a>文本的样式</h3><p><strong>text-align:文本的水平对齐</strong></p>
+<p>可选值：left(左侧对齐)  right(右侧对齐) center(居中对齐) justify(两端对齐)</p>
+<p><strong>vertical-align:设置元素垂直对齐方式</strong></p>
+<p>可选值：</p>
+<p>默认值：baseline(基线对齐)。子元素的基线和父元素的基线对齐</p>
+<p>top：顶部对齐。子元素的顶部和父元素的顶部对齐</p>
+<p>bottom：底部对齐。子元素的底部和父元素的底部对齐</p>
+<p>middle：居中对齐。子元素的中线和父元素的x的中线对齐</p>
+<p>指定值：10px  -10px 等等</p>
+<p>如果块元素中引入图片标签img，img标签属于行变量标签,和文字一样,下面有一个字间距。那么img默认也是基线对齐的。所以img标签下边距会和块元素底部有一点距离。使img标签的vertical-align属性不为基线对齐即可。</p>
+<p><em>什么是基线对齐</em></p>
+<blockquote>
+<p><strong>基线对齐其实就是指英文字母<code>a、i、n、s</code>这些字母的底部</strong></p>
+</blockquote>
+<p><strong>text-decoration</strong></p>
+<p>可选值：</p>
+<p>none；underline；line-through(删除线)；overline(上划线)</p>
+<p><code>text-decoration:underline red dotted</code>（ie不支持）</p>
+<p><strong>white-space</strong></p>
+<p>设置网页如何处理空白</p>
+<p>可选值：</p>
+<p>normal;nowrap(不换行，可能导致横向出现滚动条)；pre(保留空白。即代码里面写的什么样，页面样式就是什么样)</p>
+<p>溢出文本设置为省略号的样式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">white-space</span>:nowrap;</span><br><span class="line">    <span class="attribute">overflow</span>:hidden;</span><br><span class="line">    <span class="attribute">text-overflow</span>:ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="03-京东导航条"><a href="#03-京东导航条" class="headerlink" title="03. 京东导航条"></a>03. 京东导航条</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//当鼠标移入到class为location的元素时citylist的样式为display:block；</span><br><span class="line"><span class="selector-class">.locataion</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">citylist</span>&#123;</span><br><span class="line">	<span class="attribute">display</span>:block；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>参考代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;IE&#x3D;edge&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;&#x2F;title&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;style&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      *&#123;</span><br><span class="line">         margin: 0;</span><br><span class="line">         padding: 0;</span><br><span class="line">         border: 0;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      .nav&#123;</span><br><span class="line">         margin-top: 30px;</span><br><span class="line">         background-color:#E3E4E5;</span><br><span class="line">         height: 31px;</span><br><span class="line">         position: relative;</span><br><span class="line">		&#x2F;&#x2F;此处高度写死了就不需要overflow:hidden解决塌陷。如果加了这个属性又加了position属性，那么他的同层级弹出框就会被隐藏，不</span><br><span class="line">        &#x2F;&#x2F;会弹出</span><br><span class="line"> </span><br><span class="line">      &#125;</span><br><span class="line">      .center&#123;</span><br><span class="line"> 		&#x2F;&#x2F;用于居中</span><br><span class="line">         width:1000px;</span><br><span class="line">         margin:auto;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      .leftlocation&#123;</span><br><span class="line">		&#x2F;&#x2F;左侧浮动</span><br><span class="line">         float:left;</span><br><span class="line">       </span><br><span class="line">      &#125;</span><br><span class="line">	   .currentcity&#123;</span><br><span class="line">		  &#x2F;&#x2F;当前城市，使其相对定位设置层级，下边距一小部分就可以盖住弹出层</span><br><span class="line">          position: relative;</span><br><span class="line">          z-index:1000;</span><br><span class="line">       &#125;</span><br><span class="line">       .leftlocation:hover .currentcity&#123;</span><br><span class="line">		&#x2F;&#x2F;鼠标移入.leftlocation时.currentcity的样式</span><br><span class="line">		&#x2F;&#x2F;hover样式，因为加了边框所以鼠标移入时块会抖动，可以在原样式加入边框并使其透明解决此问题</span><br><span class="line">         background-color: white;</span><br><span class="line">         border:1px solid #CCCCCC;</span><br><span class="line">         border-bottom: none;</span><br><span class="line">      &#125; </span><br><span class="line">     </span><br><span class="line">      .rightnav li,.currentcity&#123;</span><br><span class="line">            list-style: none;</span><br><span class="line">            padding: 8px 10px;</span><br><span class="line">            font-size: 9px;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      .rightnav&#123;</span><br><span class="line"></span><br><span class="line">         float:right;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">     </span><br><span class="line">      .rightnav li a, .currentcity a&#123;</span><br><span class="line">         color:#999999;</span><br><span class="line">         text-decoration-line: none;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      .rightnav li&#123;</span><br><span class="line">         float: left;</span><br><span class="line">         </span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">	   .city-list&#123;</span><br><span class="line">		&#x2F;&#x2F;城市列表，使其绝对定位，并初始隐藏，绝对定位参照物是上面的相对定位，所以设置top属性紧贴nav，由于弹出层显示优先级需要高</span><br><span class="line">		&#x2F;&#x2F;所以z-index设置为低一级currentcity</span><br><span class="line">         background-color: black;</span><br><span class="line">         display: none;</span><br><span class="line">         width:448px;</span><br><span class="line">         height: 436px;</span><br><span class="line">         border:1px solid #CCCCCC;</span><br><span class="line">         background-color: white;</span><br><span class="line">         position: absolute;</span><br><span class="line">         top:31px;</span><br><span class="line">         z-index: 999;</span><br><span class="line">      &#125;</span><br><span class="line">      .leftlocation:hover .city-list&#123;</span><br><span class="line">		 &#x2F;&#x2F;鼠标移入.leftlocation时.city的样式</span><br><span class="line">         display: block;</span><br><span class="line">       &#125;</span><br><span class="line">     </span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;&lt;&#x2F;body&gt;</span><br><span class="line">   </span><br><span class="line">	</span><br><span class="line">		&lt;!-- 导航栏 --&gt;</span><br><span class="line">        &lt;div class &#x3D; &quot;nav&quot;&gt;</span><br><span class="line">		   &lt;!-- 居中 --&gt;</span><br><span class="line">           &lt;div class&#x3D;&quot;center&quot;&gt;</span><br><span class="line">		&lt;!-- 左侧当前位置 --&gt;</span><br><span class="line">         &lt;div class &#x3D; &quot;leftlocation&quot;&gt;</span><br><span class="line">			&lt;!-- 当前城市 --&gt;</span><br><span class="line">            &lt;div class &#x3D; &quot;currentcity&quot;&gt;</span><br><span class="line">              &lt;a href &#x3D; &quot;javascript:;&quot;&gt;广东&lt;&#x2F;a&gt;</span><br><span class="line">            &lt;&#x2F;div&gt;</span><br><span class="line">			&lt;!-- 弹出层城市列表 --&gt;</span><br><span class="line">            &lt;div class&#x3D;&quot;city-list&quot;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">         &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- 右侧列表 --&gt;</span><br><span class="line">         &lt;div class&#x3D;&quot;rightnav&quot;&gt;</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">               &lt;li&gt;&lt;a href &#x3D; &quot;javascript:;&quot;&gt;你好，请登录&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">               &lt;li&gt;&lt;a href &#x3D; &quot;javascript:;&quot;&gt;免费注册&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">               &lt;li&gt;&lt;a href &#x3D; &quot;javascript:;&quot;&gt;我的订单&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">               &lt;li&gt;&lt;a href &#x3D; &quot;javascript:;&quot;&gt;我的京东&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">               &lt;li&gt;&lt;a href &#x3D; &quot;javascript:;&quot;&gt;京东会员&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">               &lt;li&gt;&lt;a href &#x3D; &quot;javascript:;&quot;&gt;企业采购&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">               &lt;li&gt;&lt;a href &#x3D; &quot;javascript:;&quot;&gt;客户服务&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">               &lt;li&gt;&lt;a href &#x3D; &quot;javascript:;&quot;&gt;网站导航&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">               &lt;li&gt;&lt;a href &#x3D; &quot;javascript:;&quot;&gt;手机京东&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">         &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;   </span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="5-背景图片"><a href="#5-背景图片" class="headerlink" title="5. 背景图片"></a>5. 背景图片</h2><p><strong>background-clip:设置背景的范围，可选值：</strong></p>
+<ol>
+<li><p>border-box:默认值，背景会出现在边框的下边</p>
+</li>
+<li><p>padding-box:背景不会出现在边框，只出现在内容区和内边距</p>
+</li>
+<li><p>content-box:背景只会出现在内容区</p>
+</li>
+</ol>
+<p><strong>background-position:背景图片的偏移量</strong></p>
+<p><code>background-position:10px 20px;</code> 表示背景图片左移10，下移20.可以设置为负数。</p>
+<p><strong>如果仅仅设置了一个值，那么第二个值为center</strong></p>
+<p><strong>background-origin:背景图片的偏移量计算的原点(参见上述背景图片的偏移量)：</strong></p>
+<ol>
+<li><p>padding-box：默认值，background-position从内边距开始计算</p>
+</li>
+<li><p>content-box：背景图片的偏移量从内容区处计算</p>
+</li>
+<li><p>border-box：背景图片的变量从边框处开始计算</p>
+</li>
+</ol>
+<p><strong>background-size:设置背景图片大小</strong></p>
+<p><code>background-size:100px 100px;</code>第一个值代表图片的宽度，第二个值代表图片的高度 。如果只写一个值，则第二个值默认auto</p>
+<p>还有另外几个属性值。</p>
+<ol>
+<li><p>cover：图片的比例不变，将元素铺满</p>
+</li>
+<li><p>contain：图片比例不变，将图片在元素中完整显示</p>
+</li>
+</ol>
+<p><strong><font color="green">图片属于网页中的外部资源，外部资源都需要浏览器单独发送请求。浏览器加载外部资源时是按需加载，用则加载，不用则不加载。</font></strong></p>
+<p>所以按钮不同事件下加载不同的背景图片可能会造成背景的闪烁。解决此问题：</p>
+<p>可以将多个小图片统一保存到一个大图片中，然后通过调整background-position来显示响应的图片，这样图片会同时加载到网页中，就可以有效避免闪烁的问题。这个技术在网页中应用十分广泛，被称为css-Sprite。成为雪碧图。</p>
+<p><strong>雪碧图的特点：</strong></p>
+<p>一次性将多个图片加载进页面，降低请求的次数，加快访问速度，提升用户体验。只适用于背景，不适用img</p>
+<h2 id="6-渐变"><a href="#6-渐变" class="headerlink" title="6. 渐变"></a>6. 渐变</h2><p>通过渐变可以设置一些复杂的背景色，可以实现从一个颜色向其他颜色过渡的效果。渐变是图片，需要background-image来设置。特质和图片一样。</p>
+<h3 id="线性渐变：颜色沿着一条直线发生变化。"><a href="#线性渐变：颜色沿着一条直线发生变化。" class="headerlink" title="线性渐变：颜色沿着一条直线发生变化。"></a>线性渐变：颜色沿着一条直线发生变化。</h3><p><strong><font color="green">linear-gradient();</font></strong></p>
+<p><code>background-color:linear-gradient(red,yellow);//红色在开头，黄色在结尾。中间是过渡区域</code></p>
+<p><code>background-color:linear-gradient(to right,red,yellow);//从左向右</code></p>
+<p>线性渐变的开头，可以指定一个渐变的方向。to left;to right;to bottom;to top;to top left;xxxdeg（指定一个度数）;xxxturn（指定一个圈）</p>
+<p><strong>渐变可以同时指定多个颜色。多个颜色情况下默认平均分布。也可以手动指定渐变的分布情况</strong></p>
+<p><code>background-image:linear-gradient(red 50px,yellow 100px)</code>从0-50px都是红色。从100px后是黄色。50-100则是过渡区域。</p>
+<p><strong><font color="green">repeating-linear-gradient();可以平铺的线性渐变</font></strong></p>
+<p><code>background-image:repeating-linear-gradient(red 50px,yellow 100px)</code>50px是红色，100px是黄色。50-100都是一个渐变效果。50-100外的区域会平铺</p>
+<h3 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h3><p><strong>radial-gradient() 放射性的效果</strong></p>
+<p>默认情况下径向渐变圆心的形状根据元素的形状来计算的。</p>
+<p>正方形–圆形</p>
+<p>长方形–椭圆形</p>
+<p>也可以手动指定径向渐变的大小。</p>
+<p>如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-tag">background-image</span><span class="selector-pseudo">:radial-gradient(100px</span> 100<span class="selector-tag">px</span> <span class="selector-tag">red</span>,<span class="selector-tag">green</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">意思是渐变的范围是横向100px，纵向100px。其他范围没有指定默认是green</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>指定渐变的位置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-image</span><span class="selector-pseudo">:radial-gradient(100px</span> 100<span class="selector-tag">px</span> <span class="selector-tag">at</span> 0 0, <span class="selector-tag">red</span>,<span class="selector-tag">green</span>);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">渐变位置在原点</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="7-表格"><a href="#7-表格" class="headerlink" title="7.表格"></a>7.表格</h2><p><strong>注：如果表格中没有使用tbody而直接使用tr，那么浏览器会自动创建一个tbody，并将tr全都放到tbody中。故tr的父元素不是table。</strong></p>
+<p><strong>子元素垂直水平居中</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">	&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">	   <span class="selector-class">.all</span>&#123;</span><br><span class="line">	        <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">	        <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">	        <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">	        <span class="attribute">display</span>: table-cell;</span><br><span class="line">	        <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">	       </span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="selector-class">.a</span>&#123;</span><br><span class="line">	        <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	        <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">	        <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">	        <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">	    &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div class="all"&gt;</span><br><span class="line">    &lt;div class="a"&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-表单"><a href="#8-表单" class="headerlink" title="8.表单"></a>8.表单</h2><p><strong>form属性</strong></p>
+<ol>
+<li>action：表单要提交的服务器的地址</li>
+</ol>
+<p><strong>text文本框</strong></p>
+<p><code>&lt;input type = &quot;text&quot; name = &quot;ctext&quot;/&gt;</code></p>
+<p>数据要提交到服务器，必须要为元素指定一个name</p>
+<p><strong>提交按钮</strong></p>
+<p><code>&lt;input type = &quot;submit&quot; value = &quot;提交&quot;/&gt;</code></p>
+<p><strong>单选按钮</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"radio"</span> <span class="attr">name</span> = <span class="string">"testRadio"</span> <span class="attr">value</span> = <span class="string">"a"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"radio"</span> <span class="attr">name</span> = <span class="string">"testRadio"</span> <span class="attr">value</span> = <span class="string">"b"</span> <span class="attr">checked</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>需要用name属性为单选按钮分组。<code>checked</code>属性可以将单选按钮设置为默认选中</p>
+<p><strong>多选按钮</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"checkbox"</span> <span class="attr">name</span> = <span class="string">"testCheckbox"</span> <span class="attr">value</span> = <span class="string">"a"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"checkbox"</span> <span class="attr">name</span> = <span class="string">"testCheckbox"</span> <span class="attr">value</span> = <span class="string">"b"</span> <span class="attr">checked</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>下拉列表</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span> = <span class="string">"testSele"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span> = <span class="string">"i1"</span>&gt;</span>选项1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span> = <span class="string">"i2"</span>&gt;</span>选项2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span> = <span class="string">"i3"</span> <span class="attr">selected</span>&gt;</span>选项3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>颜色选择</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"color"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2021年08月08日 20:21</p>
+        <p>原始链接： <a class="post-url" href="/2021/05/02/03-css/" title="03-css">https://planeswalker1205.github.io/2021/05/02/03-css/</a></p>
+        <footer>
+            <a href="https://planeswalker1205.github.io">
+                <img src="/images/logo.png" alt="John miracle">
+                John miracle
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://planeswalker1205.github.io/2021/05/02/03-css/&title=《03-css》 — 奇迹师ori&pic=https://planeswalker1205.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://planeswalker1205.github.io/2021/05/02/03-css/&title=《03-css》 — 奇迹师ori&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://planeswalker1205.github.io/2021/05/02/03-css/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《03-css》 — 奇迹师ori&url=https://planeswalker1205.github.io/2021/05/02/03-css/&via=https://planeswalker1205.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://planeswalker1205.github.io/2021/05/02/03-css/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://planeswalker1205.github.io/2021/05/02/03-css/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/web学习/" class="color1">web学习</a>
+      
+    <a href="/tags/css/" class="color4">css</a>
+      
+    <a href="/tags/vscode/" class="color2">vscode</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-定位"><span class="post-toc-text">1. 定位</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#01-relative"><span class="post-toc-text">01.relative</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#02-absolute"><span class="post-toc-text">02.absolute</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#03-fixed"><span class="post-toc-text">03.fixed</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#04-sticky"><span class="post-toc-text">04.sticky</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-绝对定位元素的位置"><span class="post-toc-text">2. 绝对定位元素的位置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#01-水平布局"><span class="post-toc-text">01.水平布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#02-垂直布局"><span class="post-toc-text">02.垂直布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#03-元素的层级"><span class="post-toc-text">03. 元素的层级</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-图标字体"><span class="post-toc-text">3. 图标字体</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#01-图标字体库：Font-Awesome"><span class="post-toc-text">01. 图标字体库：Font Awesome</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#02-图标字体库：iconfont"><span class="post-toc-text">02. 图标字体库：iconfont</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-font"><span class="post-toc-text">4. font</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文本的样式"><span class="post-toc-text">文本的样式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#03-京东导航条"><span class="post-toc-text">03. 京东导航条</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-背景图片"><span class="post-toc-text">5. 背景图片</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-渐变"><span class="post-toc-text">6. 渐变</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线性渐变：颜色沿着一条直线发生变化。"><span class="post-toc-text">线性渐变：颜色沿着一条直线发生变化。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#径向渐变"><span class="post-toc-text">径向渐变</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-表格"><span class="post-toc-text">7.表格</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-表单"><span class="post-toc-text">8.表单</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2021/06/02/04-css/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          04-css
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2021/03/19/02-css/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">02-css</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2021 John miracle<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://planeswalker1205.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Animation/" style="font-size: 10px;">Animation</a> <a href="/tags/Error%EF%BC%8CLearn/" style="font-size: 10px;">Error，Learn</a> <a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IDEA-Intellij/" style="font-size: 10px;">IDEA Intellij</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 14px;">IntelliJ IDEA</a> <a href="/tags/Intellij-IDEA/" style="font-size: 12px;">Intellij IDEA</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16px;">Spring Boot</a> <a href="/tags/Spring-MVC/" style="font-size: 10px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 10px;">Spring Security</a> <a href="/tags/Spring-Boot/" style="font-size: 10px;">Spring-Boot</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/css/" style="font-size: 18px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/vscode/" style="font-size: 20px;">vscode</a> <a href="/tags/web%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">web学习</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/tags/%E5%9B%BE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">图结构</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">异步线程</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%A3%E5%88%97/" style="font-size: 10px;">散列</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px;">数据结构</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%A0%91%E7%BB%93%E6%9E%84/" style="font-size: 10px;">树结构</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Animation/" style="font-size: 10px;">Animation</a> <a href="/tags/Error%EF%BC%8CLearn/" style="font-size: 10px;">Error，Learn</a> <a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IDEA-Intellij/" style="font-size: 10px;">IDEA Intellij</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 14px;">IntelliJ IDEA</a> <a href="/tags/Intellij-IDEA/" style="font-size: 12px;">Intellij IDEA</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16px;">Spring Boot</a> <a href="/tags/Spring-MVC/" style="font-size: 10px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 10px;">Spring Security</a> <a href="/tags/Spring-Boot/" style="font-size: 10px;">Spring-Boot</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/css/" style="font-size: 18px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/vscode/" style="font-size: 20px;">vscode</a> <a href="/tags/web%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">web学习</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/tags/%E5%9B%BE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">图结构</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">异步线程</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%A3%E5%88%97/" style="font-size: 10px;">散列</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px;">数据结构</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%A0%91%E7%BB%93%E6%9E%84/" style="font-size: 10px;">树结构</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>02-css | 奇迹师ori</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="MIRACLE,MIRACLE's Blog" />
+  
+  <meta name="description" content="1. 继承如果我们为一个元素设置了它的样式，此样式也会应用到它的后代元素–发生在祖先和后代元素之间 优点：利用继承，我们可以把一些通用的样式统一设置到共同的祖先元素。这样只需设置一次即可让所有元素具有该样式 注：并不是所有的样式都能被继承。比如：背景、布局相关的等等都不会被继承,可在api文档查看。 2. 选择器的权重 样式的冲突：当我们通过不同的选择器，选中相同的元素，并且为相同的样式设置不同的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02-css">
+<meta property="og:url" content="https://planeswalker1205.github.io/2021/03/19/02-css/index.html">
+<meta property="og:site_name" content="奇迹师ori">
+<meta property="og:description" content="1. 继承如果我们为一个元素设置了它的样式，此样式也会应用到它的后代元素–发生在祖先和后代元素之间 优点：利用继承，我们可以把一些通用的样式统一设置到共同的祖先元素。这样只需设置一次即可让所有元素具有该样式 注：并不是所有的样式都能被继承。比如：背景、布局相关的等等都不会被继承,可在api文档查看。 2. 选择器的权重 样式的冲突：当我们通过不同的选择器，选中相同的元素，并且为相同的样式设置不同的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://planeswalker1205.github.io/2021/03/19/02-css/QQ%E6%88%AA%E5%9B%BE20210419003559.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2021/03/19/02-css/QQ%E6%88%AA%E5%9B%BE20210419003516.png">
+<meta property="article:published_time" content="2021-03-19T14:53:19.000Z">
+<meta property="article:modified_time" content="2021-08-08T14:15:06.360Z">
+<meta property="article:author" content="John miracle">
+<meta property="article:tag" content="web学习">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="vscode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://planeswalker1205.github.io/2021/03/19/02-css/QQ%E6%88%AA%E5%9B%BE20210419003559.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="奇迹师ori" type="application/atom+xml">
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">MIRACLE&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        MIRACLE&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        个人博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MIRACLE" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-02-css" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      02-css
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2021-03-19
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="1-继承"><a href="#1-继承" class="headerlink" title="1. 继承"></a>1. 继承</h2><p><strong>如果我们为一个元素设置了它的样式，此样式也会应用到它的后代元素–发生在祖先和后代元素之间</strong></p>
+<p><strong><font color="green">优点：利用继承，我们可以把一些通用的样式统一设置到共同的祖先元素。这样只需设置一次即可让所有元素具有该样式</font></strong></p>
+<p><strong><font color="red">注：并不是所有的样式都能被继承。比如：<font color="#0000FF">背景、布局</font>相关的等等都不会被继承,可在api文档查看。</font></strong></p>
+<h2 id="2-选择器的权重"><a href="#2-选择器的权重" class="headerlink" title="2. 选择器的权重"></a>2. 选择器的权重</h2><ol>
+<li><p>样式的冲突：当我们通过不同的选择器，选中相同的元素，并且为相同的样式设置不同的值时，此时就发生了样式的冲突。</p>
+</li>
+<li><p>发生样式冲突时，应用哪个样式由选择器的<strong>权重(优先级)</strong>决定。</p>
+</li>
+</ol>
+<p><strong>选择器的权重</strong></p>
+<p><strong><font color="#A52A2A">内联/行内样式&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1,0,0,0)</font></strong></p>
+<p><strong><font color="#A52A2A">&gt;id选择器&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  (0,1,0,0)</font></strong></p>
+<p><strong><font color="#A52A2A">&gt;类和伪类选择器 (0,0,1,0)</font></strong></p>
+<p><strong><font color="#A52A2A">&gt;元素选择器&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (0,0,0,1)</font></strong></p>
+<p><strong><font color="#A52A2A">&gt;通配选择器&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (0,0,0,0)</font></strong></p>
+<p><strong><font color="#A52A2A">&gt;继承的样式&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 无优先级</font></strong></p>
+<p>比较优先级时，需要将所有的选择器的优先级进行相加计算，最后优先级越高，则越优先显示（分组选择器是单独计算的）。</p>
+<p>比如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-id">#box1</span>&#123;</span><br><span class="line">	//100</span><br><span class="line">	<span class="selector-tag">background-color</span><span class="selector-pseudo">:orange</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#box1</span>&#123;</span><br><span class="line">	//100+1</span><br><span class="line">	<span class="selector-tag">background-color</span><span class="selector-pseudo">:yellow</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.red</span>&#123;</span><br><span class="line">	//10</span><br><span class="line">	<span class="selector-tag">background-color</span><span class="selector-pseudo">:red</span>;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id = "box1" class = "red"&gt;</span><br><span class="line">我是一个<span class="selector-tag">div</span></span><br><span class="line">&lt;<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>则上述样式最优先的是<code>div#box1{}</code></p>
+<p><em>分组选择器是单独计算的</em></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-tag">div</span>,<span class="selector-id">#box1</span>,<span class="selector-class">.red</span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 *  div:1</span></span><br><span class="line"><span class="comment">	 *  #box1:100</span></span><br><span class="line"><span class="comment">	 *  .red:10</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="attribute">color</span>:brown;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="red">选择器的累加不会超过它的最大数量级</font></strong></p>
+<p><em>id及以下级别的选择器优先级再叠加也大不过内联样式</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">#box1&#123;</span><br><span class="line">	&#x2F;&#x2F;100</span><br><span class="line">	background-color:orange;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.d1.d2.d3.d4.d5.d6.d7.d8.d9.d10.d11&#123;</span><br><span class="line">	</span><br><span class="line">	background-color:red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id &#x3D; &quot;box1&quot; class &#x3D; &quot;d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 d11&quot;&gt;</span><br><span class="line">我是一个div</span><br><span class="line">&lt;div&gt;</span><br></pre></td></tr></table></figure>
+<p><em>类似这种写法，样式的优先级最高的还是id选择器</em></p>
+<p><strong>如果优先级计算后相同，那么优先使用靠下的样式</strong></p>
+<blockquote>
+<p>注：可以在某一个样式后面添加<strong>important</strong>，则此时样式会获得最高的优先级。甚至超过内联样式。<strong><font color="red">在开发中一定要慎用</font></strong>。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.d1</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>:red <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>a标签伪类优先级</strong></p>
+<p>(1):link                   选择所有未访问链接   </p>
+<p>(2):visited                选择所有访问过的链接</p>
+<p>(3):hover                  选择鼠标在链接上面的链接  ( :hover 选择器器可用于所有元素，不仅是链接。)</p>
+<p>(4):active                 选择活动链接 (鼠标点击与释放之间)</p>
+<p>(注意: link 和 visited 的位置可颠倒,建议不这样做)</p>
+<p><em>此优先级遵照“爱恨原则”  即“LoVeHAye”</em>。为什么要遵照这个优先级呢，如果顺序错乱，比如<code>:link</code>放在了最后一个，那么由CSS的就近原则，同一个标签(link里包含了hover和active的标签)后面的样式会覆盖掉前面的样式，则前面的<code>active``：hover</code>都会被覆盖从而不生效。</p>
+<h2 id="3-长度单位"><a href="#3-长度单位" class="headerlink" title="3. 长度单位"></a>3. 长度单位</h2><p><strong>01.像素：显示器实际上是有一个一个的小像素点构成。不同的屏幕像素大小是不同的，像素越小的屏幕显示的就越清晰。</strong></p>
+<p><strong>02.百分比：可以将属性值设置为相对于其父元素的百分比</strong></p>
+<p><strong>03.em：是相对于自身元素的字体大小来计算的。<font color="blue">1em = 1font-size</font></strong></p>
+<p><strong>04.rem：是相对于根元素(html)的字体大小来计算的</strong></p>
+<p><em>em会根据字体的大小的改变而改变</em></p>
+<h2 id="4-RGB值"><a href="#4-RGB值" class="headerlink" title="4.RGB值"></a>4.RGB值</h2><p><strong>01.通过三种颜色的不同浓度来调配颜色。R:RED G:GREEN B:BLUE</strong></p>
+<p>每一种颜色的范围在0<del>255(0</del>100%)之间</p>
+<p>语法</p>
+<p><code>rgb{红色,绿色,蓝色}</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">	<span class="attribute">background-color</span>:<span class="built_in">rgb</span>(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>);	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>02.REGA</strong></p>
+<p>在rgb的基础上增加了a表示不透明度</p>
+<p>A:Apacity  透明度</p>
+<p>1表示完全不透明，.5表示半透明，0表示完全透明</p>
+<p><code>rgb{红色,绿色,蓝色,.5}</code></p>
+<p><strong>03.十六进制的rgb值</strong></p>
+<p>-语法：#红色绿色蓝色</p>
+<p>颜色浓度通过：00-ff表示</p>
+<p><em>如果颜色一类的两位重复，可以简写</em></p>
+<p>#aabbcc→#abc</p>
+<p><strong>04.HSL值</strong></p>
+<p>H:色相(0-360)</p>
+<p>S:饱和度(0%-100%)</p>
+<p>L:亮度(0%-100%)</p>
+<h2 id="5-文档流"><a href="#5-文档流" class="headerlink" title="5.文档流"></a>5.文档流</h2><p>文档流(normal flow)</p>
+<p>- &nbsp; 网页是一个多层的结构</p>
+<p>- &nbsp; 通过css可以为每一层设置样式</p>
+<p>- &nbsp;这些层中，最底下的一层成为文档流，文档里是网页的基础。我们所创建的元素默认都是在文档流中进行排列。</p>
+<p><strong>对于我们来说，元素主要有两个状态：在文档流中&amp;不在文档流中（脱离文档流）</strong></p>
+<p><strong>1. 元素在文档流中的特点</strong></p>
+<ul>
+<li><p>块元素(block)</p>
+<ul>
+<li>在页面中独占一行</li>
+<li>默认宽度是父元素的全部宽度。</li>
+<li>默认高度是子元素所占的高度</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>行内元素(inline)</p>
+<ul>
+<li>不会独占页面中的一行，只占自身的大小</li>
+<li>行内元素在页面中自左向右水平排列。如果一行之中容纳不小所有的行内元素，则元素会换到第二行继续自左向右排列</li>
+<li>行内元素的默认宽度和高度都是被内容撑开</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-盒子模型"><a href="#6-盒子模型" class="headerlink" title="6.盒子模型"></a>6.盒子模型</h2><p><strong>内容区(content)：</strong>元素中所有的子元素和文本内容都在内容去排列。内容区的大小由width和height两个属性来设置</p>
+<p><strong>内边距(padding)</strong></p>
+<p><strong>边框(border)：</strong>边框属于盒子的边缘</p>
+<p><strong>外边距(margin)</strong></p>
+<p><strong><font color="skyblue">类似于boder-width的属性：</font></strong></p>
+<p><code>border-width:13px 10px 11px 15px;</code></p>
+<ul>
+<li>按照<strong>上 <font color="red">右</font> 下 <font color="red">左</font></strong>的顺序为边框设置宽度</li>
+</ul>
+<p><code>border-width:13px 10px 15px</code></p>
+<ul>
+<li>按照<strong>上 <font color="red">左右</font> 下</strong>的顺序为边框设置宽度</li>
+</ul>
+<p><code>border-width:13px 15px</code></p>
+<ul>
+<li>按照<strong>上下 <font color="red">左右</font></strong>的顺序为边框设置宽度</li>
+</ul>
+<h3 id="01-内边距"><a href="#01-内边距" class="headerlink" title="01. 内边距"></a>01. 内边距</h3><p><strong>padding</strong></p>
+<p>内容区和边框之间的距离是内边距。</p>
+<p>- 一共有四个方向的内边距</p>
+<ul>
+<li><p>padding-top</p>
+</li>
+<li><p>padding-right</p>
+</li>
+<li><p>padding-bottom</p>
+</li>
+<li><p>padding-left</p>
+</li>
+</ul>
+<p><strong>内边距的设置会影响到盒子的大小</strong></p>
+<blockquote>
+<p>一个盒子的可见框大小，由<strong>内容区 内边距 边框</strong>共同决定</p>
+</blockquote>
+<p><strong><font size="5" color="red">So</font></strong>在计算盒子大小时，需要将这三个区域加到一起计算。</p>
+<h3 id="02-外边距"><a href="#02-外边距" class="headerlink" title="02.外边距"></a>02.外边距</h3><p><strong>margin</strong></p>
+<p>- 一共有四个方向的外边距</p>
+<ul>
+<li>margin-top</li>
+</ul>
+<p>上外边距，设置一个正值，元素会向下移动</p>
+<ul>
+<li>margin-right</li>
+</ul>
+<p>默认情况下设置此属性不会有任何效果。因为没有做浮动的话，块状元素独占一行。两个元素做完左浮动，设置一个正值，其右边的元素会向右移动。</p>
+<ul>
+<li>margin-bottom</li>
+</ul>
+<p>下外边距，设置一个正值，其下边的元素会向下移动。</p>
+<ul>
+<li>margin-left</li>
+</ul>
+<p>左外边距，设置一个正值，元素会向右移动</p>
+<p><strong>外边距不会影响盒子可见框的大小.但是外边距会影响盒子的位置！</strong></p>
+<p><strong><font size="5" color="red">由于</font></strong>元素在页面中是按照自左向右。自上向下排列。所以默认情况下如果我们设置的左和上外边距则会移动元素自身。而设置下和右外边距会移动其他元素</p>
+<p><strong><font color="blue">一个元素在其父元素中，水平布局必须满足以下等式:</font></strong></p>
+<p>margin-left+border-left+padding-left+width+padding-right+border-right+margin-right = 其父元素内容区的宽度。</p>
+<p>如果相加等式不成立，则成为过度约束，等式会自动调整。</p>
+<p><strong><font size="6">调整的情况∨：</font></strong></p>
+<blockquote>
+<p>如果这七个值中没有为auto的情况，则浏览器会自动调整margin-right的值以使等式满足.如果宽度比父元素还要大，那么margin-right就会变成一个负值。</p>
+</blockquote>
+<blockquote>
+<p>这七个值中有三个值可以设置为auto：width  margin-left  margin-right。如果某个值为auto，则会自动调整为auto的那个值以使等式成立。</p>
+</blockquote>
+<p><strong><font size="5" color="red">注</font>：width的值默认是auto</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.box1&#123;</span><br><span class="line">	border:2px solid black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box2&#123;</span><br><span class="line">	width:auto;</span><br><span class="line">	height:200px;</span><br><span class="line">	background-color:#bfa;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;div class &#x3D; &quot;box1&quot;&gt;</span><br><span class="line">	&lt;div class &#x3D; &quot;box2&quot;&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p><em>那么此时浏览器会自动调整<font color="red">auto</font>的值为父元素内容区的宽度。</em></p>
+<p><strong>I:如果将一个宽度和一个外边距设置为auto，则宽度会调整到最大</strong></p>
+<p><strong>II:如果将三个值都设置到auto，则外边距都是0，宽度最大。</strong></p>
+<p><strong>III:如果给两个外边距设置auto，宽度设置固定值，则会将auto设置为相同的值。</strong></p>
+<p><strong><font size="6" color="skyblue">故我们经常利用第三个特点来使一个元素水平居中。</font></strong></p>
+<h3 id="03-垂直方向的布局"><a href="#03-垂直方向的布局" class="headerlink" title="03.垂直方向的布局"></a>03.垂直方向的布局</h3><p><strong>1. 父元素的高度如果不写，就会被子元素撑开。写了的话就该是多少就是多少。</strong></p>
+<p><strong>2. 如果子元素的大小超过了父元素，则子元素会从父元素中溢出。溢出的部分没有占据空间</strong></p>
+<blockquote>
+<p>可以使用overflow属性来设置父元素中溢出的子元素。<strong><font color="green">父元素中设置</font></strong></p>
+</blockquote>
+<p><strong><font color="rgb(165, 42, 42)"> overflow可选值:</font></strong></p>
+<p><code>visible</code>:默认值(子元素会从父元素溢出，从父元素的外部显示)</p>
+<p><code>hidden</code>:隐藏。溢出的内容会被裁剪  不会显示</p>
+<p><code>scroll</code>:生成两个滚动条。通过滚动条来查看完整的内容。</p>
+<p><code>auto</code>：根据需要生成滚动条。需要哪个方向的才会有滚动条。</p>
+<p><strong><font color="rgb(165, 42, 42)"> overflow-x:</font></strong></p>
+<p>单独处理水平方向</p>
+<p><strong><font color="rgb(165, 42, 42)"> overflow-y:</font></strong></p>
+<p>单独处理垂直方向</p>
+<h3 id="04-外边距的折叠-垂直外边距的重叠"><a href="#04-外边距的折叠-垂直外边距的重叠" class="headerlink" title="04.外边距的折叠(垂直外边距的重叠)"></a>04.外边距的折叠(垂直外边距的重叠)</h3><p><strong>相邻的垂直方向的外边距会发生重叠现象：</strong></p>
+<p>两个条件</p>
+<p><strong><font color="blue" size="4">1. 相邻的</font></strong></p>
+<p><strong>所谓相邻指的是渲染之后的元素位置相邻，而不是dom结构上的相邻</strong></p>
+<p><strong><font color="blue" size="4">2. 垂直方向的</font></strong></p>
+<p>两种情况</p>
+<p><strong><font color="blue" size="4">1. 兄弟元素</font></strong></p>
+<blockquote>
+<p>兄弟元素间的相邻垂直外边距会取两者之间的较大值(两者都是正值)</p>
+</blockquote>
+<blockquote>
+<p>特殊情况：如果相邻的外边距一正一负，则取两者的和</p>
+</blockquote>
+<blockquote>
+<p>如果相邻外边距都是负值，则取两者绝对值较大的。</p>
+</blockquote>
+<p><strong><font color="#greenb">兄弟元素之间的外边距重叠，对于开发是有利的，不需要进行处理。</font></strong></p>
+<p><strong><font color="blue" size="4">2. 父子元素</font></strong></p>
+<blockquote>
+<p>父子元素之间的相邻外边距，子元素的会传递给父元素。(上外边距)</p>
+</blockquote>
+<p><strong>按照css规范，两个相邻的元素之间的margin值会共用较大的那一个，而如果没有上边框或上内间距，嵌套的元素之间和同级的元素一样满足使用这个规范的条件，父元素会拥有子元素一样的上外边距。</strong></p>
+<p><strong><font color="#red">父子元素之间的外边距重叠会影响到页面的布局，需要进行处理。</font></strong></p>
+<p>处理方案：</p>
+<ul>
+<li><p>为父元素设置边框</p>
+</li>
+<li><p>使父元素和子元素不相邻</p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">	<span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">	<span class="attribute">display</span>:table;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用padding属性不适用margin<font color="orange" size="4">OR</font>为父元素设置边框使它们父子两个的外边距不重合。</li>
+</ul>
+<h3 id="05-行内元素的盒模型"><a href="#05-行内元素的盒模型" class="headerlink" title="05.行内元素的盒模型"></a>05.行内元素的盒模型</h3><p><strong><font color="#red">行内元素不支持设置宽度和高度</font></strong></p>
+<p><strong><font color="#red">行内元素可以设置padding/border/margin  但是垂直方向padding/border/margin不会影响页面的布局</font></strong></p>
+<p><em>display属性：</em></p>
+<p>可选值：</p>
+<p> <strong>inline：</strong>将元素设置为行内元素</p>
+<p><strong>block：</strong>将元素设置为块元素</p>
+<p><strong>inline-block：</strong>将元素设置为行内块元素。即既可以设置宽高，又不会独占一行</p>
+<p><strong>table：</strong>将元素设置为一个表格</p>
+<p><strong>none：</strong>元素不在页面中显示。也不占位置</p>
+<p><em>visibility属性：</em></p>
+<p>可选值：</p>
+<p><strong>visible：</strong>默认值  显示</p>
+<p><strong>hidden：</strong>隐藏，但是还占据页面位置</p>
+<h3 id="06-默认样式"><a href="#06-默认样式" class="headerlink" title="06.默认样式"></a>06.默认样式</h3><p><strong>通常情况下，浏览器都会为元素设置一些默认样式。默认样式的存在会影响到页面的布局。</strong></p>
+<p><strong>通常情况下填写网页时必须要去除浏览器的默认样式</strong></p>
+<p><strong><font color="#fba">去除所有元素的默认样式</font></strong></p>
+<ol>
+<li>简单写法：</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line"></span><br><span class="line">	<span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">	<span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>此方法会有一些元素的默认样式无法去除</p>
+</blockquote>
+<ol start="2">
+<li>另一种写法是写一个共用的css表依次去除所有元素的默认样式，然后引入即可。</li>
+</ol>
+<h3 id="07-box-sizing"><a href="#07-box-sizing" class="headerlink" title="07.box-sizing"></a>07.box-sizing</h3><p><strong><font color="green" size="4"><i>默认情况下，盒子的可见框大小有内容区，内边距和边框共同决定。</i></font></strong></p>
+<p><strong>box-sizing属性：</strong>用来设置盒子尺寸的计算方式.(设置width和height的作用)</p>
+<p>可选值：</p>
+<p>content-box：默认值，宽度和高度用来设置内容区的大小</p>
+<p>border-box：宽度和高度用来设置整个盒子的可见框大小。</p>
+<p>简单来说：设置的height和weight的属性：如果box-sizing的值为content-box，那么height和weight的值只设置给content，不包括border和padding。如果box-sizing的值为border-box，那么height和weight的值包含了border和padding还有内容区</p>
+<h3 id="08-轮廓阴影和圆角"><a href="#08-轮廓阴影和圆角" class="headerlink" title="08.轮廓阴影和圆角"></a>08.轮廓阴影和圆角</h3><p><strong>1. outline</strong></p>
+<p>用来设置元素的轮廓线。用法和border一样。</p>
+<p>和边框的不同点是outline不会影响到可见框的大小和页面的布局。像是独立的一样。可用在鼠标移入后的样式。</p>
+<p><strong>2. box-shadow</strong></p>
+<p>设置元素的阴影效果，不会影响页面的布局</p>
+<p>box-shadow:10px 20px 10px black;</p>
+<ul>
+<li><p>10px:阴影的水平偏移量(正右负左)</p>
+</li>
+<li><p>20px：阴影的垂直偏移量(正下负上)</p>
+</li>
+<li><p>10px：阴影的模糊半径。（值越大，模糊效果越大）</p>
+</li>
+<li><p>black：阴影的颜色</p>
+</li>
+</ul>
+<div style="width:100px;height:100px;background-color:orange;box-shadow:10px 20px 10px rgba(0,0,0,.3);margin-bottom:30px;"></div>
+
+
+<p><strong>2. border-radius</strong></p>
+<p>设置不同方向上圆角的半径大小。</p>
+<ul>
+<li><p>border-top-left-radius:50px 100px;</p>
+</li>
+<li><p>border-top-right-radius:50px 100px;</p>
+</li>
+<li><p>border-bottom-left-radius:50px 100px;</p>
+</li>
+<li><p>border-bottom-right-radius:50px 100px;</p>
+</li>
+</ul>
+<p>50px:水平方向半径</p>
+<p>100px：垂直方向半径</p>
+<p><strong>border-radius可分别指定四个值/三个值/二个值</strong></p>
+<p>四个值：上左  上右  下右  下左</p>
+<p>三个值：上左  上右/下左  下右</p>
+<p>二个值： 上左/下右  上右/下左</p>
+<p><code>border-radius： 10px / 20px;</code> 代表四个角设置两个方向的圆的半径</p>
+<p><strong>将元素设置为一个圆形。</strong></p>
+<p><code>border-radius:50%;</code></p>
+<div style="width:100px;height:100px;background-color:green;border-radius:50%;"></div>
+
+
+
+<h2 id="6-浮动"><a href="#6-浮动" class="headerlink" title="6.浮动"></a>6.浮动</h2><p>使用float属性来设置元素的浮动。</p>
+<p><strong>三个可选值：</strong></p>
+<blockquote>
+<p>-</p>
+</blockquote>
+<p>none：默认值  没有浮动</p>
+<p>left：左浮动</p>
+<p>right：右浮动</p>
+<p><em>元素设置浮动以后，水平布局的等式不需要强制成立</em></p>
+<p><strong>浮动feature：</strong></p>
+<p><strong><font color="red" size="3">* 元素设置浮动以后，会完全从文档流中脱离。不再占用文档流的位置，所以元素下方的还在文档流中的元素会自动向上移动</font></strong></p>
+<p><strong><font color="red" size="3">* 设置浮动以后，元素会向父元素的左侧或右侧浮动</font></strong></p>
+<p><strong><font color="red" size="3">* 浮动元素默认不会从父元素中移出</font></strong></p>
+<p><strong><font color="red" size="3">* 浮动元素向左或向右浮动时，不会超过它前边的其他浮动元素</font></strong></p>
+<p><strong><font color="red" size="3">* 如果浮动元素的上一个块元素没有浮动，则浮动元素无法上移</font></strong></p>
+<p><strong><font color="red" size="3">* 浮动元素与它上一个兄弟浮动元素上外边距并齐</font></strong></p>
+<h3 id="01-浮动的特点"><a href="#01-浮动的特点" class="headerlink" title="01. 浮动的特点"></a>01. 浮动的特点</h3><ol>
+<li><p>浮动元素不会盖住文字，文字会自动环绕在浮动元素周围。所以我们可以利用浮动来设置文字环绕图片效果。（但是文字所在的元素是会盖住的。只是不会盖住文字）</p>
+</li>
+<li><p>元素设置浮动以后，将会从文档流中脱离，从文档流中脱离后，元素的一些特点也会发生变化</p>
+<p> <strong>脱离文档流(不是浮动独有)的特点：</strong></p>
+<p> <strong><font color="green">对于块元素：</font></strong></p>
+<ul>
+<li><p>a:块元素不再独占页面的一行</p>
+</li>
+<li><p>b:块元素的宽度和高度默认都被内容撑开</p>
+</li>
+</ul>
+<p> <strong><font color="green">对于行内元素：</font></strong></p>
+<ul>
+<li>a:行内元素脱离文档流以后会变成块元素，特点和上面块元素一样。</li>
+</ul>
+</li>
+</ol>
+<p>   即 <strong>脱离文档流以后 ，不需要再区分行内元素和块元素了</strong></p>
+<h3 id="02-高度塌陷和BFC"><a href="#02-高度塌陷和BFC" class="headerlink" title="02. 高度塌陷和BFC"></a>02. 高度塌陷和BFC</h3><p><strong>在浮动布局中，父元素的高度默认是被子元素撑开的。当子元素浮动以后，其会完全脱离文档流，子元素从文档流中脱离将会无法撑起父元素的高度，导致父元素的高度丢失。父元素的高度丢失以后，其下的元素就会上移，导致页面布局混乱。</strong></p>
+<p>所以高度塌陷是浮动布局中比较常见的一种问题，必须要处理。</p>
+<p><strong>BFC(Block Formatting Context)块级格式化环境</strong>：</p>
+<blockquote>
+<p>BFC是css中的一个隐含的属性，可以为一个元素开启BFC，开启BFC以后，该元素会变成一个独立的布局区域</p>
+</blockquote>
+<p><strong><font color="blue">元素开启BFC的特点： </font></strong></p>
+<ul>
+<li><p><strong>开启BFC的元素不会被浮动元素所覆盖</strong></p>
+</li>
+<li><p><strong>开启BFC的元素子元素和父元素的外边距不会重叠</strong></p>
+</li>
+<li><p><strong>开启BFC的元素可以包含浮动的子元素</strong></p>
+</li>
+</ul>
+<p><strong><font color="blue">可以通过一些特殊的方式来开启元素的BFC： </font></strong></p>
+<ul>
+<li><p><strong>设置元素的浮动(不推荐)</strong></p>
+<p>  比如为父元素设置浮动，那么父元素就不会因为子元素浮动而塌陷</p>
+</li>
+<li><p><strong>将元素设置为行内块元素(不推荐)</strong></p>
+<p>  display：inline-block</p>
+</li>
+<li><p><strong>将元素的overflow设置为一个非visible的值</strong></p>
+<p>  常用方式， 为元素设置overflow hidden开启BFC  以使其可以包含浮动元素</p>
+</li>
+</ul>
+<h3 id="03-clear"><a href="#03-clear" class="headerlink" title="03. clear"></a>03. clear</h3><p><strong>如果我们不希望某个元素因为其他元素浮动的影响而改变位置，可以通过clear属性来清除浮动元素对当前元素所产生的影响。</strong></p>
+<p><strong><font color="orange">clear： </font></strong></p>
+<p>left：清除左侧浮动元素对当前元素的影响</p>
+<p>right：清除右侧浮动元素对当前元素的影响。</p>
+<p>both：清除两侧中最大影响的那侧</p>
+<blockquote>
+<p>原理：设置清除浮动以后，浏览器会自动为元素添加一个上<br>外边距，以使其位置不受其他元素的影响</p>
+</blockquote>
+<h3 id="04-使用after伪类解决高度塌陷"><a href="#04-使用after伪类解决高度塌陷" class="headerlink" title="04. 使用after伪类解决高度塌陷"></a>04. 使用after伪类解决高度塌陷</h3><p>根据clear清除浮动的特性(设置清除浮动以后，浏览器会自动为元素添加一个上外边距，以使其位置不受其他元素的影响),我们可以为浮动元素的after伪类设置clear属性清除浮动，从而达到不使父元素因子元素的浮动而导致塌陷。</p>
+<p><strong>即：浮动元素box1：</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box1</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">	<span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">	<span class="attribute">display</span>:block;</span><br><span class="line">	<span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>原理是在父元素中的最后一个子元素做出clear清除浮动的操作。底层执行最后一个元素的<code>margin-top：父元素的高度</code>。外边距相关问题折叠应该已经处理了。</p>
+</blockquote>
+<p><strong><font color="#8B0000" size="5">综上：解决外边距重叠+高度塌陷</font></strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">	display:table;//解决垂直方向外边距重叠。即在父元素和第一个子元素之间加了一个元素，使之不符合外边距重叠的条件。使用此属性不会有多余的高度</span><br><span class="line">	clear:both;//解决高度塌陷。即清除最后一个子元素的浮动。</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-导航条练习"><a href="#7-导航条练习" class="headerlink" title="7.导航条练习"></a>7.导航条练习</h2><p><strong>1. line-height：将文字在父元素垂直居中，同时将该块元素的高度撑开与行高一致</strong></p>
+<blockquote>
+<p>设置行高属性，即设置该元素内文本行的高度，文本会上下居中于总行高。如果行高与该元素高度相同，那么文字会垂直居中于该元素内（前提是该元素的高度比文本字号高度要高。</p>
+</blockquote>
+<p>如下案例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">       <span class="selector-class">.a</span>&#123;</span></span><br><span class="line">          height: 100px;</span><br><span class="line">          width: 100px;</span><br><span class="line">          line-height: 10px;</span><br><span class="line">       &#125;</span><br><span class="line"><span class="css">       <span class="selector-class">.c</span>&#123;</span></span><br><span class="line">         line-height: 100px;</span><br><span class="line">       &#125;</span><br><span class="line">     </span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"a"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"b"</span>&gt;</span></span><br><span class="line">              </span><br><span class="line">               <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">"javascript:;"</span> <span class="attr">class</span>=<span class="string">"c"</span>&gt;</span>ddddddddddddddddd<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">               </span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>那么此时文本ddd…的行高将会为100px，但是a标签作为一个行内标签，其高度只会随着文本的大小而改变，故此时可以把a标签设置为块元素，那么行高将会撑开a标签的高度，能点击到超链接的范围也就加大了。</p>
+<p><strong>2. padding：此标签会撑开自身的可视大小，如果父元素设置了固定的宽高，padding的大小大于父元素的宽高，那么子块就可能会跑出父元素</strong></p>
+<p><strong><font color="red" size="4">由于文本会环绕在浮动元素，所以如果某元素在浮动元素周围，那么这个元素的文本的位置可能会有些奇怪。</font></strong></p>
+<p><img src="/2021/03/19/02-css/QQ%E6%88%AA%E5%9B%BE20210419003559.png" alt></p>
+<p><img src="/2021/03/19/02-css/QQ%E6%88%AA%E5%9B%BE20210419003516.png" alt></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2021年08月08日 22:15</p>
+        <p>原始链接： <a class="post-url" href="/2021/03/19/02-css/" title="02-css">https://planeswalker1205.github.io/2021/03/19/02-css/</a></p>
+        <footer>
+            <a href="https://planeswalker1205.github.io">
+                <img src="/images/logo.png" alt="John miracle">
+                John miracle
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://planeswalker1205.github.io/2021/03/19/02-css/&title=《02-css》 — 奇迹师ori&pic=https://planeswalker1205.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://planeswalker1205.github.io/2021/03/19/02-css/&title=《02-css》 — 奇迹师ori&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://planeswalker1205.github.io/2021/03/19/02-css/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《02-css》 — 奇迹师ori&url=https://planeswalker1205.github.io/2021/03/19/02-css/&via=https://planeswalker1205.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://planeswalker1205.github.io/2021/03/19/02-css/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://planeswalker1205.github.io/2021/03/19/02-css/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/web学习/" class="color1">web学习</a>
+      
+    <a href="/tags/css/" class="color4">css</a>
+      
+    <a href="/tags/vscode/" class="color2">vscode</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-继承"><span class="post-toc-text">1. 继承</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-选择器的权重"><span class="post-toc-text">2. 选择器的权重</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-长度单位"><span class="post-toc-text">3. 长度单位</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-RGB值"><span class="post-toc-text">4.RGB值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-文档流"><span class="post-toc-text">5.文档流</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-盒子模型"><span class="post-toc-text">6.盒子模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#01-内边距"><span class="post-toc-text">01. 内边距</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#02-外边距"><span class="post-toc-text">02.外边距</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#03-垂直方向的布局"><span class="post-toc-text">03.垂直方向的布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#04-外边距的折叠-垂直外边距的重叠"><span class="post-toc-text">04.外边距的折叠(垂直外边距的重叠)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#05-行内元素的盒模型"><span class="post-toc-text">05.行内元素的盒模型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#06-默认样式"><span class="post-toc-text">06.默认样式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#07-box-sizing"><span class="post-toc-text">07.box-sizing</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#08-轮廓阴影和圆角"><span class="post-toc-text">08.轮廓阴影和圆角</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-浮动"><span class="post-toc-text">6.浮动</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#01-浮动的特点"><span class="post-toc-text">01. 浮动的特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#02-高度塌陷和BFC"><span class="post-toc-text">02. 高度塌陷和BFC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#03-clear"><span class="post-toc-text">03. clear</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#04-使用after伪类解决高度塌陷"><span class="post-toc-text">04. 使用after伪类解决高度塌陷</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-导航条练习"><span class="post-toc-text">7.导航条练习</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2021/05/02/03-css/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          03-css
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2021/03/01/01-css/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">01_css</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2021 John miracle<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://planeswalker1205.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Animation/" style="font-size: 10px;">Animation</a> <a href="/tags/Error%EF%BC%8CLearn/" style="font-size: 10px;">Error，Learn</a> <a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IDEA-Intellij/" style="font-size: 10px;">IDEA Intellij</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 14px;">IntelliJ IDEA</a> <a href="/tags/Intellij-IDEA/" style="font-size: 12px;">Intellij IDEA</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16px;">Spring Boot</a> <a href="/tags/Spring-MVC/" style="font-size: 10px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 10px;">Spring Security</a> <a href="/tags/Spring-Boot/" style="font-size: 10px;">Spring-Boot</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/css/" style="font-size: 18px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/vscode/" style="font-size: 20px;">vscode</a> <a href="/tags/web%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">web学习</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/tags/%E5%9B%BE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">图结构</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">异步线程</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%A3%E5%88%97/" style="font-size: 10px;">散列</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px;">数据结构</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%A0%91%E7%BB%93%E6%9E%84/" style="font-size: 10px;">树结构</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Animation/" style="font-size: 10px;">Animation</a> <a href="/tags/Error%EF%BC%8CLearn/" style="font-size: 10px;">Error，Learn</a> <a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IDEA-Intellij/" style="font-size: 10px;">IDEA Intellij</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 14px;">IntelliJ IDEA</a> <a href="/tags/Intellij-IDEA/" style="font-size: 12px;">Intellij IDEA</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16px;">Spring Boot</a> <a href="/tags/Spring-MVC/" style="font-size: 10px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 10px;">Spring Security</a> <a href="/tags/Spring-Boot/" style="font-size: 10px;">Spring-Boot</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/css/" style="font-size: 18px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/vscode/" style="font-size: 20px;">vscode</a> <a href="/tags/web%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">web学习</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/tags/%E5%9B%BE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">图结构</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">异步线程</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%A3%E5%88%97/" style="font-size: 10px;">散列</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px;">数据结构</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%A0%91%E7%BB%93%E6%9E%84/" style="font-size: 10px;">树结构</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
