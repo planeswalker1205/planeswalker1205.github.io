@@ -31,8 +31,7 @@
   
   
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="奇迹师ori" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 <body>
   <div id="container">
@@ -112,14 +111,14 @@
       <div class="outer">
         <section id="main" class="body-wrap">
   
-    <article id="post-记录Spring-Boot中遇到的问题" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Spring-异步线程池" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/01/%E8%AE%B0%E5%BD%95Spring-Boot%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"  >记录Spring Boot中遇到的问题</a>
+      <a class="article-title" href="/2020/08/02/Spring-%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B%E6%B1%A0/"  >Spring 异步线程池</a>
     </h1>
   
 
@@ -129,25 +128,17 @@
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2020/02/01/%E8%AE%B0%E5%BD%95Spring-Boot%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" >
+            <a href="/2020/08/02/Spring-%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B%E6%B1%A0/" >
                 
-                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="记录Spring Boot中遇到的问题" title="记录Spring Boot中遇到的问题">
+                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="Spring 异步线程池" title="Spring 异步线程池">
                 
             </a>
         </div>
         <div class="article-feed">
             <p>
-                记录Spring Boot学习中遇到的一些错误及解决方案
-关于SpringBoot项目中@Controller无法引入的问题
-
-
-一般在工程中无法引入jar文件或者Dependencies报错只需以下操作:
-
-工程中clean再install
-
-找到本地仓库删除对应包，然后到工程中clean/install
-
-打开项目 pom.xml 文件，右键 maven –&gt; ...
+                异步实例为了满足运维人员的需求，往往需要生成报表交由后台线程操作，生成报表是另外一个线程的任务
+1. 使用Java配置定义线程池和启用异步
+12345678910111213141516171819202122232425262728package com.example.rediscachetest.tools;import org.springframework.co...
             </p>
         </div>
       
@@ -157,90 +148,23 @@
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2020-02-01</li>
+                <li><i class="fa fa-calendar"></i>2020-08-02</li>
             
             
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
-      
-    <a href="/tags/SpringBoot/" class="color2">Spring Boot</a>
-      
-    <a href="/tags/Error，Learn/" class="color2">Error，Learn</a>
-      
-  </li>
-
-        </ul>
-        
-            <a href="/2020/02/01/%E8%AE%B0%E5%BD%95Spring-Boot%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/#more" class="article-more-link" >更多&gt;&gt;</a>
-        
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article id="post-Spring-Boot学习v1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/"  >Spring Boot学习v1</a>
-    </h1>
-  
-
-          
-      </header>
-    
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/" >
-                
-                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="Spring Boot学习v1" title="Spring Boot学习v1">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                简单搭建Spring Boot开发环境搭建环境
-启动Intellij IDEA，选择Create New Project，看到了一个新的窗口之后，选择Spring Initializr，将JDK切换为你想要的版本。
-
-点击Next，进行一定的配置
-
-
-
-
-点击Next，可以根据自己的需要选择对应的starter进行依赖。
-
-建好后，工程目录可以看到一个已经建好的类Spbo...
-            </p>
-        </div>
-      
-        
-    </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2020-01-28</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/SpringBoot/" class="color2">Spring Boot</a>
-      
-    <a href="/tags/IntelliJIDEA/" class="color4">IntelliJ IDEA</a>
       
     <a href="/tags/Spring/" class="color2">Spring</a>
       
+    <a href="/tags/异步线程/" class="color5">异步线程</a>
+      
+    <a href="/tags/IDEAIntellij/" class="color4">IDEA Intellij</a>
+      
   </li>
 
         </ul>
         
-            <a href="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/#more" class="article-more-link" >更多&gt;&gt;</a>
+            <a href="/2020/08/02/Spring-%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B%E6%B1%A0/#more" class="article-more-link" >更多&gt;&gt;</a>
         
     </footer>
   </div>
@@ -248,14 +172,14 @@
 
 
   
-    <article id="post-Git学习笔记v2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Spring-Security" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/"  >Git学习笔记v2</a>
+      <a class="article-title" href="/2020/07/22/Spring-Security/"  >Spring Security</a>
     </h1>
   
 
@@ -265,18 +189,24 @@
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/" >
+            <a href="/2020/07/22/Spring-Security/" >
                 
-                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="Git学习笔记v2" title="Git学习笔记v2">
+                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="Spring Security" title="Spring Security">
                 
             </a>
         </div>
         <div class="article-feed">
             <p>
-                网页无法访问GitHub网站的解决办法:
-进入Window下目录：C：\ Windows \ System32 \ drivers \ etc
-notepad++打开hosts文件,在末尾添加如下代码:
-12345#github 192.30.253.113 github.com 192.30.253.113 github.com 192.30.253.118 gist....
+                
+安全–Spring Security
+
+
+    为了使用SpringSecurity，需要在Maven配置文件中引入对应的依赖
+
+
+
+
+123456&lt;dependency&gt;	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;	&lt;artifactId&gt;spring-boot-starte...
             </p>
         </div>
       
@@ -286,19 +216,23 @@ notepad++打开hosts文件,在末尾添加如下代码:
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2020-01-21</li>
+                <li><i class="fa fa-calendar"></i>2020-07-22</li>
             
             
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/Git/" class="color4">Git</a>
+    <a href="/tags/IntellijIDEA/" class="color4">Intellij IDEA</a>
+      
+    <a href="/tags/Spring/" class="color2">Spring</a>
+      
+    <a href="/tags/SpringSecurity/" class="color1">Spring Security</a>
       
   </li>
 
         </ul>
         
-            <a href="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/#more" class="article-more-link" >更多&gt;&gt;</a>
+            <a href="/2020/07/22/Spring-Security/#more" class="article-more-link" >更多&gt;&gt;</a>
         
     </footer>
   </div>
@@ -306,14 +240,14 @@ notepad++打开hosts文件,在末尾添加如下代码:
 
 
   
-    <article id="post-Git学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-REST风格" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/15/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"  >Git学习笔记1</a>
+      <a class="article-title" href="/2020/07/19/REST%E9%A3%8E%E6%A0%BC/"  >REST风格</a>
     </h1>
   
 
@@ -323,18 +257,18 @@ notepad++打开hosts文件,在末尾添加如下代码:
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2020/01/15/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" >
+            <a href="/2020/07/19/REST%E9%A3%8E%E6%A0%BC/" >
                 
-                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="Git学习笔记1" title="Git学习笔记1">
+                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="REST风格" title="REST风格">
                 
             </a>
         </div>
         <div class="article-feed">
             <p>
-                Git安装在Linux上安装Git首先，您可以试着输入git，看看系统有没有安装Git:
-123$ gitThe program 'git' is currently not installed. You can install it by typing:sudo apt-get install git
-
-如果您碰巧用Debian或Ubuntu Linux，通过一条sud...
+                REST简述REST名词1. 资源:是一个具体存在的对象，它可以是系统权限用户，角色和菜单等。也可以是一些媒体类型，如文本，图片，歌曲
+2. 表现层:表现这个资源
+3. 状态转换:现实中的资源不是一层不变的，它是一个变化的过程，一个资源可以经历创建，访问，修改和删除的过程。
+开发REST风格端点Spring 4.3之后除了@RequestMapping外，还可以使用以下5...
             </p>
         </div>
       
@@ -344,19 +278,12 @@ notepad++打开hosts文件,在末尾添加如下代码:
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2020-01-15</li>
+                <li><i class="fa fa-calendar"></i>2020-07-19</li>
             
             
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/Git/" class="color4">Git</a>
-      
-  </li>
-
         </ul>
         
-            <a href="/2020/01/15/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" class="article-more-link" >更多&gt;&gt;</a>
+            <a href="/2020/07/19/REST%E9%A3%8E%E6%A0%BC/#more" class="article-more-link" >更多&gt;&gt;</a>
         
     </footer>
   </div>
@@ -364,14 +291,14 @@ notepad++打开hosts文件,在末尾添加如下代码:
 
 
   
-    <article id="post-IDEA基础设置及操作" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Spring-MVC学习笔记v1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/11/IDEA%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE%E5%8F%8A%E6%93%8D%E4%BD%9C/"  >IDEA基础设置及操作</a>
+      <a class="article-title" href="/2020/06/17/Spring-MVC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v1/"  >Spring MVC学习笔记v1</a>
     </h1>
   
 
@@ -381,27 +308,206 @@ notepad++打开hosts文件,在末尾添加如下代码:
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2020/01/11/IDEA%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE%E5%8F%8A%E6%93%8D%E4%BD%9C/" >
+            <a href="/2020/06/17/Spring-MVC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v1/" >
                 
-                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="IDEA基础设置及操作" title="IDEA基础设置及操作">
+                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="Spring MVC学习笔记v1" title="Spring MVC学习笔记v1">
                 
             </a>
         </div>
         <div class="article-feed">
             <p>
-                快捷键操作：http://blog.zhaojishun.cn/articles/2020/01/27/1580092173752.html
+                Spring MVC简单页面配置1. 控制器
+123456789101112131415161718192021222324package com.example.rediscachetest.controller;import com.example.rediscachetest.pojo.ServerUser;import com.example.rediscache...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2020-06-17</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/SpringMVC/" class="color1">Spring MVC</a>
+      
+    <a href="/tags/笔记/" class="color3">笔记</a>
+      
+  </li>
 
-弹出代码修改提示:alt+enter
+        </ul>
+        
+            <a href="/2020/06/17/Spring-MVC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v1/#more" class="article-more-link" >更多&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
 
-代码补全:ctrl+space(如果没用可能是快捷键冲突)
 
-输出快捷键:sout
+  
+    <article id="post-Redis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/19/Redis/"  >Redis</a>
+    </h1>
+  
 
-get/set生成:alt+insert
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2020/05/19/Redis/" >
+                
+                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="Redis" title="Redis">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                
+Redis基础数据类型
 
-Alt+回车 导入包,自动修正
+1. String(字符串)
+String是Redis最基本的类型，一个key对应一个value。String类型是二进制安全的，意思是string可以包含任何数据，比如jpg图片或者序列化的对象。
 
-Ctrl+N  查找类
+
+设置指定key的值
+  SET key value
+
+获取指定key的值
+  GET key
+
+将给定 key 的值设为 value ，并返回...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2020-05-19</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Redis/" class="color1">Redis</a>
+      
+    <a href="/tags/SpringBoot/" class="color1">SpringBoot</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2020/05/19/Redis/#more" class="article-more-link" >更多&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-排序算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"  >排序算法</a>
+    </h1>
+  
+
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" >
+                
+                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="排序算法" title="排序算法">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                算法希尔排序1234567891011121314151617181920212223242526public static void main(String[] args)&#123;    int[] arrs = new int[]&#123;5，2，7，6，4，1，3&#125;;    algoTest.shellself(arrs);    System.ou...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2020-05-19</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/算法/" class="color3">算法</a>
+      
+    <a href="/tags/排序/" class="color3">排序</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#more" class="article-more-link" >更多&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-枚举" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/04/%E6%9E%9A%E4%B8%BE/"  >枚举</a>
+    </h1>
+  
+
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2020/04/04/%E6%9E%9A%E4%B8%BE/" >
+                
+                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="枚举" title="枚举">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                枚举的常见用法
+定义常量
+
+12345678package com.example.testdata.demodata.enumeration;public class enumTest &#123;    public enum enumT&#123;        red,orange,yellow,green    &#125;&#125;
+
+
+switch语句
 
 ...
             </p>
@@ -413,21 +519,21 @@ Ctrl+N  查找类
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2020-01-11</li>
+                <li><i class="fa fa-calendar"></i>2020-04-04</li>
             
             
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/IntellijIDEA/" class="color4">Intellij IDEA</a>
-      
     <a href="/tags/Java/" class="color5">Java</a>
+      
+    <a href="/tags/枚举/" class="color3">枚举</a>
       
   </li>
 
         </ul>
         
-            <a href="/2020/01/11/IDEA%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE%E5%8F%8A%E6%93%8D%E4%BD%9C/#more" class="article-more-link" >更多&gt;&gt;</a>
+            <a href="/2020/04/04/%E6%9E%9A%E4%B8%BE/#more" class="article-more-link" >更多&gt;&gt;</a>
         
     </footer>
   </div>
@@ -435,14 +541,14 @@ Ctrl+N  查找类
 
 
   
-    <article id="post-使用hexo搭建个人博客网站" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-遇错解错" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/08/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/"  >使用hexo搭建个人博客网站</a>
+      <a class="article-title" href="/2020/03/29/%E9%81%87%E9%94%99%E8%A7%A3%E9%94%99/"  >遇错解错</a>
     </h1>
   
 
@@ -452,21 +558,16 @@ Ctrl+N  查找类
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2020/01/08/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" >
+            <a href="/2020/03/29/%E9%81%87%E9%94%99%E8%A7%A3%E9%94%99/" >
                 
-                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="使用hexo搭建个人博客网站" title="使用hexo搭建个人博客网站">
+                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="遇错解错" title="遇错解错">
                 
             </a>
         </div>
         <div class="article-feed">
             <p>
-                地址:https://planeswalker1205.github.io/
-环境:Windows 10 64bit工具:node.js     Git操作:1.安装Node.js
-打开官网:https://nodejs.org
-2.安装Git
-打开官网:https://git-scm.com/donloads
-3.管理员权限打开命令行
-4.node -v查看node版本...
+                Mysqlmysql8.0忘记密码的情况参考地址:
+https://blog.csdn.net/weixin_42289383&#x2F;article&#x2F;details&#x2F;98039313?depth_1-utm_source&#x3D;distribute.pc_relevant.none-task&amp;utm_source&#x3D;distri...
             </p>
         </div>
       
@@ -476,12 +577,145 @@ Ctrl+N  查找类
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2020-01-08</li>
+                <li><i class="fa fa-calendar"></i>2020-03-29</li>
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/mysql/" class="color1">mysql</a>
+      
+    <a href="/tags/Spring-Boot/" class="color2">Spring-Boot</a>
+      
+    <a href="/tags/IDE/" class="color4">IDE</a>
+      
+  </li>
+
         </ul>
         
-            <a href="/2020/01/08/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/#more" class="article-more-link" >更多&gt;&gt;</a>
+            <a href="/2020/03/29/%E9%81%87%E9%94%99%E8%A7%A3%E9%94%99/#more" class="article-more-link" >更多&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-Spring-Boot学习v3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/29/Spring-Boot%E5%AD%A6%E4%B9%A0v3/"  >Spring-Boot学习v3</a>
+    </h1>
+  
+
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2020/03/29/Spring-Boot%E5%AD%A6%E4%B9%A0v3/" >
+                
+                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="Spring-Boot学习v3" title="Spring-Boot学习v3">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                访问数据库1. JdbcTemplate在依赖于SpringBoot的spring-boot&#x3D;starter-data&#x3D;jpa后。它就会自动配置数据源。但有时候我们需要配置自己的数据源.
+1.1 配置自定义数据源- 
+1234567891011121314151617181920212223242526&lt;dependency&gt;    &lt...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2020-03-29</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/SpringBoot/" class="color2">Spring Boot</a>
+      
+    <a href="/tags/IntelliJIDEA/" class="color4">IntelliJ IDEA</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2020/03/29/Spring-Boot%E5%AD%A6%E4%B9%A0v3/#more" class="article-more-link" >更多&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-Spring-Boot学习v2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/09/Spring-Boot%E5%AD%A6%E4%B9%A0v2/"  >Spring-Boot学习v2</a>
+    </h1>
+  
+
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2020/02/09/Spring-Boot%E5%AD%A6%E4%B9%A0v2/" >
+                
+                <img src="https://planeswalker1205.github.io/images/DanteVirgil.jpg" alt="Spring-Boot学习v2" title="Spring-Boot学习v2">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                约定编程–Spring AOP简单实现约定编程
+简单接口HelloService
+
+12345package com.example.sprbot.interfece;public interface HelloService &#123;    public void sayHello(String name);&#125;
+
+
+HelloService实现类Hello...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2020-02-09</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/SpringBoot/" class="color2">Spring Boot</a>
+      
+    <a href="/tags/IntelliJIDEA/" class="color4">IntelliJ IDEA</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2020/02/09/Spring-Boot%E5%AD%A6%E4%B9%A0v2/#more" class="article-more-link" >更多&gt;&gt;</a>
         
     </footer>
   </div>
@@ -492,7 +726,7 @@ Ctrl+N  查找类
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/2/">&lt;&lt; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">&lt;&lt; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &gt;&gt;</a>
   </nav>
 </section>
         
@@ -514,7 +748,7 @@ Ctrl+N  查找类
       <p>
         Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
         Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
-      &copy; 2021 John miracle<br>
+      &copy; 2022 John miracle<br>
       </p>
     </div>
   </div>
@@ -550,7 +784,7 @@ Ctrl+N  查找类
             
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/Animation/" style="font-size: 10px;">Animation</a> <a href="/tags/Error%EF%BC%8CLearn/" style="font-size: 10px;">Error，Learn</a> <a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IDEA-Intellij/" style="font-size: 10px;">IDEA Intellij</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 14px;">IntelliJ IDEA</a> <a href="/tags/Intellij-IDEA/" style="font-size: 12px;">Intellij IDEA</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16px;">Spring Boot</a> <a href="/tags/Spring-MVC/" style="font-size: 10px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 10px;">Spring Security</a> <a href="/tags/Spring-Boot/" style="font-size: 10px;">Spring-Boot</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/css/" style="font-size: 18px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/vscode/" style="font-size: 20px;">vscode</a> <a href="/tags/web%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">web学习</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/tags/%E5%9B%BE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">图结构</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">异步线程</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%A3%E5%88%97/" style="font-size: 10px;">散列</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px;">数据结构</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%A0%91%E7%BB%93%E6%9E%84/" style="font-size: 10px;">树结构</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+            <a href="/tags/Animation/" style="font-size: 10px;">Animation</a> <a href="/tags/DOM/" style="font-size: 11.67px;">DOM</a> <a href="/tags/ECMAScript/" style="font-size: 10px;">ECMAScript</a> <a href="/tags/ES/" style="font-size: 10px;">ES</a> <a href="/tags/ES10/" style="font-size: 10px;">ES10</a> <a href="/tags/ES11/" style="font-size: 10px;">ES11</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/ES8/" style="font-size: 10px;">ES8</a> <a href="/tags/ES9/" style="font-size: 10px;">ES9</a> <a href="/tags/Error%EF%BC%8CLearn/" style="font-size: 10px;">Error，Learn</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IDEA-Intellij/" style="font-size: 10px;">IDEA Intellij</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 13.33px;">IntelliJ IDEA</a> <a href="/tags/Intellij-IDEA/" style="font-size: 11.67px;">Intellij IDEA</a> <a href="/tags/JS/" style="font-size: 16.67px;">JS</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Spring/" style="font-size: 13.33px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 15px;">Spring Boot</a> <a href="/tags/Spring-MVC/" style="font-size: 10px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 10px;">Spring Security</a> <a href="/tags/Spring-Boot/" style="font-size: 10px;">Spring-Boot</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/WEB/" style="font-size: 10px;">WEB</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/css/" style="font-size: 18.33px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodeJS/" style="font-size: 10px;">nodeJS</a> <a href="/tags/vscode/" style="font-size: 20px;">vscode</a> <a href="/tags/web%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">web学习</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a> <a href="/tags/%E5%83%8F%E7%B4%A0/" style="font-size: 10px;">像素</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/tags/%E5%9B%BE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">图结构</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">异步线程</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%A3%E5%88%97/" style="font-size: 10px;">散列</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%A0%91%E7%BB%93%E6%9E%84/" style="font-size: 10px;">树结构</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/" style="font-size: 10px;">静态网站</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -583,7 +817,7 @@ Ctrl+N  查找类
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/Animation/" style="font-size: 10px;">Animation</a> <a href="/tags/Error%EF%BC%8CLearn/" style="font-size: 10px;">Error，Learn</a> <a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IDEA-Intellij/" style="font-size: 10px;">IDEA Intellij</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 14px;">IntelliJ IDEA</a> <a href="/tags/Intellij-IDEA/" style="font-size: 12px;">Intellij IDEA</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16px;">Spring Boot</a> <a href="/tags/Spring-MVC/" style="font-size: 10px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 10px;">Spring Security</a> <a href="/tags/Spring-Boot/" style="font-size: 10px;">Spring-Boot</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/css/" style="font-size: 18px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/vscode/" style="font-size: 20px;">vscode</a> <a href="/tags/web%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">web学习</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/tags/%E5%9B%BE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">图结构</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">异步线程</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%A3%E5%88%97/" style="font-size: 10px;">散列</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px;">数据结构</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%A0%91%E7%BB%93%E6%9E%84/" style="font-size: 10px;">树结构</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+            <a href="/tags/Animation/" style="font-size: 10px;">Animation</a> <a href="/tags/DOM/" style="font-size: 11.67px;">DOM</a> <a href="/tags/ECMAScript/" style="font-size: 10px;">ECMAScript</a> <a href="/tags/ES/" style="font-size: 10px;">ES</a> <a href="/tags/ES10/" style="font-size: 10px;">ES10</a> <a href="/tags/ES11/" style="font-size: 10px;">ES11</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/ES8/" style="font-size: 10px;">ES8</a> <a href="/tags/ES9/" style="font-size: 10px;">ES9</a> <a href="/tags/Error%EF%BC%8CLearn/" style="font-size: 10px;">Error，Learn</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IDEA-Intellij/" style="font-size: 10px;">IDEA Intellij</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 13.33px;">IntelliJ IDEA</a> <a href="/tags/Intellij-IDEA/" style="font-size: 11.67px;">Intellij IDEA</a> <a href="/tags/JS/" style="font-size: 16.67px;">JS</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Spring/" style="font-size: 13.33px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 15px;">Spring Boot</a> <a href="/tags/Spring-MVC/" style="font-size: 10px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 10px;">Spring Security</a> <a href="/tags/Spring-Boot/" style="font-size: 10px;">Spring-Boot</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/WEB/" style="font-size: 10px;">WEB</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/css/" style="font-size: 18.33px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodeJS/" style="font-size: 10px;">nodeJS</a> <a href="/tags/vscode/" style="font-size: 20px;">vscode</a> <a href="/tags/web%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">web学习</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a> <a href="/tags/%E5%83%8F%E7%B4%A0/" style="font-size: 10px;">像素</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/tags/%E5%9B%BE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">图结构</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">异步线程</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%A3%E5%88%97/" style="font-size: 10px;">散列</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%A0%91%E7%BB%93%E6%9E%84/" style="font-size: 10px;">树结构</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/" style="font-size: 10px;">静态网站</a>
         </div>
     </div>
 </div>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>03-JS-jQuery | 奇迹师ori</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="MIRACLE,MIRACLE's Blog" />
+  
+  <meta name="description" content="匿名函数自调用 123456789(function(window) &amp;#123;    var jQuery &#x3D; function() &amp;#123;		return new ×××;    &amp;#125;    window.jQuery &#x3D; window.$ &#x3D; jQuery&amp;#125;)(window)  自调用的另外一种方法 1!function()&amp;#123;&amp;#125;()  前面加一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="03-JS-jQuery">
+<meta property="og:url" content="https://planeswalker1205.github.io/2021/12/12/03-JS-jQuery/index.html">
+<meta property="og:site_name" content="奇迹师ori">
+<meta property="og:description" content="匿名函数自调用 123456789(function(window) &amp;#123;    var jQuery &#x3D; function() &amp;#123;		return new ×××;    &amp;#125;    window.jQuery &#x3D; window.$ &#x3D; jQuery&amp;#125;)(window)  自调用的另外一种方法 1!function()&amp;#123;&amp;#125;()  前面加一个">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-12-12T11:22:02.000Z">
+<meta property="article:modified_time" content="2022-01-23T10:25:49.669Z">
+<meta property="article:author" content="John miracle">
+<meta property="article:tag" content="web学习">
+<meta property="article:tag" content="vscode">
+<meta property="article:tag" content="JS">
+<meta property="article:tag" content="DOM">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">MIRACLE&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        MIRACLE&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        个人博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MIRACLE" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="/MIRACLE.COM">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-03-JS-jQuery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      03-JS-jQuery
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2021-12-12
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p><strong>匿名函数自调用</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params"><span class="variable language_">window</span></span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> jQuery = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ×××;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">jQuery</span> = <span class="variable language_">window</span>.<span class="property">$</span> = jQuery</span><br><span class="line"></span><br><span class="line">&#125;)(<span class="variable language_">window</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>自调用的另外一种方法</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;()</span><br></pre></td></tr></table></figure>
+
+<p><em>前面加一个感叹号</em></p>
+<h1 id="1-jQuery的使用"><a href="#1-jQuery的使用" class="headerlink" title="1. jQuery的使用"></a>1. jQuery的使用</h1><p><strong>$&#x2F;jQuery作为一般函数调用：$(param)</strong></p>
+<p>1） 参数为函数：当DOM加载完成后，执行此回调函数</p>
+<p>2） 参数为选择器字符串：查找所匹配的标签，并将它们封装为jQuery对象</p>
+<p>3） 参数为DOM对象：将DOM对象封装为jQuery对象</p>
+<p>4） 参数为html标签字符串：创建标签对象并封装为jQuery对象</p>
+<p><code>$(&#39;&lt;input type=&quot;text&quot; name = &quot;msg3&quot;/&gt;&lt;br/&gt;&#39;).appendTo(&#39;div&#39;)</code></p>
+<p><em>将此jQuery对象插入到div的最后一个</em></p>
+<p><strong>dom对象转成jquery对象：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;text&quot;</span> id=<span class="string">&quot;tx&quot;</span> value=<span class="string">&quot;33&quot;</span>&gt;</span><br><span class="line"><span class="comment">//获取文本框</span></span><br><span class="line"><span class="keyword">var</span> domObj=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;tx&quot;</span>);</span><br><span class="line"><span class="comment">//转成jquery对象</span></span><br><span class="line"><span class="keyword">var</span> jq=$(domObj);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>$&#x2F;jQuery作为对象使用：$.×××()</strong></p>
+<p>1）$.each():隐式遍历数组</p>
+<p>2）$.trim():去除两端空格</p>
+<h1 id="2-选择器"><a href="#2-选择器" class="headerlink" title="2.选择器"></a>2.选择器</h1><p>伪数组：通过$(元素)获取到的元素数组实质上是伪数组，是jQuery自己定义的，不能使用JS数组的一些方法</p>
+<p><strong>伪数组是通过属性访问值的。并不是通过下标</strong></p>
+<p><strong><font color = "red">只有调用$().并将选择器作为参数传入才能起作用</font></strong></p>
+<h2 id="2-1过滤"><a href="#2-1过滤" class="headerlink" title="2.1过滤"></a>2.1过滤</h2><p>在jQuery对象内部的元素中找出部分匹配的元素，并封装成新的jQuery对象返回</p>
+<h2 id="2-2查找"><a href="#2-2查找" class="headerlink" title="2.2查找"></a>2.2查找</h2><p>查找jQuery对象内部的元素的子孙&#x2F;兄弟&#x2F;父母元素，并封装成新的jQuery对象返回</p>
+<h1 id="3-属性"><a href="#3-属性" class="headerlink" title="3.属性"></a>3.属性</h1><p><strong>arrt():操作属性值为非布尔值的属性</strong></p>
+<p><strong>prop():操作属性值为布尔值的属性</strong></p>
+<h2 id="3-1-CSS属性"><a href="#3-1-CSS属性" class="headerlink" title="3.1 CSS属性"></a>3.1 CSS属性</h2><p><strong>1. 得到一个P标签的颜色</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p:first&quot;</span>).<span class="title function_">css</span>(<span class="string">&quot;color&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 设置所有p标签的文本颜色为red</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;p&#x27;</span>).<span class="title function_">css</span>(<span class="string">&#x27;color&#x27;</span>,<span class="string">&#x27;red&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 设置第二个p的字体颜色</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//width可以不写px</span></span><br><span class="line">$(<span class="string">&#x27;p:eq(1)&#x27;</span>).<span class="title function_">css</span>(&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">color</span>:<span class="string">&#x27;#ff0011&#x27;</span></span><br><span class="line"><span class="attr">background</span>:<span class="string">&#x27;blue&#x27;</span></span><br><span class="line"><span class="attr">width</span>:<span class="number">300</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-尺寸"><a href="#3-2-尺寸" class="headerlink" title="3.2 尺寸"></a>3.2 尺寸</h2><p>wdith()&#x2F;height()：width&#x2F;height</p>
+<p>innerWidth()&#x2F;innerHeight():width+padding</p>
+<p>outerWidth()&#x2F;outerHeight():width+padding+border(如果参数为true还要加margin)</p>
+<h1 id="4-事件"><a href="#4-事件" class="headerlink" title="4.事件"></a>4.事件</h1><h2 id="1-事件绑定-两种"><a href="#1-事件绑定-两种" class="headerlink" title="1. 事件绑定(两种)"></a>1. 事件绑定(两种)</h2><p><strong>(1) eventName(function(){})</strong></p>
+<p>绑定对应事件名的监听，例如:<code>$(&quot;#div&quot;).click(function()&#123;&#125;)</code></p>
+<p><strong>(2)on(eventName,function(){})</strong></p>
+<p>通用的绑定事件监听，例如：<code>$(&quot;#div&quot;).on(&#39;click&#39;,function()&#123;&#125;)</code></p>
+<p><strong>优缺点</strong></p>
+<p>eventName：编码方便，且有的事件监听不支持</p>
+<p>on:编码不方便，且更通用</p>
+<h2 id="2-事件解绑"><a href="#2-事件解绑" class="headerlink" title="2. 事件解绑"></a>2. 事件解绑</h2><p>off(eventName)</p>
+<h2 id="3-事件的坐标"><a href="#3-事件的坐标" class="headerlink" title="3. 事件的坐标"></a>3. 事件的坐标</h2><ul>
+<li><p>event.clientX,event.clientY 相对于视口的左上角</p>
+</li>
+<li><p>event.pageX,event.pageY 相对于页面的左上角</p>
+</li>
+<li><p>event.offsetX,event.offsetY 相对于事件元素左上角</p>
+</li>
+</ul>
+<h2 id="4-事件相关处理"><a href="#4-事件相关处理" class="headerlink" title="4. 事件相关处理"></a>4. 事件相关处理</h2><p>停止事件冒泡：event.stopPropagation()</p>
+<p><em>event是参数</em></p>
+<p>阻止事件的默认行为：event.preventDefault()</p>
+<p><em>比如页面跳转</em></p>
+<h2 id="mouseover和mouseenter的区别"><a href="#mouseover和mouseenter的区别" class="headerlink" title="mouseover和mouseenter的区别"></a><font color = "green">mouseover和mouseenter的区别</font></h2><ul>
+<li><p>mouseover：在移入子元素时也会触发，对应mouseout</p>
+</li>
+<li><p>mouseenter：只在移入当前元素时才触发，对应mouseleave(注：hover方法内使用的就是<code>mouseenter()和mouseleave()</code>)</p>
+</li>
+</ul>
+<h2 id="on-‘click’-fun-和click-fun-的区别"><a href="#on-‘click’-fun-和click-fun-的区别" class="headerlink" title="on(‘click’,fun)和click(fun)的区别"></a><font color = "green">on(‘click’,fun)和click(fun)的区别</font></h2><h2 id="5-事件的委派"><a href="#5-事件的委派" class="headerlink" title="5. 事件的委派"></a>5. 事件的委派</h2><h3 id="5-1-事件的委派："><a href="#5-1-事件的委派：" class="headerlink" title="5.1. 事件的委派："></a>5.1. 事件的委派：</h3><ul>
+<li><p>将多个子元素的事件监听委托给父元素处理</p>
+</li>
+<li><p>监听回调是加载了父辈元素上</p>
+</li>
+<li><p>当操作任意一个子元素时，事件都会冒泡到父辈元素</p>
+</li>
+<li><p>父辈元素不会直接处理事件，而是根据event.target得到发生事件的子元素，<b>通过这个子元素调用事件回调函数</b></p>
+</li>
+</ul>
+<p><strong>也就是说event并不是固定是某一个元素对象的，而是根据鼠标当前的指向</strong></p>
+<h3 id="5-2-jQuery的事件委托API"><a href="#5-2-jQuery的事件委托API" class="headerlink" title="5.2 jQuery的事件委托API"></a>5.2 jQuery的事件委托API</h3><p><strong>设置事件的委托：$(parentSelector).delegate(childrenSelector,eventName,callback)</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;ul&quot;</span>).<span class="title function_">delegate</span>(<span class="string">&#x27;li&#x27;</span>,<span class="string">&#x27;click&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="variable language_">this</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color = 'red'>此处this指向的是委派方<code>li</code>，原因是回调函数callback通过call方法将指针给了li对象</font></strong></p>
+<p><strong>移除事件的委派：$(parentSelector).undelegate(eventName)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(parentSelector).undelegate(&#x27;click&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><em>只移除点击事件的委派</em></p>
+<h1 id="5-动画"><a href="#5-动画" class="headerlink" title="5.动画"></a>5.动画</h1><h2 id="5-1淡入淡出"><a href="#5-1淡入淡出" class="headerlink" title="5.1淡入淡出"></a>5.1淡入淡出</h2><p><strong>fadeOut([speed],[easing],[fn])</strong></p>
+<ul>
+<li><p>speed:三种预定速度之一的字符串(“slow”,”normal”,”fast”)或者表示动画时长的ms数值，(如：1000)</p>
+</li>
+<li><p>easing：用来指定切换的效果(匀速，变速)，默认：swing</p>
+</li>
+<li><p>fn：在动画完成时执行的函数，每个元素执行一次</p>
+</li>
+</ul>
+<p><strong>fadeIn([speed],[easing],[fn])</strong></p>
+<p><strong>fadeToggle：切换</strong></p>
+<h2 id="5-2滑动-不断改变元素的高度实现"><a href="#5-2滑动-不断改变元素的高度实现" class="headerlink" title="5.2滑动(不断改变元素的高度实现)"></a>5.2滑动(不断改变元素的高度实现)</h2><p><strong>slideDown([speed,[easing],[fn]]):向下滑动</strong></p>
+<p><strong>slideUp([speed,[easing],[fn]]):向上滑动</strong></p>
+<p><strong>slideToggle():带动画的切换展开&#x2F;收缩</strong></p>
+<h2 id="5-3显示-x2F-隐藏-默认没有动画，如果带动画改变的是透明度，高度，宽度，固定左上角"><a href="#5-3显示-x2F-隐藏-默认没有动画，如果带动画改变的是透明度，高度，宽度，固定左上角" class="headerlink" title="5.3显示&#x2F;隐藏(默认没有动画，如果带动画改变的是透明度，高度，宽度，固定左上角)##"></a>5.3显示&#x2F;隐藏(默认没有动画，如果带动画改变的是透明度，高度，宽度，固定左上角)##</h2><p><strong>show([speed,[easing],[fn]])显示</strong></p>
+<p><strong>hide([speed,[easing],[fn]]) 隐藏</strong></p>
+<p><em>有速度参数就会有动画</em></p>
+<h2 id="5-4-自定义动画"><a href="#5-4-自定义动画" class="headerlink" title="5.4 自定义动画"></a>5.4 自定义动画</h2><p><code>animate(params,[speed],[easing],[fn])</code></p>
+<ul>
+<li><p>params:一组包含作为动画属性和终值样式和及其值的集合</p>
+</li>
+<li><p>speed：速度</p>
+</li>
+<li><p>easing：效果(匀速，变速)</p>
+</li>
+<li><p>fn：动画完成后的回调函数</p>
+</li>
+</ul>
+<p>例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在原有的基础上增加的距离</span></span><br><span class="line">$(param).<span class="title function_">animate</span>(</span><br><span class="line">&#123;</span><br><span class="line">	<span class="attr">left</span>:<span class="string">&#x27;+=100&#x27;</span>,</span><br><span class="line">	<span class="attr">top</span>:<span class="string">&#x27;+=50&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>停止动画</strong></p>
+<p><code>stop()</code></p>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#animationTest&quot;</span>).<span class="title function_">hover</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    $(<span class="variable language_">this</span>).<span class="title function_">stop</span>().<span class="title function_">slideUp</span>()</span><br><span class="line">&#125;, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    $(<span class="variable language_">this</span>).<span class="title function_">stop</span>().<span class="title function_">slideDown</span>()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>此种写法可以使动画不用执行完后继续执行下一次  而是重复动画时会先停止上一次的动画直接进行下一次动画</p>
+<h1 id="6-多库共存"><a href="#6-多库共存" class="headerlink" title="6.多库共存"></a>6.多库共存</h1><p><strong>如果有2个库都有$,就存在冲突。</strong></p>
+<p>jQuery库可以释放$的使用权，让另一个库正常使用，此时jQuery库只能使用jQuery了。</p>
+<p>API:<code>jQuery.noConflict()</code> </p>
+<h1 id="7-window-onload-和-document-ready"><a href="#7-window-onload-和-document-ready" class="headerlink" title="7. window.onload()和$(document).ready()"></a>7. window.onload()和$(document).ready()</h1><p>window.onload:</p>
+<ul>
+<li><p>包括页面的图片加载完成后才会回调（晚）</p>
+</li>
+<li><p>只能有一个监听回调</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;w1&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;w2&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//只执行第二个</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><font color = 'red'>回调的完  那么有些没加载完的数据比如图片的宽高在加载完后可以正常获取到</font></strong></p>
+<p>$(document).ready()</p>
+<ul>
+<li><p>等同于：$(function(){})</p>
+</li>
+<li><p>页面加载完后就回调(早)</p>
+</li>
+<li><p>可以有多个监听回调</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;r1&quot;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;r2&quot;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//两个都可以执行</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><font color = 'red'>回调的早  那么有些没加载完的数据比如图片的宽高可能就获取不到</font></strong></p>
+<h1 id="8-插件"><a href="#8-插件" class="headerlink" title="8.插件"></a>8.插件</h1><h2 id="8-1-jQuery-fn-extend-object"><a href="#8-1-jQuery-fn-extend-object" class="headerlink" title="8.1 jQuery.fn.extend(object)"></a>8.1 <code>jQuery.fn.extend(object)</code></h2><p>扩展jQuery对象的方法(jQuery函数获取到的对象，如<code>$(&quot;#id1&quot;))</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">jQuery.fn.extend(&#123;</span><br><span class="line"></span><br><span class="line">	check:function()&#123;</span><br><span class="line">		return this.each(function()&#123;this.checked = true&#125;)</span><br><span class="line">		/**</span><br><span class="line">		 * 外层的this是jQuery对象(用jQuery获取到的对象统称为jQuery对象)</span><br><span class="line">		 * 内层的this是DOM元素(遍历了jQuery集里面的元素，每一个元素都是一个DOM对象)</span><br><span class="line">		 */</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	uncheck:function()&#123;</span><br><span class="line">		return this.each(function()&#123;this.checked = false&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>调用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#id1&quot;</span>).<span class="title function_">check</span>()</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-2-jQuery-extend-object"><a href="#8-2-jQuery-extend-object" class="headerlink" title="8.2 jQuery.extend(object)"></a>8.2 <code>jQuery.extend(object)</code></h2><p>扩展jQuery对象本身，用来在jQuery命名空间上增加新函数。</p>
+<p>如，在jQuery命名空间上增加两个函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jQuery.<span class="title function_">extend</span>(&#123;</span><br><span class="line">	<span class="attr">min</span>:<span class="keyword">function</span>(<span class="params">a,b</span>)&#123;<span class="keyword">return</span> a&lt;b?<span class="attr">a</span>:b&#125;</span><br><span class="line"></span><br><span class="line">	<span class="attr">max</span>:<span class="keyword">function</span>(<span class="params">a,b</span>)&#123;<span class="keyword">return</span> a&gt;b?<span class="attr">a</span>:b&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>使用</p>
+<p>&#96;&#96;&#96;JS<br>console.info($.min(3,5))<br>&#96;&#96;<br>53</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2022年01月23日 18:25</p>
+        <p>原始链接： <a class="post-url" href="/2021/12/12/03-JS-jQuery/" title="03-JS-jQuery">https://planeswalker1205.github.io/2021/12/12/03-JS-jQuery/</a></p>
+        <footer>
+            <a href="https://planeswalker1205.github.io">
+                <img src="/images/logo.png" alt="John miracle">
+                John miracle
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://planeswalker1205.github.io/2021/12/12/03-JS-jQuery/&title=《03-JS-jQuery》 — 奇迹师ori&pic=https://planeswalker1205.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://planeswalker1205.github.io/2021/12/12/03-JS-jQuery/&title=《03-JS-jQuery》 — 奇迹师ori&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://planeswalker1205.github.io/2021/12/12/03-JS-jQuery/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《03-JS-jQuery》 — 奇迹师ori&url=https://planeswalker1205.github.io/2021/12/12/03-JS-jQuery/&via=https://planeswalker1205.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://planeswalker1205.github.io/2021/12/12/03-JS-jQuery/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://planeswalker1205.github.io/2021/12/12/03-JS-jQuery/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/web学习/" class="color1">web学习</a>
+      
+    <a href="/tags/vscode/" class="color2">vscode</a>
+      
+    <a href="/tags/JS/" class="color3">JS</a>
+      
+    <a href="/tags/DOM/" class="color4">DOM</a>
+      
+    <a href="/tags/jQuery/" class="color2">jQuery</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-jQuery%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="post-toc-text">1. jQuery的使用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="post-toc-text">2.选择器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-1%E8%BF%87%E6%BB%A4"><span class="post-toc-text">2.1过滤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2%E6%9F%A5%E6%89%BE"><span class="post-toc-text">2.2查找</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-%E5%B1%9E%E6%80%A7"><span class="post-toc-text">3.属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-CSS%E5%B1%9E%E6%80%A7"><span class="post-toc-text">3.1 CSS属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-%E5%B0%BA%E5%AF%B8"><span class="post-toc-text">3.2 尺寸</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-%E4%BA%8B%E4%BB%B6"><span class="post-toc-text">4.事件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E4%B8%A4%E7%A7%8D"><span class="post-toc-text">1. 事件绑定(两种)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-%E4%BA%8B%E4%BB%B6%E8%A7%A3%E7%BB%91"><span class="post-toc-text">2. 事件解绑</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%9D%90%E6%A0%87"><span class="post-toc-text">3. 事件的坐标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-%E4%BA%8B%E4%BB%B6%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86"><span class="post-toc-text">4. 事件相关处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mouseover%E5%92%8Cmouseenter%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="post-toc-text">mouseover和mouseenter的区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#on-%E2%80%98click%E2%80%99-fun-%E5%92%8Cclick-fun-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="post-toc-text">on(‘click’,fun)和click(fun)的区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%A7%94%E6%B4%BE"><span class="post-toc-text">5. 事件的委派</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%A7%94%E6%B4%BE%EF%BC%9A"><span class="post-toc-text">5.1. 事件的委派：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-jQuery%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98API"><span class="post-toc-text">5.2 jQuery的事件委托API</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-%E5%8A%A8%E7%94%BB"><span class="post-toc-text">5.动画</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-1%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA"><span class="post-toc-text">5.1淡入淡出</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-2%E6%BB%91%E5%8A%A8-%E4%B8%8D%E6%96%AD%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E7%9A%84%E9%AB%98%E5%BA%A6%E5%AE%9E%E7%8E%B0"><span class="post-toc-text">5.2滑动(不断改变元素的高度实现)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-3%E6%98%BE%E7%A4%BA-x2F-%E9%9A%90%E8%97%8F-%E9%BB%98%E8%AE%A4%E6%B2%A1%E6%9C%89%E5%8A%A8%E7%94%BB%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%B8%A6%E5%8A%A8%E7%94%BB%E6%94%B9%E5%8F%98%E7%9A%84%E6%98%AF%E9%80%8F%E6%98%8E%E5%BA%A6%EF%BC%8C%E9%AB%98%E5%BA%A6%EF%BC%8C%E5%AE%BD%E5%BA%A6%EF%BC%8C%E5%9B%BA%E5%AE%9A%E5%B7%A6%E4%B8%8A%E8%A7%92"><span class="post-toc-text">5.3显示&#x2F;隐藏(默认没有动画，如果带动画改变的是透明度，高度，宽度，固定左上角)##</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-4-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB"><span class="post-toc-text">5.4 自定义动画</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-%E5%A4%9A%E5%BA%93%E5%85%B1%E5%AD%98"><span class="post-toc-text">6.多库共存</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-window-onload-%E5%92%8C-document-ready"><span class="post-toc-text">7. window.onload()和$(document).ready()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#8-%E6%8F%92%E4%BB%B6"><span class="post-toc-text">8.插件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-1-jQuery-fn-extend-object"><span class="post-toc-text">8.1 jQuery.fn.extend(object)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-2-jQuery-extend-object"><span class="post-toc-text">8.2 jQuery.extend(object)</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2022/01/31/web-bootstrap01/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          web-bootstrap01
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2021/10/31/02-JS-DOM/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">02-JS-DOM</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2022 John miracle<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://planeswalker1205.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Animation/" style="font-size: 10px;">Animation</a> <a href="/tags/DOM/" style="font-size: 11.67px;">DOM</a> <a href="/tags/ECMAScript/" style="font-size: 10px;">ECMAScript</a> <a href="/tags/ES/" style="font-size: 10px;">ES</a> <a href="/tags/ES10/" style="font-size: 10px;">ES10</a> <a href="/tags/ES11/" style="font-size: 10px;">ES11</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/ES8/" style="font-size: 10px;">ES8</a> <a href="/tags/ES9/" style="font-size: 10px;">ES9</a> <a href="/tags/Error%EF%BC%8CLearn/" style="font-size: 10px;">Error，Learn</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IDEA-Intellij/" style="font-size: 10px;">IDEA Intellij</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 13.33px;">IntelliJ IDEA</a> <a href="/tags/Intellij-IDEA/" style="font-size: 11.67px;">Intellij IDEA</a> <a href="/tags/JS/" style="font-size: 16.67px;">JS</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Spring/" style="font-size: 13.33px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 15px;">Spring Boot</a> <a href="/tags/Spring-MVC/" style="font-size: 10px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 10px;">Spring Security</a> <a href="/tags/Spring-Boot/" style="font-size: 10px;">Spring-Boot</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/WEB/" style="font-size: 10px;">WEB</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/css/" style="font-size: 18.33px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodeJS/" style="font-size: 10px;">nodeJS</a> <a href="/tags/vscode/" style="font-size: 20px;">vscode</a> <a href="/tags/web%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">web学习</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a> <a href="/tags/%E5%83%8F%E7%B4%A0/" style="font-size: 10px;">像素</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/tags/%E5%9B%BE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">图结构</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">异步线程</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%A3%E5%88%97/" style="font-size: 10px;">散列</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%A0%91%E7%BB%93%E6%9E%84/" style="font-size: 10px;">树结构</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/" style="font-size: 10px;">静态网站</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Animation/" style="font-size: 10px;">Animation</a> <a href="/tags/DOM/" style="font-size: 11.67px;">DOM</a> <a href="/tags/ECMAScript/" style="font-size: 10px;">ECMAScript</a> <a href="/tags/ES/" style="font-size: 10px;">ES</a> <a href="/tags/ES10/" style="font-size: 10px;">ES10</a> <a href="/tags/ES11/" style="font-size: 10px;">ES11</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/ES8/" style="font-size: 10px;">ES8</a> <a href="/tags/ES9/" style="font-size: 10px;">ES9</a> <a href="/tags/Error%EF%BC%8CLearn/" style="font-size: 10px;">Error，Learn</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IDEA-Intellij/" style="font-size: 10px;">IDEA Intellij</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 13.33px;">IntelliJ IDEA</a> <a href="/tags/Intellij-IDEA/" style="font-size: 11.67px;">Intellij IDEA</a> <a href="/tags/JS/" style="font-size: 16.67px;">JS</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Spring/" style="font-size: 13.33px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 15px;">Spring Boot</a> <a href="/tags/Spring-MVC/" style="font-size: 10px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 10px;">Spring Security</a> <a href="/tags/Spring-Boot/" style="font-size: 10px;">Spring-Boot</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/WEB/" style="font-size: 10px;">WEB</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/css/" style="font-size: 18.33px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodeJS/" style="font-size: 10px;">nodeJS</a> <a href="/tags/vscode/" style="font-size: 20px;">vscode</a> <a href="/tags/web%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">web学习</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a> <a href="/tags/%E5%83%8F%E7%B4%A0/" style="font-size: 10px;">像素</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/tags/%E5%9B%BE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">图结构</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">异步线程</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%A3%E5%88%97/" style="font-size: 10px;">散列</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%A0%91%E7%BB%93%E6%9E%84/" style="font-size: 10px;">树结构</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/" style="font-size: 10px;">静态网站</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
