@@ -64,18 +64,18 @@
 <li><p>点击Next，进行一定的配置</p>
 </li>
 </ol>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128160719.png" alt="config1"></p>
+<p><img src="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128160719.png" alt="config1"></p>
 <ol start="3">
 <li><p>点击Next，可以根据自己的需要选择对应的starter进行依赖。</p>
 </li>
 <li><p>建好后，工程目录可以看到一个已经建好的类Spbotdemo1Application、ServletInitializer和Maven的pom.xml文件。运行Spbotdemo1Application就可以启动Spring Boot的工程，而pom.xml则配置好了你选中的starter依赖，这样就能够基于Intellij IDEA开发Spring Boot工程了。</p>
 </li>
 </ol>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128161252.png" alt="config1"></p>
+<p><img src="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128161252.png" alt="config1"></p>
 <ol start="5">
 <li>自定义配置:在新建的工程中可以看到一个属性文件application.properties文件，通过它可以根据自己的需要实现自定义。如图:</li>
 </ol>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128161536.png" alt="config1"></p>
+<p><img src="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128161536.png" alt="config1"></p>
 <h3 id="开发项目"><a href="#开发项目" class="headerlink" title="开发项目"></a>开发项目</h3><ol>
 <li>新增JSP和JSTL的Maven依赖配置</li>
 </ol>
@@ -99,7 +99,7 @@
 <ol start="5">
 <li>运行application文件，打开浏览器访问<code>http://localhost:8090/index</code></li>
 </ol>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128162325.png" alt="config1"></p>
+<p><img src="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128162325.png" alt="config1"></p>
 <p><strong>注:Application启动类要放在最外侧，即包含所有的子包。因为Spring Boot会自动加载启动类所在包下及其子包下的所有组件</strong></p>
 <p>如果@Controller注解报错失效的话添加以下依赖:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-context&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.2.5.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
@@ -115,18 +115,18 @@
 <ol>
 <li>定义User实体</li>
 </ol>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128210557.png" alt="User"></p>
+<p><img src="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128210557.png" alt="User"></p>
 <ol start="2">
 <li>定义Java配置文件</li>
 </ol>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128210935.png" alt="config"></p>
+<p><img src="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128210935.png" alt="config"></p>
 <blockquote>
 <p>注解<code>@Configuration</code>代表这是一个Java配置文件，Spring的容器会根据它来生成IoC容器去装配Bean；<code>@Bean</code>代表将initUser方法返回的pojo装配到IoC容器中，属性name表示这个Bean的名称，如果没有配置它，默认是方法名称”initUser”.</p>
 </blockquote>
 <ol start="3">
 <li>使用AnnotationConfigApplicationContext构建IoC容器。</li>
 </ol>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128211358.png" alt="config"></p>
+<p><img src="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128211358.png" alt="config"></p>
 <ul>
 <li><strong>通过扫描装配Bean</strong></li>
 </ul>
@@ -136,7 +136,7 @@
 <ol>
 <li>首先移动User类到conf包下，这是因为注解了<code>@ComponentScan</code>的类默认扫描该类所在的当前包和其子包。</li>
 </ol>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128212945.png" alt="config"></p>
+<p><img src="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128212945.png" alt="config"></p>
 <ol start="2">
 <li>User类加入注解@Component</li>
 </ol>
@@ -166,7 +166,7 @@
 <ol>
 <li>重新把类User放到pojo包下。</li>
 </ol>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128214250.png" alt="diyBean"></p>
+<p><img src="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200128214250.png" alt="diyBean"></p>
 <ol start="2">
 <li>把Appconfig中的注解修改为:</li>
 </ol>
@@ -256,7 +256,7 @@
 
 <p>可以通过Value注解，使用${…}占位符读取配置。这里的@Value注解，可以加在属性，也可以加在方法上。</p>
 <p>启动SpringBoot，由于我们已经知道了如果没有在ComponentScan中配置lazyInit属性值为true的话，默认在定义bean的时候就实例化(依赖注入)，所以我们可以看到以下打印信息。</p>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200203172450.png" alt="console"></p>
+<p><img src="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200203172450.png" alt="console"></p>
 <p><strong>@ConfigurationProperties读取配置文件</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.sprbot.pojo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(&quot;database&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DataBaseProperties</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String driverName=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">private</span> String url=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">private</span> String username=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">private</span> String password=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setDriverName</span><span class="params">(String driverName)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;driverName的值是:&quot;</span>+driverName);</span><br><span class="line">        <span class="built_in">this</span>.driverName = driverName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUrl</span><span class="params">(String url)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;url的值是:&quot;</span>+url);</span><br><span class="line">        <span class="built_in">this</span>.url = url;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsername</span><span class="params">(String username)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;username的值是:&quot;</span>+username);</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPassword</span><span class="params">(String password)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;当前密码是:&quot;</span>+password);</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在这里注解@ConfigurationProperties中配置的字符串database，将于POJO的属性名称组成属性的全限定名去配置文件中查找，这样就可以将对应的属性读入POJO当中。<strong>注意，POJO的属性名称要与.properties&#x2F;.yml文件中的名称相同。</strong></p>
@@ -283,7 +283,7 @@
 <p>matches方法首先读取上下文环境，然后判断是否已经配置了对应的数据库信息，这样，当所有配置信息都配置好的话返回true，这个时候Spring会装配数据库连接池的Bean，否则是不装配的。</p>
 </blockquote>
 <p>以此，当配置属性文件中不存在某个配置的话，启动springapplication将不会打印一下信息。</p>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200203204506.png" alt="println"></p>
+<p><img src="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/QQ%E6%88%AA%E5%9B%BE20200203204506.png" alt="println"></p>
 <h2 id="Bean的作用域"><a href="#Bean的作用域" class="headerlink" title="Bean的作用域"></a>Bean的作用域</h2><p>singleton</p>
 <p>prototype</p>
 <p>session</p>

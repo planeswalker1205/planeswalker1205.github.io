@@ -135,13 +135,13 @@
 
 <p>div内所有的span都会被选中</p>
 <p><strong>3. 兄弟元素选择器</strong></p>
-<p><strong><font color=skyblue>选择下一个兄弟</font></strong></p>
+<p><strong><font color="skyblue">选择下一个兄弟</font></strong></p>
 <p>语法:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">前一个 + 后一个</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> + <span class="selector-tag">span</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>选择p标签<strong>紧挨着的</strong>span元素</p>
 <p><strong>如果没有紧挨着也不会选中</strong></p>
-<p><strong><font color=skyblue>选择下面所有兄弟</font></strong></p>
+<p><strong><font color="skyblue">选择下面所有兄弟</font></strong></p>
 <p>语法:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">兄 ~ 弟&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> ~ <span class="selector-tag">span</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -158,43 +158,43 @@
 <p><strong>2. 选择含有指定属性和指定属性值的元素</strong></p>
 <p>语法：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[属性名=属性值]</span><br></pre></td></tr></table></figure>
-<p><strong><font color = skyblue>选择属性值以指定值开头的元素</font></strong></p>
+<p><strong><font color="skyblue">选择属性值以指定值开头的元素</font></strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[属性名^=属性值]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><strong><font color = skyblue>选择属性值以指定值结尾的元素</font></strong></p>
+<p><strong><font color="skyblue">选择属性值以指定值结尾的元素</font></strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[属性名$=属性值]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><strong><font color = skyblue>选择属性值含有某值的元素</font></strong></p>
+<p><strong><font color="skyblue">选择属性值含有某值的元素</font></strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[属性名*=属性值]</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[title=a]</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="attribute">color</span>:orange;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 <h2 id="05-伪类选择器"><a href="#05-伪类选择器" class="headerlink" title="05_伪类选择器"></a>05_伪类选择器</h2><h3 id="1-不存在的类-x2F-特殊的类"><a href="#1-不存在的类-x2F-特殊的类" class="headerlink" title="1. 不存在的类&#x2F;特殊的类"></a>1. 不存在的类&#x2F;特殊的类</h3><p>用来描述一个元素的特殊状态。如：第一个子元素、被点击的元素、鼠标移入的元素、</p>
-<p><strong>伪类一般情况下都是使用  <font color = orange>:</font>  开头</strong></p>
+<p><strong>伪类一般情况下都是使用  <font color="orange">:</font>  开头</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>a<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>b<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>c<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>d<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>e<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong><font color = red>父元素下的第一个子元素且标签为li</font></strong></p>
+<p><strong><font color="red">父元素下的第一个子元素且标签为li</font></strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:first</span>-child&#123;</span><br><span class="line"></span><br><span class="line">	<span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong><font color = red>父元素下的最后一个子元素且标签为li</font></strong></p>
+<p><strong><font color="red">父元素下的最后一个子元素且标签为li</font></strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong><font color = red>父元素下的第n子元素且标签为li</font></strong></p>
+<p><strong><font color="red">父元素下的第n子元素且标签为li</font></strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//选择第二个</span><br><span class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>)&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>如果第一个子元素为span则不满足，不会发生变化。即既要满足li标签，又要满足为第n个子元素。</p>
-<p><strong><font color = Chocolate>以上这些伪类都是根据所有的子元素进行排序。</font></strong></p>
-<p><strong><font color = blue>父元素下标签为li的第一个子元素</font></strong></p>
+<p><strong><font color="Chocolate">以上这些伪类都是根据所有的子元素进行排序。</font></strong></p>
+<p><strong><font color="blue">父元素下标签为li的第一个子元素</font></strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:first</span>-of-type&#123;</span><br><span class="line"></span><br><span class="line">	<span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong><font color = blue>父元素下标签为li的最后一个子元素</font></strong></p>
+<p><strong><font color="blue">父元素下标签为li的最后一个子元素</font></strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:last-of-type</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong><font color = blue>父元素下标签为li的第n个子元素</font></strong></p>
+<p><strong><font color="blue">父元素下标签为li的第n个子元素</font></strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//第二个</span><br><span class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-of-type</span>(<span class="number">2</span>)&#123;</span><br><span class="line"></span><br><span class="line">	<span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><strong><font color = DarkCyan>以上这些伪类都是根据子元素的类型进行排序。</font></strong></p>
+<p><strong><font color="DarkCyan">以上这些伪类都是根据子元素的类型进行排序。</font></strong></p>
 <h3 id="2-否定伪类"><a href="#2-否定伪类" class="headerlink" title="2. 否定伪类"></a>2. 否定伪类</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:not</span>()</span><br></pre></td></tr></table></figure>
 
 <p>将符合条件的元素从选择器中去除。</p>
@@ -248,9 +248,9 @@
                 
                     <a href="/tags/web%E5%AD%A6%E4%B9%A0/">web学习</a>
                 
-                    <a href="/tags/css/">css</a>
-                
                     <a href="/tags/vscode/">vscode</a>
+                
+                    <a href="/tags/css/">css</a>
                 
             </div>
         

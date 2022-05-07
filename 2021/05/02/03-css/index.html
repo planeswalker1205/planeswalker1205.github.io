@@ -75,7 +75,7 @@
 <li><p>sticky：开启元素的粘滞位</p>
 </li>
 </ul>
-<h3 id="01-relative"><a href="#01-relative" class="headerlink" title="01.relative"></a>01.relative</h3><p><strong><font color = "green" size = "4">feature：</font></strong></p>
+<h3 id="01-relative"><a href="#01-relative" class="headerlink" title="01.relative"></a>01.relative</h3><p><strong><font color="green" size="4">feature：</font></strong></p>
 <ol>
 <li><p>元素开启相对定位以后，如果不设置偏移量，元素不会发生任何的改变</p>
 </li>
@@ -101,9 +101,9 @@
 </li>
 </ul>
 <h3 id="02-absolute"><a href="#02-absolute" class="headerlink" title="02.absolute"></a>02.absolute</h3><p><strong>当元素的position属性设置为absolute时，则开启了元素的绝对定位</strong></p>
-<p><strong><font color = "green" size = "4">feature：</font></strong></p>
+<p><strong><font color="green" size="4">feature：</font></strong></p>
 <ol>
-<li><p>元素开启绝对定位以后，如果不设置偏移量，元素的**<font color = "red">位置</font>**不会发生任何的改变</p>
+<li><p>元素开启绝对定位以后，如果不设置偏移量，元素的**<font color="red">位置</font>**不会发生任何的改变</p>
 </li>
 <li><p>开启绝对定位后，元素会从文档流中脱离</p>
 </li>
@@ -114,7 +114,7 @@
 <li><p>绝对定位元素是相对于其包含块进行定位的。</p>
 </li>
 </ol>
-<p><strong><font color = "green">包含块(containing block)：</font></strong></p>
+<p><strong><font color="green">包含块(containing block)：</font></strong></p>
 <p><strong>-</strong> 正常情况下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">包含块就是离当前元素最近的祖先块元素</span><br><span class="line">&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;  //外边div是里边div的包含块</span><br><span class="line"></span><br><span class="line">&lt;div&gt;&lt;span&gt;&lt;em&gt;&lt;/em&gt;&lt;/span&gt;&lt;/div&gt; //em和span的包含块是div。span不是块，所以em的包含块是div而不是span</span><br></pre></td></tr></table></figure>
 <p><strong>-</strong> 开启绝对定位的情况下：</p>
@@ -127,23 +127,23 @@
 </blockquote>
 <p>**-**html（根元素，初始包含块）</p>
 <h3 id="03-fixed"><a href="#03-fixed" class="headerlink" title="03.fixed"></a>03.fixed</h3><p><strong>将元素的position属性设置为fixed则开启了元素的固定定位</strong></p>
-<p><strong><font color = "green">固定定位也是一种绝对定位，所以固定定位的大部分特点和绝对定位一样</font></strong></p>
-<p><strong><font color = "red">唯一不同的是，固定定位永远参照于浏览器得到视口进行定位。</font></strong></p>
+<p><strong><font color="green">固定定位也是一种绝对定位，所以固定定位的大部分特点和绝对定位一样</font></strong></p>
+<p><strong><font color="red">唯一不同的是，固定定位永远参照于浏览器得到视口进行定位。</font></strong></p>
 <p><strong>视口：浏览器的可视窗口。</strong></p>
-<p><strong><font color = "green">固定定位的元素不会随着网页的滚动条滚动</font></strong></p>
+<p><strong><font color="green">固定定位的元素不会随着网页的滚动条滚动</font></strong></p>
 <h3 id="04-sticky"><a href="#04-sticky" class="headerlink" title="04.sticky"></a>04.sticky</h3><p><strong>将元素的position属性设置为sticky则开启了元素的粘滞定位</strong></p>
-<p><strong><font color = "green">粘滞定位和相对定位的特点基本一致。不同的是，粘滞定位可以在元素到达某个位置(top:×px;left:×px;bottom:×px;right:×px;)时将其固定</font></strong></p>
-<p><strong><font color = "red">需要考虑兼容性</font></strong></p>
-<h2 id="2-绝对定位元素的位置"><a href="#2-绝对定位元素的位置" class="headerlink" title="2. 绝对定位元素的位置"></a>2. 绝对定位元素的位置</h2><h3 id="01-水平布局"><a href="#01-水平布局" class="headerlink" title="01.水平布局"></a>01.水平布局</h3><p><strong>正常情况下：包含块的水平布局需要满足等式<font color = "green">margin-left+border-left+padding-left+width+padding-right+border-right+margin-right</font></strong>.</p>
-<p><strong>而当开启了相对定位的包含块内的子元素开启了绝对定位之后，等式就发生了变化，即：<font color = "green">left+margin-left+border-left+padding-left+width+padding-right+border-right+margin-right+right</font><font size = "5">  &#x3D;  </font>包含块的水平宽度</strong></p>
+<p><strong><font color="green">粘滞定位和相对定位的特点基本一致。不同的是，粘滞定位可以在元素到达某个位置(top:×px;left:×px;bottom:×px;right:×px;)时将其固定</font></strong></p>
+<p><strong><font color="red">需要考虑兼容性</font></strong></p>
+<h2 id="2-绝对定位元素的位置"><a href="#2-绝对定位元素的位置" class="headerlink" title="2. 绝对定位元素的位置"></a>2. 绝对定位元素的位置</h2><h3 id="01-水平布局"><a href="#01-水平布局" class="headerlink" title="01.水平布局"></a>01.水平布局</h3><p><strong>正常情况下：包含块的水平布局需要满足等式<font color="green">margin-left+border-left+padding-left+width+padding-right+border-right+margin-right</font></strong>.</p>
+<p><strong>而当开启了相对定位的包含块内的子元素开启了绝对定位之后，等式就发生了变化，即：<font color="green">left+margin-left+border-left+padding-left+width+padding-right+border-right+margin-right+right</font><font size="5">  &#x3D;  </font>包含块的水平宽度</strong></p>
 <p><strong>多出来的left和right就是绝对定位的left和right属性。由于布局是从左往右从上往下的，所以left和right都设置值的话，left会使自身元素移动。</strong></p>
-<p><strong><font color = "red">当left设置一个值，且等式没有满足时，就会发生过度约束，如果9个值中没有auto，right的值则不会生效，自动调整right值以使等式满足；如果有auto，则自动调整auto的值以使等式满足</font></strong></p>
-<p><strong><font color = "red">left和right的值默认是auto</font></strong></p>
+<p><strong><font color="red">当left设置一个值，且等式没有满足时，就会发生过度约束，如果9个值中没有auto，right的值则不会生效，自动调整right值以使等式满足；如果有auto，则自动调整auto的值以使等式满足</font></strong></p>
+<p><strong><font color="red">left和right的值默认是auto</font></strong></p>
 <blockquote>
 <p>可设置auto的属性：margin；width；left；width</p>
 </blockquote>
 <h3 id="02-垂直布局"><a href="#02-垂直布局" class="headerlink" title="02.垂直布局"></a>02.垂直布局</h3><p><strong>同上，垂直布局的等式也必须要满足：</strong></p>
-<p><strong><font color = "green">top&#x2F;bottom+margin-top&#x2F;bottom+padding-top&#x2F;bottom+border-top&#x2F;bottom+height</font><font size = "5">  &#x3D;  包含块的高度</font></strong></p>
+<p><strong><font color="green">top&#x2F;bottom+margin-top&#x2F;bottom+padding-top&#x2F;bottom+border-top&#x2F;bottom+height</font><font size="5">  &#x3D;  包含块的高度</font></strong></p>
 <h3 id="03-元素的层级"><a href="#03-元素的层级" class="headerlink" title="03. 元素的层级"></a>03. 元素的层级</h3><p>对于开启了定位的元素，可以通过z-index属性来指定元素的层级。z-index需要一个整数作为参数，值越大元素的层级就越高。</p>
 <p><strong>如果元素的层级一样，则优先显示靠下的元素</strong></p>
 <p><strong>祖先元素的层级再高也不会盖住后代元素</strong></p>
@@ -206,19 +206,19 @@
 <p>2、父元素【line box】的baseline是最后一个inline box 的baseline。 </p>
 <p>3、inline-block元素的baseline确定规则</p>
 <p>规则1：inline-block元素，如果内部有line box，则inline-block元素的baseline就是最后一个作为内容存在的元素[inline box]的<br>baseline，而这个元素的baseline的确定就要根据它自身来定了。<br>规则2：inline-block元素，如果其内部没有line box或它的overflow属性不是visible，那么baseline将是这个inline-block元素的底<br>margin边界。</p>
-<p><strong><font color = "blue">关于inline-block垂直对齐的一个小坑</font></strong></p>
+<p><strong><font color="blue">关于inline-block垂直对齐的一个小坑</font></strong></p>
 <p>代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.out</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">500px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.a</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">box-sizing</span>: border-box;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">display</span>: inline-block;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;out&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;a&quot;</span>&gt;</span>axxxx<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>xxxx<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>效果：</p>
-<p><img src="/03-css/capture_20220107215727026.bmp"></p>
-<p><strong><font color = "redblue">此时给div.a元素设置<code>vertical-align:middle;</code></font></strong></p>
+<p><img src="/2021/05/02/03-css/capture_20220107215727026.bmp"></p>
+<p><strong><font color="redblue">此时给div.a元素设置<code>vertical-align:middle;</code></font></strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.out</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">500px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.a</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">box-sizing</span>: border-box;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">display</span>: inline-block;</span></span><br><span class="line"><span class="language-css">		<span class="attribute">vertical-align</span>:middle;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;out&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;a&quot;</span>&gt;</span>axxxx<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>xxxx<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>效果：</p>
-<p><img src="/03-css/capture_20220107220012967.bmp"></p>
+<p><img src="/2021/05/02/03-css/capture_20220107220012967.bmp"></p>
 <p><strong>此时我们可以看到，效果上div.a没有移动，反而是父元素的基线xxxx移动到了div.a的中垂线位置上。这个是为啥呢。。正在了解中</strong></p>
-<hr/>
+<hr>
 
 <p><em>什么是基线对齐</em></p>
 <blockquote>
@@ -272,19 +272,19 @@
 <li><p>contain：图片比例不变，将图片在元素中完整显示</p>
 </li>
 </ol>
-<p><strong><font color = "green">图片属于网页中的外部资源，外部资源都需要浏览器单独发送请求。浏览器加载外部资源时是按需加载，用则加载，不用则不加载。</font></strong></p>
+<p><strong><font color="green">图片属于网页中的外部资源，外部资源都需要浏览器单独发送请求。浏览器加载外部资源时是按需加载，用则加载，不用则不加载。</font></strong></p>
 <p>所以按钮不同事件下加载不同的背景图片可能会造成背景的闪烁。解决此问题：</p>
 <p>可以将多个小图片统一保存到一个大图片中，然后通过调整background-position来显示响应的图片，这样图片会同时加载到网页中，就可以有效避免闪烁的问题。这个技术在网页中应用十分广泛，被称为css-Sprite。成为雪碧图。</p>
 <p><strong>雪碧图的特点：</strong></p>
 <p>一次性将多个图片加载进页面，降低请求的次数，加快访问速度，提升用户体验。只适用于背景，不适用img</p>
 <h2 id="6-渐变"><a href="#6-渐变" class="headerlink" title="6. 渐变"></a>6. 渐变</h2><p>通过渐变可以设置一些复杂的背景色，可以实现从一个颜色向其他颜色过渡的效果。渐变是图片，需要background-image来设置。特质和图片一样。</p>
-<h3 id="线性渐变：颜色沿着一条直线发生变化。"><a href="#线性渐变：颜色沿着一条直线发生变化。" class="headerlink" title="线性渐变：颜色沿着一条直线发生变化。"></a>线性渐变：颜色沿着一条直线发生变化。</h3><p><strong><font color = "green">linear-gradient();</font></strong></p>
+<h3 id="线性渐变：颜色沿着一条直线发生变化。"><a href="#线性渐变：颜色沿着一条直线发生变化。" class="headerlink" title="线性渐变：颜色沿着一条直线发生变化。"></a>线性渐变：颜色沿着一条直线发生变化。</h3><p><strong><font color="green">linear-gradient();</font></strong></p>
 <p><code>background-color:linear-gradient(red,yellow);//红色在开头，黄色在结尾。中间是过渡区域</code></p>
 <p><code>background-color:linear-gradient(to right,red,yellow);//从左向右</code></p>
 <p>线性渐变的开头，可以指定一个渐变的方向。to left;to right;to bottom;to top;to top left;xxxdeg（指定一个度数）;xxxturn（指定一个圈）</p>
 <p><strong>渐变可以同时指定多个颜色。多个颜色情况下默认平均分布。也可以手动指定渐变的分布情况</strong></p>
 <p><code>background-image:linear-gradient(red 50px,yellow 100px)</code>从0-50px都是红色。从100px后是黄色。50-100则是过渡区域。</p>
-<p><strong><font color = "green">repeating-linear-gradient();可以平铺的线性渐变</font></strong></p>
+<p><strong><font color="green">repeating-linear-gradient();可以平铺的线性渐变</font></strong></p>
 <p><code>background-image:repeating-linear-gradient(red 50px,yellow 100px)</code>50px是红色，100px是黄色。50-100都是一个渐变效果。50-100外的区域会平铺</p>
 <h3 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h3><p><strong>radial-gradient() 放射性的效果</strong></p>
 <p>默认情况下径向渐变圆心的形状根据元素的形状来计算的。</p>
@@ -353,9 +353,9 @@
                 
                     <a href="/tags/web%E5%AD%A6%E4%B9%A0/">web学习</a>
                 
-                    <a href="/tags/css/">css</a>
-                
                     <a href="/tags/vscode/">vscode</a>
+                
+                    <a href="/tags/css/">css</a>
                 
             </div>
         

@@ -121,7 +121,7 @@
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">      <span class="type">HelloService</span> <span class="variable">helloService</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HelloServiceImpl</span>();</span><br><span class="line">      <span class="comment">//按约定获取proxy</span></span><br><span class="line">      <span class="type">HelloService</span> <span class="variable">proxy</span> <span class="operator">=</span> (HelloService) ProxyBean.getProxyBean(helloService,<span class="keyword">new</span> <span class="title class_">MyInterceptor</span>());</span><br><span class="line">      proxy.sayHello(<span class="string">&quot;LWT&quot;</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-<p>输出如下:<br><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v2/consoleout.png" alt="输出"></p>
+<p>输出如下:<br><img src="/2020/02/09/Spring-Boot%E5%AD%A6%E4%B9%A0v2/consoleout.png" alt="输出"></p>
 <p><strong>重点方法:</strong><code>getProxyBean</code>和<code>invoke</code>。</p>
 <h3 id="AOP术语和流程"><a href="#AOP术语和流程" class="headerlink" title="AOP术语和流程"></a>AOP术语和流程</h3><ol>
 <li><p><strong>连接点（join point）</strong>:对应的是具体被拦截的对象。因为Spring只能支持方法。故呗拦截的对象往往就是指特定的方法。</p>
@@ -190,7 +190,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Around(&quot;pointCut()&quot;)</span></span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">aroundAdvice</span><span class="params">(ProceedingJoinPoint p)</span>&#123;</span><br><span class="line">     <span class="keyword">try</span> &#123;</span><br><span class="line">         System.out.println(<span class="string">&quot;环绕前&quot;</span>);</span><br><span class="line">         p.proceed();</span><br><span class="line">         System.out.println(<span class="string">&quot;环绕后&quot;</span>);</span><br><span class="line">     &#125; <span class="keyword">catch</span> (Throwable throwable) &#123;</span><br><span class="line">         throwable.printStackTrace();</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 <p>再次测试查看日志:</p>
-<p><img src="/Spring-Boot%E5%AD%A6%E4%B9%A0v2/QQ%E6%88%AA%E5%9B%BE20200322111102.png"></p>
+<p><img src="/2020/02/09/Spring-Boot%E5%AD%A6%E4%B9%A0v2/QQ%E6%88%AA%E5%9B%BE20200322111102.png"></p>
 <p><strong>注意此处“前置方法”打印在“环绕前”之后，可能是什么版本差异的bug</strong></p>
 <ul>
 <li>引入</li>

@@ -74,17 +74,17 @@
 </blockquote>
 <p><strong>1.1.1 属性</strong></p>
 <ul>
-<li><font color = "blue">flex-direction： 指定容器中元素的排列方式（只能给弹性容器使用）</font></li>
+<li><font color="blue">flex-direction： 指定容器中元素的排列方式（只能给弹性容器使用）</font></li>
 </ul>
 <p>可选值：</p>
 <p>row：默认值，弹性元素在容器中水平排列。(左向右)</p>
 <p>row-reverse：弹性元素在容器中反向水平排列。（右向左）</p>
 <p>column：弹性元素在容器中纵向排列。（上向下）</p>
 <p>column-reverse：弹性元素在容器中反向纵向排列。（下向上）</p>
-<p><strong><font color = "red">主轴：弹性元素的排列方向成为主轴(左向右–右向左–上向下–下向上)</font></strong></p>
-<p><strong><font color = "red">侧轴：与主轴垂直方向的成为侧轴。（如果主轴垂直，侧轴水平；主轴水平，侧轴垂直）</font></strong></p>
+<p><strong><font color="red">主轴：弹性元素的排列方向成为主轴(左向右–右向左–上向下–下向上)</font></strong></p>
+<p><strong><font color="red">侧轴：与主轴垂直方向的成为侧轴。（如果主轴垂直，侧轴水平；主轴水平，侧轴垂直）</font></strong></p>
 <ul>
-<li><font color = "blue">flex-wrap： 设置弹性元素是否在弹性容器中自动换行</font></li>
+<li><font color="blue">flex-wrap： 设置弹性元素是否在弹性容器中自动换行</font></li>
 </ul>
 <p>可选值：</p>
 <p>nowrap：默认值，元素不会自动换行</p>
@@ -94,9 +94,9 @@
 <p>自动换行，默认stretch。假如换了一行，那么实际上父元素内容被分成了上下两部分。上下两部分每部分的高度取决于:如果两行的高度大于父元素的高度，那么每一部分高度&#x3D;当行最高的元素的高度从上玩下排，多出的部分溢出，如果两行的高度&lt;&#x3D;父元素的高度，那么每一部分高度&#x3D;当行最高的元素+(父元素的高度-两行元素最高的高度之和)&#x2F;2。参考下属性<strong>align-content</strong></p>
 </blockquote>
 <ul>
-<li><p><font color = "blue">flex-flow： direction和wrap的简写属性。</font></p>
+<li><p><font color="blue">flex-flow： direction和wrap的简写属性。</font></p>
 </li>
-<li><p><font color = "blue">justify-content：如何分配主轴上的空白空间。（主轴上的元素如何排列。）</font></p>
+<li><p><font color="blue">justify-content：如何分配主轴上的空白空间。（主轴上的元素如何排列。）</font></p>
 </li>
 </ul>
 <p>可选值：</p>
@@ -109,7 +109,7 @@
 <p>center：元素水平居中。</p>
 <p><strong>align：一般用来设置辅轴</strong></p>
 <ul>
-<li><font color = "blue">align-items：元素在辅轴上如何对齐</font></li>
+<li><font color="blue">align-items：元素在辅轴上如何对齐</font></li>
 </ul>
 <p>stretch：默认值，将元素的长度设置为相同的值。同一行的元素高度和最高的哪个对齐。上面行和下面行平均分配到父元素高度。</p>
 <p>flex-start：元素不会拉伸，沿着辅轴起边对齐。</p>
@@ -117,7 +117,7 @@
 <p>center：居中对齐</p>
 <p>base-line：基线对齐（沿着文字的基线对齐）</p>
 <ul>
-<li><font color = "blue">align-content：辅轴空白空间的分布</font></li>
+<li><font color="blue">align-content：辅轴空白空间的分布</font></li>
 </ul>
 <p>center：上下的空白相等，元素在中间</p>
 <p>flex-start：元素靠上对齐，空白在下面</p>
@@ -129,10 +129,10 @@
 <p><strong>一个元素可以同时是弹性容器和弹性元素</strong></p>
 <p><strong>1.2.1 属性</strong></p>
 <ul>
-<li><font color = "blue">flex-grow 指定元素伸展的系数</font></li>
+<li><font color="blue">flex-grow 指定元素伸展的系数</font></li>
 </ul>
 <blockquote>
-<p>当父元素有<font size = "7" color = "red"><B>剩余的空间</b></font>时，子元素如何伸展。</p>
+<p>当父元素有<font size="7" color="red"><B>剩余的空间</B></font>时，子元素如何伸展。</p>
 </blockquote>
 <p>0 ：表示不伸展</p>
 <blockquote>
@@ -143,21 +143,21 @@
 <p><em>假如父元素剩余的空间为600px，那么子元素1占100px(600</em>1&#x2F;6)，子元素2占200px(600<em>2&#x2F;6)，子元素3占300px(600</em>3&#x2F;6)*</p>
 <p><strong>如果父元素中只有一个子元素设置了系数(flex-grow:2;)且父元素还有剩余空间，那么该元素将占满剩下的空间（2&#x2F;2）。</strong></p>
 <ul>
-<li><font color = "blue">flex-shrink 指定元素的收缩系数</font></li>
+<li><font color="blue">flex-shrink 指定元素的收缩系数</font></li>
 </ul>
 <blockquote>
 <p>当父元素的空间不足以容纳所有的子元素时，如何对子元素进行收缩</p>
 </blockquote>
 <p>1：默认值，等比收缩。(不写就是默认值)</p>
 <ul>
-<li><p><font color = "blue">align-self,和align-items，用来覆盖align-items</font></p>
+<li><p><font color="blue">align-self,和align-items，用来覆盖align-items</font></p>
 </li>
-<li><p><font color = "blue">flex-basis：元素在主轴上的基础长度。</font></p>
+<li><p><font color="blue">flex-basis：元素在主轴上的基础长度。</font></p>
 </li>
 </ul>
 <p>如果主轴是横向的，则该值指定的就是元素的宽度。如果主轴是纵向的，则改值指定的就是元素的高度。默认值为auto，表示参考元素自身的高度或者宽度。如果传递了一个具体的树脂。则以该值为准。</p>
 <ul>
-<li><font color = "blue">flex：简写属性</font></li>
+<li><font color="blue">flex：简写属性</font></li>
 </ul>
 <p>可以设置弹性元素所有的三个样式。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex:增长 缩减  基础值;</span><br></pre></td></tr></table></figure>
@@ -167,7 +167,7 @@
 <p>auto(1 1 auto)</p>
 <p>none(0 0 auto)</p>
 <ul>
-<li><font color = "blue">order:决定弹性元素的排列顺序</font></li>
+<li><font color="blue">order:决定弹性元素的排列顺序</font></li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth(3)&#123;</span><br><span class="line">	order:1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         <p class="suffix-end">__END__</p>
@@ -198,9 +198,9 @@
                 
                     <a href="/tags/web%E5%AD%A6%E4%B9%A0/">web学习</a>
                 
-                    <a href="/tags/css/">css</a>
-                
                     <a href="/tags/vscode/">vscode</a>
+                
+                    <a href="/tags/css/">css</a>
                 
                     <a href="/tags/Flex/">Flex</a>
                 

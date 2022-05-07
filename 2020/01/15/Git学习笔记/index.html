@@ -135,7 +135,7 @@
 
 <h2 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h2><p>Git中存在着暂存区的概念。</p>
 <p><strong>工作区</strong>指的就是你在电脑里能看到的目录，比如创建的包含<code>.git</code>的文件夹就是一个工作区。</p>
-<p><strong>版本库</strong>工作区中有一个隐藏的目录<code>.git</code>，他不算是工作区，而是Git的版本库。Git的版本库中存放了很多东西，其中，最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的 第一个分支<code>master</code>，以及指向<code>master</code>的一个指针<code>HEAD</code><br><img src="/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%9A%82%E7%BC%93%E5%8C%BA.jpg" alt="示意图"></p>
+<p><strong>版本库</strong>工作区中有一个隐藏的目录<code>.git</code>，他不算是工作区，而是Git的版本库。Git的版本库中存放了很多东西，其中，最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的 第一个分支<code>master</code>，以及指向<code>master</code>的一个指针<code>HEAD</code><br><img src="/2020/01/15/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%9A%82%E7%BC%93%E5%8C%BA.jpg" alt="示意图"></p>
 <p>可以用命令试着去比较一下工作区，暂缓区和版本库之间的区别。</p>
 <p><strong>git diff的命令只会比较两区域都存在的文件,如果工作区存在a文件,暂存区不存在a文件,其他都相同,那么git diff也不会打印出任何东西.这是可以使用git status命令比较查看.</strong></p>
 <p><code>git status</code> —查看状态。</p>

@@ -67,11 +67,11 @@
 <p><strong>4. @PatchMapping: 对应HTTP的PATCH请求，提交资源部分修改的属性</strong></p>
 <p><strong>5. @DeleteMapping: 对应HTTP的DELETE请求，删除服务器端的资源。</strong></p>
 <blockquote>
-<table><tr><td bgcolor=#F0FFFF>通过这些注解就能把URI定位到对应的控制器方法上。通过注解@PathVariable进行获取，这样就能满足REST风格传递参数的要求。对于复杂的参数，比如传递十几个的字段，可以考虑请求体JSON的方式提交给服务器。</td></tr></table>
+<table><tr><td bgcolor="#F0FFFF">通过这些注解就能把URI定位到对应的控制器方法上。通过注解@PathVariable进行获取，这样就能满足REST风格传递参数的要求。对于复杂的参数，比如传递十几个的字段，可以考虑请求体JSON的方式提交给服务器。</td></tr></table>
 </blockquote>
-<h2 id="RestController使用"><a href="#RestController使用" class="headerlink" title="RestController使用"></a>RestController使用</h2><table><tr><td bgcolor=#F5F5F5>因为现在的前后端分离，所以使用JSOM作为前后端交互已经十分普遍。如果每个方法都加上@ResponseBody才能将数据转换为JSON，显然有些冗余。@RestController注解，通过它可以将控制器返回的对象转换为JSON数据集。</td></tr></table>
+<h2 id="RestController使用"><a href="#RestController使用" class="headerlink" title="RestController使用"></a>RestController使用</h2><table><tr><td bgcolor="#F5F5F5">因为现在的前后端分离，所以使用JSOM作为前后端交互已经十分普遍。如果每个方法都加上@ResponseBody才能将数据转换为JSON，显然有些冗余。@RestController注解，通过它可以将控制器返回的对象转换为JSON数据集。</td></tr></table>
 
-<table><tr><td bgcolor=#FFF5EE>使用此注解就能让之前的getUser方法返回的对象转变为JSON数据集了，为了使得JSP视图也能够被渲染成功，原本通过直接返回字符串的方式就不能使用了。这时可以使用ModelAndView的返回，通过视图名称找到对应的视图，将数据模型进行渲染，展示JSP视图给用户观看。</td></tr></table>
+<table><tr><td bgcolor="#FFF5EE">使用此注解就能让之前的getUser方法返回的对象转变为JSON数据集了，为了使得JSP视图也能够被渲染成功，原本通过直接返回字符串的方式就不能使用了。这时可以使用ModelAndView的返回，通过视图名称找到对应的视图，将数据模型进行渲染，展示JSP视图给用户观看。</td></tr></table>
 
 <h2 id="渲染结果"><a href="#渲染结果" class="headerlink" title="渲染结果"></a>渲染结果</h2><p>在@RequestMapping，@GetMapping中还存在consumes和produces属性。欠着代表的是限制该方法接受什么类型的请求体，后者代表的是限定返回的媒体类型，仅当request请求头中的类型中包含该指定的类型才返回。如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(value=&quot;user2/name/&#123;id&#125;&quot;,consumes=MediaType.All_VALUE,prodices=MediaType.TEXT_PLAIN_VALUE)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">getUsername</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> Long id)</span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> userService.getUser(id);</span><br><span class="line">	<span class="keyword">return</span> user.getUserName();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

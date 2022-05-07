@@ -78,7 +78,7 @@
 </ol>
  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;email@email.com&quot;</span><br><span class="line"></span><br><span class="line">Creates a new ssh key using the provided email # Generating public/private rsa key pair.</span><br><span class="line"></span><br><span class="line">Enter file in which to save the key (/home/you/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
 <p> 直接enter，然后输入密码。</p>
-<p> <img src="/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121232408.png" alt="输入密码"></p>
+<p> <img src="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121232408.png" alt="输入密码"></p>
 </li>
 <li><p>设置远程仓库上的公钥</p>
 <ol>
@@ -91,7 +91,7 @@
 <li><p>把命令行查看的密钥复制粘贴进去，记得要把前面的<code>ssh-rsa</code>一块复制进去，title随便填，最后点击Add key。</p>
 </li>
 </ol>
-<p>  <img src="/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121233114.png" alt="pic"></p>
+<p>  <img src="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121233114.png" alt="pic"></p>
 <ol start="4">
 <li>验证key是否正常工作</li>
 </ol>
@@ -111,7 +111,7 @@
 </ol>
 <p>  <code>git remote set-url origin git@github.com:planeswalker1205/newRepository.git</code></p>
 <p>  最后再使用<code>git remote -v查看</code></p>
-<p>  <img src="/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121233712.png" alt="ssh地址"></p>
+<p>  <img src="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121233712.png" alt="ssh地址"></p>
 </li>
 </ul>
 <h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p><strong>添加远程仓库</strong></p>
@@ -214,7 +214,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git log --graph --pretty=oneline --abbrev-commit</span><br><span class="line">*   e1e9c68 (HEAD -&gt; master) merge with no-ff</span><br><span class="line">|\  </span><br><span class="line">| * f52c633 (dev) add merge</span><br><span class="line">|/  </span><br><span class="line">*   cf810e4 conflict fixed</span><br></pre></td></tr></table></figure>
 
 <p>在不使用<code>Fast forward</code>模式，merge后就会像这样。</p>
-<p><img src="/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/0.png" alt="0"></p>
+<p><img src="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/0.png" alt="0"></p>
 <p>如果你在一个分支dev上工作许久，此时需要紧急切换到另一个分支，但你还并不想提交当前工作的分支的内容，那么你就可以使用<code>stash</code>命令，把当前工作现场”储藏”起来，等以后恢复现场后继续工作。</p>
 <p><code>$ git stash</code></p>
 <p>现在，用<code>git status</code>查看工作区，就是干净的。可以放心创建或者切换到别的分支而不受本分支的影响。</p>

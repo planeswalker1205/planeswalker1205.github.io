@@ -59,7 +59,7 @@
     <div class="toc"></div>
     <div class="article-body">
         <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><strong>Less是一门css的预处理语言。是一个css的增强版。通过Less编写更少的代码，实现更强大的样式</strong> </p>
-<p><strong><font color = "red">在less中添加了许多的新特性，像对变量的支持，对mixin的支持。浏览器无法直接执行less代码，要执行必须先将less转换为css，然后由浏览器执行</font></strong></p>
+<p><strong><font color="red">在less中添加了许多的新特性，像对变量的支持，对mixin的支持。浏览器无法直接执行less代码，要执行必须先将less转换为css，然后由浏览器执行</font></strong></p>
 <h3 id="css变量"><a href="#css变量" class="headerlink" title="css变量"></a>css变量</h3><p><strong>1. css原生也支持变量的设置，但是兼容性较差</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">html&#123;</span><br><span class="line">	--变量名:值;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.box1&#123;</span><br><span class="line">	background-color:var(--变量名);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -68,7 +68,7 @@
 
 <h2 id="less"><a href="#less" class="headerlink" title="less"></a>less</h2><p><strong>1. vscode插件–easyless，安装</strong></p>
 <p><strong>2. 定义变量</strong></p>
-<p>语法：<br><strong><font color = "red">@变量名:值;</font></strong></p>
+<p>语法：<br><strong><font color="red">@变量名:值;</font></strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@a</span>:100px;</span><br><span class="line">//定义类名</span><br><span class="line"><span class="keyword">@b</span>:box2;</span><br><span class="line"><span class="keyword">@c</span>:images;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>:@a;</span><br><span class="line">&#125;</span><br><span class="line">//作为类名，或者一部分值使用时必须以 @&#123;变量名&#125; 的形式使用</span><br><span class="line">.@&#123;<span class="selector-tag">b</span>&#125;&#123;</span><br><span class="line">	<span class="attribute">background-image</span>:<span class="built_in">url</span>(<span class="string">&quot;@&#123;c&#125;/1.png&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><em>可以在变量名声明前就使用，但是不好维护，不建议。变量发生重名时。就近原则(后面定义的。即使变量在使用后面声明，此为变量的延迟加载)</em></p>
@@ -156,9 +156,9 @@
                 
                     <a href="/tags/web%E5%AD%A6%E4%B9%A0/">web学习</a>
                 
-                    <a href="/tags/css/">css</a>
-                
                     <a href="/tags/vscode/">vscode</a>
+                
+                    <a href="/tags/css/">css</a>
                 
                     <a href="/tags/Less/">Less</a>
                 
