@@ -1,82 +1,65 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
-    <meta name="referrer" content="origin">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>Git学习笔记v2</title>
-    <link rel="shortcut icon" href="#"/>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="网页无法访问GitHub网站的解决办法: 进入Window下目录：C：\ Windows \ System32 \ drivers \ etc notepad++打开hosts文件,在末尾添加如下代码: 12345#github 192.30.253.113 github.com 192.30.253.113 github.com 192.30.253.118 gist.github.com 19">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git学习笔记v2">
+<meta property="og:url" content="https://planeswalker1205.github.io/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/index.html">
+<meta property="og:site_name" content="MIRACLE">
+<meta property="og:description" content="网页无法访问GitHub网站的解决办法: 进入Window下目录：C：\ Windows \ System32 \ drivers \ etc notepad++打开hosts文件,在末尾添加如下代码: 12345#github 192.30.253.113 github.com 192.30.253.113 github.com 192.30.253.118 gist.github.com 19">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121232408.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121233114.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121233712.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/0.png">
+<meta property="article:published_time" content="2020-01-21T13:51:24.000Z">
+<meta property="article:modified_time" content="2022-06-16T02:43:10.458Z">
+<meta property="article:author" content="ashen">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://planeswalker1205.github.io/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121232408.png"><title>Git学习笔记v2 | MIRACLE</title><link ref="canonical" href="https://planeswalker1205.github.io/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
 
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/NotoSansSC.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Playball.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/PTMono.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/RobotoSlab.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Rosario.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/UbuntuMono.css">
-
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/post.css">
-    
-        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/normal.css">
-    
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/jquery-3.4.1.min.js"></script>
-
-<meta name="generator" content="Hexo 6.1.0"></head>
-<body>
-    <a id="cover"></a>
-    <div id="header">
-    <div class="header">
-        <div class="vertical">
-            <div class="inner">
-                <h1 class="header-subtitle">Git学习笔记v2</h1>
-                <div class="header-subinfo">
-                    <p class="article-info-text">
-                        <span>
-                            <i class="iconfont icon-time"></i> 发表时间：2020-01-21
-                        </span>
-                        
-                            <span id="https://planeswalker1205.github.io/2020/01/21/Git学习笔记v2/" class="leancloud_visitors" data-flag-title="Git学习笔记v2">
-                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
-                            </span>
-                        
-                        <span>
-                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="https://planeswalker1205.github.io/2020/01/21/Git学习笔记v2/"></span>
-                        </span>  
-                    </p>                 
-                </div>
-            </div>
-        </div>
-        <canvas id="articleHeaderCanvas"></canvas>
-    </div>
-</div>
-    <div id="container">
-    <div id="content">
-        <div id="article">
-    <div class="toc"></div>
-    <div class="article-body">
-        <p><strong>网页无法访问GitHub网站的解决办法:</strong></p>
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">Tags</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">MIRACLE</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Git学习笔记v2</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-01-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-06-16</span></span></div></header><div class="post-body"><p><strong>网页无法访问GitHub网站的解决办法:</strong></p>
 <p>进入Window下目录：C：\ Windows \ System32 \ drivers \ etc</p>
 <p>notepad++打开hosts文件,在末尾添加如下代码:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#github </span><br><span class="line">192.30.253.113 github.com </span><br><span class="line">192.30.253.113 github.com </span><br><span class="line">192.30.253.118 gist.github.com </span><br><span class="line">192.30.253.119 gist.github.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#github </span><br><span class="line">192.30.253.113 github.com </span><br><span class="line">192.30.253.113 github.com </span><br><span class="line">192.30.253.118 gist.github.com </span><br><span class="line">192.30.253.119 gist.github.com</span><br></pre></td></tr></table></div></figure>
 
-<p><em>此方法来自博客:</em> <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39087263/article/details/84493188">https://blog.csdn.net/weixin_39087263&#x2F;article&#x2F;details&#x2F;84493188</a></p>
-<h2 id="如何使用ssh密钥"><a href="#如何使用ssh密钥" class="headerlink" title="如何使用ssh密钥"></a>如何使用ssh密钥</h2><p>初次使用git的用户要使用git协议大概需要三个步骤:</p>
+<p><em>此方法来自博客:</em> <span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39087263/article/details/84493188">https://blog.csdn.net/weixin_39087263&#x2F;article&#x2F;details&#x2F;84493188</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h2 id="如何使用ssh密钥">
+          <a href="#如何使用ssh密钥" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何使用ssh密钥" class="headerlink" title="如何使用ssh密钥"></a>如何使用ssh密钥</h2>
+      <p>初次使用git的用户要使用git协议大概需要三个步骤:</p>
 <ul>
 <li><p>生成密钥对</p>
 <ol>
 <li>ssh公钥默认存储在账户的主目录下的~&#x2F;.ssh目录，查看:</li>
 </ol>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd~/.ssh</span><br><span class="line">$ ls</span><br><span class="line"> 	authorized_leys2 id_dsa		known_hosts config		id_dsa.pub</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd~/.ssh</span><br><span class="line">$ ls</span><br><span class="line"> 	authorized_leys2 id_dsa		known_hosts config		id_dsa.pub</span><br></pre></td></tr></table></div></figure>
 <p> 查看是否存在id_rsa和id_rsa.pub(id_dsa和id_dsa.pub之类成对的文件.)。</p>
 <p> <code>.pub</code>后缀的文件为公钥，另一个文件时密钥。</p>
 <ol start="2">
 <li>如果没有上述文件，没有.ssh目录，可以使用ssh-keygen创建</li>
 </ol>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;email@email.com&quot;</span><br><span class="line"></span><br><span class="line">Creates a new ssh key using the provided email # Generating public/private rsa key pair.</span><br><span class="line"></span><br><span class="line">Enter file in which to save the key (/home/you/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;email@email.com&quot;</span><br><span class="line"></span><br><span class="line">Creates a new ssh key using the provided email # Generating public/private rsa key pair.</span><br><span class="line"></span><br><span class="line">Enter file in which to save the key (/home/you/.ssh/id_rsa):</span><br></pre></td></tr></table></div></figure>
 <p> 直接enter，然后输入密码。</p>
 <p> <img src="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121232408.png" alt="输入密码"></p>
 </li>
@@ -84,7 +67,7 @@
 <ol>
 <li>查看生成的公钥:</li>
 </ol>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br><span class="line"></span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBGTYBoVSyZsK0FyYuL3u5ATxwaETtplLsejKsj76G9ca1Bx519YLZCzY6zFnaD/2jYEZv1/IUjNxHWWRqP47zWTdQvdvSfPOheIp1j+mbA0HWPtCIi4c8vX3XWSv90uDoyzllMT3Qwi1XAn3TdcthLxIXKIb0v70ZdmXcl5t3t68BQfhrB/ykL4m6Nji0qPdTOtYwNYT0FH/n8Wvb7wBd8w1BJ6YNUZzyWkWLHFcF+hvXpaM4w5A0P7M880xsYROnyMB57WSejp1Dcp69KAp0WpjV5CPXsMgyvwEQ/aYKTYw06EAVUMavDTDTOZ9/I08P0R9X07HG+V99pB2r74f7AC2vvuglTLC4OT0hc3ZuyGYX3ATasv4og46sJJY46q65WUEyVvfNF6+QVRV8j9scy/OyjzrEQqXOjFVaxx7RE7LgcVvLhNRnartavD7Ll+4wMNDdiWqD88EBe8p3nbtl4/5Eu5w35BWm0AJg3jSykT643lOD0LJVSXIzyHkXST0= 462083214@qq.com</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br><span class="line"></span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBGTYBoVSyZsK0FyYuL3u5ATxwaETtplLsejKsj76G9ca1Bx519YLZCzY6zFnaD/2jYEZv1/IUjNxHWWRqP47zWTdQvdvSfPOheIp1j+mbA0HWPtCIi4c8vX3XWSv90uDoyzllMT3Qwi1XAn3TdcthLxIXKIb0v70ZdmXcl5t3t68BQfhrB/ykL4m6Nji0qPdTOtYwNYT0FH/n8Wvb7wBd8w1BJ6YNUZzyWkWLHFcF+hvXpaM4w5A0P7M880xsYROnyMB57WSejp1Dcp69KAp0WpjV5CPXsMgyvwEQ/aYKTYw06EAVUMavDTDTOZ9/I08P0R9X07HG+V99pB2r74f7AC2vvuglTLC4OT0hc3ZuyGYX3ATasv4og46sJJY46q65WUEyVvfNF6+QVRV8j9scy/OyjzrEQqXOjFVaxx7RE7LgcVvLhNRnartavD7Ll+4wMNDdiWqD88EBe8p3nbtl4/5Eu5w35BWm0AJg3jSykT643lOD0LJVSXIzyHkXST0= 462083214@qq.com</span><br></pre></td></tr></table></div></figure>
 <ol start="2">
 <li><p>登录GitHub账户，点击头像，Settings–SSH and GPG kets–New SSH key。</p>
 </li>
@@ -95,7 +78,7 @@
 <ol start="4">
 <li>验证key是否正常工作</li>
 </ol>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line"></span><br><span class="line">Attempts to ssh to github</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line"></span><br><span class="line">Attempts to ssh to github</span><br></pre></td></tr></table></div></figure>
 <p>  这里可能会让你输入密码。</p>
 <p>  最后，如果看到<code>Hi xxx! You&#39;ve successfully authenticated, but GitHub does not # provide shell access.</code>则代表已经设置成功！</p>
 </li>
@@ -103,7 +86,7 @@
 <ol>
 <li>使用命令git remote -v查看当前remote url</li>
 </ol>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">origin https://github.com/someaccount/someproject.git (fetch)</span><br><span class="line">origin https://github.com/someaccount/someproject.git (push)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">origin https://github.com/someaccount/someproject.git (fetch)</span><br><span class="line">origin https://github.com/someaccount/someproject.git (push)</span><br></pre></td></tr></table></div></figure>
 
 <p>  若是以上结果说明此项目是使用https协议进行访问的.(如果地址是git开头则表示是git协议).且只有是SSH URL的链接我们才能推送数据上去。</p>
 <ol start="2">
@@ -114,14 +97,17 @@
 <p>  <img src="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/QQ%E6%88%AA%E5%9B%BE20200121233712.png" alt="ssh地址"></p>
 </li>
 </ul>
-<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p><strong>添加远程仓库</strong></p>
+
+        <h2 id="远程仓库">
+          <a href="#远程仓库" class="heading-link"><i class="fas fa-link"></i></a><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2>
+      <p><strong>添加远程仓库</strong></p>
 <ol>
 <li><p>登录GitHub，创建一个新的仓库，仓库名称叫newRepository。</p>
 </li>
 <li><p>本地仓库运行如下命令:</p>
 </li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@git.com:planewalker1205/newRepository.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@git.com:planewalker1205/newRepository.git</span><br></pre></td></tr></table></div></figure>
 
 <blockquote>
 <p>以上命令中:<strong>gitrep</strong>：远程仓库名称，默认可以叫origin，一看就可以知道是远程仓库，<strong>planewalker1205</strong>是你的GitHub用户名名称，<strong>newRepository.git</strong>是GitHub上创建的仓库的名称。再次强调只有SSH URL的链接(也就是git开头)我们才可以推送数据上去。</p>
@@ -135,7 +121,10 @@
 </blockquote>
 <p><strong>删除指定的远程仓库</strong></p>
 <p><code>git remote rm origin</code></p>
-<h2 id="分支的创建与合并"><a href="#分支的创建与合并" class="headerlink" title="分支的创建与合并"></a>分支的创建与合并</h2><p>注意:</p>
+
+        <h2 id="分支的创建与合并">
+          <a href="#分支的创建与合并" class="heading-link"><i class="fas fa-link"></i></a><a href="#分支的创建与合并" class="headerlink" title="分支的创建与合并"></a>分支的创建与合并</h2>
+      <p>注意:</p>
 <blockquote>
 <p>在使用分支时要注意，各分支之间工作区与暂存区是公共的，所以在一个分支的工作区修改的内容如果未add或commit就切换到另一个分支那么这些修改的内容也会被带到另一个分支。只有在一个分支中把内容提交另一个分支的工作区的内容才会更改回原来的状态。如果一个分支的内容已经作出修改并提交，而在另一个分支的工作区修改内容，再从另一个分支切换到已经修改并提交的分支时是不允许的。可以使用git stash命令处理相关问题。</p>
 </blockquote>
@@ -157,7 +146,7 @@
 <p><code>$ git branch dev</code></p>
 <p><code>$ git checkout dev</code></p>
 <p>使用<code>$ git branch</code>查看当前分支</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* dev</span><br><span class="line">  master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* dev</span><br><span class="line">  master</span><br></pre></td></tr></table></div></figure>
 
 <blockquote>
 <p>*号表示当前在哪个分支。</p>
@@ -165,7 +154,7 @@
 <ul>
 <li>合并分支</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  dev</span><br></pre></td></tr></table></div></figure>
 
 <p><code>$ git merge dev</code></p>
 <blockquote>
@@ -176,7 +165,7 @@
 <p>如果报错的话可能是因为当前的分支还没有合并提示你并不能删除。此时，如果想要强制删除的话可以使用大写的D</p>
 <p><code>$ git branch -D dev</code></p>
 <p>再次查看分支，可以看到只剩下<code>master</code>分支了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></table></div></figure>
 
 <ul>
 <li>switch切换分支</li>
@@ -187,22 +176,22 @@
 <ol>
 <li>创建dev分支</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git switch -c dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git switch -c dev</span><br></pre></td></tr></table></div></figure>
 
 <ol start="2">
 <li>修改test.txt内容并提交</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cat test.txt</span><br><span class="line"></span><br><span class="line">dev test.txt</span><br><span class="line"></span><br><span class="line">$ git add test.txt</span><br><span class="line"></span><br><span class="line">$ git commit -m &quot;dev commit&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cat test.txt</span><br><span class="line"></span><br><span class="line">dev test.txt</span><br><span class="line"></span><br><span class="line">$ git add test.txt</span><br><span class="line"></span><br><span class="line">$ git commit -m &quot;dev commit&quot;</span><br></pre></td></tr></table></div></figure>
 
 <ol start="3">
 <li>切换到master分支，修改test.txt内容并提交</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cat test.txt</span><br><span class="line"></span><br><span class="line">master test.txt</span><br><span class="line"></span><br><span class="line">$ git add test.txt</span><br><span class="line"></span><br><span class="line">$ git commit -m &quot;master commit&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cat test.txt</span><br><span class="line"></span><br><span class="line">master test.txt</span><br><span class="line"></span><br><span class="line">$ git add test.txt</span><br><span class="line"></span><br><span class="line">$ git commit -m &quot;master commit&quot;</span><br></pre></td></tr></table></div></figure>
 
 <ol start="4">
 <li>合并dev分支</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git merge dev</span><br><span class="line"></span><br><span class="line">Auto-merging readme.txt</span><br><span class="line">CONFLICT (content): Merge conflict in readme.txt</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git merge dev</span><br><span class="line"></span><br><span class="line">Auto-merging readme.txt</span><br><span class="line">CONFLICT (content): Merge conflict in readme.txt</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br></pre></td></tr></table></div></figure>
 
 <blockquote>
 <p>可以看到如果两个分支的同一个文件的不同位置都有修改且提交的话，再次合并就会发生冲突。必须手动解决冲突后才能提交。</p>
@@ -211,7 +200,7 @@
 <p>合并分支默认会使用<code>Fast forward</code>模式，该模式下如果删除分支会丢失分支信息。如果要禁用<code>Fast forward</code>模式，Git就会在merge时生成一个新的commit。</p>
 <p><code>git merge --no-ff -m &quot;merge with no-ff&quot; dev</code></p>
 <p>使用<code>git log</code>查看分支历史</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git log --graph --pretty=oneline --abbrev-commit</span><br><span class="line">*   e1e9c68 (HEAD -&gt; master) merge with no-ff</span><br><span class="line">|\  </span><br><span class="line">| * f52c633 (dev) add merge</span><br><span class="line">|/  </span><br><span class="line">*   cf810e4 conflict fixed</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git log --graph --pretty=oneline --abbrev-commit</span><br><span class="line">*   e1e9c68 (HEAD -&gt; master) merge with no-ff</span><br><span class="line">|\  </span><br><span class="line">| * f52c633 (dev) add merge</span><br><span class="line">|/  </span><br><span class="line">*   cf810e4 conflict fixed</span><br></pre></td></tr></table></div></figure>
 
 <p>在不使用<code>Fast forward</code>模式，merge后就会像这样。</p>
 <p><img src="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/0.png" alt="0"></p>
@@ -219,7 +208,7 @@
 <p><code>$ git stash</code></p>
 <p>现在，用<code>git status</code>查看工作区，就是干净的。可以放心创建或者切换到别的分支而不受本分支的影响。</p>
 <p>当你处理完别的分支上的事情，切换到了之前工作并使用<code>stash</code>命令储藏工作内容的dev分支上。使用<code>git stash list</code>命令查看储藏起来的工作现场。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git stash list</span><br><span class="line">stash@&#123;0&#125;: WIP on dev: f52c633 add merge</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git stash list</span><br><span class="line">stash@&#123;0&#125;: WIP on dev: f52c633 add merge</span><br></pre></td></tr></table></div></figure>
 
 <p>想要恢复工作现场。有两种办法。</p>
 <ol>
@@ -237,10 +226,10 @@
 <p><strong>多人协作</strong></p>
 <p>当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin。</p>
 <p>要查看远程库的信息，用git remote：.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote</span><br><span class="line">origin</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote</span><br><span class="line">origin</span><br></pre></td></tr></table></div></figure>
 
 <p>或者，使用<code>git remote -v</code>查看更详细的信息。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">origin  git@github.com:planewalker1205/newRepository.git (fetch)</span><br><span class="line">origin  git@github.com:planewalker1205/newRepository.git (push)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">origin  git@github.com:planewalker1205/newRepository.git (fetch)</span><br><span class="line">origin  git@github.com:planewalker1205/newRepository.git (push)</span><br></pre></td></tr></table></div></figure>
 
 <p>上面显示的是可以抓取的<code>origin</code>的地址，如果没有推送权限的话，是看不到push的地址的。</p>
 <ul>
@@ -285,11 +274,11 @@
 <li><p>此时，<code>git pull</code>也失败了，原因是他没有指定本地的<code>dev</code>分支与远程<code>origin/dev</code>分支链接</p>
 </li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch --set-upstream-to=origin/dev dev</span><br><span class="line">Branch &#x27;dev&#x27; set up to track remote branch &#x27;dev&#x27; from &#x27;origin&#x27;.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch --set-upstream-to=origin/dev dev</span><br><span class="line">Branch &#x27;dev&#x27; set up to track remote branch &#x27;dev&#x27; from &#x27;origin&#x27;.</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
 
 
 <p>再重新<code>pull</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br><span class="line">Auto-merging env.txt</span><br><span class="line">CONFLICT (add/add): Merge conflict in env.txt</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br><span class="line">Auto-merging env.txt</span><br><span class="line">CONFLICT (add/add): Merge conflict in env.txt</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br></pre></td></tr></table></div></figure>
 
 <p>此时，会提示与本地合并有冲突，手动解决后，提交，<code>push</code></p>
 <p><strong>跟踪分支</strong></p>
@@ -302,9 +291,12 @@
 <p><code>$ git branch --set-upstream-to=origin/dev dev</code></p>
 <p>如果想要查看设置的所有跟踪分支，可以使用 <code>git branch</code> 的 <code>-vv</code> 选项。 这会将所有的本地分支列出来并且包含更多的信息，如每一个分支正在跟踪哪个远程分支与本地分支是否是领先、落后或是都有。</p>
 <p>相关学习地址:</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012701023/article/details/79222731" title="创建远程分支">https://blog.csdn.net/u012701023/article/details/79222731</a></p>
-<p><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF" title="远程分支">https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF</a></p>
-<h2 id="本章命令总结"><a href="#本章命令总结" class="headerlink" title="本章命令总结"></a>本章命令总结</h2><ul>
+<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://blog.csdn.net/u012701023/article/details/79222731" title="创建远程分支">https://blog.csdn.net/u012701023/article/details/79222731</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF" title="远程分支">https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h2 id="本章命令总结">
+          <a href="#本章命令总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#本章命令总结" class="headerlink" title="本章命令总结"></a>本章命令总结</h2>
+      <ul>
 <li>创建并切换分支</li>
 </ul>
 <p><code>$ git checkout -b dev</code></p>
@@ -392,6 +384,10 @@
 </ul>
 <p><code>$ git push origin dev</code></p>
 <ul>
+<li>强制推送到远程仓库，且覆盖远程代码库</li>
+</ul>
+<p><code>$ git push -f --set-upstream origin master:master</code></p>
+<ul>
 <li>远程仓库克隆</li>
 </ul>
 <p><code>$ git clone git@github.com:planewalker1205/newRepository.git</code></p>
@@ -431,607 +427,8 @@
 <li>删除远程分支(推送一个空分支到远程分支)</li>
 </ul>
 <p><code>$ git push origin:dev</code></p>
-
-        <p class="suffix-end">__END__</p>
-        <div class="suffix-box">
-            <div class="suffix-box-left">
-                <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Live For Code">
-            </div>
-            <div class="suffix-box-right">
-                <span class="suffix-box-title">文章作者</span>：Live For Code
-                <br>
-                <span class="suffix-box-title">文章出处</span>：<a href="/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/" target="_blank">Git学习笔记v2</a>
-                <br>
-                <span class="suffix-box-title">作者签名</span>：简单地活着, 肆意又精彩.
-                <br>
-                <span class="suffix-box-title">关于主题</span>：<a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
-                <br>
-                <span class="suffix-box-title">版权声明</span>：文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
-                <br>
-            </div>
-            <div style="clear: both;"></div>
-        </div>
-    </div>
-    <div class="article-footer">
-        
-        
-            <div class="tag">
-                标签：
-                
-                    <a href="/tags/Git/">Git</a>
-                
-            </div>
-        
-        <div class="article-prev-next">
-            
-                <a href="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/" class="prev-prefix">« </a> 上一篇：    <a href="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/" title="发布于 2020-01-28 03:55">Spring Boot学习v1</a>
-                <br>
-            
-            
-                <a href="/2020/01/15/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="next-prefix">» </a> 下一篇：    <a href="/2020/01/15/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="发布于 2020-01-15 10:46">Git学习笔记1</a>
-            
-        </div>
-    </div>
-    
-    <div class="article-comments">
-        <div class="comments-title">
-            评论列表
-        </div>
-        <div class="comments-content">
-        </div>
-    </div>
-
-</div>
-
-    </div>
-</div>
-    <div id="footer"></div>
-    <div id="sidebar">
-    <div class="menu-wrap" style="display:none;">
-        <nav class="menu">
-            <div class="menu-introduce"> 
-                <div class="introduce-avatar"></div> 
-                <div class="introduce-info"> 
-                    <div class="introduce-user"><span></span></div>        
-                </div> 
-            </div> 
-            <div class="menu-list">
-                <ul></ul> 
-            </div> 
-            <div class="menu-link"></div> 
-        </nav>
-        <button class="menu-button-close"></button>
-        <div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
-            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
-                <path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
-            </svg>
-        </div>
-    </div>
-    <button class="menu-button-open">MENU</button>
-    <div class="menu-cover"></div>
-</div>
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/search.css">
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/iscroll.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/instantsearch.min.js"></script>
-<div class="search-window">
-    <div class="search-content">
-        <div class="search-content-icon">
-            <i class="iconfont icon-search"></i>
-        </div>
-        <div id="search-input" class="search-input"></div>
-    </div>
-
-    <div class="search-scroll">
-        <div class="search-result">
-            <div id="search-stats" class="search-stats"></div>
-            <div id="search-hits"></div>
-            <div id="search-pagination" class="search-pagination"></div>
-        </div>
-    </div>
-
-    <span class="search-close-icon">
-        <i class="iconfont icon-close"></i>
-    </span>
-</div>
-    <div id="tools">
-    <div class="progressbar-top"></div>
-
-    
-        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/APlayer.css">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/APlayer.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/Meting.min.js"></script>
-        <meting-js id="3778678" lrcshow="false" server="netease" type="playlist" fixed="true" autoplay="false" loop="all" order="random" preload="auto" volume="0.67" mutex="true"></meting-js>
-    
-    
-    <div class="wrap-right"></div>
-    <div class="loading"></div>
-</div>
-    <script>
-    window.config = {
-        GitHubUserName     : 'first19326',
-        GitHubRepositories : 'Hexo-LiveForCode',
-
-        BlogUser      : 'Live For Code',
-        BlogAvatar    : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg',
-        BlogStartDate : '2020-01-01',
-
-        WebsiteTitleBlur         : '(◍´꒳`◍) Hi, Live For Code',
-        WebsiteTitleBlurTimeOut  : 500,
-        WebsiteTitleFocus        : '(*´∇｀*) 欢迎回来!',
-        WebsiteTitleFocusTimeOut : 1000,
-        WebsiteFavicon           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/website/logo.png',
-
-        ProgressBar: {
-            id       : 'topProgressBar',
-            color    : '#77B6FF',
-            height   : '2px',
-            duration : 0.2
-        },
-
-        Loading: {
-            rebound: {
-                tension  : 16,
-                friction : 5
-            },
-            spinner: {
-                id     : 'spinner',
-                radius : 90,
-                sides  : 3,
-                depth  : 4,
-                colors : {
-                    background : '#F0F0F0',
-                    stroke     : '#272633',
-                    base       : '',
-                    child      : '#272633'
-                },
-                alwaysForward : true,
-                restAt        : 0.5,
-                renderBase    : false
-            }
-        },
-
-        HomeHeaderAnimationRendered : true,
-        HomeHeaderAnimation         : {
-            radius      : 15,
-            density     : 0.2,
-            color       : 'rgba(255, 255, 255, .2)',
-            clearOffset : 0.3
-        },
-
-        ArticleHeaderAnimationRendered : false,
-        ArticleHeaderAnimation         : {
-            triW                  : 14,
-            triH                  : 20,
-            neighbours            : [
-                
-                    'side',
-                
-                    'top',
-                
-                    'bottom',
-                
-            ],
-            speedTrailAppear      : 0.1,
-            speedTrailDisappear   : 0.1,
-            speedTriOpen          : 1,
-            trailMaxLength        : 30,
-            trailIntervalCreation : 100,
-            delayBeforeDisappear  : 2,
-            colors                : [
-                
-                    '#96EDA6',
-                
-                    '#5BC6A9',
-                
-                    '#38668C',
-                
-                    '#374D84',
-                
-                    '#BED5CB',
-                
-                    '#62ADC6',
-                
-                    '#8EE5DE',
-                
-                    '#304E7B',
-                
-            ]
-        },
-
-        BackAnimationRendered          : true,
-        IEBrowserBackAnimationRendered : false,
-        BackAnimation                  : {
-            colorSaturation  : '60%',
-            colorBrightness  : '50%',
-            colorAlpha       : 0.5,
-            colorCycleSpeed  : 5,
-            verticalPosition : 'random',
-            horizontalSpeed  : 200,
-            ribbonCount      : 3,
-            strokeSize       : 0,
-            parallaxAmount   : -0.2,
-            animateSections  : true
-        },
-
-        HomeHeaderImage : [
-            
-                'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpg',
-            
-                'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpeg',
-            
-        ],
-        HomeBannerText  : '',
-
-        ArticleHeaderImage : [
-            
-                'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/article.jpg',
-            
-        ],
-
-        OtherBannerText : '',
-
-        MenuList : [
-            
-                {
-                    name   : '首页',
-                    href   : '/',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '标签',
-                    href   : '/tag',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '分类',
-                    href   : '/category',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '归档',
-                    href   : '/archive',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '赞赏',
-                    href   : '/donate',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '关于',
-                    href   : '/about',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '订阅',
-                    href   : '/atom.xml',    
-                    target : '_blank',
-                    class  : ''
-                },
-            
-                {
-                    name   : '搜索',
-                    href   : '',    
-                    target : '',
-                    class  : 'search'
-                },
-            
-                {
-                    name   : '留言板',
-                    href   : '/comment',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '友情链接',
-                    href   : '/friend',    
-                    target : '',
-                    class  : ''
-                },
-            
-        ],
-        MenuLink : [
-            
-                
-                    {
-                        icon : 'icon-weibo', 
-                        url  : ''
-                    },
-                
-                    {
-                        icon : 'icon-wechat', 
-                        url  : ''
-                    },
-                
-                    {
-                        icon : 'icon-qq', 
-                        url  : ''
-                    },
-                
-                    {
-                        icon : 'icon-github', 
-                        url  : 'https://github.com/first19326'
-                    },
-                
-            
-        ],
-
-        FooterStyle : 2,
-        BottomText  : {
-            icon    : 'like-fill',
-            left    : '人生若只如初见',
-            right   : '何事秋风悲画扇'
-        },
-        ThemeInfo   : true,
-
-        ConsoleList : [
-            
-                
-                    [
-                        
-                            
-                                'Based on cnblogs theme SimpleMemory.',
-                            
-                                '',
-                            
-                        
-                    ],
-                
-                    [
-                        
-                            
-                                'SimpleMemory Author:',
-                            
-                                'BNDong',
-                            
-                        
-                    ],
-                
-                    [
-                        
-                            
-                                'Theme:',
-                            
-                                'LiveForCode',
-                            
-                        
-                    ],
-                
-            
-        ],
-
-        FontIconExtend : '',
-
-        Donate : {
-            paypal  : '',
-            bitcoin : '',
-            alipay  : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/donate/alipay.png',
-            wechat  : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/donate/wechat.png'
-        },
-
-        Code : {
-            style : 'normal'
-        },  
-
-        Search : {
-            applicationID : '010C3EANT8',
-            apiKey        : 'c7abab9f11b79102b9aff7fe6d41447d',
-            indexName     : 'Notes',
-            hits          : {
-                page : 10
-            },
-            labels        : {
-                placeholder : '搜索',
-                empty       : '未发现与 「${query}」 相关的内容',
-                stats       : '${hits} 条相关条目，使用了 ${time} 毫秒',
-            }
-        }, 
-
-        Valine : {
-            switch         : true,
-            el             : '.comments-content',
-            appId          : 'srhKtvWPQTWYKh3qX8G8M7v0-gzGzoHsz',
-            appKey         : '8uVSP1q6UlALVC5igYfIfv2h',
-            serverURLs     : '',
-            placeholder    : '你是我一生只会遇见一次的惊喜...',
-            avatar         : 'mm',
-            meta           : 'nick,mail,link',
-            requiredFields : 'nick,mail',
-            pageSize       : 5,
-            lang           : 'zh-cn',
-            visitor        : true,
-            enableQQ       : true
-        },
-
-        Tocbot : {
-            switch                : true,
-            tocSelector           : '.toc',
-            contentSelector       : '.article-body',
-            headingSelector       : 'h1, h2, h3, h4, h5',
-            headingsOffset        : 0,
-            scrollSmooth          : true,
-            scrollSmoothOffset    : -5,
-            positionFixedSelector : '.toc',
-            positionFixedClass    : 'toc-fixed',
-            fixedSidebarOffset    : '',
-        },
-
-        Require : {
-            baseUrl     : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/',
-            waitSeconds : 100
-        },
-
-        Music : {
-            type : 'Meting'
-        },
-        APlayer : {
-            container : '.aplayer',
-            fixed     : true,
-            autoplay  : false,
-            loop      : 'all',
-            order     : 'random',
-            preload   : 'auto',
-            volume    : 0.67,
-            mutex     : true,
-            lrcType   : 3,
-            audio     : [
-                
-                    {
-                        name   : 'aLIEz',
-                        artist : 'mizuki（瑞葵）',
-                        cover  : '/music/cover/aLIEz.jpg',
-                        url    : '/music/song/aLIEz.mp3',
-                        lrc    : '/music/lrc/aLIEz.lrc'
-                    },
-                
-                    {
-                        name   : 'Endless Tears',
-                        artist : 'CLIFF EDGE',
-                        cover  : '/music/cover/Endless Tears.jpg',
-                        url    : '/music/song/Endless Tears.mp3',
-                        lrc    : '/music/lrc/Endless Tears.lrc'
-                    },
-                
-                    {
-                        name   : 'Miracle',
-                        artist : 'Cascada',
-                        cover  : '/music/cover/Miracle.jpg',
-                        url    : '/music/song/Miracle.mp3',
-                        lrc    : '/music/lrc/Miracle.lrc'
-                    },
-                
-                    {
-                        name   : 'Roll The Dice',
-                        artist : '高珊',
-                        cover  : '/music/cover/Roll The Dice.jpg',
-                        url    : '/music/song/Roll The Dice.mp3',
-                        lrc    : '/music/lrc/Roll The Dice.lrc'
-                    },
-                
-                    {
-                        name   : 'See You Again',
-                        artist : 'Charlie Puth, Wiz Khalifa',
-                        cover  : '/music/cover/See You Again.jpg',
-                        url    : '/music/song/See You Again.mp3',
-                        lrc    : '/music/lrc/See You Again.lrc'
-                    },
-                
-                    {
-                        name   : 'Traveling Light',
-                        artist : 'Joel Hanson, Sara Groves',
-                        cover  : '/music/cover/Traveling Light.jpg',
-                        url    : '/music/song/Traveling Light.mp3',
-                        lrc    : '/music/lrc/Traveling Light.lrc'
-                    },
-                
-                    {
-                        name   : '痴心绝对',
-                        artist : '李圣杰',
-                        cover  : '/music/cover/痴心绝对.jpg',
-                        url    : '/music/song/痴心绝对.mp3',
-                        lrc    : '/music/lrc/痴心绝对.lrc'
-                    },
-                
-                    {
-                        name   : '好想大声说爱你',
-                        artist : 'BAAD（バード）',
-                        cover  : '/music/cover/好想大声说爱你.jpg',
-                        url    : '/music/song/好想大声说爱你.mp3',
-                        lrc    : '/music/lrc/好想大声说爱你.lrc'
-                    },
-                
-            ]
-        },
-        Meting : {
-            id       : '3778678', 
-            lrcshow  : false, 
-            server   : 'netease', 
-            type     : 'playlist', 
-            fixed    : true, 
-            autoplay : false, 
-            loop     : 'all', 
-            order    : 'random', 
-            preload  : 'auto', 
-            volume   : 0.67, 
-            mutex    : true
-        },
-
-        Mouse : {
-            enable  : true,
-            options : {
-                size  : 6,
-                sizeF : 24
-            }
-        },
-
-        LazyLoad : {
-            default : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/website/lazyload.svg'
-        },
-  
-        Style : {
-            aplayer          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/APlayer.css',
-            archive          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/archive.css',
-            donate           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/donate.css',
-            fancybox         : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/jquery.fancybox.css',
-            footer           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/footer.css',
-            iconfont         : 'https://at.alicdn.com/t/font_1546312_l3yohatebw.css',
-            index            : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/index.css',
-            menuBubble       : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/menu-bubble.css',
-            page             : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/page.css',
-            post             : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/post.css',
-            search           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/search.css',
-            tocbot           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/tocbot.css',
-            normal           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/normal.css',
-            night            : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/night.css',
-            clipboard        : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/clipboard.css'
-        },
-
-        Script: {
-            aplayer          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/APlayer.min.js',
-            config           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/require.config.js',
-            index            : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/index.js',
-            instantSearch    : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/instantsearch.min.js',
-            jQuery           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/jquery-3.4.1.min.js',
-            loading          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/loading.js',
-            meting           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/Meting.min.js',
-            iscroll          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/iscroll.js',
-            require          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/require.min.js'
-        },
-
-        Font: {
-            LongCang   : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css',
-            Monda      : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css',
-            NotoSansSC : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/NotoSansSC.css',
-            Playball   : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Playball.css',
-            PTMono     : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/PTMono.css',
-            RobotoSlab : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/RobotoSlab.css',
-            Rosario    : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Rosario.css',
-            UbuntuMono : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/UbuntuMono.css'
-        },
-
-        Suffix : {
-            about : '简单地活着, 肆意又精彩.'
-        },
-            
-        Theme : {
-            url  : 'https://github.com/first19326/Hexo-LiveForCode',
-            name : 'Hexo - Live For Code'
-        }  
-    };
-</script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/index.js"></script>
-</body>
-</html>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://planeswalker1205.github.io">ashen</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://planeswalker1205.github.io/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/">https://planeswalker1205.github.io/2020/01/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0v2/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://planeswalker1205.github.io/tags/Git/">Git</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2020/01/28/Spring-Boot%E5%AD%A6%E4%B9%A0v1/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">Spring Boot学习v1</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2020/01/15/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="paginator-prev__text">Git学习笔记1</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8ssh%E5%AF%86%E9%92%A5"><span class="toc-number">1.</span> <span class="toc-text">
+          如何使用ssh密钥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">
+          远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6"><span class="toc-number">3.</span> <span class="toc-text">
+          分支的创建与合并</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E7%AB%A0%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">
+          本章命令总结</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">42</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">0</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">60</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ashen</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v6.1.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

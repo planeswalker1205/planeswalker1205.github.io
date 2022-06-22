@@ -1,64 +1,58 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
-    <meta name="referrer" content="origin">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>排序算法</title>
-    <link rel="shortcut icon" href="#"/>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="算法                           希尔排序       1234567891011121314151617181920212223242526public static void main(String[] args)&amp;#123;    int[] arrs &#x3D; new int[]&amp;#123;5，2，7，6，4，1，3&amp;#125;;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法">
+<meta property="og:url" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="MIRACLE">
+<meta property="og:description" content="算法                           希尔排序       1234567891011121314151617181920212223242526public static void main(String[] args)&amp;#123;    int[] arrs &#x3D; new int[]&amp;#123;5，2，7，6，4，1，3&amp;#125;;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/one.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/two.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/se-one.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/merge-one.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/merge-two.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/merge-three.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/radix-one.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/radix-two.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/heap-one.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/heap-two.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/heap-three.png">
+<meta property="article:published_time" content="2020-05-19T03:23:25.000Z">
+<meta property="article:modified_time" content="2022-05-21T06:05:51.326Z">
+<meta property="article:author" content="ashen">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="排序">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/one.png"><title>排序算法 | MIRACLE</title><link ref="canonical" href="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
 
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/NotoSansSC.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Playball.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/PTMono.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/RobotoSlab.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Rosario.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/UbuntuMono.css">
-
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/post.css">
-    
-        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/normal.css">
-    
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/jquery-3.4.1.min.js"></script>
-
-<meta name="generator" content="Hexo 6.1.0"></head>
-<body>
-    <a id="cover"></a>
-    <div id="header">
-    <div class="header">
-        <div class="vertical">
-            <div class="inner">
-                <h1 class="header-subtitle">排序算法</h1>
-                <div class="header-subinfo">
-                    <p class="article-info-text">
-                        <span>
-                            <i class="iconfont icon-time"></i> 发表时间：2020-05-19
-                        </span>
-                        
-                            <span id="https://planeswalker1205.github.io/2020/05/19/排序算法/" class="leancloud_visitors" data-flag-title="排序算法">
-                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
-                            </span>
-                        
-                        <span>
-                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="https://planeswalker1205.github.io/2020/05/19/排序算法/"></span>
-                        </span>  
-                    </p>                 
-                </div>
-            </div>
-        </div>
-        <canvas id="articleHeaderCanvas"></canvas>
-    </div>
-</div>
-    <div id="container">
-    <div id="content">
-        <div id="article">
-    <div class="toc"></div>
-    <div class="article-body">
-        <h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] arrs = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">5</span>，<span class="number">2</span>，<span class="number">7</span>，<span class="number">6</span>，<span class="number">4</span>，<span class="number">1</span>，<span class="number">3</span>&#125;;</span><br><span class="line">    algoTest.shellself(arrs);</span><br><span class="line">    System.out.println(<span class="string">&quot;主函数结果:&quot;</span>+ Arrays.toString(arrs));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">shellSory</span><span class="params">(<span class="type">int</span>[] arr)</span>&#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">d</span> <span class="operator">=</span> arr.length;d&gt;<span class="number">0</span>;d/=<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> d;i&lt;arr.length;i++)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i-d;j&gt;=<span class="number">0</span>;j-=d)&#123;</span><br><span class="line">                <span class="keyword">if</span>(arr[j]&gt;arr[j+d])&#123;</span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[j];</span><br><span class="line">                    arr[j] = arr[j+d];</span><br><span class="line">                    arr[j+d] = temp ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;第&quot;</span>+(k+<span class="number">1</span>)+<span class="string">&quot;次排序结果:&quot;</span>+Arrays.toString(arr));</span><br><span class="line">        k++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">Tags</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">MIRACLE</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">排序算法</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-05-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-05-21</span></span></div></header><div class="post-body">
+        <h2 id="算法">
+          <a href="#算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#算法" class="headerlink" title="算法"></a>算法</h2>
+      
+        <h3 id="希尔排序">
+          <a href="#希尔排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3>
+      <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] arrs = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">5</span>，<span class="number">2</span>，<span class="number">7</span>，<span class="number">6</span>，<span class="number">4</span>，<span class="number">1</span>，<span class="number">3</span>&#125;;</span><br><span class="line">    algoTest.shellself(arrs);</span><br><span class="line">    System.out.println(<span class="string">&quot;主函数结果:&quot;</span>+ Arrays.toString(arrs));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">shellSory</span><span class="params">(<span class="type">int</span>[] arr)</span>&#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">d</span> <span class="operator">=</span> arr.length;d&gt;<span class="number">0</span>;d/=<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> d;i&lt;arr.length;i++)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i-d;j&gt;=<span class="number">0</span>;j-=d)&#123;</span><br><span class="line">                <span class="keyword">if</span>(arr[j]&gt;arr[j+d])&#123;</span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[j];</span><br><span class="line">                    arr[j] = arr[j+d];</span><br><span class="line">                    arr[j+d] = temp ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;第&quot;</span>+(k+<span class="number">1</span>)+<span class="string">&quot;次排序结果:&quot;</span>+Arrays.toString(arr));</span><br><span class="line">        k++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 <p>1： <strong>最外层For第一次循环</strong></p>
 <p> (1) 第一次d的值为数组长度除以2，即3</p>
@@ -68,11 +62,17 @@
 <p><img src="/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/one.png"></p>
 <p>2： <strong>最外层for第二次循环</strong></p>
 <p><img src="/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/two.png"></p>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">selectsort</span><span class="params">(<span class="type">int</span>[] arrs)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arrs.length; i++)&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">minIndex</span> <span class="operator">=</span> i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i+<span class="number">1</span>; j &lt; arrs.length; j++)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(arrs[j]&lt;arrs[minIndex])&#123;</span><br><span class="line">                minIndex = j;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(minIndex!=i)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arrs[i];</span><br><span class="line">            arrs[i] = arrs[minIndex];</span><br><span class="line">            arrs[minIndex] = temp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        <h3 id="选择排序">
+          <a href="#选择排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3>
+      <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">selectsort</span><span class="params">(<span class="type">int</span>[] arrs)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arrs.length; i++)&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">minIndex</span> <span class="operator">=</span> i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i+<span class="number">1</span>; j &lt; arrs.length; j++)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(arrs[j]&lt;arrs[minIndex])&#123;</span><br><span class="line">                minIndex = j;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(minIndex!=i)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arrs[i];</span><br><span class="line">            arrs[i] = arrs[minIndex];</span><br><span class="line">            arrs[minIndex] = temp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 <p><img src="/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/se-one.png"></p>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p><strong>两组有顺序的归并</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] testArr = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>&#125;;</span><br><span class="line">    System.out.println(<span class="string">&quot;执行前testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line">    algoTest.merge(testArr,<span class="number">0</span>,<span class="number">3</span>,<span class="number">7</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;执行后testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 归并排序</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> arrs  传入的数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> low   数组的起始位置。一般为0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> middle   数组两组有顺序排列的数字的分割点。一般为第一组最后一个数字的下标</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> high    数组结束位置。一般为最后一个数字的下标</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">merge</span><span class="params">(<span class="type">int</span>[] arrs,<span class="type">int</span> low,<span class="type">int</span> middle,<span class="type">int</span> high)</span>&#123;</span><br><span class="line">		</span><br><span class="line">	    <span class="type">int</span>[] tempArr = <span class="keyword">new</span> <span class="title class_">int</span>[high-low+<span class="number">1</span>];</span><br><span class="line">	    <span class="comment">//记录左边部分的下标</span></span><br><span class="line">	    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> low;</span><br><span class="line">	    <span class="comment">//记录右边部分的下标</span></span><br><span class="line">	    <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> middle + <span class="number">1</span>;</span><br><span class="line">	    <span class="comment">//记录临时数组的下标</span></span><br><span class="line">	    <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">	    <span class="keyword">while</span>(i&lt;=middle&amp;&amp;j&lt;=high)&#123;</span><br><span class="line">	        <span class="keyword">if</span>(arrs[i]&lt;arrs[j])&#123;</span><br><span class="line">	            tempArr[index] = arrs[i];</span><br><span class="line">	            i++;</span><br><span class="line">	            index++;</span><br><span class="line">	</span><br><span class="line">	        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	            tempArr[index] = arrs[j];</span><br><span class="line">	            j++;</span><br><span class="line">	            index++;</span><br><span class="line">	        &#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	     * 处理剩余数据</span></span><br><span class="line"><span class="comment">	     */</span></span><br><span class="line">	    <span class="comment">//上述循环结束后左半边部分还剩余</span></span><br><span class="line">	    <span class="keyword">while</span>(i&lt;=middle)&#123;</span><br><span class="line">	        tempArr[index] = arrs[i];</span><br><span class="line">	        i++;</span><br><span class="line">	        index++;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="comment">//第一个循环结束后右半边部分还剩余</span></span><br><span class="line">	    <span class="keyword">while</span> ((j&lt;=high))&#123;</span><br><span class="line">	        tempArr[index] = arrs[j];</span><br><span class="line">	        j++;</span><br><span class="line">	        index++;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="comment">//将临时数组的数据存入原数组</span></span><br><span class="line">	    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;k&lt;tempArr.length;k++)&#123;</span><br><span class="line">	        arrs[k+low] = tempArr[k];</span><br><span class="line">	    &#125;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+        <h3 id="归并排序">
+          <a href="#归并排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3>
+      <p><strong>两组有顺序的归并</strong></p>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] testArr = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>&#125;;</span><br><span class="line">    System.out.println(<span class="string">&quot;执行前testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line">    algoTest.merge(testArr,<span class="number">0</span>,<span class="number">3</span>,<span class="number">7</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;执行后testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 归并排序</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> arrs  传入的数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> low   数组的起始位置。一般为0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> middle   数组两组有顺序排列的数字的分割点。一般为第一组最后一个数字的下标</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> high    数组结束位置。一般为最后一个数字的下标</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">merge</span><span class="params">(<span class="type">int</span>[] arrs,<span class="type">int</span> low,<span class="type">int</span> middle,<span class="type">int</span> high)</span>&#123;</span><br><span class="line">		</span><br><span class="line">	    <span class="type">int</span>[] tempArr = <span class="keyword">new</span> <span class="title class_">int</span>[high-low+<span class="number">1</span>];</span><br><span class="line">	    <span class="comment">//记录左边部分的下标</span></span><br><span class="line">	    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> low;</span><br><span class="line">	    <span class="comment">//记录右边部分的下标</span></span><br><span class="line">	    <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> middle + <span class="number">1</span>;</span><br><span class="line">	    <span class="comment">//记录临时数组的下标</span></span><br><span class="line">	    <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">	    <span class="keyword">while</span>(i&lt;=middle&amp;&amp;j&lt;=high)&#123;</span><br><span class="line">	        <span class="keyword">if</span>(arrs[i]&lt;arrs[j])&#123;</span><br><span class="line">	            tempArr[index] = arrs[i];</span><br><span class="line">	            i++;</span><br><span class="line">	            index++;</span><br><span class="line">	</span><br><span class="line">	        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	            tempArr[index] = arrs[j];</span><br><span class="line">	            j++;</span><br><span class="line">	            index++;</span><br><span class="line">	        &#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	     * 处理剩余数据</span></span><br><span class="line"><span class="comment">	     */</span></span><br><span class="line">	    <span class="comment">//上述循环结束后左半边部分还剩余</span></span><br><span class="line">	    <span class="keyword">while</span>(i&lt;=middle)&#123;</span><br><span class="line">	        tempArr[index] = arrs[i];</span><br><span class="line">	        i++;</span><br><span class="line">	        index++;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="comment">//第一个循环结束后右半边部分还剩余</span></span><br><span class="line">	    <span class="keyword">while</span> ((j&lt;=high))&#123;</span><br><span class="line">	        tempArr[index] = arrs[j];</span><br><span class="line">	        j++;</span><br><span class="line">	        index++;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="comment">//将临时数组的数据存入原数组</span></span><br><span class="line">	    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;k&lt;tempArr.length;k++)&#123;</span><br><span class="line">	        arrs[k+low] = tempArr[k];</span><br><span class="line">	    &#125;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
 
 <p><strong>&gt; 流程</strong></p>
 <ol>
@@ -88,12 +88,15 @@
 </ol>
 <p><img src="/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/merge-three.png"></p>
 <p><strong>使用递归处理无序数组的归并</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] testArr = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">5</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">    System.out.println(<span class="string">&quot;执行前testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line">    algoTest.mergeSort(testArr,<span class="number">0</span>,<span class="number">9</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;执行后testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">mergeSort</span><span class="params">(<span class="type">int</span>[] arr,<span class="type">int</span> low, <span class="type">int</span> high)</span>&#123;</span><br><span class="line">	<span class="comment">//high的值最终会变为0，与low相等。此时high和low的下标同样，无法进行对比</span></span><br><span class="line">    <span class="keyword">if</span>(low&lt;high) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">middle</span> <span class="operator">=</span> (low + high) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//左边的处理</span></span><br><span class="line">        mergeSort(arr, low, middle);</span><br><span class="line">        <span class="comment">//右边的处理</span></span><br><span class="line">        mergeSort(arr, middle+<span class="number">1</span>, high);</span><br><span class="line">        <span class="comment">//归并</span></span><br><span class="line">        merge(arr, low, middle, high);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] testArr = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">5</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">    System.out.println(<span class="string">&quot;执行前testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line">    algoTest.mergeSort(testArr,<span class="number">0</span>,<span class="number">9</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;执行后testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">mergeSort</span><span class="params">(<span class="type">int</span>[] arr,<span class="type">int</span> low, <span class="type">int</span> high)</span>&#123;</span><br><span class="line">	<span class="comment">//high的值最终会变为0，与low相等。此时high和low的下标同样，无法进行对比</span></span><br><span class="line">    <span class="keyword">if</span>(low&lt;high) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">middle</span> <span class="operator">=</span> (low + high) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//左边的处理</span></span><br><span class="line">        mergeSort(arr, low, middle);</span><br><span class="line">        <span class="comment">//右边的处理</span></span><br><span class="line">        mergeSort(arr, middle+<span class="number">1</span>, high);</span><br><span class="line">        <span class="comment">//归并</span></span><br><span class="line">        merge(arr, low, middle, high);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 
 
 
-<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] testArr = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">10</span>,<span class="number">6</span>,<span class="number">52</span>,<span class="number">132</span>,<span class="number">679</span>,<span class="number">25</span>,<span class="number">13</span>,<span class="number">98</span>,<span class="number">4</span>,<span class="number">7</span>&#125;;</span><br><span class="line">    System.out.println(<span class="string">&quot;执行前testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line">    algoTest.radixSort(testArr);</span><br><span class="line">    System.out.println(<span class="string">&quot;执行后testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">radixSort</span><span class="params">(<span class="type">int</span>[] arrs)</span>&#123;</span><br><span class="line">    <span class="comment">//定义一个数用来存放数组中最大的数字</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">maxNum</span> <span class="operator">=</span> Integer.MIN_VALUE;</span><br><span class="line">    <span class="comment">//找出数组中最大的数字</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i&lt;arrs.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arrs[i]&gt;maxNum)&#123;</span><br><span class="line">            maxNum = arrs[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//计算出数组中最大数字的位数</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">times</span> <span class="operator">=</span> (maxNum+<span class="string">&quot;&quot;</span>).length();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义二维数组用来装入每位数的排序结果</span></span><br><span class="line"></span><br><span class="line">    <span class="type">int</span>[][] tempArrs = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>][arrs.length];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义数组用来记录二维数组中每个数组中存放值的数量</span></span><br><span class="line">    <span class="type">int</span>[] counts = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 循环执行的次数依据数组中最大数字的位数</span></span><br><span class="line"><span class="comment">     * 第一次循环找到的是数组中每个数的个位</span></span><br><span class="line"><span class="comment">     * 第二次循环找到的是数组中每个数的十位</span></span><br><span class="line"><span class="comment">     * 以此类推</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>,n = <span class="number">1</span>; i&lt;times; i++,n*=<span class="number">10</span>)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; k &lt;arrs.length; k++)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//找到对应位数的数字</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">sequenceNum</span> <span class="operator">=</span> arrs[k]/n%<span class="number">10</span>;</span><br><span class="line">            <span class="comment">//将此位数的数字存放在对应的二维数组中</span></span><br><span class="line">            tempArrs[sequenceNum][counts[sequenceNum]] = arrs[k];</span><br><span class="line">            <span class="comment">//当二维数组中某一个数组中已经添加了一个值，那么下标应该＋1</span></span><br><span class="line">            counts[sequenceNum]++;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//定义原数组下标</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">oIdx</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>;l&lt;counts.length;l++)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(counts[l]!=<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">g</span> <span class="operator">=</span> <span class="number">0</span>; g&lt;counts[l];g++)&#123;</span><br><span class="line"></span><br><span class="line">                    arrs[oIdx] = tempArrs[l][g];</span><br><span class="line">                    oIdx++;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//重置为0</span></span><br><span class="line">                counts[l] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        <h3 id="基数排序">
+          <a href="#基数排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3>
+      <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] testArr = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">10</span>,<span class="number">6</span>,<span class="number">52</span>,<span class="number">132</span>,<span class="number">679</span>,<span class="number">25</span>,<span class="number">13</span>,<span class="number">98</span>,<span class="number">4</span>,<span class="number">7</span>&#125;;</span><br><span class="line">    System.out.println(<span class="string">&quot;执行前testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line">    algoTest.radixSort(testArr);</span><br><span class="line">    System.out.println(<span class="string">&quot;执行后testArr:&quot;</span>+Arrays.toString(testArr));</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">radixSort</span><span class="params">(<span class="type">int</span>[] arrs)</span>&#123;</span><br><span class="line">    <span class="comment">//定义一个数用来存放数组中最大的数字</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">maxNum</span> <span class="operator">=</span> Integer.MIN_VALUE;</span><br><span class="line">    <span class="comment">//找出数组中最大的数字</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i&lt;arrs.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arrs[i]&gt;maxNum)&#123;</span><br><span class="line">            maxNum = arrs[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//计算出数组中最大数字的位数</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">times</span> <span class="operator">=</span> (maxNum+<span class="string">&quot;&quot;</span>).length();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义二维数组用来装入每位数的排序结果</span></span><br><span class="line"></span><br><span class="line">    <span class="type">int</span>[][] tempArrs = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>][arrs.length];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义数组用来记录二维数组中每个数组中存放值的数量</span></span><br><span class="line">    <span class="type">int</span>[] counts = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 循环执行的次数依据数组中最大数字的位数</span></span><br><span class="line"><span class="comment">     * 第一次循环找到的是数组中每个数的个位</span></span><br><span class="line"><span class="comment">     * 第二次循环找到的是数组中每个数的十位</span></span><br><span class="line"><span class="comment">     * 以此类推</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>,n = <span class="number">1</span>; i&lt;times; i++,n*=<span class="number">10</span>)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; k &lt;arrs.length; k++)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//找到对应位数的数字</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">sequenceNum</span> <span class="operator">=</span> arrs[k]/n%<span class="number">10</span>;</span><br><span class="line">            <span class="comment">//将此位数的数字存放在对应的二维数组中</span></span><br><span class="line">            tempArrs[sequenceNum][counts[sequenceNum]] = arrs[k];</span><br><span class="line">            <span class="comment">//当二维数组中某一个数组中已经添加了一个值，那么下标应该＋1</span></span><br><span class="line">            counts[sequenceNum]++;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//定义原数组下标</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">oIdx</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>;l&lt;counts.length;l++)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(counts[l]!=<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">g</span> <span class="operator">=</span> <span class="number">0</span>; g&lt;counts[l];g++)&#123;</span><br><span class="line"></span><br><span class="line">                    arrs[oIdx] = tempArrs[l][g];</span><br><span class="line">                    oIdx++;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//重置为0</span></span><br><span class="line">                counts[l] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 <p><strong>&gt; 流程</strong></p>
 <ol>
@@ -104,7 +107,10 @@
 <li>可知最大数为679，位数为3.故一共需进行三次流程</li>
 </ol>
 <p><img src="/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/radix-two.png"></p>
-<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><ul>
+
+        <h3 id="堆排序">
+          <a href="#堆排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3>
+      <ul>
 <li><p>升序排列使用大顶堆</p>
 </li>
 <li><p>降序排列使用小顶堆</p>
@@ -118,609 +124,10 @@
 <p> 将根节点和数组的最后一个元素替换位置后，将除了最后一个元素的数组从根节点重新转换为大顶堆；再次将根节点和数组的倒数第二个元素替换，将除了倒数第二个和其之后的数据的数组重新替换为大顶堆；以此递减。递减至根节点之前停止。</p>
 <p>全过程:</p>
 <p><img src="/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/heap-three.png"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> algorithm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">heapSort</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arrs = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">9</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">11</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        heapAsc(arrs);</span><br><span class="line">        <span class="comment">//打印最终结果</span></span><br><span class="line">        System.out.println(Arrays.toString(arrs));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  1. 先将整体数组转换为大顶堆</span></span><br><span class="line"><span class="comment">     *  2. 从根节点开始，将根节点的值放在数组最后一位，再从根节点开始将数组重新转换为</span></span><br><span class="line"><span class="comment">     *  大顶堆(判断的size的值要逐步减去一。即已经将根节点的值放入数组最后的下标不再计</span></span><br><span class="line"><span class="comment">     *  入大顶堆的转化中)。转换后将新获得的根节点的值存入倒数第二位。以此类推。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arrs 传入的数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">heapAsc</span><span class="params">(<span class="type">int</span>[] arrs)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将数组转换为大顶堆</span></span><br><span class="line">        <span class="comment">//定义最后一个叶子节点的父节点</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">finalleafNodeFaIdx</span> <span class="operator">=</span> (arrs.length-<span class="number">2</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="comment">//从最后一个叶子节点的父节点开始向上遍历</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> finalleafNodeFaIdx;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            maxHeap(arrs,arrs.length,i);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将根节点的值放在最后一位并向前递进</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> arrs.length-<span class="number">1</span>;i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">tempVal</span> <span class="operator">=</span> arrs[<span class="number">0</span>];</span><br><span class="line">            arrs[<span class="number">0</span>] = arrs[i];</span><br><span class="line">            arrs[i] = tempVal;</span><br><span class="line">            <span class="comment">//将第一位和最后一位交替后的数组从根节点开始重新转换为大顶堆</span></span><br><span class="line">            maxHeap(arrs,i,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 大顶堆</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arrs 传入的数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> size 代表数组的大小:arr.length</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> index  选定转换成大顶堆的节点</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">maxHeap</span><span class="params">(<span class="type">int</span>[] arrs,<span class="type">int</span> size,<span class="type">int</span> index)</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">leftNodeIdx</span> <span class="operator">=</span> index*<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">rightNodeIdx</span> <span class="operator">=</span> index*<span class="number">2</span>+<span class="number">2</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">maxIdx</span> <span class="operator">=</span> index;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//比较左子节点和父节点</span></span><br><span class="line">        <span class="keyword">if</span>(leftNodeIdx&lt;size&amp;&amp;arrs[leftNodeIdx] &gt; arrs[maxIdx])&#123;</span><br><span class="line"></span><br><span class="line">            maxIdx = leftNodeIdx;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//比较右子节点 和 左子节点、父节点中最大的一个</span></span><br><span class="line">        <span class="keyword">if</span>(rightNodeIdx&lt;size&amp;&amp;arrs[rightNodeIdx] &gt; arrs[maxIdx])&#123;</span><br><span class="line"></span><br><span class="line">            maxIdx = rightNodeIdx;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(maxIdx!=index)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arrs[index];</span><br><span class="line">            arrs[index] = arrs[maxIdx];</span><br><span class="line">            arrs[maxIdx] = temp;</span><br><span class="line">            maxHeap(arrs,size,maxIdx);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-        <p class="suffix-end">__END__</p>
-        <div class="suffix-box">
-            <div class="suffix-box-left">
-                <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Live For Code">
-            </div>
-            <div class="suffix-box-right">
-                <span class="suffix-box-title">文章作者</span>：Live For Code
-                <br>
-                <span class="suffix-box-title">文章出处</span>：<a href="/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" target="_blank">排序算法</a>
-                <br>
-                <span class="suffix-box-title">作者签名</span>：简单地活着, 肆意又精彩.
-                <br>
-                <span class="suffix-box-title">关于主题</span>：<a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
-                <br>
-                <span class="suffix-box-title">版权声明</span>：文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
-                <br>
-            </div>
-            <div style="clear: both;"></div>
-        </div>
-    </div>
-    <div class="article-footer">
-        
-        
-            <div class="tag">
-                标签：
-                
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
-                
-                    <a href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>
-                
-            </div>
-        
-        <div class="article-prev-next">
-            
-                <a href="/2020/05/19/Redis/" class="prev-prefix">« </a> 上一篇：    <a href="/2020/05/19/Redis/" title="发布于 2020-05-19 02:07">Redis</a>
-                <br>
-            
-            
-                <a href="/2020/04/04/%E6%9E%9A%E4%B8%BE/" class="next-prefix">» </a> 下一篇：    <a href="/2020/04/04/%E6%9E%9A%E4%B8%BE/" title="发布于 2020-04-04 07:55">枚举</a>
-            
-        </div>
-    </div>
-    
-    <div class="article-comments">
-        <div class="comments-title">
-            评论列表
-        </div>
-        <div class="comments-content">
-        </div>
-    </div>
-
-</div>
-
-    </div>
-</div>
-    <div id="footer"></div>
-    <div id="sidebar">
-    <div class="menu-wrap" style="display:none;">
-        <nav class="menu">
-            <div class="menu-introduce"> 
-                <div class="introduce-avatar"></div> 
-                <div class="introduce-info"> 
-                    <div class="introduce-user"><span></span></div>        
-                </div> 
-            </div> 
-            <div class="menu-list">
-                <ul></ul> 
-            </div> 
-            <div class="menu-link"></div> 
-        </nav>
-        <button class="menu-button-close"></button>
-        <div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
-            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
-                <path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
-            </svg>
-        </div>
-    </div>
-    <button class="menu-button-open">MENU</button>
-    <div class="menu-cover"></div>
-</div>
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/search.css">
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/iscroll.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/instantsearch.min.js"></script>
-<div class="search-window">
-    <div class="search-content">
-        <div class="search-content-icon">
-            <i class="iconfont icon-search"></i>
-        </div>
-        <div id="search-input" class="search-input"></div>
-    </div>
-
-    <div class="search-scroll">
-        <div class="search-result">
-            <div id="search-stats" class="search-stats"></div>
-            <div id="search-hits"></div>
-            <div id="search-pagination" class="search-pagination"></div>
-        </div>
-    </div>
-
-    <span class="search-close-icon">
-        <i class="iconfont icon-close"></i>
-    </span>
-</div>
-    <div id="tools">
-    <div class="progressbar-top"></div>
-
-    
-        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/APlayer.css">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/APlayer.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/Meting.min.js"></script>
-        <meting-js id="3778678" lrcshow="false" server="netease" type="playlist" fixed="true" autoplay="false" loop="all" order="random" preload="auto" volume="0.67" mutex="true"></meting-js>
-    
-    
-    <div class="wrap-right"></div>
-    <div class="loading"></div>
-</div>
-    <script>
-    window.config = {
-        GitHubUserName     : 'first19326',
-        GitHubRepositories : 'Hexo-LiveForCode',
-
-        BlogUser      : 'Live For Code',
-        BlogAvatar    : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg',
-        BlogStartDate : '2020-01-01',
-
-        WebsiteTitleBlur         : '(◍´꒳`◍) Hi, Live For Code',
-        WebsiteTitleBlurTimeOut  : 500,
-        WebsiteTitleFocus        : '(*´∇｀*) 欢迎回来!',
-        WebsiteTitleFocusTimeOut : 1000,
-        WebsiteFavicon           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/website/logo.png',
-
-        ProgressBar: {
-            id       : 'topProgressBar',
-            color    : '#77B6FF',
-            height   : '2px',
-            duration : 0.2
-        },
-
-        Loading: {
-            rebound: {
-                tension  : 16,
-                friction : 5
-            },
-            spinner: {
-                id     : 'spinner',
-                radius : 90,
-                sides  : 3,
-                depth  : 4,
-                colors : {
-                    background : '#F0F0F0',
-                    stroke     : '#272633',
-                    base       : '',
-                    child      : '#272633'
-                },
-                alwaysForward : true,
-                restAt        : 0.5,
-                renderBase    : false
-            }
-        },
-
-        HomeHeaderAnimationRendered : true,
-        HomeHeaderAnimation         : {
-            radius      : 15,
-            density     : 0.2,
-            color       : 'rgba(255, 255, 255, .2)',
-            clearOffset : 0.3
-        },
-
-        ArticleHeaderAnimationRendered : false,
-        ArticleHeaderAnimation         : {
-            triW                  : 14,
-            triH                  : 20,
-            neighbours            : [
-                
-                    'side',
-                
-                    'top',
-                
-                    'bottom',
-                
-            ],
-            speedTrailAppear      : 0.1,
-            speedTrailDisappear   : 0.1,
-            speedTriOpen          : 1,
-            trailMaxLength        : 30,
-            trailIntervalCreation : 100,
-            delayBeforeDisappear  : 2,
-            colors                : [
-                
-                    '#96EDA6',
-                
-                    '#5BC6A9',
-                
-                    '#38668C',
-                
-                    '#374D84',
-                
-                    '#BED5CB',
-                
-                    '#62ADC6',
-                
-                    '#8EE5DE',
-                
-                    '#304E7B',
-                
-            ]
-        },
-
-        BackAnimationRendered          : true,
-        IEBrowserBackAnimationRendered : false,
-        BackAnimation                  : {
-            colorSaturation  : '60%',
-            colorBrightness  : '50%',
-            colorAlpha       : 0.5,
-            colorCycleSpeed  : 5,
-            verticalPosition : 'random',
-            horizontalSpeed  : 200,
-            ribbonCount      : 3,
-            strokeSize       : 0,
-            parallaxAmount   : -0.2,
-            animateSections  : true
-        },
-
-        HomeHeaderImage : [
-            
-                'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpg',
-            
-                'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpeg',
-            
-        ],
-        HomeBannerText  : '',
-
-        ArticleHeaderImage : [
-            
-                'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/article.jpg',
-            
-        ],
-
-        OtherBannerText : '',
-
-        MenuList : [
-            
-                {
-                    name   : '首页',
-                    href   : '/',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '标签',
-                    href   : '/tag',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '分类',
-                    href   : '/category',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '归档',
-                    href   : '/archive',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '赞赏',
-                    href   : '/donate',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '关于',
-                    href   : '/about',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '订阅',
-                    href   : '/atom.xml',    
-                    target : '_blank',
-                    class  : ''
-                },
-            
-                {
-                    name   : '搜索',
-                    href   : '',    
-                    target : '',
-                    class  : 'search'
-                },
-            
-                {
-                    name   : '留言板',
-                    href   : '/comment',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '友情链接',
-                    href   : '/friend',    
-                    target : '',
-                    class  : ''
-                },
-            
-        ],
-        MenuLink : [
-            
-                
-                    {
-                        icon : 'icon-weibo', 
-                        url  : ''
-                    },
-                
-                    {
-                        icon : 'icon-wechat', 
-                        url  : ''
-                    },
-                
-                    {
-                        icon : 'icon-qq', 
-                        url  : ''
-                    },
-                
-                    {
-                        icon : 'icon-github', 
-                        url  : 'https://github.com/first19326'
-                    },
-                
-            
-        ],
-
-        FooterStyle : 2,
-        BottomText  : {
-            icon    : 'like-fill',
-            left    : '人生若只如初见',
-            right   : '何事秋风悲画扇'
-        },
-        ThemeInfo   : true,
-
-        ConsoleList : [
-            
-                
-                    [
-                        
-                            
-                                'Based on cnblogs theme SimpleMemory.',
-                            
-                                '',
-                            
-                        
-                    ],
-                
-                    [
-                        
-                            
-                                'SimpleMemory Author:',
-                            
-                                'BNDong',
-                            
-                        
-                    ],
-                
-                    [
-                        
-                            
-                                'Theme:',
-                            
-                                'LiveForCode',
-                            
-                        
-                    ],
-                
-            
-        ],
-
-        FontIconExtend : '',
-
-        Donate : {
-            paypal  : '',
-            bitcoin : '',
-            alipay  : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/donate/alipay.png',
-            wechat  : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/donate/wechat.png'
-        },
-
-        Code : {
-            style : 'normal'
-        },  
-
-        Search : {
-            applicationID : '010C3EANT8',
-            apiKey        : 'c7abab9f11b79102b9aff7fe6d41447d',
-            indexName     : 'Notes',
-            hits          : {
-                page : 10
-            },
-            labels        : {
-                placeholder : '搜索',
-                empty       : '未发现与 「${query}」 相关的内容',
-                stats       : '${hits} 条相关条目，使用了 ${time} 毫秒',
-            }
-        }, 
-
-        Valine : {
-            switch         : true,
-            el             : '.comments-content',
-            appId          : 'srhKtvWPQTWYKh3qX8G8M7v0-gzGzoHsz',
-            appKey         : '8uVSP1q6UlALVC5igYfIfv2h',
-            serverURLs     : '',
-            placeholder    : '你是我一生只会遇见一次的惊喜...',
-            avatar         : 'mm',
-            meta           : 'nick,mail,link',
-            requiredFields : 'nick,mail',
-            pageSize       : 5,
-            lang           : 'zh-cn',
-            visitor        : true,
-            enableQQ       : true
-        },
-
-        Tocbot : {
-            switch                : true,
-            tocSelector           : '.toc',
-            contentSelector       : '.article-body',
-            headingSelector       : 'h1, h2, h3, h4, h5',
-            headingsOffset        : 0,
-            scrollSmooth          : true,
-            scrollSmoothOffset    : -5,
-            positionFixedSelector : '.toc',
-            positionFixedClass    : 'toc-fixed',
-            fixedSidebarOffset    : '',
-        },
-
-        Require : {
-            baseUrl     : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/',
-            waitSeconds : 100
-        },
-
-        Music : {
-            type : 'Meting'
-        },
-        APlayer : {
-            container : '.aplayer',
-            fixed     : true,
-            autoplay  : false,
-            loop      : 'all',
-            order     : 'random',
-            preload   : 'auto',
-            volume    : 0.67,
-            mutex     : true,
-            lrcType   : 3,
-            audio     : [
-                
-                    {
-                        name   : 'aLIEz',
-                        artist : 'mizuki（瑞葵）',
-                        cover  : '/music/cover/aLIEz.jpg',
-                        url    : '/music/song/aLIEz.mp3',
-                        lrc    : '/music/lrc/aLIEz.lrc'
-                    },
-                
-                    {
-                        name   : 'Endless Tears',
-                        artist : 'CLIFF EDGE',
-                        cover  : '/music/cover/Endless Tears.jpg',
-                        url    : '/music/song/Endless Tears.mp3',
-                        lrc    : '/music/lrc/Endless Tears.lrc'
-                    },
-                
-                    {
-                        name   : 'Miracle',
-                        artist : 'Cascada',
-                        cover  : '/music/cover/Miracle.jpg',
-                        url    : '/music/song/Miracle.mp3',
-                        lrc    : '/music/lrc/Miracle.lrc'
-                    },
-                
-                    {
-                        name   : 'Roll The Dice',
-                        artist : '高珊',
-                        cover  : '/music/cover/Roll The Dice.jpg',
-                        url    : '/music/song/Roll The Dice.mp3',
-                        lrc    : '/music/lrc/Roll The Dice.lrc'
-                    },
-                
-                    {
-                        name   : 'See You Again',
-                        artist : 'Charlie Puth, Wiz Khalifa',
-                        cover  : '/music/cover/See You Again.jpg',
-                        url    : '/music/song/See You Again.mp3',
-                        lrc    : '/music/lrc/See You Again.lrc'
-                    },
-                
-                    {
-                        name   : 'Traveling Light',
-                        artist : 'Joel Hanson, Sara Groves',
-                        cover  : '/music/cover/Traveling Light.jpg',
-                        url    : '/music/song/Traveling Light.mp3',
-                        lrc    : '/music/lrc/Traveling Light.lrc'
-                    },
-                
-                    {
-                        name   : '痴心绝对',
-                        artist : '李圣杰',
-                        cover  : '/music/cover/痴心绝对.jpg',
-                        url    : '/music/song/痴心绝对.mp3',
-                        lrc    : '/music/lrc/痴心绝对.lrc'
-                    },
-                
-                    {
-                        name   : '好想大声说爱你',
-                        artist : 'BAAD（バード）',
-                        cover  : '/music/cover/好想大声说爱你.jpg',
-                        url    : '/music/song/好想大声说爱你.mp3',
-                        lrc    : '/music/lrc/好想大声说爱你.lrc'
-                    },
-                
-            ]
-        },
-        Meting : {
-            id       : '3778678', 
-            lrcshow  : false, 
-            server   : 'netease', 
-            type     : 'playlist', 
-            fixed    : true, 
-            autoplay : false, 
-            loop     : 'all', 
-            order    : 'random', 
-            preload  : 'auto', 
-            volume   : 0.67, 
-            mutex    : true
-        },
-
-        Mouse : {
-            enable  : true,
-            options : {
-                size  : 6,
-                sizeF : 24
-            }
-        },
-
-        LazyLoad : {
-            default : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/website/lazyload.svg'
-        },
-  
-        Style : {
-            aplayer          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/APlayer.css',
-            archive          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/archive.css',
-            donate           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/donate.css',
-            fancybox         : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/jquery.fancybox.css',
-            footer           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/footer.css',
-            iconfont         : 'https://at.alicdn.com/t/font_1546312_l3yohatebw.css',
-            index            : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/index.css',
-            menuBubble       : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/menu-bubble.css',
-            page             : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/page.css',
-            post             : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/post.css',
-            search           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/search.css',
-            tocbot           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/tocbot.css',
-            normal           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/normal.css',
-            night            : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/night.css',
-            clipboard        : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/clipboard.css'
-        },
-
-        Script: {
-            aplayer          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/APlayer.min.js',
-            config           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/require.config.js',
-            index            : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/index.js',
-            instantSearch    : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/instantsearch.min.js',
-            jQuery           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/jquery-3.4.1.min.js',
-            loading          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/loading.js',
-            meting           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/Meting.min.js',
-            iscroll          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/iscroll.js',
-            require          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/require.min.js'
-        },
-
-        Font: {
-            LongCang   : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css',
-            Monda      : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css',
-            NotoSansSC : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/NotoSansSC.css',
-            Playball   : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Playball.css',
-            PTMono     : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/PTMono.css',
-            RobotoSlab : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/RobotoSlab.css',
-            Rosario    : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Rosario.css',
-            UbuntuMono : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/UbuntuMono.css'
-        },
-
-        Suffix : {
-            about : '简单地活着, 肆意又精彩.'
-        },
-            
-        Theme : {
-            url  : 'https://github.com/first19326/Hexo-LiveForCode',
-            name : 'Hexo - Live For Code'
-        }  
-    };
-</script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/index.js"></script>
-</body>
-</html>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> algorithm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">heapSort</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arrs = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">9</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">11</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        heapAsc(arrs);</span><br><span class="line">        <span class="comment">//打印最终结果</span></span><br><span class="line">        System.out.println(Arrays.toString(arrs));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  1. 先将整体数组转换为大顶堆</span></span><br><span class="line"><span class="comment">     *  2. 从根节点开始，将根节点的值放在数组最后一位，再从根节点开始将数组重新转换为</span></span><br><span class="line"><span class="comment">     *  大顶堆(判断的size的值要逐步减去一。即已经将根节点的值放入数组最后的下标不再计</span></span><br><span class="line"><span class="comment">     *  入大顶堆的转化中)。转换后将新获得的根节点的值存入倒数第二位。以此类推。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arrs 传入的数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">heapAsc</span><span class="params">(<span class="type">int</span>[] arrs)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将数组转换为大顶堆</span></span><br><span class="line">        <span class="comment">//定义最后一个叶子节点的父节点</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">finalleafNodeFaIdx</span> <span class="operator">=</span> (arrs.length-<span class="number">2</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="comment">//从最后一个叶子节点的父节点开始向上遍历</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> finalleafNodeFaIdx;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            maxHeap(arrs,arrs.length,i);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将根节点的值放在最后一位并向前递进</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> arrs.length-<span class="number">1</span>;i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">tempVal</span> <span class="operator">=</span> arrs[<span class="number">0</span>];</span><br><span class="line">            arrs[<span class="number">0</span>] = arrs[i];</span><br><span class="line">            arrs[i] = tempVal;</span><br><span class="line">            <span class="comment">//将第一位和最后一位交替后的数组从根节点开始重新转换为大顶堆</span></span><br><span class="line">            maxHeap(arrs,i,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 大顶堆</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arrs 传入的数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> size 代表数组的大小:arr.length</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> index  选定转换成大顶堆的节点</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">maxHeap</span><span class="params">(<span class="type">int</span>[] arrs,<span class="type">int</span> size,<span class="type">int</span> index)</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">leftNodeIdx</span> <span class="operator">=</span> index*<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">rightNodeIdx</span> <span class="operator">=</span> index*<span class="number">2</span>+<span class="number">2</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">maxIdx</span> <span class="operator">=</span> index;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//比较左子节点和父节点</span></span><br><span class="line">        <span class="keyword">if</span>(leftNodeIdx&lt;size&amp;&amp;arrs[leftNodeIdx] &gt; arrs[maxIdx])&#123;</span><br><span class="line"></span><br><span class="line">            maxIdx = leftNodeIdx;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//比较右子节点 和 左子节点、父节点中最大的一个</span></span><br><span class="line">        <span class="keyword">if</span>(rightNodeIdx&lt;size&amp;&amp;arrs[rightNodeIdx] &gt; arrs[maxIdx])&#123;</span><br><span class="line"></span><br><span class="line">            maxIdx = rightNodeIdx;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(maxIdx!=index)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arrs[index];</span><br><span class="line">            arrs[index] = arrs[maxIdx];</span><br><span class="line">            arrs[maxIdx] = temp;</span><br><span class="line">            maxHeap(arrs,size,maxIdx);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://planeswalker1205.github.io">ashen</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">https://planeswalker1205.github.io/2020/05/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://planeswalker1205.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://planeswalker1205.github.io/tags/%E6%8E%92%E5%BA%8F/">排序</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2020/05/19/Redis/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">Redis</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2020/04/04/%E6%9E%9A%E4%B8%BE/"><span class="paginator-prev__text">枚举</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">
+          算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F"><span class="toc-number">1.1.</span> <span class="toc-text">
+          希尔排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="toc-number">1.2.</span> <span class="toc-text">
+          选择排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-number">1.3.</span> <span class="toc-text">
+          归并排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F"><span class="toc-number">1.4.</span> <span class="toc-text">
+          基数排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F"><span class="toc-number">1.5.</span> <span class="toc-text">
+          堆排序</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">42</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">0</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">60</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ashen</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v6.1.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

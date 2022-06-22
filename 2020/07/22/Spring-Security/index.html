@@ -1,75 +1,64 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
-    <meta name="referrer" content="origin">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>Spring Security</title>
-    <link rel="shortcut icon" href="#"/>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="安全–Spring Security              为了使用SpringSecurity，需要在Maven配置文件中引入对应的依赖     123456&lt;dependency&gt;	&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;spri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Security">
+<meta property="og:url" content="https://planeswalker1205.github.io/2020/07/22/Spring-Security/index.html">
+<meta property="og:site_name" content="MIRACLE">
+<meta property="og:description" content="安全–Spring Security              为了使用SpringSecurity，需要在Maven配置文件中引入对应的依赖     123456&lt;dependency&gt;	&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;spri">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/07/22/Spring-Security/QQ%E6%88%AA%E5%9B%BE20200722153547.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/07/22/Spring-Security/QQ%E6%88%AA%E5%9B%BE20200722154351.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/07/22/Spring-Security/tabUser.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/07/22/Spring-Security/tabRole.png">
+<meta property="og:image" content="https://planeswalker1205.github.io/2020/07/22/Spring-Security/tabUserRole.png">
+<meta property="article:published_time" content="2020-07-22T07:26:06.000Z">
+<meta property="article:modified_time" content="2022-05-21T06:05:51.307Z">
+<meta property="article:author" content="ashen">
+<meta property="article:tag" content="Intellij IDEA">
+<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="Spring Security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://planeswalker1205.github.io/2020/07/22/Spring-Security/QQ%E6%88%AA%E5%9B%BE20200722153547.png"><title>Spring Security | MIRACLE</title><link ref="canonical" href="https://planeswalker1205.github.io/2020/07/22/Spring-Security/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
 
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/NotoSansSC.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Playball.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/PTMono.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/RobotoSlab.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Rosario.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/UbuntuMono.css">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">Tags</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">MIRACLE</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Spring Security</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-07-22</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-05-21</span></span></div></header><div class="post-body"><span id="more"></span>
 
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/post.css">
-    
-        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/normal.css">
-    
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/jquery-3.4.1.min.js"></script>
-
-<meta name="generator" content="Hexo 6.1.0"></head>
-<body>
-    <a id="cover"></a>
-    <div id="header">
-    <div class="header">
-        <div class="vertical">
-            <div class="inner">
-                <h1 class="header-subtitle">Spring Security</h1>
-                <div class="header-subinfo">
-                    <p class="article-info-text">
-                        <span>
-                            <i class="iconfont icon-time"></i> 发表时间：2020-07-22
-                        </span>
-                        
-                            <span id="https://planeswalker1205.github.io/2020/07/22/Spring-Security/" class="leancloud_visitors" data-flag-title="Spring Security">
-                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
-                            </span>
-                        
-                        <span>
-                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="https://planeswalker1205.github.io/2020/07/22/Spring-Security/"></span>
-                        </span>  
-                    </p>                 
-                </div>
-            </div>
-        </div>
-        <canvas id="articleHeaderCanvas"></canvas>
-    </div>
-</div>
-    <div id="container">
-    <div id="content">
-        <div id="article">
-    <div class="toc"></div>
-    <div class="article-body">
-        <span id="more"></span>
-<h1 id="安全–Spring-Security"><a href="#安全–Spring-Security" class="headerlink" title="安全–Spring Security"></a>安全–Spring Security</h1><table>
+        <h1 id="安全–Spring-Security">
+          <a href="#安全–Spring-Security" class="heading-link"><i class="fas fa-link"></i></a><a href="#安全–Spring-Security" class="headerlink" title="安全–Spring Security"></a>安全–Spring Security</h1>
+      <div class="table-container"><table>
 <tr>
 <td bgcolor="Aquamarine">
     <b>为了使用SpringSecurity，需要在Maven配置文件中引入对应的依赖</b>
 </td>
 </tr>
-</table>
+</table></div>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
 
-<h2 id="简单安全认证"><a href="#简单安全认证" class="headerlink" title="简单安全认证"></a>简单安全认证</h2><blockquote>
+
+        <h2 id="简单安全认证">
+          <a href="#简单安全认证" class="heading-link"><i class="fas fa-link"></i></a><a href="#简单安全认证" class="headerlink" title="简单安全认证"></a>简单安全认证</h2>
+      <blockquote>
 <p>引入依赖完成后，直接启动SpringBoot的应用也会启用Spring Security，启动完后可以看到如下打印随机生成密码的日志(需保证日志级别为INFO或以下才能看到)</p>
 </blockquote>
 <p><img src="/2020/07/22/Spring-Security/QQ%E6%88%AA%E5%9B%BE20200722153547.png"></p>
@@ -79,10 +68,13 @@
 
 <p><img src="/2020/07/22/Spring-Security/QQ%E6%88%AA%E5%9B%BE20200722154351.png"></p>
 <p><strong>Spring Boot的自动配置机制，允许开发者快速修改用户名和密码</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#自定义用户名和密码</span><br><span class="line">spring.security.user.name=myusers</span><br><span class="line">spring.security.user.password=darksouls</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#自定义用户名和密码</span><br><span class="line">spring.security.user.name=myusers</span><br><span class="line">spring.security.user.password=darksouls</span><br></pre></td></tr></table></div></figure>
 
 <p>这样就可以使用上述配置的用户名和密码而不再使用固定的用户名和随机生成的密码</p>
-<h2 id="使用WebSecurityConfigurerAdapter自定义-x2F-自定义用户服务信息"><a href="#使用WebSecurityConfigurerAdapter自定义-x2F-自定义用户服务信息" class="headerlink" title="使用WebSecurityConfigurerAdapter自定义&#x2F;自定义用户服务信息"></a>使用WebSecurityConfigurerAdapter自定义&#x2F;自定义用户服务信息</h2><table>
+
+        <h2 id="使用WebSecurityConfigurerAdapter自定义-x2F-自定义用户服务信息">
+          <a href="#使用WebSecurityConfigurerAdapter自定义-x2F-自定义用户服务信息" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用WebSecurityConfigurerAdapter自定义-x2F-自定义用户服务信息" class="headerlink" title="使用WebSecurityConfigurerAdapter自定义&#x2F;自定义用户服务信息"></a>使用WebSecurityConfigurerAdapter自定义&#x2F;自定义用户服务信息</h2>
+      <div class="table-container"><table>
 <tr>
 <td bgcolor="#FFFAF0">
     <b>
@@ -90,21 +82,27 @@
     </b>
 </td>
 </tr>
-</table>
+</table></div>
 
-<h3 id="使用内存签名服务"><a href="#使用内存签名服务" class="headerlink" title="使用内存签名服务"></a>使用内存签名服务</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.rediscachetest.tools;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ***</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">securityConf</span> <span class="keyword">extends</span> <span class="title class_">WebSecurityConfigurerAdapter</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">        <span class="comment">//密码编码器</span></span><br><span class="line"></span><br><span class="line">        <span class="type">PasswordEncoder</span> <span class="variable">passwordEncoder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>();</span><br><span class="line">        <span class="comment">//使用内存存储</span></span><br><span class="line">        InMemoryUserDetailsManagerConfigurer&lt;AuthenticationManagerBuilder&gt; userConfig = auth.inMemoryAuthentication()</span><br><span class="line">                <span class="comment">//设置密码编译器</span></span><br><span class="line">                .passwordEncoder(passwordEncoder);</span><br><span class="line">        <span class="comment">//生成abc加密后的密码</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">secrePass</span> <span class="operator">=</span> passwordEncoder.encode(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;abc加密后的密码:&quot;</span>+secrePass);</span><br><span class="line">        <span class="comment">//注册用户admin，密码abc，并赋予USER和ADMIN权限</span></span><br><span class="line">        userConfig.withUser(<span class="string">&quot;admin&quot;</span>)</span><br><span class="line">                .password(secrePass)</span><br><span class="line">                .authorities(<span class="string">&quot;ROLE_USER&quot;</span>,<span class="string">&quot;ROLE_ADMIN&quot;</span>);</span><br><span class="line">        <span class="comment">//生成123456加密后的密码</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">secreONETWO</span> <span class="operator">=</span> passwordEncoder.encode(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;123456加密后的密码:&quot;</span>+secreONETWO);</span><br><span class="line">        <span class="comment">//注册用户myuser，密码为123456并赋予USER角色权限</span></span><br><span class="line">        userConfig.withUser(<span class="string">&quot;myuser&quot;</span>)</span><br><span class="line">                .password(secreONETWO)</span><br><span class="line">                .authorities(<span class="string">&quot;ROLE_USER&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+        <h3 id="使用内存签名服务">
+          <a href="#使用内存签名服务" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用内存签名服务" class="headerlink" title="使用内存签名服务"></a>使用内存签名服务</h3>
+      <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.rediscachetest.tools;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ***</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">securityConf</span> <span class="keyword">extends</span> <span class="title class_">WebSecurityConfigurerAdapter</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">        <span class="comment">//密码编码器</span></span><br><span class="line"></span><br><span class="line">        <span class="type">PasswordEncoder</span> <span class="variable">passwordEncoder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>();</span><br><span class="line">        <span class="comment">//使用内存存储</span></span><br><span class="line">        InMemoryUserDetailsManagerConfigurer&lt;AuthenticationManagerBuilder&gt; userConfig = auth.inMemoryAuthentication()</span><br><span class="line">                <span class="comment">//设置密码编译器</span></span><br><span class="line">                .passwordEncoder(passwordEncoder);</span><br><span class="line">        <span class="comment">//生成abc加密后的密码</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">secrePass</span> <span class="operator">=</span> passwordEncoder.encode(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;abc加密后的密码:&quot;</span>+secrePass);</span><br><span class="line">        <span class="comment">//注册用户admin，密码abc，并赋予USER和ADMIN权限</span></span><br><span class="line">        userConfig.withUser(<span class="string">&quot;admin&quot;</span>)</span><br><span class="line">                .password(secrePass)</span><br><span class="line">                .authorities(<span class="string">&quot;ROLE_USER&quot;</span>,<span class="string">&quot;ROLE_ADMIN&quot;</span>);</span><br><span class="line">        <span class="comment">//生成123456加密后的密码</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">secreONETWO</span> <span class="operator">=</span> passwordEncoder.encode(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;123456加密后的密码:&quot;</span>+secreONETWO);</span><br><span class="line">        <span class="comment">//注册用户myuser，密码为123456并赋予USER角色权限</span></span><br><span class="line">        userConfig.withUser(<span class="string">&quot;myuser&quot;</span>)</span><br><span class="line">                .password(secreONETWO)</span><br><span class="line">                .authorities(<span class="string">&quot;ROLE_USER&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
 
 
 <blockquote>
 <p>在Spring 5的Security中都要求使用密码编译器，否则会发生异常</p>
 </blockquote>
-<h3 id="使用数据库定义用户认证服务"><a href="#使用数据库定义用户认证服务" class="headerlink" title="使用数据库定义用户认证服务"></a>使用数据库定义用户认证服务</h3><p><strong>1. 创建用户表，角色表，用户角色表</strong></p>
+
+        <h3 id="使用数据库定义用户认证服务">
+          <a href="#使用数据库定义用户认证服务" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用数据库定义用户认证服务" class="headerlink" title="使用数据库定义用户认证服务"></a>使用数据库定义用户认证服务</h3>
+      <p><strong>1. 创建用户表，角色表，用户角色表</strong></p>
 <p><font color="orange">用户角色表关联用户表和角色表</font></p>
 <p><img src="/2020/07/22/Spring-Security/tabUser.png"></p>
 <p><img src="/2020/07/22/Spring-Security/tabRole.png"></p>
 <p><img src="/2020/07/22/Spring-Security/tabUserRole.png"></p>
 <p><strong>2. 使用数据库验证</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 数据库定义用户认证服务</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//注入数据源</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">DataSource</span> <span class="variable">dataSource</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"><span class="comment">//使用用户名称查询密码</span></span><br><span class="line"><span class="type">String</span> <span class="variable">pwdQuery</span> <span class="operator">=</span> <span class="string">&quot; select user_name,user_password,available from tab_user where user_name = ? &quot;</span>;</span><br><span class="line"><span class="comment">//使用用户名称查询角色信息</span></span><br><span class="line"><span class="type">String</span> <span class="variable">roleQuery</span> <span class="operator">=</span> <span class="string">&quot; select u.user_name,r.role_name from tab_user u,tab_user_role ur,tab_role r where u.id = ur.user_id and r.id = ur.role_id and u.user_name=? &quot;</span>;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//密码编译器</span></span><br><span class="line">    auth.</span><br><span class="line">            jdbcAuthentication()</span><br><span class="line">            <span class="comment">//密码编译器</span></span><br><span class="line">            .passwordEncoder(<span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>())</span><br><span class="line">            <span class="comment">//数据源</span></span><br><span class="line">            .dataSource(dataSource)</span><br><span class="line">            <span class="comment">//查询用户</span></span><br><span class="line">            .usersByUsernameQuery(pwdQuery)</span><br><span class="line">            <span class="comment">//赋予权限</span></span><br><span class="line">            .authoritiesByUsernameQuery(roleQuery);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 数据库定义用户认证服务</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//注入数据源</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">DataSource</span> <span class="variable">dataSource</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"><span class="comment">//使用用户名称查询密码</span></span><br><span class="line"><span class="type">String</span> <span class="variable">pwdQuery</span> <span class="operator">=</span> <span class="string">&quot; select user_name,user_password,available from tab_user where user_name = ? &quot;</span>;</span><br><span class="line"><span class="comment">//使用用户名称查询角色信息</span></span><br><span class="line"><span class="type">String</span> <span class="variable">roleQuery</span> <span class="operator">=</span> <span class="string">&quot; select u.user_name,r.role_name from tab_user u,tab_user_role ur,tab_role r where u.id = ur.user_id and r.id = ur.role_id and u.user_name=? &quot;</span>;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//密码编译器</span></span><br><span class="line">    auth.</span><br><span class="line">            jdbcAuthentication()</span><br><span class="line">            <span class="comment">//密码编译器</span></span><br><span class="line">            .passwordEncoder(<span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>())</span><br><span class="line">            <span class="comment">//数据源</span></span><br><span class="line">            .dataSource(dataSource)</span><br><span class="line">            <span class="comment">//查询用户</span></span><br><span class="line">            .usersByUsernameQuery(pwdQuery)</span><br><span class="line">            <span class="comment">//赋予权限</span></span><br><span class="line">            .authoritiesByUsernameQuery(roleQuery);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 <blockquote>
 <p>注意方法中<font color="#0000FF"> .passwordEncoder(new BCryptPasswordEncoder())</font>中的<font color="#0000FF">new BCryptPasswordEncoder()</font>方法。Spring 5的Security中都要求使用密码编码器，这里指定的是<strong>BCryptPasswordEncoder</strong>实例，如果不想指定的话可以写成<font color="#0000FF">NoOpPasswordEncoder.getInstance()</font>，不过此方法已经画横线了所以最好不用。</p>
@@ -113,7 +111,10 @@
 <p><font color="#0000FF">usersByUsernameQuery</font>方法通过定义的sql语句返回3个列。分别是用户名，密码和布尔值，这样就可以对用户名和密码进行验证了。<font color="#0000FF">authoritiesByUsernameQuery</font>方法会用roleQuery定义的SQL通过用户名称查找角色名称，根据查询的结果赋予权限，如果这条SQL语句返回的时多条，那么就会给这个用户赋予多个角色</p>
 </blockquote>
 <p><strong>值得一提的是，如果使用了<font color="blue">BCryptPasswordEncoder</font>类型的编码器进行加密，那么在保存在数据库中密码的格式就需要是BCryt格式的，否则就会报错。比如密码为”123456789”,那么保存在数据库中的就应该是<font color="#7FFFD4">$2a$10$rrZC9HLI2CwN4WWrVSf9Ie0APh.WVRAzvdcX0Pzm5MpIqjJKjNaNK</font>，切记这只是保存在数据库中的密码格式，如果登录验证时使用的密码一定是”123456789”，它会转换成BCryt格式的密文进行比对。而不是<font color="#7FFFD4">$2a$10$rrZC9HLI2CwN4WWrVSf9Ie0APh.WVRAzvdcX0Pzm5MpIqjJKjNaNK</font>。</strong></p>
-<h3 id="限制请求"><a href="#限制请求" class="headerlink" title="限制请求"></a>限制请求</h3><table>
+
+        <h3 id="限制请求">
+          <a href="#限制请求" class="heading-link"><i class="fas fa-link"></i></a><a href="#限制请求" class="headerlink" title="限制请求"></a>限制请求</h3>
+      <div class="table-container"><table>
 <tr>
 <td bgcolor="Beige">
     <b>
@@ -121,643 +122,46 @@
     </b>
 </td>
 </tr>
-</table>
+</table></div>
 
 <p><strong>1. 配置请求路径访问权限</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.rediscachetest.tools;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.authentication.configurers.provisioning.InMemoryUserDetailsManagerConfigurer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.web.builders.HttpSecurity;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.crypto.password.PasswordEncoder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">securityConf</span>  <span class="keyword">extends</span> <span class="title class_">WebSecurityConfigurerAdapter</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数据库定义用户认证服务</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">//注入数据源</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">DataSource</span> <span class="variable">dataSource</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">//使用用户名称查询密码</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">pwdQuery</span> <span class="operator">=</span> <span class="string">&quot; select user_name,user_password,available from tab_user where user_name = ? &quot;</span>;</span><br><span class="line">    <span class="comment">//使用用户名称查询角色信息</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">roleQuery</span> <span class="operator">=</span> <span class="string">&quot; select u.user_name,r.role_name from tab_user u,tab_user_role ur,tab_role r where u.id = ur.user_id and r.id = ur.role_id and u.user_name=? &quot;</span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//密码编译器</span></span><br><span class="line">        auth.</span><br><span class="line">                jdbcAuthentication()</span><br><span class="line">                <span class="comment">//密码编译器</span></span><br><span class="line">                .passwordEncoder(<span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>())</span><br><span class="line">                <span class="comment">//数据源</span></span><br><span class="line">                .dataSource(dataSource)</span><br><span class="line">                <span class="comment">//查询用户</span></span><br><span class="line">                .usersByUsernameQuery(pwdQuery)</span><br><span class="line">                <span class="comment">//赋予权限</span></span><br><span class="line">                .authoritiesByUsernameQuery(roleQuery);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(HttpSecurity httpSecurity)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">         httpSecurity</span><br><span class="line">                 .authorizeRequests()</span><br><span class="line">                 .antMatchers(<span class="string">&quot;/models/mod1&quot;</span>).hasAnyRole(<span class="string">&quot;SYSTEM&quot;</span>,<span class="string">&quot;SUPER&quot;</span>,<span class="string">&quot;USER&quot;</span>)</span><br><span class="line">                 .antMatchers(<span class="string">&quot;/session/**&quot;</span>).hasAnyAuthority(<span class="string">&quot;ROLE_ADMIN&quot;</span>)</span><br><span class="line">                 .anyRequest().permitAll()</span><br><span class="line">                 .and().anonymous()</span><br><span class="line">                 .and().formLogin()</span><br><span class="line">                 .and().httpBasic();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.rediscachetest.tools;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.authentication.configurers.provisioning.InMemoryUserDetailsManagerConfigurer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.web.builders.HttpSecurity;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.crypto.password.PasswordEncoder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">securityConf</span>  <span class="keyword">extends</span> <span class="title class_">WebSecurityConfigurerAdapter</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数据库定义用户认证服务</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">//注入数据源</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">DataSource</span> <span class="variable">dataSource</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">//使用用户名称查询密码</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">pwdQuery</span> <span class="operator">=</span> <span class="string">&quot; select user_name,user_password,available from tab_user where user_name = ? &quot;</span>;</span><br><span class="line">    <span class="comment">//使用用户名称查询角色信息</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">roleQuery</span> <span class="operator">=</span> <span class="string">&quot; select u.user_name,r.role_name from tab_user u,tab_user_role ur,tab_role r where u.id = ur.user_id and r.id = ur.role_id and u.user_name=? &quot;</span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//密码编译器</span></span><br><span class="line">        auth.</span><br><span class="line">                jdbcAuthentication()</span><br><span class="line">                <span class="comment">//密码编译器</span></span><br><span class="line">                .passwordEncoder(<span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>())</span><br><span class="line">                <span class="comment">//数据源</span></span><br><span class="line">                .dataSource(dataSource)</span><br><span class="line">                <span class="comment">//查询用户</span></span><br><span class="line">                .usersByUsernameQuery(pwdQuery)</span><br><span class="line">                <span class="comment">//赋予权限</span></span><br><span class="line">                .authoritiesByUsernameQuery(roleQuery);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(HttpSecurity httpSecurity)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">         httpSecurity</span><br><span class="line">                 .authorizeRequests()</span><br><span class="line">                 .antMatchers(<span class="string">&quot;/models/mod1&quot;</span>).hasAnyRole(<span class="string">&quot;SYSTEM&quot;</span>,<span class="string">&quot;SUPER&quot;</span>,<span class="string">&quot;USER&quot;</span>)</span><br><span class="line">                 .antMatchers(<span class="string">&quot;/session/**&quot;</span>).hasAnyAuthority(<span class="string">&quot;ROLE_ADMIN&quot;</span>)</span><br><span class="line">                 .anyRequest().permitAll()</span><br><span class="line">                 .and().anonymous()</span><br><span class="line">                 .and().formLogin()</span><br><span class="line">                 .and().httpBasic();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
 
 <blockquote>
 <p>着重在于方法**<font color="red">configure(HttpSecurity httpSecurity)</font>**。<font color="orange">antMatchers</font>方法指定了请求的路径。<font color="orange">hasAnyRole</font>指定了该路径访问的角色权限为”ROLE_SYSTEM”,”ROLE_SUPER”,”ROLE_USER”.第二个<font color="orange">antMatchers</font>方法限定”session”下所有请求权限赋予角色”ROLE_ADMIN”.注意，<font color="orange">hasAnyRole</font>方法会自动加入前缀“ROLE_”,<font color="orange">hasAnyAuthority</font>方法则不会，此方法可以使用自定义不带ROLE的角色。<font color="orange">.anyRequest().permitAll()</font>表示其他路径允许签名后访问，<font color="orange">and().anonymous()</font>表示对于没有配置权限的其他请求允许匿名访问。</p>
 </blockquote>
 <p><strong>2. Spring表达式设置权限</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(HttpSecurity httpSecurity)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Spring 表达式设置权限</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    httpSecurity.authorizeRequests()</span><br><span class="line">			<span class="comment">//限定角色只有ROLE_USER或者ROLE_ADMIN</span></span><br><span class="line">            .antMatchers(<span class="string">&quot;/models/mod1&quot;</span>).access(<span class="string">&quot;hasAnyRole(&#x27;USER&#x27;) or hasAnyRole(&#x27;ADMIN&#x27;)&quot;</span>)</span><br><span class="line">			<span class="comment">//限定角色只有testone，要求是完整登录</span></span><br><span class="line">            .antMatchers(<span class="string">&quot;/session/**&quot;</span>).access(<span class="string">&quot;hasAnyAuthority(&#x27;testone&#x27;) &amp;&amp; isFullyAuthenticated()&quot;</span>)</span><br><span class="line">			<span class="comment">//使用记住我功能</span></span><br><span class="line">            .and().rememberMe()</span><br><span class="line">			<span class="comment">//使用Spring Security默认登录页面</span></span><br><span class="line">            .and().formLogin()</span><br><span class="line">			<span class="comment">//启用http基础验证</span></span><br><span class="line">            .and().httpBasic();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(HttpSecurity httpSecurity)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Spring 表达式设置权限</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    httpSecurity.authorizeRequests()</span><br><span class="line">			<span class="comment">//限定角色只有ROLE_USER或者ROLE_ADMIN</span></span><br><span class="line">            .antMatchers(<span class="string">&quot;/models/mod1&quot;</span>).access(<span class="string">&quot;hasAnyRole(&#x27;USER&#x27;) or hasAnyRole(&#x27;ADMIN&#x27;)&quot;</span>)</span><br><span class="line">			<span class="comment">//限定角色只有testone，要求是完整登录</span></span><br><span class="line">            .antMatchers(<span class="string">&quot;/session/**&quot;</span>).access(<span class="string">&quot;hasAnyAuthority(&#x27;testone&#x27;) &amp;&amp; isFullyAuthenticated()&quot;</span>)</span><br><span class="line">			<span class="comment">//使用记住我功能</span></span><br><span class="line">            .and().rememberMe()</span><br><span class="line">			<span class="comment">//使用Spring Security默认登录页面</span></span><br><span class="line">            .and().formLogin()</span><br><span class="line">			<span class="comment">//启用http基础验证</span></span><br><span class="line">            .and().httpBasic();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
 
-<h3 id="用户认证功能"><a href="#用户认证功能" class="headerlink" title="用户认证功能"></a>用户认证功能</h3><p><strong>自定义登录界面</strong></p>
+
+        <h3 id="用户认证功能">
+          <a href="#用户认证功能" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户认证功能" class="headerlink" title="用户认证功能"></a>用户认证功能</h3>
+      <p><strong>自定义登录界面</strong></p>
 <p><strong><font color="gray">1. 配置登录请求和记住我</font></strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(HttpSecurity httpSecurity)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Spring 表达式设置权限</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    httpSecurity.authorizeRequests()</span><br><span class="line">            .antMatchers(<span class="string">&quot;/models/mod1&quot;</span>).access(<span class="string">&quot;hasAnyRole(&#x27;USER&#x27;) or hasAnyRole(&#x27;ADMIN&#x27;)&quot;</span>)</span><br><span class="line">            .antMatchers(<span class="string">&quot;/session/**&quot;</span>).access(<span class="string">&quot;hasAnyAuthority(&#x27;testone&#x27;) &amp;&amp; isFullyAuthenticated()&quot;</span>)</span><br><span class="line">            .and().rememberMe().tokenValiditySeconds(<span class="number">86400</span>).key(<span class="string">&quot;remember-me-key&quot;</span>)</span><br><span class="line">            .and().formLogin().loginPage(<span class="string">&quot;/login/page&quot;</span>).defaultSuccessUrl(<span class="string">&quot;/admin/welcome&quot;</span>)</span><br><span class="line">            .and().logout().logoutUrl(<span class="string">&quot;/logout&quot;</span>).logoutSuccessUrl(<span class="string">&quot;/logout/page&quot;</span>)</span><br><span class="line">            .and().httpBasic().realmName(<span class="string">&quot;my_basic_name&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(HttpSecurity httpSecurity)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Spring 表达式设置权限</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    httpSecurity.authorizeRequests()</span><br><span class="line">            .antMatchers(<span class="string">&quot;/models/mod1&quot;</span>).access(<span class="string">&quot;hasAnyRole(&#x27;USER&#x27;) or hasAnyRole(&#x27;ADMIN&#x27;)&quot;</span>)</span><br><span class="line">            .antMatchers(<span class="string">&quot;/session/**&quot;</span>).access(<span class="string">&quot;hasAnyAuthority(&#x27;testone&#x27;) &amp;&amp; isFullyAuthenticated()&quot;</span>)</span><br><span class="line">            .and().rememberMe().tokenValiditySeconds(<span class="number">86400</span>).key(<span class="string">&quot;remember-me-key&quot;</span>)</span><br><span class="line">            .and().formLogin().loginPage(<span class="string">&quot;/login/page&quot;</span>).defaultSuccessUrl(<span class="string">&quot;/admin/welcome&quot;</span>)</span><br><span class="line">            .and().logout().logoutUrl(<span class="string">&quot;/logout&quot;</span>).logoutSuccessUrl(<span class="string">&quot;/logout/page&quot;</span>)</span><br><span class="line">            .and().httpBasic().realmName(<span class="string">&quot;my_basic_name&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 <blockquote>
 <p>这里的rememberMe方法意思是“记住我”功能，有效时间为1天（86400s）,在浏览器中将使用Cookie以键“remember-me-key”进行保存、loginPage方法是指定登录的路径(login&#x2F;page)，defaultSuccessUrl为默认跳转路径。</p>
 </blockquote>
 <p><strong><font color="gray">2. 指定的login&#x2F;page所映射的路径既可以用传统的控制器映射，也可以使用新增映射关系完成</font></strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.rediscachetest.tools;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.ViewControllerRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebConfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line">    <span class="comment">// 增加映射关系</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addViewControllers</span><span class="params">(ViewControllerRegistry registry)</span>&#123;</span><br><span class="line">        <span class="comment">// 使得/login/page映射为login.jsp</span></span><br><span class="line"></span><br><span class="line">        registry.addViewController(<span class="string">&quot;/login/page&quot;</span>).setViewName(<span class="string">&quot;user/login&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使得/logout/page映射为/logout_welcome.jsp</span></span><br><span class="line"></span><br><span class="line">        registry.addViewController(<span class="string">&quot;/logout/page&quot;</span>).setViewName(<span class="string">&quot;user/logout_welcome&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//使得/loogout映射为logout.jsp</span></span><br><span class="line">        registry.addViewController(<span class="string">&quot;/logout&quot;</span>).setViewName(<span class="string">&quot;user/logout&quot;</span>);</span><br><span class="line"></span><br><span class="line">        registry.addViewController(<span class="string">&quot;/admin/welcome&quot;</span>).setViewName(<span class="string">&quot;user/welcome&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.rediscachetest.tools;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.ViewControllerRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebConfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line">    <span class="comment">// 增加映射关系</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addViewControllers</span><span class="params">(ViewControllerRegistry registry)</span>&#123;</span><br><span class="line">        <span class="comment">// 使得/login/page映射为login.jsp</span></span><br><span class="line"></span><br><span class="line">        registry.addViewController(<span class="string">&quot;/login/page&quot;</span>).setViewName(<span class="string">&quot;user/login&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使得/logout/page映射为/logout_welcome.jsp</span></span><br><span class="line"></span><br><span class="line">        registry.addViewController(<span class="string">&quot;/logout/page&quot;</span>).setViewName(<span class="string">&quot;user/logout_welcome&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//使得/loogout映射为logout.jsp</span></span><br><span class="line">        registry.addViewController(<span class="string">&quot;/logout&quot;</span>).setViewName(<span class="string">&quot;user/logout&quot;</span>);</span><br><span class="line"></span><br><span class="line">        registry.addViewController(<span class="string">&quot;/admin/welcome&quot;</span>).setViewName(<span class="string">&quot;user/welcome&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
 
 <p><strong><font color="gray">3. 自定义登录界面</font></strong></p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;登录页面&lt;/title&gt;</span><br><span class="line">    &lt;<span class="type">script</span> <span class="variable">src</span> <span class="operator">=</span> <span class="string">&quot;https://code.jquery.com/jquery-3.0.0.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;</span><br><span class="line">    &lt;% System.out.println(<span class="string">&quot;视图渲染&quot;</span>);%&gt;</span><br><span class="line">&lt;/h1&gt;</span><br><span class="line">&lt;form action=<span class="string">&quot;/login/page&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">&quot;text&quot;</span> id = <span class="string">&quot;username&quot;</span> name = <span class="string">&quot;username&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=<span class="string">&quot;text&quot;</span> id = <span class="string">&quot;password&quot;</span> name = <span class="string">&quot;password&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=<span class="string">&quot;checkbox&quot;</span> id = <span class="string">&quot;remember_me&quot;</span> name = <span class="string">&quot;remember-me&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;登录&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=<span class="string">&quot;hidden&quot;</span> id = <span class="string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span> name = <span class="string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span> value=<span class="string">&quot;$&#123;_csrf.token&#125;&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;登录页面&lt;/title&gt;</span><br><span class="line">    &lt;<span class="type">script</span> <span class="variable">src</span> <span class="operator">=</span> <span class="string">&quot;https://code.jquery.com/jquery-3.0.0.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;</span><br><span class="line">    &lt;% System.out.println(<span class="string">&quot;视图渲染&quot;</span>);%&gt;</span><br><span class="line">&lt;/h1&gt;</span><br><span class="line">&lt;form action=<span class="string">&quot;/login/page&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">&quot;text&quot;</span> id = <span class="string">&quot;username&quot;</span> name = <span class="string">&quot;username&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=<span class="string">&quot;text&quot;</span> id = <span class="string">&quot;password&quot;</span> name = <span class="string">&quot;password&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=<span class="string">&quot;checkbox&quot;</span> id = <span class="string">&quot;remember_me&quot;</span> name = <span class="string">&quot;remember-me&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;登录&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=<span class="string">&quot;hidden&quot;</span> id = <span class="string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span> name = <span class="string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span> value=<span class="string">&quot;$&#123;_csrf.token&#125;&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></div></figure>
 
 <blockquote>
 <p>此处的表单提交的action定义为&#x2F;login&#x2F;page,这样安全登录拦截器就会拦截这些参数。此处要求method为post，用户名为username，密码为password，记住我为remember-me且为checkbox类型</p>
 </blockquote>
 <p><strong><font color="gray">4. 登出页面</font></strong></p>
 <p>logout_welcome.jsp</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;登出页面&lt;/title&gt;</span><br><span class="line">    &lt;<span class="type">script</span> <span class="variable">src</span> <span class="operator">=</span> <span class="string">&quot;https://code.jquery.com/jquery-3.0.0.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;您已登出系统&lt;/p&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;登出页面&lt;/title&gt;</span><br><span class="line">    &lt;<span class="type">script</span> <span class="variable">src</span> <span class="operator">=</span> <span class="string">&quot;https://code.jquery.com/jquery-3.0.0.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;您已登出系统&lt;/p&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></div></figure>
 
 <p>logout.jsp</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;登出&lt;/title&gt;</span><br><span class="line">    &lt;<span class="type">script</span> <span class="variable">src</span> <span class="operator">=</span> <span class="string">&quot;https://code.jquery.com/jquery-3.0.0.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;form action=<span class="string">&quot;/logout&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;登出&quot;</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">&quot;hidden&quot;</span> id = <span class="string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span> name = <span class="string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span> value=<span class="string">&quot;$&#123;_csrf.token&#125;&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-        <p class="suffix-end">__END__</p>
-        <div class="suffix-box">
-            <div class="suffix-box-left">
-                <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Live For Code">
-            </div>
-            <div class="suffix-box-right">
-                <span class="suffix-box-title">文章作者</span>：Live For Code
-                <br>
-                <span class="suffix-box-title">文章出处</span>：<a href="/2020/07/22/Spring-Security/" target="_blank">Spring Security</a>
-                <br>
-                <span class="suffix-box-title">作者签名</span>：简单地活着, 肆意又精彩.
-                <br>
-                <span class="suffix-box-title">关于主题</span>：<a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
-                <br>
-                <span class="suffix-box-title">版权声明</span>：文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
-                <br>
-            </div>
-            <div style="clear: both;"></div>
-        </div>
-    </div>
-    <div class="article-footer">
-        
-        
-            <div class="tag">
-                标签：
-                
-                    <a href="/tags/Intellij-IDEA/">Intellij IDEA</a>
-                
-                    <a href="/tags/Spring/">Spring</a>
-                
-                    <a href="/tags/Spring-Security/">Spring Security</a>
-                
-            </div>
-        
-        <div class="article-prev-next">
-            
-                <a href="/2020/08/02/Spring-%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="prev-prefix">« </a> 上一篇：    <a href="/2020/08/02/Spring-%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B%E6%B1%A0/" title="发布于 2020-08-02 02:58">Spring 异步线程池</a>
-                <br>
-            
-            
-                <a href="/2020/07/19/REST%E9%A3%8E%E6%A0%BC/" class="next-prefix">» </a> 下一篇：    <a href="/2020/07/19/REST%E9%A3%8E%E6%A0%BC/" title="发布于 2020-07-19 02:58">REST风格</a>
-            
-        </div>
-    </div>
-    
-    <div class="article-comments">
-        <div class="comments-title">
-            评论列表
-        </div>
-        <div class="comments-content">
-        </div>
-    </div>
-
-</div>
-
-    </div>
-</div>
-    <div id="footer"></div>
-    <div id="sidebar">
-    <div class="menu-wrap" style="display:none;">
-        <nav class="menu">
-            <div class="menu-introduce"> 
-                <div class="introduce-avatar"></div> 
-                <div class="introduce-info"> 
-                    <div class="introduce-user"><span></span></div>        
-                </div> 
-            </div> 
-            <div class="menu-list">
-                <ul></ul> 
-            </div> 
-            <div class="menu-link"></div> 
-        </nav>
-        <button class="menu-button-close"></button>
-        <div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
-            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
-                <path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
-            </svg>
-        </div>
-    </div>
-    <button class="menu-button-open">MENU</button>
-    <div class="menu-cover"></div>
-</div>
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/search.css">
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/iscroll.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/instantsearch.min.js"></script>
-<div class="search-window">
-    <div class="search-content">
-        <div class="search-content-icon">
-            <i class="iconfont icon-search"></i>
-        </div>
-        <div id="search-input" class="search-input"></div>
-    </div>
-
-    <div class="search-scroll">
-        <div class="search-result">
-            <div id="search-stats" class="search-stats"></div>
-            <div id="search-hits"></div>
-            <div id="search-pagination" class="search-pagination"></div>
-        </div>
-    </div>
-
-    <span class="search-close-icon">
-        <i class="iconfont icon-close"></i>
-    </span>
-</div>
-    <div id="tools">
-    <div class="progressbar-top"></div>
-
-    
-        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/APlayer.css">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/APlayer.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/Meting.min.js"></script>
-        <meting-js id="3778678" lrcshow="false" server="netease" type="playlist" fixed="true" autoplay="false" loop="all" order="random" preload="auto" volume="0.67" mutex="true"></meting-js>
-    
-    
-    <div class="wrap-right"></div>
-    <div class="loading"></div>
-</div>
-    <script>
-    window.config = {
-        GitHubUserName     : 'first19326',
-        GitHubRepositories : 'Hexo-LiveForCode',
-
-        BlogUser      : 'Live For Code',
-        BlogAvatar    : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg',
-        BlogStartDate : '2020-01-01',
-
-        WebsiteTitleBlur         : '(◍´꒳`◍) Hi, Live For Code',
-        WebsiteTitleBlurTimeOut  : 500,
-        WebsiteTitleFocus        : '(*´∇｀*) 欢迎回来!',
-        WebsiteTitleFocusTimeOut : 1000,
-        WebsiteFavicon           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/website/logo.png',
-
-        ProgressBar: {
-            id       : 'topProgressBar',
-            color    : '#77B6FF',
-            height   : '2px',
-            duration : 0.2
-        },
-
-        Loading: {
-            rebound: {
-                tension  : 16,
-                friction : 5
-            },
-            spinner: {
-                id     : 'spinner',
-                radius : 90,
-                sides  : 3,
-                depth  : 4,
-                colors : {
-                    background : '#F0F0F0',
-                    stroke     : '#272633',
-                    base       : '',
-                    child      : '#272633'
-                },
-                alwaysForward : true,
-                restAt        : 0.5,
-                renderBase    : false
-            }
-        },
-
-        HomeHeaderAnimationRendered : true,
-        HomeHeaderAnimation         : {
-            radius      : 15,
-            density     : 0.2,
-            color       : 'rgba(255, 255, 255, .2)',
-            clearOffset : 0.3
-        },
-
-        ArticleHeaderAnimationRendered : false,
-        ArticleHeaderAnimation         : {
-            triW                  : 14,
-            triH                  : 20,
-            neighbours            : [
-                
-                    'side',
-                
-                    'top',
-                
-                    'bottom',
-                
-            ],
-            speedTrailAppear      : 0.1,
-            speedTrailDisappear   : 0.1,
-            speedTriOpen          : 1,
-            trailMaxLength        : 30,
-            trailIntervalCreation : 100,
-            delayBeforeDisappear  : 2,
-            colors                : [
-                
-                    '#96EDA6',
-                
-                    '#5BC6A9',
-                
-                    '#38668C',
-                
-                    '#374D84',
-                
-                    '#BED5CB',
-                
-                    '#62ADC6',
-                
-                    '#8EE5DE',
-                
-                    '#304E7B',
-                
-            ]
-        },
-
-        BackAnimationRendered          : true,
-        IEBrowserBackAnimationRendered : false,
-        BackAnimation                  : {
-            colorSaturation  : '60%',
-            colorBrightness  : '50%',
-            colorAlpha       : 0.5,
-            colorCycleSpeed  : 5,
-            verticalPosition : 'random',
-            horizontalSpeed  : 200,
-            ribbonCount      : 3,
-            strokeSize       : 0,
-            parallaxAmount   : -0.2,
-            animateSections  : true
-        },
-
-        HomeHeaderImage : [
-            
-                'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpg',
-            
-                'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpeg',
-            
-        ],
-        HomeBannerText  : '',
-
-        ArticleHeaderImage : [
-            
-                'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/article.jpg',
-            
-        ],
-
-        OtherBannerText : '',
-
-        MenuList : [
-            
-                {
-                    name   : '首页',
-                    href   : '/',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '标签',
-                    href   : '/tag',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '分类',
-                    href   : '/category',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '归档',
-                    href   : '/archive',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '赞赏',
-                    href   : '/donate',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '关于',
-                    href   : '/about',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '订阅',
-                    href   : '/atom.xml',    
-                    target : '_blank',
-                    class  : ''
-                },
-            
-                {
-                    name   : '搜索',
-                    href   : '',    
-                    target : '',
-                    class  : 'search'
-                },
-            
-                {
-                    name   : '留言板',
-                    href   : '/comment',    
-                    target : '',
-                    class  : ''
-                },
-            
-                {
-                    name   : '友情链接',
-                    href   : '/friend',    
-                    target : '',
-                    class  : ''
-                },
-            
-        ],
-        MenuLink : [
-            
-                
-                    {
-                        icon : 'icon-weibo', 
-                        url  : ''
-                    },
-                
-                    {
-                        icon : 'icon-wechat', 
-                        url  : ''
-                    },
-                
-                    {
-                        icon : 'icon-qq', 
-                        url  : ''
-                    },
-                
-                    {
-                        icon : 'icon-github', 
-                        url  : 'https://github.com/first19326'
-                    },
-                
-            
-        ],
-
-        FooterStyle : 2,
-        BottomText  : {
-            icon    : 'like-fill',
-            left    : '人生若只如初见',
-            right   : '何事秋风悲画扇'
-        },
-        ThemeInfo   : true,
-
-        ConsoleList : [
-            
-                
-                    [
-                        
-                            
-                                'Based on cnblogs theme SimpleMemory.',
-                            
-                                '',
-                            
-                        
-                    ],
-                
-                    [
-                        
-                            
-                                'SimpleMemory Author:',
-                            
-                                'BNDong',
-                            
-                        
-                    ],
-                
-                    [
-                        
-                            
-                                'Theme:',
-                            
-                                'LiveForCode',
-                            
-                        
-                    ],
-                
-            
-        ],
-
-        FontIconExtend : '',
-
-        Donate : {
-            paypal  : '',
-            bitcoin : '',
-            alipay  : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/donate/alipay.png',
-            wechat  : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/donate/wechat.png'
-        },
-
-        Code : {
-            style : 'normal'
-        },  
-
-        Search : {
-            applicationID : '010C3EANT8',
-            apiKey        : 'c7abab9f11b79102b9aff7fe6d41447d',
-            indexName     : 'Notes',
-            hits          : {
-                page : 10
-            },
-            labels        : {
-                placeholder : '搜索',
-                empty       : '未发现与 「${query}」 相关的内容',
-                stats       : '${hits} 条相关条目，使用了 ${time} 毫秒',
-            }
-        }, 
-
-        Valine : {
-            switch         : true,
-            el             : '.comments-content',
-            appId          : 'srhKtvWPQTWYKh3qX8G8M7v0-gzGzoHsz',
-            appKey         : '8uVSP1q6UlALVC5igYfIfv2h',
-            serverURLs     : '',
-            placeholder    : '你是我一生只会遇见一次的惊喜...',
-            avatar         : 'mm',
-            meta           : 'nick,mail,link',
-            requiredFields : 'nick,mail',
-            pageSize       : 5,
-            lang           : 'zh-cn',
-            visitor        : true,
-            enableQQ       : true
-        },
-
-        Tocbot : {
-            switch                : true,
-            tocSelector           : '.toc',
-            contentSelector       : '.article-body',
-            headingSelector       : 'h1, h2, h3, h4, h5',
-            headingsOffset        : 0,
-            scrollSmooth          : true,
-            scrollSmoothOffset    : -5,
-            positionFixedSelector : '.toc',
-            positionFixedClass    : 'toc-fixed',
-            fixedSidebarOffset    : '',
-        },
-
-        Require : {
-            baseUrl     : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/',
-            waitSeconds : 100
-        },
-
-        Music : {
-            type : 'Meting'
-        },
-        APlayer : {
-            container : '.aplayer',
-            fixed     : true,
-            autoplay  : false,
-            loop      : 'all',
-            order     : 'random',
-            preload   : 'auto',
-            volume    : 0.67,
-            mutex     : true,
-            lrcType   : 3,
-            audio     : [
-                
-                    {
-                        name   : 'aLIEz',
-                        artist : 'mizuki（瑞葵）',
-                        cover  : '/music/cover/aLIEz.jpg',
-                        url    : '/music/song/aLIEz.mp3',
-                        lrc    : '/music/lrc/aLIEz.lrc'
-                    },
-                
-                    {
-                        name   : 'Endless Tears',
-                        artist : 'CLIFF EDGE',
-                        cover  : '/music/cover/Endless Tears.jpg',
-                        url    : '/music/song/Endless Tears.mp3',
-                        lrc    : '/music/lrc/Endless Tears.lrc'
-                    },
-                
-                    {
-                        name   : 'Miracle',
-                        artist : 'Cascada',
-                        cover  : '/music/cover/Miracle.jpg',
-                        url    : '/music/song/Miracle.mp3',
-                        lrc    : '/music/lrc/Miracle.lrc'
-                    },
-                
-                    {
-                        name   : 'Roll The Dice',
-                        artist : '高珊',
-                        cover  : '/music/cover/Roll The Dice.jpg',
-                        url    : '/music/song/Roll The Dice.mp3',
-                        lrc    : '/music/lrc/Roll The Dice.lrc'
-                    },
-                
-                    {
-                        name   : 'See You Again',
-                        artist : 'Charlie Puth, Wiz Khalifa',
-                        cover  : '/music/cover/See You Again.jpg',
-                        url    : '/music/song/See You Again.mp3',
-                        lrc    : '/music/lrc/See You Again.lrc'
-                    },
-                
-                    {
-                        name   : 'Traveling Light',
-                        artist : 'Joel Hanson, Sara Groves',
-                        cover  : '/music/cover/Traveling Light.jpg',
-                        url    : '/music/song/Traveling Light.mp3',
-                        lrc    : '/music/lrc/Traveling Light.lrc'
-                    },
-                
-                    {
-                        name   : '痴心绝对',
-                        artist : '李圣杰',
-                        cover  : '/music/cover/痴心绝对.jpg',
-                        url    : '/music/song/痴心绝对.mp3',
-                        lrc    : '/music/lrc/痴心绝对.lrc'
-                    },
-                
-                    {
-                        name   : '好想大声说爱你',
-                        artist : 'BAAD（バード）',
-                        cover  : '/music/cover/好想大声说爱你.jpg',
-                        url    : '/music/song/好想大声说爱你.mp3',
-                        lrc    : '/music/lrc/好想大声说爱你.lrc'
-                    },
-                
-            ]
-        },
-        Meting : {
-            id       : '3778678', 
-            lrcshow  : false, 
-            server   : 'netease', 
-            type     : 'playlist', 
-            fixed    : true, 
-            autoplay : false, 
-            loop     : 'all', 
-            order    : 'random', 
-            preload  : 'auto', 
-            volume   : 0.67, 
-            mutex    : true
-        },
-
-        Mouse : {
-            enable  : true,
-            options : {
-                size  : 6,
-                sizeF : 24
-            }
-        },
-
-        LazyLoad : {
-            default : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/website/lazyload.svg'
-        },
-  
-        Style : {
-            aplayer          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/APlayer.css',
-            archive          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/archive.css',
-            donate           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/donate.css',
-            fancybox         : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/jquery.fancybox.css',
-            footer           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/footer.css',
-            iconfont         : 'https://at.alicdn.com/t/font_1546312_l3yohatebw.css',
-            index            : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/index.css',
-            menuBubble       : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/menu-bubble.css',
-            page             : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/page.css',
-            post             : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/post.css',
-            search           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/search.css',
-            tocbot           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/tocbot.css',
-            normal           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/normal.css',
-            night            : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/night.css',
-            clipboard        : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/clipboard.css'
-        },
-
-        Script: {
-            aplayer          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/APlayer.min.js',
-            config           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/require.config.js',
-            index            : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/index.js',
-            instantSearch    : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/instantsearch.min.js',
-            jQuery           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/jquery-3.4.1.min.js',
-            loading          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/loading.js',
-            meting           : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/Meting.min.js',
-            iscroll          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/iscroll.js',
-            require          : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/require.min.js'
-        },
-
-        Font: {
-            LongCang   : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css',
-            Monda      : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css',
-            NotoSansSC : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/NotoSansSC.css',
-            Playball   : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Playball.css',
-            PTMono     : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/PTMono.css',
-            RobotoSlab : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/RobotoSlab.css',
-            Rosario    : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Rosario.css',
-            UbuntuMono : 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/UbuntuMono.css'
-        },
-
-        Suffix : {
-            about : '简单地活着, 肆意又精彩.'
-        },
-            
-        Theme : {
-            url  : 'https://github.com/first19326/Hexo-LiveForCode',
-            name : 'Hexo - Live For Code'
-        }  
-    };
-</script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/index.js"></script>
-</body>
-</html>
+<figure class="highlight jsp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;登出&lt;/title&gt;</span><br><span class="line">    &lt;<span class="type">script</span> <span class="variable">src</span> <span class="operator">=</span> <span class="string">&quot;https://code.jquery.com/jquery-3.0.0.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;form action=<span class="string">&quot;/logout&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;登出&quot;</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">&quot;hidden&quot;</span> id = <span class="string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span> name = <span class="string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span> value=<span class="string">&quot;$&#123;_csrf.token&#125;&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://planeswalker1205.github.io">ashen</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://planeswalker1205.github.io/2020/07/22/Spring-Security/">https://planeswalker1205.github.io/2020/07/22/Spring-Security/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://planeswalker1205.github.io/tags/Intellij-IDEA/">Intellij IDEA</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://planeswalker1205.github.io/tags/Spring/">Spring</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://planeswalker1205.github.io/tags/Spring-Security/">Spring Security</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2020/08/02/Spring-%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B%E6%B1%A0/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">Spring 异步线程池</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2020/07/19/REST%E9%A3%8E%E6%A0%BC/"><span class="paginator-prev__text">REST风格</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E2%80%93Spring-Security"><span class="toc-number">1.</span> <span class="toc-text">
+          安全–Spring Security</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81"><span class="toc-number">1.1.</span> <span class="toc-text">
+          简单安全认证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8WebSecurityConfigurerAdapter%E8%87%AA%E5%AE%9A%E4%B9%89-x2F-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%94%A8%E6%88%B7%E6%9C%8D%E5%8A%A1%E4%BF%A1%E6%81%AF"><span class="toc-number">1.2.</span> <span class="toc-text">
+          使用WebSecurityConfigurerAdapter自定义&#x2F;自定义用户服务信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%86%85%E5%AD%98%E7%AD%BE%E5%90%8D%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          使用内存签名服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E4%B9%89%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          使用数据库定义用户认证服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E8%AF%B7%E6%B1%82"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          限制请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+          用户认证功能</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">42</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">0</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">60</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ashen</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v6.1.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
