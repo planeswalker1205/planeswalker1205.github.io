@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="基础概念                           API模块                           1.Map和View       Map:管理图层和底图的容器 View：主要显示地图图层，处理用户交互及点击、弹出窗口、小部件、地图等的显示位置 Map中的图层分为三组 Ground layers–对应属性：Map.ground 地">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web-arcgisForJavascript">
+<meta property="og:url" content="https://planeswalker1205.github.io/2022/07/24/web-arcgisForJavascript/index.html">
+<meta property="og:site_name" content="MIRACLE">
+<meta property="og:description" content="基础概念                           API模块                           1.Map和View       Map:管理图层和底图的容器 View：主要显示地图图层，处理用户交互及点击、弹出窗口、小部件、地图等的显示位置 Map中的图层分为三组 Ground layers–对应属性：Map.ground 地">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-24T11:50:18.000Z">
+<meta property="article:modified_time" content="2022-07-24T13:30:08.470Z">
+<meta property="article:author" content="ashen">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="arcgis for javascript">
+<meta name="twitter:card" content="summary"><title>web-arcgisForJavascript | MIRACLE</title><link ref="canonical" href="https://planeswalker1205.github.io/2022/07/24/web-arcgisForJavascript/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">Tags</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">MIRACLE</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">web-arcgisForJavascript</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-07-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-07-24</span></span></div></header><div class="post-body">
+        <h1 id="基础概念">
+          <a href="#基础概念" class="heading-link"><i class="fas fa-link"></i></a><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1>
+      
+        <h2 id="API模块">
+          <a href="#API模块" class="heading-link"><i class="fas fa-link"></i></a><a href="#API模块" class="headerlink" title="API模块"></a>API模块</h2>
+      
+        <h3 id="1-Map和View">
+          <a href="#1-Map和View" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-Map和View" class="headerlink" title="1.Map和View"></a>1.Map和View</h3>
+      <p><strong>Map:管理图层和底图的容器</strong></p>
+<p><strong>View：主要显示地图图层，处理用户交互及点击、弹出窗口、小部件、地图等的显示位置</strong></p>
+<p><strong>Map中的图层分为三组</strong></p>
+<p>Ground layers–对应属性：Map.ground</p>
+<p>地形图层：在sceneView看到的一个地形起伏的效果，在mapView中没有作用</p>
+<p>Basemap layers–对应属性：Map.basemap</p>
+<p>底图图层</p>
+<p>Operational layers–对应属性：Map.layers</p>
+<p>业务图层。mapImageLayer</p>
+
+        <h3 id="2-View的方法">
+          <a href="#2-View的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-View的方法" class="headerlink" title="2.View的方法"></a>2.View的方法</h3>
+      <p><strong>1.goTo(target,options)</strong></p>
+<p>导航到另外一个位置</p>
+<p><strong>target可以指定：</strong></p>
+<ul>
+<li><p>[longitude,latitude] 两个坐标</p>
+</li>
+<li><p>Geometry(或者Geometry[]数组)</p>
+</li>
+<li><p>Graphic(或者Graphic[]数组)</p>
+</li>
+<li><p>Viewpoint</p>
+</li>
+<li><p>可以是以上的结合</p>
+</li>
+</ul>
+<p><strong>options可以指定</strong></p>
+<ul>
+<li><p>animate 动画效果</p>
+</li>
+<li><p>duration 导航到此处的时间</p>
+</li>
+<li><p>easing 速度参数(匀速，先快后慢…)</p>
+</li>
+</ul>
+<p><strong>2. View.toMap()</strong></p>
+<p>将screen point(屏幕上的点)转换为map point(地图上的一个点)</p>
+<p><strong>3. View.toScreen()</strong></p>
+<p>将map point(地图上的一个点)转换为screen point(屏幕上的点)</p>
+<p><strong>4.View.htiTest(screenPoint)</strong></p>
+<p>返回与指定屏幕坐标相交的每个图层的最顶层要素</p>
+<ul>
+<li>能够返回要素的图层类型：GraphicsLayer,FeatureLayer,CSVLayer,GeoRSSLayer,KMLLayer,StreamLayer</li>
+</ul>
+<p><strong>5. View.when()</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">view.when(function()&#123;</span><br><span class="line">	//view执行成功的回调</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>6. View.on(type,modifiersOrHandler,hander?)</strong></p>
+<p>对view监听</p>
+<p>移除监听</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var clickEvent = view.on(&quot;click&quot;,function(e)&#123;&#125;);</span><br><span class="line"></span><br><span class="line">clickEvent.remove()</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>7.View.watch(path,callback)</strong></p>
+<p>对view的属性做监听</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var handler = view.watch(&quot;scale&quot;,function(newValue,oldValue,propertyName,target)&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">handler.remove()</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="3-Layers">
+          <a href="#3-Layers" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-Layers" class="headerlink" title="3.Layers"></a>3.Layers</h3>
+      <p><strong>1.TileLayer</strong></p>
+<p>用来加载缓存服务，缓存服务从缓存中直接获取切片，不需要动态渲染</p>
+<p><strong>2. MapImageLayer</strong></p>
+<p>用来加载动态地图服务，地图服务请求在服务端动态输出地图图像</p>
+<p><strong>4.GraphicsLayer</strong></p>
+<p>包含一个或者多个客户端要素</p>
+<p>GraphicLayer没有renderer,GraphicsLayer中的每一个graphic都有自己的symbol</p>
+<p><strong>5.FeatureLayer</strong></p>
+<p>可以通过服务或者客户端要素集合来创建</p>
+<p>FeatureLayer中的要素不能被单独符号化，需要通过renderer属性进行</p>
+<p><strong>6.ElevationLayer</strong></p>
+<ul>
+<li>高程服务</li>
+</ul>
+<p> 缓存影像服务</p>
+<p> LERC format（有损压缩格式）</p>
+<ul>
+<li>添加至map.ground.layers</li>
+</ul>
+<p> 支持多个高程图层叠加</p>
+<p> 支持高程查询</p>
+<p><strong>7. SceneLayer</strong></p>
+<p>支持两种集合类型：Point和3D Object</p>
+<p><strong>8.IntegratedMeshLayer</strong></p>
+<p><strong>9. PointCloudLayer</strong></p>
+
+        <h3 id="4-符号化">
+          <a href="#4-符号化" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-符号化" class="headerlink" title="4.符号化"></a>4.符号化</h3>
+      <p><strong>ArcGIS online&#x2F;Portal tools</strong></p>
+<p><strong>智能绘图API</strong></p>
+
+        <h3 id="5-widget">
+          <a href="#5-widget" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-widget" class="headerlink" title="5.widget"></a>5.widget</h3>
+      <p>常用功能做了封装成为小部件</p>
+<p>比如</p>
+<p>Attribution  NavigaationToggle</p>
+<p>BasemapGallery Popup</p>
+<p>BasemapToggle Print</p>
+<p>Bookmarks ScaleBar</p>
+<p>Compass Search</p>
+<p>CoordinateConversion Sketch</p>
+<p>Directions Track</p>
+<p>Home Zoom</p>
+<p>LayerList DirectLineMeasurement3D</p>
+<p>Legend AreaMeasurement3D</p>
+<p>Locate</p>
+<p><strong>实例化后使用<code>view.ui.add(activeWidget,&quot;top-right&quot;)</code>添加</strong></p>
+
+        <h3 id="6-任务和查询">
+          <a href="#6-任务和查询" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-任务和查询" class="headerlink" title="6. 任务和查询"></a>6. 任务和查询</h3>
+      <p><strong>查询-Query对象</strong></p>
+<ul>
+<li>属性查询：可以通过两个属性设置查询条件：Query.where和Query.text</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var query = new Query()</span><br><span class="line"></span><br><span class="line">query.where=&quot;STATE_NAME=&#x27;Washington&#x27;&quot;</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var query = new Query()</span><br><span class="line">query.text=&quot;&quot;Washington</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>空间查询</li>
+</ul>
+<p>通过Query.geometry+Query.spatialRelationship指定查询条件</p>
+<ul>
+<li>统计查询</li>
+</ul>
+<p><strong>查询-QueryTask对象</strong></p>
+<p>创建QueryTask对象</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var queryTask = new QueryTask(&#123;</span><br><span class="line">	url:&quot;&quot;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://planeswalker1205.github.io">ashen</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://planeswalker1205.github.io/2022/07/24/web-arcgisForJavascript/">https://planeswalker1205.github.io/2022/07/24/web-arcgisForJavascript/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://planeswalker1205.github.io/tags/javascript/">javascript</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://planeswalker1205.github.io/tags/web/">web</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://planeswalker1205.github.io/tags/arcgis-for-javascript/">arcgis for javascript</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/07/13/web-react/"><span class="paginator-prev__text">web-react</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">
+          基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#API%E6%A8%A1%E5%9D%97"><span class="toc-number">1.1.</span> <span class="toc-text">
+          API模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Map%E5%92%8CView"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          1.Map和View</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-View%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          2.View的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Layers"><span class="toc-number">1.1.3.</span> <span class="toc-text">
+          3.Layers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%AC%A6%E5%8F%B7%E5%8C%96"><span class="toc-number">1.1.4.</span> <span class="toc-text">
+          4.符号化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-widget"><span class="toc-number">1.1.5.</span> <span class="toc-text">
+          5.widget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E4%BB%BB%E5%8A%A1%E5%92%8C%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.1.6.</span> <span class="toc-text">
+          6. 任务和查询</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">46</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">0</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">68</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ashen</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v6.1.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

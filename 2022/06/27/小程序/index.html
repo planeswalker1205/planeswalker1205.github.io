@@ -1,0 +1,1256 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="简介                           1. 小程序与普通网页开发的区别        运行环境不同：网页运行在浏览器；小程序运行在微信环境中  API不同：小程序中，无法调用DOM和BOM的API，但是小程序中可以调用微信环境提供的各种API，例如：地理定位，扫码，支付  开发模式不同：    申请小程序开发账号  安装小程序开发工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小程序">
+<meta property="og:url" content="https://planeswalker1205.github.io/2022/06/27/%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.html">
+<meta property="og:site_name" content="MIRACLE">
+<meta property="og:description" content="简介                           1. 小程序与普通网页开发的区别        运行环境不同：网页运行在浏览器；小程序运行在微信环境中  API不同：小程序中，无法调用DOM和BOM的API，但是小程序中可以调用微信环境提供的各种API，例如：地理定位，扫码，支付  开发模式不同：    申请小程序开发账号  安装小程序开发工具">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-27T13:29:11.000Z">
+<meta property="article:modified_time" content="2022-07-05T09:10:46.345Z">
+<meta property="article:author" content="ashen">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="小程序">
+<meta name="twitter:card" content="summary"><title>小程序 | MIRACLE</title><link ref="canonical" href="https://planeswalker1205.github.io/2022/06/27/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">Tags</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">MIRACLE</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">小程序</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-06-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-07-05</span></span></div></header><div class="post-body">
+        <h1 id="简介">
+          <a href="#简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#简介" class="headerlink" title="简介"></a>简介</h1>
+      
+        <h2 id="1-小程序与普通网页开发的区别">
+          <a href="#1-小程序与普通网页开发的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-小程序与普通网页开发的区别" class="headerlink" title="1. 小程序与普通网页开发的区别"></a>1. 小程序与普通网页开发的区别</h2>
+      <ol>
+<li><p>运行环境不同：网页运行在浏览器；小程序运行在微信环境中</p>
+</li>
+<li><p>API不同：小程序中，无法调用DOM和BOM的API，但是小程序中可以调用微信环境提供的各种API，例如：地理定位，扫码，支付</p>
+</li>
+<li><p>开发模式不同：</p>
+</li>
+</ol>
+<ul>
+<li><p>申请小程序开发账号</p>
+</li>
+<li><p>安装小程序开发工具</p>
+</li>
+<li><p>创建和配置小程序项目</p>
+</li>
+</ul>
+
+        <h2 id="小程序代码的构成">
+          <a href="#小程序代码的构成" class="heading-link"><i class="fas fa-link"></i></a><a href="#小程序代码的构成" class="headerlink" title="小程序代码的构成"></a>小程序代码的构成</h2>
+      
+        <h3 id="1-新建小程序页面">
+          <a href="#1-新建小程序页面" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-新建小程序页面" class="headerlink" title="1. 新建小程序页面"></a>1. 新建小程序页面</h3>
+      <p><strong>只需要在app.json&gt;&gt;pages中新增页面的存放路径，小程序开发者工具即可帮我们自动创建对应的页面文件</strong></p>
+
+        <h3 id="2-修改项目首页">
+          <a href="#2-修改项目首页" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-修改项目首页" class="headerlink" title="2. 修改项目首页"></a>2. 修改项目首页</h3>
+      <p><strong>只需要调整app.json&gt;&gt;pages数组中页面路径的前后顺序，即可修改项目的首页。小程序会把排在第一位的页面，当做项目首页进行渲染</strong></p>
+
+        <h3 id="3-页面">
+          <a href="#3-页面" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-页面" class="headerlink" title="3. 页面"></a>3. 页面</h3>
+      <p><strong>wxml和html的区别</strong></p>
+<ul>
+<li>标签名称不同</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">html（div span img a）</span><br><span class="line"></span><br><span class="line">wxml(view text image navigator)</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>属性节点不同</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#&quot;&gt;超链接&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;navigator url=&quot;/pages/home/home&quot;&gt;&lt;/navigator&gt;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>提供了类似于于vue中的模板语法</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 数据绑定</span><br><span class="line"></span><br><span class="line">- 列表渲染</span><br><span class="line"></span><br><span class="line">- 条件渲染</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>wxss和css的区别</strong></p>
+<ul>
+<li>新增了rpx尺寸单位</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wxss在底层支持新的尺寸单位rpx，在不同大小的屏幕上小程序会自动进行换算</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>提供了全局的样式和局部样式</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">= 项目根目录中的app.wxss会作用于所有小程序页面</span><br><span class="line"></span><br><span class="line">= 局部页面的.wxss样式仅对当前页面生效</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>wxss仅支持部分css选择器</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.class和#id</span><br><span class="line">element</span><br><span class="line">并集选择器、后代选择器</span><br><span class="line">::after和::before等伪类选择器</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>js逻辑交互</strong></p>
+<p>小程序中.js文件的分类</p>
+<ul>
+<li>app.js</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是整个小程序项目的入口文件，通过调用App()函数来启动整个小程序</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>页面的.js文件</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是页面的入口文件，通过调用Page()函数来创建并运行页面</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>普通的.js文件</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是普通的功能模块文件，用来封装公共的函数或属性供页面使用</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="小程序的宿主环境">
+          <a href="#小程序的宿主环境" class="heading-link"><i class="fas fa-link"></i></a><a href="#小程序的宿主环境" class="headerlink" title="小程序的宿主环境"></a>小程序的宿主环境</h2>
+      <p><strong>宿主环境(host environment)指的是程序运行所必须的依赖环境</strong></p>
+<p>Android系统和iOS系统是两个不同的宿主环境。安卓版的微信App是不能在iOS环境下运行的。所以，Android是安卓软件的宿主环境，脱离了宿主环境的软件是没有任何意义的</p>
+<p><strong>小程序宿主环境包含的内容</strong></p>
+<ul>
+<li><p>通信模型</p>
+</li>
+<li><p>运行机制</p>
+</li>
+<li><p>组件</p>
+</li>
+<li><p>API</p>
+</li>
+</ul>
+
+        <h3 id="1-通信模型">
+          <a href="#1-通信模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-通信模型" class="headerlink" title="1.通信模型"></a>1.通信模型</h3>
+      <p>小程序中通信的主体是渲染层和逻辑层：其中</p>
+<ol>
+<li><p>wxml模板和wxss样式工作在渲染层</p>
+</li>
+<li><p>js脚本工作在逻辑层</p>
+</li>
+</ol>
+<p><strong>小程序启动的过程</strong></p>
+<ol>
+<li><p>把小程序的代码包下载到本地</p>
+</li>
+<li><p>解析app.json全局配置文件</p>
+</li>
+<li><p>执行app.js小程序入口文件，调用App()创建小程序实例</p>
+</li>
+<li><p>渲染小程序首页</p>
+</li>
+<li><p>小程序启动完成</p>
+</li>
+</ol>
+<p><strong>页面渲染过程</strong></p>
+<ol>
+<li><p>加载解析页面的.json配置文件</p>
+</li>
+<li><p>加载页面的.wxml模板和.wxss样式</p>
+</li>
+<li><p>执行页面的.js文件，调用Page()创建野页面实例</p>
+</li>
+<li><p>页面渲染完成</p>
+</li>
+</ol>
+
+        <h1 id="组件">
+          <a href="#组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#组件" class="headerlink" title="组件"></a>组件</h1>
+      
+        <h2 id="分类">
+          <a href="#分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#分类" class="headerlink" title="分类"></a>分类</h2>
+      <p>小程序中的组件也是由宿主环境提供的，开发者可以基于组件快速搭建出页面结构。官方把小程序的组件分为九大类：</p>
+<p>视图容器;</p>
+<p>基础组件;</p>
+<p>表单组件;</p>
+<p>导航组件;</p>
+<p>媒体组件;</p>
+<p>map地图组件;</p>
+<p>canvas画布组件;</p>
+<p>开放能力;</p>
+<p>无障碍访问</p>
+
+        <h3 id="1-视图容器">
+          <a href="#1-视图容器" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-视图容器" class="headerlink" title="1. 视图容器"></a>1. 视图容器</h3>
+      <p><strong>1. view</strong></p>
+<p>普通视图区域；类似div是一个块级元素</p>
+<p><strong>2. scroll-view</strong></p>
+<p>可滚动的视图区域</p>
+<p><strong>3. swiper和swiper-item</strong></p>
+<p>轮播图容器组件和轮播图item组件</p>
+
+        <h3 id="2-基础组件">
+          <a href="#2-基础组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-基础组件" class="headerlink" title="2. 基础组件"></a>2. 基础组件</h3>
+      <p><strong>text</strong></p>
+<p>文本组件，类似span</p>
+<p><strong>rich-text</strong></p>
+<p>富文本组件，支持把html字符串渲染为wxml结构</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;rich-text nodes=&quot;&lt;h1 style=&#x27;color:red;&#x27;&gt;标题&lt;/h1&gt;&quot;&gt;&lt;/rich-text&gt;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="3-其他常用组件">
+          <a href="#3-其他常用组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-其他常用组件" class="headerlink" title="3. 其他常用组件"></a>3. 其他常用组件</h3>
+      <p><strong>1. button</strong></p>
+<p>按钮组件，功能丰富；通过open-type属性可以调用微信提供的各种功能(客服、转发、获取用户授权、获取用户信息)</p>
+<p><strong>2. image</strong></p>
+<p>图片组件：该组件默认宽度约300px，高约240px</p>
+<p><strong>3. navigator</strong></p>
+<p>页面导航组件，类似a链接</p>
+
+        <h2 id="小程序API">
+          <a href="#小程序API" class="heading-link"><i class="fas fa-link"></i></a><a href="#小程序API" class="headerlink" title="小程序API"></a>小程序API</h2>
+      <p>小程序中的API信息是由宿主环境提供的，通过这些丰富的小程序API，开发者可以方便的调用微信提供的能力，如：获取用户信息、本地存储、支付功能等</p>
+
+        <h3 id="1-事件监听API">
+          <a href="#1-事件监听API" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-事件监听API" class="headerlink" title="1. 事件监听API"></a>1. 事件监听API</h3>
+      <p>以on开头，用来监听某些事件的触发。</p>
+<p><code>wx.onWindowResize(function callback)</code>监听窗口尺寸变化的时间</p>
+
+        <h3 id="2-同步API">
+          <a href="#2-同步API" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-同步API" class="headerlink" title="2. 同步API"></a>2. 同步API</h3>
+      <p>以Sync结尾的API都是同步API</p>
+<p>同步API的执行结果，可以通过函数返回值直接获取。如果执行出错会抛出异常。</p>
+<p><code>wx.setStorageSync(&#39;key&#39;,&#39;value&#39;)</code>向本地存储中写入内容</p>
+
+        <h3 id="3-异步API">
+          <a href="#3-异步API" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-异步API" class="headerlink" title="3. 异步API"></a>3. 异步API</h3>
+      <p>类似jQuery中的$.ajax(options)函数。需要通过success，fail，complete接收调用的结果</p>
+<p><code>wx.request()</code>发起网络数据请求，通过success回调函数接收数据</p>
+
+        <h1 id="模板与配置">
+          <a href="#模板与配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#模板与配置" class="headerlink" title="模板与配置"></a>模板与配置</h1>
+      
+        <h2 id="模板语法">
+          <a href="#模板语法" class="heading-link"><i class="fas fa-link"></i></a><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h2>
+      
+        <h3 id="1-数据绑定">
+          <a href="#1-数据绑定" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-数据绑定" class="headerlink" title="1.数据绑定"></a>1.数据绑定</h3>
+      <p>基本原则：早data中定义页面的数据；在wxml中使用数据</p>
+<p><strong>1. 定义：js文件中定义</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 页面的初始数据</span><br><span class="line">   */</span><br><span class="line">  data: &#123;</span><br><span class="line">    info:&#x27;initdata&#x27;,</span><br><span class="line">    msgList:[&#123;msg:&quot;hello&quot;&#125;,&#123;msg:&quot;world&quot;&#125;]</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>2. Mustache语法渲染</strong></p>
+<p>绑定内容</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;</span><br><span class="line">&#123;&#123;info&#125;&#125;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p>绑定属性（与vue有所不同）</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;image src=&quot;&#123;&#123;imgSrc&#125;&#125;&quot;&gt;&lt;/image&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p>三元运算</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;</span><br><span class="line">&#123;&#123;num&gt;10?&quot;大于10&quot;:&quot;小于10&quot;&#125;&#125;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-事件绑定">
+          <a href="#2-事件绑定" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-事件绑定" class="headerlink" title="2. 事件绑定"></a>2. 事件绑定</h3>
+      <p><strong>tap：手指离开后马上离开，类似click</strong></p>
+<p>绑定方式：<code>bindtap</code>或<code>bind:taap</code></p>
+<p><strong>input：文本框的输入事件</strong></p>
+<p>绑定方式：<code>bindinput</code>或<code>bind:input</code></p>
+<p><strong>change：状态改变时触发</strong></p>
+<p>绑定方式：<code>bindchange</code>或<code>bind:change</code></p>
+<p><strong>事件对象的属性列表</strong></p>
+<p>当事件回调触发的时候，会收到一个事件对象event，详细属性如下：</p>
+<p>type：string：事件类型</p>
+<p>timeStamp：Integer：页面打开到触发事件所经过的毫秒数</p>
+<p>target：Object：触发事件的组件的一些属性值集合</p>
+<p>currentTarget：Object：当前组件的一些属性值集合</p>
+<p>detail：Object：额外的信息</p>
+<p>touches：Array：触摸事件，当前停留在屏幕中的触摸点信息的数组</p>
+<p>changedTouches：Array：触摸事件，当前变化的触摸点信息的数组</p>
+<p><strong>target和currentTarget的区别</strong></p>
+<p>target是触发该事件的源头组件，而currentTarget则是当前事件所绑定的组件。</p>
+<p>比如事件绑定在父组件，此时点击子组件出现冒泡机制，父组件的点击事件也会触发。此时<code>target</code>指触发该事件的源头组件，<code>currentTarget</code>则是当前事件所绑定的组件。</p>
+<p>在页面的.js文件中定义对应的事件处理函数，事件参数通过形参event(简写e)来接收</p>
+<p><strong><font color="red">注意：如果在绑定的点击事件中获取数据<code>data-**</code>时，使用<code>e.currentTarget.dataset.**</code></font></strong></p>
+
+        <h3 id="3-事件传参与数据同步">
+          <a href="#3-事件传参与数据同步" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-事件传参与数据同步" class="headerlink" title="3. 事件传参与数据同步"></a>3. 事件传参与数据同步</h3>
+      <p><strong>更新视图数据：</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">	info:&#x27;initdata&#x27;,</span><br><span class="line">&#125;,</span><br><span class="line">onefunc()&#123;</span><br><span class="line">//获取data数据</span><br><span class="line">console.log(this.data.info);</span><br><span class="line">this.setData(&#123;</span><br><span class="line">  info:&quot;please&quot;</span><br><span class="line">&#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>事件传参</strong></p>
+<p>小程序中的事件传参比较特殊，不能在绑定事件的同时为事件处理函数传递参数。因为小程序会把bindtap的属性值，统一当做事件名称来处理。</p>
+<p>传递参数：可以为组件提供<code>data-*</code>自定义属性传参。*代表参数的名字</p>
+<p>获取参数：<code>event.target.dataset.参数名</code></p>
+<p>例：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;button size=&quot;mini&quot; bindtap=&quot;onefunc&quot; data-num=&quot;&#123;&#123;3&#125;&#125;&quot; type=&quot;primary&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">onefunc(e:any)&#123;</span><br><span class="line">	console.log(e.target.dataset.num);</span><br><span class="line"></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="4-bindinput">
+          <a href="#4-bindinput" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-bindinput" class="headerlink" title="4.bindinput"></a>4.bindinput</h3>
+      <p>语法：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot;  bindinput=&quot;inputHandler&quot; /&gt;</span><br><span class="line"></span><br><span class="line">inputHandler(e)&#123;</span><br><span class="line"></span><br><span class="line">	//e.detail.value是变化过后，文本框最新的值</span><br><span class="line">	console.log(e.detail.value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="5-实现文本框和data之间的数据同步">
+          <a href="#5-实现文本框和data之间的数据同步" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-实现文本框和data之间的数据同步" class="headerlink" title="5. 实现文本框和data之间的数据同步"></a>5. 实现文本框和data之间的数据同步</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot;  bindinput=&quot;inputHandler&quot; value=&quot;&#123;&#123;msg&#125;&#125;&quot;/&gt;</span><br><span class="line"></span><br><span class="line">inputHandler(e:any)&#123;</span><br><span class="line">	this.setData(&#123;</span><br><span class="line">	  msg:e.detail.value</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="6-条件语法">
+          <a href="#6-条件语法" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-条件语法" class="headerlink" title="6. 条件语法"></a>6. 条件语法</h3>
+      <p><strong>wx:if</strong></p>
+<p><strong>wx:elif</strong></p>
+<p><strong>wx:else</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:if=&quot;&#123;&#123;num===0&#125;&#125;&quot;&gt;</span><br><span class="line">123</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">&lt;view wx:elif=&quot;&#123;&#123;num===1&#125;&#125;&quot;&gt;</span><br><span class="line">456</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">&lt;view wx:else&gt;</span><br><span class="line">789</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>如果要一次性控制多个组件的展示与隐藏，可以使用一个<code>&lt;block&gt;&lt;/block&gt;</code>标签将多个组件包装起来，并在block标签上使用wx:if控制属性</strong></p>
+<p><code>&lt;block&gt;</code>并不是一个组件，只是一个包裹性质的容器，不会再页面上做任何渲染。</p>
+
+        <h3 id="7-hidden">
+          <a href="#7-hidden" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-hidden" class="headerlink" title="7. hidden"></a>7. hidden</h3>
+      <p><code>hidden=&quot;&#123;&#123;condition&#125;&#125;&quot;</code></p>
+<p>条件为true隐藏，为false显示</p>
+
+        <h3 id="8-列表渲染">
+          <a href="#8-列表渲染" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-列表渲染" class="headerlink" title="8. 列表渲染"></a>8. 列表渲染</h3>
+      <p><code>wx:for</code></p>
+<p>语法：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:for=&quot;&#123;&#123;msgList&#125;&#125;&quot;&gt;</span><br><span class="line">索引：&#123;&#123;index&#125;&#125;</span><br><span class="line">当前项：&#123;&#123;item&#125;&#125;</span><br><span class="line">展示信息：&#123;&#123;item.msg&#125;&#125;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>手动指定索引和当前项的变量名</strong></p>
+<ul>
+<li><p>使用<code>wx:for-index</code>可以指定当前循环项的索引的变量名</p>
+</li>
+<li><p>使用<code>wx:for-item</code>可以指定当前项的变量名</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:for=&quot;&#123;&#123;msgList&#125;&#125;&quot; wx:for-index=&quot;idx&quot; wx:for-item=&quot;wxitem&quot;&gt;</span><br><span class="line">索引：&#123;&#123;idx&#125;&#125;</span><br><span class="line">当前项：&#123;&#123;wxitem&#125;&#125;</span><br><span class="line">展示信息：&#123;&#123;wxitem.msg&#125;&#125;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong><code>wx:key</code></strong></p>
+<p>類似vue的<code>:key</code></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line"></span><br><span class="line">	msgList:[&#123;id:&#x27;001&#x27;,msg:&quot;hello&quot;&#125;,&#123;id:&quot;002&quot;,msg:&quot;world&quot;&#125;],</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;view wx:for=&quot;&#123;&#123;msgList&#125;&#125;&quot; wx:for-index=&quot;idx&quot; wx:for-item=&quot;wxitem&quot; wx:key=&quot;id&quot;&gt;</span><br><span class="line">索引：&#123;&#123;idx&#125;&#125;</span><br><span class="line">当前项：&#123;&#123;wxitem&#125;&#125;</span><br><span class="line">展示信息：&#123;&#123;wxitem.msg&#125;&#125;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p>指定key时不需要加<code>&#123;&#123;&#125;&#125;</code></p>
+
+        <h2 id="模板样式">
+          <a href="#模板样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#模板样式" class="headerlink" title="模板样式"></a>模板样式</h2>
+      <p><strong>wxss和css的关系</strong></p>
+<p>wxss具有css大部分特性，同时，wxss还对css进行了扩充以及修改，以适应微信小程序的开发。wxss扩展的特性有：</p>
+<ul>
+<li><p>rpx尺寸单位</p>
+</li>
+<li><p>@import样式导入</p>
+</li>
+</ul>
+
+        <h3 id="1-rpx">
+          <a href="#1-rpx" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-rpx" class="headerlink" title="1.rpx"></a>1.rpx</h3>
+      <p>是小程序独有的，用来解决屏适配的尺寸单位</p>
+<p><strong>原理</strong></p>
+<p>rpx把所有设备的屏幕，在宽度上等分为750份(即：当前屏幕的总宽度为750rpx)</p>
+
+        <h3 id="2-样式导入">
+          <a href="#2-样式导入" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-样式导入" class="headerlink" title="2. 样式导入"></a>2. 样式导入</h3>
+      <p>@import后跟需要导入的外联样式表的相对路径，用<code>;</code>表示语句结束。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;common.wxss&quot;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="3-window-导航栏">
+          <a href="#3-window-导航栏" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-window-导航栏" class="headerlink" title="3. window-导航栏"></a>3. window-导航栏</h3>
+      <p>用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
+<p>各个属性参考全局配置文档的window项：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#window">https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#window</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="4-下拉刷新">
+          <a href="#4-下拉刷新" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-下拉刷新" class="headerlink" title="4. 下拉刷新"></a>4. 下拉刷新</h3>
+      <p><strong>设置步骤：</strong></p>
+<p>app.json–window–enablePullDownRefresh的值设置为true</p>
+<p>注：在app.json中启用下拉刷新功能，会作用于每个页面。</p>
+<p><strong>下拉刷新背景色：</strong></p>
+<p>app.json–window-“backgroundColor”: “#bfa”</p>
+<p>值只能是十六进制</p>
+<p><strong>下拉刷新的loaading样式</strong></p>
+<p>app.json–window-backgroundTextStyle</p>
+
+        <h3 id="5-上拉触底">
+          <a href="#5-上拉触底" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-上拉触底" class="headerlink" title="5. 上拉触底"></a>5. 上拉触底</h3>
+      <p>指手指在屏幕上的上拉滑动操作，从而加载更多数据的行为。</p>
+<p> app.json–window-onReachBottomDistance</p>
+<p>默认距离为50px</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;onReachBottomDistance&quot;: 50</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="5-tabBar">
+          <a href="#5-tabBar" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-tabBar" class="headerlink" title="5. tabBar"></a>5. tabBar</h3>
+      <p>是移动端应用常见的页面效果，用于实现多页面的快速切换。通常将其分为：</p>
+<p>底部tabBar</p>
+<p>顶部tabBar</p>
+<p><strong>注：tabBar中只能配置最少2个，最多5个tab页签；当渲染顶部tabBar时，不显示icon，只显示文本</strong></p>
+<ul>
+<li><p>backgroundColor：tabBar的背景色</p>
+</li>
+<li><p>selectedIconPath：选中时的图片路径</p>
+</li>
+<li><p>borderStyle：tabBar上边框的颜色</p>
+</li>
+<li><p>iconPath：未选中时的图片路径</p>
+</li>
+<li><p>selectedColor：tab上的文字选中时的颜色</p>
+</li>
+<li><p>color：tab上文字默认颜色</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&quot;tabBar&quot;: &#123;</span><br><span class="line">  &quot;list&quot;: [&#123;</span><br><span class="line">    &quot;pagePath&quot;: &quot;pages/index/index&quot;,</span><br><span class="line">    &quot;text&quot;: &quot;index&quot;</span><br><span class="line">  &#125;,&#123;</span><br><span class="line">    &quot;pagePath&quot;: &quot;pages/list/list&quot;,</span><br><span class="line">    &quot;text&quot;: &quot;list&quot;</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>图标设置</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&quot;tabBar&quot;: &#123;</span><br><span class="line">  &quot;list&quot;: [&#123;</span><br><span class="line">    &quot;pagePath&quot;: &quot;pages/index/index&quot;,</span><br><span class="line">    &quot;text&quot;: &quot;index&quot;,</span><br><span class="line">    &quot;iconPath&quot;: &quot;./images/home.png&quot;,</span><br><span class="line">    &quot;selectedIconPath&quot;: &quot;./images/home-active.png&quot;</span><br><span class="line">  &#125;,&#123;</span><br><span class="line">    &quot;pagePath&quot;: &quot;pages/list/list&quot;,</span><br><span class="line">    &quot;text&quot;: &quot;list&quot;,</span><br><span class="line">    &quot;iconPath&quot;: &quot;./images/phone.png&quot;,</span><br><span class="line">    &quot;selectedIconPath&quot;: &quot;./images/phone-active.png&quot;</span><br><span class="line">  &#125;,&#123;</span><br><span class="line">    &quot;pagePath&quot;: &quot;pages/message/message&quot;,</span><br><span class="line">    &quot;text&quot;:&quot;message&quot;,</span><br><span class="line">    &quot;iconPath&quot;: &quot;./images/message.png&quot;,</span><br><span class="line">    &quot;selectedIconPath&quot;: &quot;./images/messaage-active.png&quot;</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>注意：tab页签的页面需要在pages数组中放在前面</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;pages&quot;: [</span><br><span class="line">  &quot;pages/index/index&quot;,</span><br><span class="line">  &quot;pages/list/list&quot;,</span><br><span class="line">  &quot;pages/message/message&quot;</span><br><span class="line">],</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h2 id="页面配置">
+          <a href="#页面配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#页面配置" class="headerlink" title="页面配置"></a>页面配置</h2>
+      <p>app.json中的weindow节点，可以全局配置小程序中每个页面的窗口表现。如果某些小程序页面想要拥有特殊的窗口表现，此时，”页面级别的.json配置文件”就可以实现这种需求。</p>
+<p>当页面配置与全局配置冲突时，根据就近原则，以页面配置为准。</p>
+
+        <h2 id="数据请求">
+          <a href="#数据请求" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据请求" class="headerlink" title="数据请求"></a>数据请求</h2>
+      <p>出于安全性方面的考虑，小程序官方对数据接口的请求做出了如下限制：</p>
+<ul>
+<li><p>只能请求HTTPS类型的接口</p>
+</li>
+<li><p>必须将接口的域名添加到新人列表中</p>
+</li>
+</ul>
+
+        <h3 id="1-配置request合法域名">
+          <a href="#1-配置request合法域名" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-配置request合法域名" class="headerlink" title="1. 配置request合法域名"></a>1. 配置request合法域名</h3>
+      <p>配置步骤：登录微信小程序管理后台–开发–开发设置–服务器域名–修改request合法域名</p>
+<p><strong><font color="red">域名只支持https协议</font></strong></p>
+<p><strong><font color="red">不能使用IP地址或localhost</font></strong></p>
+<p><strong><font color="red">域名必须经过ICP备案</font></strong></p>
+<p><strong><font color="red">服务器域名一个月内最多可申请5次修改</font></strong></p>
+
+        <h3 id="2-发起GET请求">
+          <a href="#2-发起GET请求" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-发起GET请求" class="headerlink" title="2.发起GET请求"></a>2.发起GET请求</h3>
+      <p>调用微信小程序提供的<code>wx.request()</code>方法，可以发起GET数据请求。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">getInfo()&#123;</span><br><span class="line">  wx.request(&#123;</span><br><span class="line">    url:&quot;https://www.escook.cn/api/get&quot;,</span><br><span class="line">    method:&#x27;GET&#x27;,</span><br><span class="line">    data:&#123;</span><br><span class="line">      name1:&quot;张三&quot;,</span><br><span class="line">      aage:22</span><br><span class="line">    &#125;,</span><br><span class="line">    success:(res)=&gt;&#123;</span><br><span class="line">      console.log(res);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="3-发起POST请求">
+          <a href="#3-发起POST请求" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-发起POST请求" class="headerlink" title="3. 发起POST请求"></a>3. 发起POST请求</h3>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">getPostInfo</span>(<span class="params"></span>)&#123;</span><br><span class="line">  wx.<span class="title function_">request</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>:<span class="string">&quot;https://www.escook.cn/api/post&quot;</span>,</span><br><span class="line">    <span class="attr">method</span>:<span class="string">&quot;POST&quot;</span>,</span><br><span class="line">    <span class="attr">data</span>:&#123;</span><br><span class="line">      <span class="attr">name1</span>:<span class="string">&quot;李斯特&quot;</span>,</span><br><span class="line">      <span class="attr">age</span>:<span class="number">31</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">success</span>:<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="4-在页面刚加载时请求数据">
+          <a href="#4-在页面刚加载时请求数据" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-在页面刚加载时请求数据" class="headerlink" title="4. 在页面刚加载时请求数据"></a>4. 在页面刚加载时请求数据</h3>
+      <p>在onLoad事件中调用获取数据的函数</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//this代表当前页面的实例</span><br><span class="line">onLoad() &#123;</span><br><span class="line">	this.getPostInfo()</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="5-request请求的注意事项">
+          <a href="#5-request请求的注意事项" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-request请求的注意事项" class="headerlink" title="5. request请求的注意事项"></a>5. request请求的注意事项</h3>
+      <p><strong>如果未提供https协议的接口，可以在开发者工具中，临时开启【开发不校验请求域名，TLS版本及HTTPS证书】选项，跳过request合法域名校验</strong></p>
+<p>仅限在开发与调试阶段使用。</p>
+
+        <h3 id="6-跨域和ajax">
+          <a href="#6-跨域和ajax" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-跨域和ajax" class="headerlink" title="6. 跨域和ajax"></a>6. 跨域和ajax</h3>
+      <p>跨域问题只存在于基于浏览器的Web开发中，由于小程序的宿主环境不是浏览器，所以不存在跨域问题。</p>
+<p>Ajax技术的核心是依赖于浏览器中的XMLHttpRequest这个对象，由于小程序的宿主环境是微信客户端，所以小程序中的请求叫做”发起网络数据请求”</p>
+
+        <h1 id="视图与逻辑">
+          <a href="#视图与逻辑" class="heading-link"><i class="fas fa-link"></i></a><a href="#视图与逻辑" class="headerlink" title="视图与逻辑"></a>视图与逻辑</h1>
+      
+        <h2 id="页面导航">
+          <a href="#页面导航" class="heading-link"><i class="fas fa-link"></i></a><a href="#页面导航" class="headerlink" title="页面导航"></a>页面导航</h2>
+      
+        <h3 id="1-声明式导航">
+          <a href="#1-声明式导航" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-声明式导航" class="headerlink" title="1. 声明式导航"></a>1. 声明式导航</h3>
+      <p><code>&lt;navigator&gt;</code></p>
+<p><strong>导航到tabBar页面</strong></p>
+<p>指被配置为tabBar的页面。在使用<code>&lt;navigator&gt;</code>组件跳转到指定的tabBar页面时，需要指定url属性和open-type属性。其中：</p>
+<ul>
+<li><p>url表示要跳转的页面的地址，必须以<code>/</code>开头</p>
+</li>
+<li><p>open-type表示跳转的方式，必须为<code>switchTab</code></p>
+</li>
+</ul>
+<p>如：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;navigator url=&quot;../home/home&quot; open-type=&quot;switchTab&quot;&gt;跳转&lt;/navigator&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>导航到非tobBar页面</strong></p>
+<p>同上，open-type为navigate，可省略</p>
+<p>例：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;navigator url=&quot;../index/index&quot; open-type=&quot;navigate&quot;&gt;非tabBar页面&lt;/navigator&gt;</span><br></pre></td></tr></table></div></figure>
+
+
+<p><strong>后退导航</strong></p>
+<p>如果要后退到上一页面或多级页面，则需要指定open-type属性和delta属性，</p>
+<ul>
+<li><p>open-type的值必须是navigateBack，表示要进行后退导航</p>
+</li>
+<li><p>delta的值必须是数字，表示要后退的层级。默认值为1可省略</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;navigator open-type=&quot;navigateBack&quot; delta=&quot;1&quot;&gt;退！退！退！&lt;/navigator&gt;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-编程式导航">
+          <a href="#2-编程式导航" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-编程式导航" class="headerlink" title="2.编程式导航"></a>2.编程式导航</h3>
+      <p>调用小程序的导航API,实现页面的跳转</p>
+<p><strong>1. 导航到tabBar页面</strong></p>
+<p>调用<code>wx.switchTab(Object object)</code>跳转</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wx.switchTab(&#123;</span><br><span class="line">  url:&quot;/pages/message/message&quot;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>2. 导航到非tabBar页面</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">skipNoTabBar()&#123;</span><br><span class="line">  wx.navigateTo(&#123;</span><br><span class="line">    url:&quot;/pages/index/index&quot;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>如果指定的是pages根路径，前面要加<code>/</code></p>
+<p><strong>3. 后退导航</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pageBack()&#123;</span><br><span class="line">  wx.navigateBack()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="3-导航传参">
+          <a href="#3-导航传参" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-导航传参" class="headerlink" title="3. 导航传参"></a>3. 导航传参</h3>
+      <p><strong>1. 声明式导航传参</strong></p>
+<p>navigator组件的url属性用来指定将要跳转到的页面的路径。同时，路径的后面还可以携带参数：</p>
+<ul>
+<li><p>参数与路径之间使用?分隔</p>
+</li>
+<li><p>参数键与参数值用&#x3D;相连</p>
+</li>
+<li><p>不同参数用&amp;分隔</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;navigator url=&quot;../home/home?name=zs&amp;age=20&quot; open-type=&quot;switchTab&quot;&gt;跳转&lt;/navigator&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>2. 编程式导航传参</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">skipNoTabBar()&#123;</span><br><span class="line">  wx.navigateTo(&#123;</span><br><span class="line">    url:&quot;/pages/index/index?name=zs&amp;age=19&quot;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>3. onLoad中接收参数</strong></p>
+<p>通过声明式导航和编程式导航传参所携带的参数，可以直接在onLoad事件中直接获取到、</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">onLoad(options) &#123;</span><br><span class="line">    console.log(&quot;传递的参数:&quot;,options);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="页面事件">
+          <a href="#页面事件" class="heading-link"><i class="fas fa-link"></i></a><a href="#页面事件" class="headerlink" title="页面事件"></a>页面事件</h2>
+      
+        <h3 id="1-下拉刷新">
+          <a href="#1-下拉刷新" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-下拉刷新" class="headerlink" title="1. 下拉刷新"></a>1. 下拉刷新</h3>
+      <p>指的是通过手指在屏幕上的下拉滑动操作，从而重新加载页面数据的行为</p>
+<p><strong>全局开启下拉刷新</strong></p>
+<p>app.json的window节点中：<code>&quot;enablePullDownRefresh&quot;:true</code></p>
+<p><strong>局部开启</strong></p>
+<p>在页面的.json配置文件中加上该属性。直接添加即可不需要有window属性</p>
+<p>推荐使用第二种</p>
+<p><strong>2. 监听页面的下拉刷新事件</strong></p>
+<p>在页面的.js文件中，通过<code>onPullDownRefresh</code></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">onPullDownRefresh() &#123;</span><br><span class="line">  console.log(&quot;下拉刷新&quot;);</span><br><span class="line">  </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>停止下拉刷新</strong></p>
+<p><code>wx.stopPullDownRefresh()</code></p>
+
+        <h3 id="2-上拉触底">
+          <a href="#2-上拉触底" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-上拉触底" class="headerlink" title="2. 上拉触底"></a>2. 上拉触底</h3>
+      <p>通过手指在屏幕上的上拉滑动操作，从而加载更多数据的行为</p>
+<p><strong>1. 监听上拉触底</strong></p>
+<p><code>onReachBottom()</code></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">onReachBottom() &#123;</span><br><span class="line">	console.log(&quot;上拉触底&quot;);</span><br><span class="line"></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>2. 配置上拉触底距离</strong></p>
+<p><code>&quot;onReachBottomDistance&quot;: 150</code></p>
+<p><strong>3. loading效果</strong></p>
+<p><code>wx.showLoading(object)</code></p>
+<p><code>wx.hideLoading(object)</code></p>
+<p>使用</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">getColors()&#123;</span><br><span class="line">  wx.showLoading(&#123;title:&quot;数据加载中...&quot;&#125;)</span><br><span class="line">  wx.request(&#123;</span><br><span class="line">    url:&quot;https://applet-base-api-t.itheima.net/api/color&quot;,</span><br><span class="line">    method:&quot;GET&quot;,</span><br><span class="line">    success:(res:colorArray)=&gt;&#123;</span><br><span class="line">      this.setData(&#123;</span><br><span class="line">        colorList:[...this.data.colorList,...res.data.data]</span><br><span class="line">      </span><br><span class="line">      &#125;)</span><br><span class="line">      </span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">	//无论成功还是失败(即请求完成后)</span><br><span class="line">    complete:()=&gt;&#123;</span><br><span class="line">      wx.hideLoading()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>4. 对上拉触底进行节流处理</strong></p>
+<ol>
+<li>data中定义isLoading节流阀</li>
+</ol>
+<ul>
+<li><p>false 表示当前没有进行任何数据请求</p>
+</li>
+<li><p>true表示当前正在进行数据请求</p>
+</li>
+</ul>
+<ol start="2">
+<li>getColors()方法中修改isLoading节流阀的值</li>
+</ol>
+<ul>
+<li><p>在刚调用getColors时将节流阀设置true</p>
+</li>
+<li><p>在网络请求的complete回调函数中，设置false</p>
+</li>
+</ul>
+<ol start="3">
+<li>在onReachBottom中判断节流阀的值，从而对数据请求进行节流控制</li>
+</ol>
+<ul>
+<li><p>如果为true，阻止请求</p>
+</li>
+<li><p>如果为false，发起请求</p>
+</li>
+</ul>
+
+        <h3 id="3-自定义编译模式">
+          <a href="#3-自定义编译模式" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-自定义编译模式" class="headerlink" title="3. 自定义编译模式"></a>3. 自定义编译模式</h3>
+      <p><strong>开发工具–添加编译模式</strong></p>
+
+        <h2 id="生命周期">
+          <a href="#生命周期" class="heading-link"><i class="fas fa-link"></i></a><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2>
+      <p>生命周期是指一个对象从创建–&gt;运行–&gt;销毁的整个阶段，强调的是一个时间段。</p>
+
+        <h3 id="1-生命周期的分类：">
+          <a href="#1-生命周期的分类：" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-生命周期的分类：" class="headerlink" title="1. 生命周期的分类：*"></a>1. 生命周期的分类：*</h3>
+      <p>应用生命周期：特指小程序从启动–&gt;运行–&gt;销毁的过程</p>
+<p>页面生命周期：每个页面的加载–&gt;渲染–&gt;销毁的过程</p>
+
+        <h3 id="2-生命周期函数">
+          <a href="#2-生命周期函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-生命周期函数" class="headerlink" title="2. 生命周期函数"></a>2. 生命周期函数</h3>
+      <p>是由小程序框架提供的内置函数，会伴随着生命周期，自动按次序执行。</p>
+<p><strong>生命周期函数的作用</strong>：允许程序员在特定的时间点， 执行某些特定的操作。</p>
+<p>生命周期强调的是时间段，生命周期函数强调的是时间点。</p>
+
+        <h3 id="3-生命周期函数的分类">
+          <a href="#3-生命周期函数的分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-生命周期函数的分类" class="headerlink" title="3. 生命周期函数的分类"></a>3. 生命周期函数的分类</h3>
+      <p><strong>应用的生命周期函数</strong></p>
+<p>小程序从启动–运行–销毁期间依次调用的函数</p>
+<p><strong>页面的生命周期函数</strong></p>
+<p>每个页面从加载–渲染–销毁期间依次调用的函数</p>
+
+        <h3 id="4-应用的生命周期函数">
+          <a href="#4-应用的生命周期函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-应用的生命周期函数" class="headerlink" title="4. 应用的生命周期函数"></a>4. 应用的生命周期函数</h3>
+      <p>小程序的应用生命周期函数需要在app.js中进行声明</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">App&lt;IAppOption&gt;(&#123;</span><br><span class="line">  globalData: &#123;&#125;,</span><br><span class="line">  /**</span><br><span class="line">   * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）</span><br><span class="line">   */</span><br><span class="line">  onLaunch() &#123;</span><br><span class="line">    console.log(&quot;onLaunch&quot;);</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 当小程序启动，或从后台进入前台显示，会触发 onShow</span><br><span class="line">   */</span><br><span class="line">  onShow(opts) &#123;</span><br><span class="line">    console.log(&quot;onShow&quot;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 当小程序从前台进入后台，会触发 onHide</span><br><span class="line">   */</span><br><span class="line">  onHide() &#123;</span><br><span class="line">    console.log(&quot;onHide&quot;);</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息</span><br><span class="line">   */</span><br><span class="line">  onError(msg) &#123;</span><br><span class="line">    console.error(msg)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="5-页面的生命周期函数">
+          <a href="#5-页面的生命周期函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-页面的生命周期函数" class="headerlink" title="5. 页面的生命周期函数"></a>5. 页面的生命周期函数</h3>
+      <p>小程序的页面生命周期函数需要在页面的.js文件中进行声明</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 生命周期函数--监听页面加载</span><br><span class="line"> */</span><br><span class="line">onLoad() &#123;</span><br><span class="line">  console.log(&quot;页面：onLoad&quot;);</span><br><span class="line">  </span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 生命周期函数--监听页面初次渲染完成</span><br><span class="line"> */</span><br><span class="line">onReady() &#123;</span><br><span class="line">  console.log(&quot;页面：onReady&quot;);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 生命周期函数--监听页面显示</span><br><span class="line"> */</span><br><span class="line">onShow() &#123;</span><br><span class="line">  console.log(&quot;页面：onShow&quot;);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 生命周期函数--监听页面隐藏</span><br><span class="line"> */</span><br><span class="line">onHide() &#123;</span><br><span class="line">  console.log(&quot;页面：onHide&quot;);</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 生命周期函数--监听页面卸载</span><br><span class="line"> */</span><br><span class="line">onUnload() &#123;</span><br><span class="line">  console.log(&quot;页面：onUnload&quot;);</span><br><span class="line"></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="WXS脚本">
+          <a href="#WXS脚本" class="heading-link"><i class="fas fa-link"></i></a><a href="#WXS脚本" class="headerlink" title="WXS脚本"></a>WXS脚本</h2>
+      <p><strong>WXS是小程序独有的一套脚本语言，结合WXML，可以构建出页面的结构</strong></p>
+<p><strong>应用场景</strong></p>
+<p>wxml中无法调用在页面的.js中定义的函数，但是，wxml中可以调用wxs中定义的函数。因此，小程序中wxs的典型应用场景就是”过滤器”</p>
+<p><strong>wxs的语法类似js，但是是完全不同的两种语言：</strong></p>
+<ol>
+<li>wxs有自己的数据类型</li>
+</ol>
+<p>number </p>
+<p>string</p>
+<p>boolean</p>
+<p>object</p>
+<p>function</p>
+<p>araray</p>
+<p>date</p>
+<p>regexp</p>
+<ol start="2">
+<li>wxs不支持类似于ES6及以上的语法形式</li>
+</ol>
+<p>不支持：let 、 const 、 解构赋值 、 展开运算符 、 箭头函数 、 对象属性简写 、 etc。。。</p>
+<p>支持：var定义变量、普通function函数等类似于ES5的语法</p>
+<p>3 wxs遵循commonJS规范</p>
+<p>module对象</p>
+<p>require()函数</p>
+<p>module.exports对象</p>
+
+        <h3 id="1-基础语法">
+          <a href="#1-基础语法" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-基础语法" class="headerlink" title="1. 基础语法"></a>1. 基础语法</h3>
+      <ol>
+<li>内嵌wxs脚本</li>
+</ol>
+<p>wxs代码可以编写在wxml温家安中的<code>&lt;wxs&gt;</code>标签内。</p>
+<p>wxml文件中的每个<code>&lt;wxs&gt;&lt;/wxs&gt;</code>标签，必须提供module属性，用来指定当前wxs的模块名称，方便在wxml中访问模块中的成员</p>
+<p>例：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;&#123;&#123;m1.toUpper(username)&#125;&#125;&lt;/view&gt;</span><br><span class="line">&lt;wxs module=&quot;m1&quot;&gt;</span><br><span class="line">  module.exports.toUpper = function(str)&#123;</span><br><span class="line"></span><br><span class="line">    return str.toUpperCase()</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/wxs&gt;</span><br></pre></td></tr></table></div></figure>
+
+<ol start="2">
+<li>定义外联的wxs脚本</li>
+</ol>
+<ul>
+<li>utils–&gt;创建tools.wxs文件</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function toLower(str)&#123;</span><br><span class="line"></span><br><span class="line">  return str.toLowerCase()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line"></span><br><span class="line">  toLower:toLower</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>注：不支持对象属性的简写形式。</p>
+<ul>
+<li>页面引入使用</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;&#123;&#123;m2.toLower(username)&#125;&#125;&lt;/view&gt;</span><br><span class="line">&lt;wxs src=&quot;../../utils/tools.wxs&quot; module=&quot;m2&quot;&gt;&lt;/wxs&gt;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-wxs的特点">
+          <a href="#2-wxs的特点" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-wxs的特点" class="headerlink" title="2. wxs的特点"></a>2. wxs的特点</h3>
+      <p><strong>为了降低wxs的学习成本，wxs语言在设计时借鉴大量javascript语法。但是本质上wxs和javascript是完全不同的两种语言。</strong></p>
+<p><strong>不能作为组件的事件回调</strong></p>
+<p>wxs典型的应用场景就是过滤器，经常配合Mustache语法进行使用。但是在wxs中定义的函数不能作为组件的时间回调函数</p>
+<p><strong>隔离性</strong></p>
+<p>隔离性指的是wxs的运行环境和其他javascript代码是隔离的。</p>
+<ul>
+<li><p>wxs不能调用js中定义的函数</p>
+</li>
+<li><p>wxs不能调用小程序提供的api</p>
+</li>
+</ul>
+<p><strong>性能好</strong></p>
+<ul>
+<li><p>在IOS设备上，小程序内的WXS会比JavaScript代码块2~20倍</p>
+</li>
+<li><p>在Android设备上，二者的运行效率无差异</p>
+</li>
+</ul>
+
+        <h1 id="小程序-基础加强">
+          <a href="#小程序-基础加强" class="heading-link"><i class="fas fa-link"></i></a><a href="#小程序-基础加强" class="headerlink" title="小程序-基础加强"></a>小程序-基础加强</h1>
+      
+        <h2 id="自定义组件">
+          <a href="#自定义组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h2>
+      
+        <h3 id="1-创建组件">
+          <a href="#1-创建组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-创建组件" class="headerlink" title="1.创建组件"></a>1.创建组件</h3>
+      <ul>
+<li><p>在项目的根目录中，鼠标右键，创建components-&gt;test文件夹</p>
+</li>
+<li><p>在新建的components-&gt;test文件夹上，鼠标右键，“新建Component”</p>
+</li>
+<li><p>键入组件的名称之后回车，会自动生成组件对应的四个文件。</p>
+</li>
+</ul>
+<p><strong>为了保证目录结构的清晰，建议把不同的组件，存放单独目录中</strong></p>
+
+        <h3 id="2-引用组件">
+          <a href="#2-引用组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-引用组件" class="headerlink" title="2. 引用组件"></a>2. 引用组件</h3>
+      <p><strong>局部引用：组件只能在当前被引用的页面内使用</strong></p>
+<p>在页面.json配置文件中引用组件的方式，叫做“局部引用”</p>
+<figure class="highlight json"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;usingComponents&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;my-test1&quot;</span><span class="punctuation">:</span><span class="string">&quot;/components/test/test&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-test1</span>&gt;</span><span class="tag">&lt;/<span class="name">my-test1</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>全局引用：组件可以在每个小程序页面中使用</strong></p>
+<p>app.json</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;usingComponents&quot;: &#123;</span><br><span class="line">  &quot;my-test2&quot;:&quot;/components/test/test&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>组件和页面的区别</strong></p>
+<ul>
+<li><p>组件的.json文件中需要声明<code>&quot;component&quot;:true</code>属性</p>
+</li>
+<li><p>组件的.js文件中调用的是Component()函数</p>
+</li>
+<li><p>组件的事件处理函数需要定义到methods节点中</p>
+</li>
+</ul>
+
+        <h3 id="3-样式">
+          <a href="#3-样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-样式" class="headerlink" title="3.样式"></a>3.样式</h3>
+      <p><strong>1. 组件样式隔离：默认情况下，自定义组件的样式只对当前组件生效，不会影响到组件之外的UI结构</strong></p>
+<p><strong>app.wxss全局样式对组件无效</strong></p>
+<p><strong>只有class选择器会有样式隔离效果。id选择器，属性选择器，标签选择器不受样式隔离的影响</strong></p>
+<p>所以在组件和引用组件的页面中建议使用class选择器，不要使用id 、属性 、标签选择器</p>
+<p><strong>2. 修改组件的样式隔离选项</strong></p>
+<p>如果希望在外界能够控制组件内部的样式。此时可以通过<code>styleIsolation</code></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//在组件的.js文件中</span><br><span class="line"></span><br><span class="line">Component(&#123;</span><br><span class="line">	options:&#123;</span><br><span class="line">		//启用样式隔离</span><br><span class="line">		styleIsolation:&quot;isolated&quot;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="4-自定义组件-数据、方法和属性">
+          <a href="#4-自定义组件-数据、方法和属性" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-自定义组件-数据、方法和属性" class="headerlink" title="4.自定义组件-数据、方法和属性"></a>4.自定义组件-数据、方法和属性</h3>
+      <p><strong>1. methods方法</strong></p>
+<p>在小程序组件中，事件处理函数和自定义方法需要定义到methods节点中</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> methods: &#123;</span><br><span class="line">   addCount()&#123;</span><br><span class="line">     this.setData(&#123;</span><br><span class="line">       count:this.data.count+1</span><br><span class="line">     &#125;)</span><br><span class="line">     this._showCount()</span><br><span class="line">   &#125;,</span><br><span class="line"></span><br><span class="line">//自定义方法就是内部会调用的方法，建议“_”开头</span><br><span class="line">   _showCount()&#123;</span><br><span class="line">     wx.showToast(&#123;</span><br><span class="line">       title:&#x27;count是&#x27;+this.data.count,</span><br><span class="line">       icon:&quot;none&quot;</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>2. properties属性</strong></p>
+<p>在小程序组件中，properties是组件的对外属性，用来接收外界传递到组件中的数据。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">properties: &#123;</span><br><span class="line">  //属性定义</span><br><span class="line">  max:&#123; //完整定义属性的方式(需要指定默认值时使用)</span><br><span class="line">    type:Number,//属性值的数据类型</span><br><span class="line">    value:10//属性默认值</span><br><span class="line">  &#125;，</span><br><span class="line">  max:Number //简化定义属性的方式（不需要指定默认值）</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+<p>父组件传递：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-test2 max=&quot;1574561&quot;&gt;&lt;/my-test2&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p>组件使用：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;&#123;&#123;max&#125;&#125;&lt;/view&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>3. data和properties的区别</strong></p>
+<p>在小程序中，properties属性和data数据的用法相同，它们都是可读可写的。只不过</p>
+<ul>
+<li><p>data更倾向于与存储组件的私有数据</p>
+</li>
+<li><p>properties更倾向于存储外界传递到组件中的数据</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.data===this.properties</span><br></pre></td></tr></table></div></figure>
+
+<p>为true</p>
+<p><strong>使用setData修改propert的值</strong></p>
+<p>由于data数据和properties属性本质上没有任何区别。因此properties的值也可以用于页面渲染，或使用setData为properties中的属性重新辅助。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.setData(&#123;</span><br><span class="line">	max:this.properties.max+1	</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h3 id="5-数据监听器">
+          <a href="#5-数据监听器" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-数据监听器" class="headerlink" title="5. 数据监听器"></a>5. 数据监听器</h3>
+      <p>数据监听器用于监听和响应任何属性和数据字段的变化，从而执行特定的操作，类似vue的<code>watch</code>。</p>
+<p>语法：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">observers:&#123;</span><br><span class="line"></span><br><span class="line">&#x27;字段A,字段B&#x27;:function(字段A的新值,字段B的新值)&#123;</span><br><span class="line"></span><br><span class="line">	//dosomething</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>例子：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">observers:&#123;</span><br><span class="line"></span><br><span class="line">  &#x27;num1&#x27;:function(newn1)&#123;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      sum:newn1+this.data.num2</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  &#x27;num2&#x27;:function(newn2)&#123;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      sum:this.data.num1+newn2</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>或者</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">observers:&#123;</span><br><span class="line"></span><br><span class="line">  &#x27;num1,num2&#x27;:function(newn1,newn2)&#123;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      sum:newn1+newn2</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>监听对象属性</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">observers:&#123;</span><br><span class="line"></span><br><span class="line">&#x27;对象.属性A,对象.属性B&#x27;:function(字段属性A的新值,字段属性B的新值)&#123;</span><br><span class="line"></span><br><span class="line">	//dosomething</span><br><span class="line"></span><br><span class="line">	//触发此监听器的三种情况</span><br><span class="line"></span><br><span class="line">	//【为A赋值】：使用setData设置this.data.对象.属性A时触发</span><br><span class="line"></span><br><span class="line">	//【为B赋值】：使用setData设置this.data.对象。属性B时触发</span><br><span class="line"></span><br><span class="line">	//【直接为对象赋值】：使用setData这时this.data.对象时触发</span><br><span class="line"></span><br><span class="line">	//dosth</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>监听对象中指定属性的变化</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">observers:&#123;</span><br><span class="line">  &#x27;rgb.r,rgb.g,rgb.a&#x27;:function(r,g,b)&#123;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      fullRgb:`$&#123;r&#125;,$&#123;g&#125;,$&#123;b&#125;`</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>监听对象中所有属性的变化</strong></p>
+<p>如果某个对象中需要被监听的属性太多，为了方便，可以使用通配符<code>**</code>来监听对象中所有属性的变化。如：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">observers:&#123;</span><br><span class="line">  &#x27;rgb.**&#x27;:function(obj)&#123;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      fullRgb:`$&#123;obj.r&#125;,$&#123;obj.g&#125;,$&#123;obj.b&#125;`</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>得到的新值是对象，可以直接使用对应对象的属性</p>
+
+        <h3 id="6-纯数据字段">
+          <a href="#6-纯数据字段" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-纯数据字段" class="headerlink" title="6. 纯数据字段"></a>6. 纯数据字段</h3>
+      <p>春数据字段指的是那些不用于界面渲染的data字段。</p>
+<p>例如某些情况下某些data中的字段既不会展示在页面也不会传递给其他组件。仅仅在当前组件内部使用。</p>
+<p>纯数据字段有助于提升页面更新的性能</p>
+<p><strong>使用规则</strong></p>
+<p>在Component构造器的options节点中，指定pureDataPattern为一个正则表达式，字段案名符合这个正则表达式的字段将成为纯数据字段。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Component(&#123;</span><br><span class="line"></span><br><span class="line">	options:&#123;</span><br><span class="line">		//指定所有_开头的数据字段为纯数据字段。不可以渲染页面</span><br><span class="line">		pureDataPattern:/^_/</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	data:&#123;</span><br><span class="line">		_b:true,//纯数据字段</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="7-组件的生命周期">
+          <a href="#7-组件的生命周期" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-组件的生命周期" class="headerlink" title="7. 组件的生命周期"></a>7. 组件的生命周期</h3>
+      <p>created:组件实例刚刚被创建时执行</p>
+<p>attached:在组件实例进入页面节点树时执行</p>
+<p>ready：在组件在视图层布局完成后执行</p>
+<p>moved：在组件实例被移动到节点树的另一个位置时执行</p>
+<p>error：每当组件方法抛出错误时执行</p>
+<p><strong>lifetimes节点</strong></p>
+<p>在小程序组件中，生命周期函数可以直接定义在Component构造器的第一级参数中，可以在lifetimes字段内进行声明（推荐的方式优先级最高）</p>
+
+        <h3 id="8-组件所在页面的生命周期">
+          <a href="#8-组件所在页面的生命周期" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-组件所在页面的生命周期" class="headerlink" title="8. 组件所在页面的生命周期"></a>8. 组件所在页面的生命周期</h3>
+      <p>有时，自定义组件的行为依赖于页面状态的变化，此时就需要用到组件所在页面的生命周期。</p>
+<p>show:组件所在的页面被展示时执行</p>
+<p>hide：组件所在的页面被隐藏时执行</p>
+<p>resize：组件所在的页面尺寸变化时执行</p>
+<p><strong>pageLifetimes节点</strong></p>
+<p>组件所在页面的生命周期函数，需要定义在pageLifetimes节点中</p>
+
+        <h3 id="9-自定义组件-插槽">
+          <a href="#9-自定义组件-插槽" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-自定义组件-插槽" class="headerlink" title="9. 自定义组件-插槽"></a>9. 自定义组件-插槽</h3>
+      <p>在自定义组件的wxml结构中，可以提供一个<code>&lt;slot&gt;</code>节点，用于承载组件使用者提供的wxml结构</p>
+<p><strong>单个插槽</strong></p>
+<p>默认每个自定义组件中只允许使用一个<code>&lt;slot&gt;</code>进行占位，这种个数上的限制叫做单个插槽</p>
+<p><strong>启用多个插槽</strong></p>
+<p>在组件的.js文件中，通过如下方式启用</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Component(&#123;</span><br><span class="line">  /**</span><br><span class="line">   * 组件的初始数据</span><br><span class="line">   */</span><br><span class="line">  options:&#123;</span><br><span class="line"></span><br><span class="line">    multipleSlots:true</span><br><span class="line">  &#125;,</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>使用：</strong></p>
+<p>组件</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;slot name=&quot;cc1&quot;&gt;&lt;/slot&gt;</span><br><span class="line">&lt;slot name=&quot;cc2&quot;&gt;&lt;/slot&gt;</span><br><span class="line">&lt;slot name=&quot;cc3&quot;&gt;&lt;/slot&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p>页面</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;view slot=&quot;cc2&quot;&gt;第二个插槽&lt;/view&gt;</span><br><span class="line">&lt;view slot=&quot;cc1&quot;&gt;第一个插槽&lt;/view&gt;</span><br><span class="line">&lt;view slot=&quot;cc3&quot;&gt;第三个插槽&lt;/view&gt;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="10-父子组件之间的通信">
+          <a href="#10-父子组件之间的通信" class="heading-link"><i class="fas fa-link"></i></a><a href="#10-父子组件之间的通信" class="headerlink" title="10.父子组件之间的通信"></a>10.父子组件之间的通信</h3>
+      <p><strong>属性绑定</strong></p>
+<p>用于父组件向子组件的指定属性设置数据，仅能设置JSON兼容的数据，无法传递方法。</p>
+<p>传递后子组件的值不影响父组件</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//子组件的properties节点</span><br><span class="line">properties:&#123;</span><br><span class="line">	count:Number</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//子组件的wxml结构</span><br><span class="line"></span><br><span class="line">&lt;text&gt;子组件中。count值为：&#123;&#123;count&#125;&#125;&lt;/text&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>事件绑定</strong></p>
+<p>用于子组件向父组件传递数据，可以传递任意数据</p>
+<ul>
+<li>在父组件的js中，定义一个函数，这个函数即将通过自定义事件的形式传递给子组件</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">syncCount(e)&#123;</span><br><span class="line">	console.log(&quot;syncCount&quot;);</span><br><span class="line">	console.log(&quot;传递的数据:&quot;,e.detail);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>在父组件的wxml中，通过自定义事件的形式，将步骤1中定义的函数引用，传递给子组件</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-test1 bind:sync = &quot;syncCount&quot;&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/my-test1&gt;</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>在子组件的js中，通过调用<code>this.triggerEvent(&#39;自定义事件名称&#39;,&#123;/*参数对象*/&#125;)</code>，将数据发送到父组件</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">addR()&#123;</span><br><span class="line">  //触发自定义事件，将数值同步给父组件</span><br><span class="line">  this.triggerEvent(&quot;sync&quot;,this.data.rgb.r)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>获取组件实例</strong></p>
+<p>父组件可以通过<code>this.selectComponent()</code>获取子组件实例对象，这样就可以直接访问子组件的任意数据和方法</p>
+<p>调用时需要传入一个选择器。例如：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.selectComponent(&quot;.my_component&quot;)</span><br></pre></td></tr></table></div></figure>
+
+<p>例子：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-test1 class=&quot;mytest1&quot; bind:sync = &quot;syncCount&quot;&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/my-test1&gt;</span><br><span class="line">&lt;button bindtap=&quot;getChildData&quot;&gt;获取子组件数据&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">。。。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">getChildData()&#123;</span><br><span class="line">	const child = this.selectComponent(&#x27;.mytest1&#x27;)</span><br><span class="line">	//修改子组件数据</span><br><span class="line">	child.setData(&#123;</span><br><span class="line">	  fullRgb:&#x27;154,54,16&#x27;</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	//调用子组件方法</span><br><span class="line">	child.addR()</span><br><span class="line"></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="11-behaviors">
+          <a href="#11-behaviors" class="heading-link"><i class="fas fa-link"></i></a><a href="#11-behaviors" class="headerlink" title="11. behaviors"></a>11. behaviors</h3>
+      <p>是小程序中用于实现组件间代码共享的特性，类似于vue.hs中的”mixins”</p>
+<p><strong>每个behavior可以包含一组属性、数据、生命周期函数和方法。组件引用它时，它的属性、数据和方法会被合并到组件中</strong></p>
+<p>每个组件可以引用多个behavior，behavior也可以引用其他behavior</p>
+<p><strong>创建behavior</strong></p>
+<p>调用Behavior方法即可创建一个共享的behavior实例对象，供所有的组件使用</p>
+<ol>
+<li>根目录创建Behavior–创建my-behavior.js</li>
+</ol>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module.exports = Behavior(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    username:&quot;沙比&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  properties:&#123;&#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+<ol start="2">
+<li>导入并使用behavior</li>
+</ol>
+<p>在组件中，使用require()方法导入需要的behavior，挂载后即可访问behavior中的数据和方法</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// components/test/test.ts</span><br><span class="line">const myBehavior = require(&quot;../../behaviors/my-behavior&quot;)</span><br><span class="line"></span><br><span class="line">Component(&#123;</span><br><span class="line">  behaviors:[myBehavior],</span><br><span class="line">    methods: &#123;</span><br><span class="line">    addR()&#123;</span><br><span class="line">      console.log(&quot;behavior定义的数据：&quot;,this.data.username);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="使用npm包">
+          <a href="#使用npm包" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用npm包" class="headerlink" title="使用npm包"></a>使用npm包</h2>
+      <p>目前，小程序已经支持使用npm安装第三方包，从而来提高小程序的开发效率。但是，在小程序中使用npm包邮如下三个限制</p>
+<ul>
+<li><p>不支持依赖于Node.js内置库的包</p>
+</li>
+<li><p>不支持依赖于浏览器内置对象的包</p>
+</li>
+<li><p>不支持依赖于C++插件的包</p>
+</li>
+</ul>
+<p><strong><font color="red">注意，每次安装npm包后都要在工具栏构建一次到<code>miniprogram_npm</code>中，建议每次都先清除<code>miniprogram_npm</code>，再构建</font></strong></p>
+<p>构建时要注意project.config.json中配置的信息是否正确</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;packNpmRelationList&quot;: [</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;packageJsonPath&quot;: &quot;./package.json&quot;,</span><br><span class="line">	//构建的项目地址</span><br><span class="line">    &quot;miniprogramNpmDistDir&quot;: &quot;../wx_test&quot;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="1-Vant-Webapp">
+          <a href="#1-Vant-Webapp" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-Vant-Webapp" class="headerlink" title="1.Vant Webapp"></a>1.Vant Webapp</h3>
+      <p>是有赞前端团队开源的一套小程序UI组件库。使用的是MIT开源许可协议</p>
+<p>官方文档：<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://youzan.github.io/vant-weapp">https://youzan.github.io/vant-weapp</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="2-安装Vant组件库">
+          <a href="#2-安装Vant组件库" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-安装Vant组件库" class="headerlink" title="2.安装Vant组件库"></a>2.安装Vant组件库</h3>
+      <p>在小程序项目中，安装Vant组件库分为以下步骤</p>
+<ul>
+<li><p>通过npm安装</p>
+</li>
+<li><p>构建npm包</p>
+</li>
+<li><p>修改app.json</p>
+</li>
+</ul>
+
+        <h3 id="3-使用Vant组件">
+          <a href="#3-使用Vant组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-使用Vant组件" class="headerlink" title="3.使用Vant组件"></a>3.使用Vant组件</h3>
+      <p>安装完Vant组件库之后，可以在app.json的usingComponents节点中引入需要的组件，即可在wxml中直接使用组件(全局)</p>
+<p>参考文档…</p>
+
+        <h3 id="4-定制全局主题样式">
+          <a href="#4-定制全局主题样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-定制全局主题样式" class="headerlink" title="4. 定制全局主题样式"></a>4. 定制全局主题样式</h3>
+      <p>VantWeapp使用CSS变量来实现定制主题。关于CSS变量的基本用法，参考MDN文档</p>
+<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties">https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><strong>1. 在app.wxss中，写入css变量，即可对全局生效</strong></p>
+<p>&#x2F;&#x2F;修改按钮的背景色和边框</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">page&#123;</span><br><span class="line">  --button-primary-background-color:#C00000;</span><br><span class="line">  --button-primary-border-color:#D60000;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>样式变量参考文档。。。</p>
+<p><strong>局部主题样式就在对应页面的wxss设置</strong></p>
+
+        <h3 id="5-API-Promise化">
+          <a href="#5-API-Promise化" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-API-Promise化" class="headerlink" title="5. API Promise化"></a>5. API Promise化</h3>
+      <p>默认情况下，小程序官方提供的异步API都是基于回调函数实现的。</p>
+<p>缺点：容易造成回调地狱</p>
+<p><strong>API Promise化，指的是通过额外的配置，将官方提供的，基于回调函数的异步API,升级改造为基于Promise的异步API。从而提升代码可读性，维护性，解决回调地狱</strong></p>
+<p><strong>1. 安装<code>miniprogram-api-promise@1.0.4</code></strong></p>
+<p><code>npm install --save miniprogram-api-promise@1.0.4</code></p>
+<p><strong>2. 构建npm</strong></p>
+<p><strong>3. 小程序入口文件中的app.js文件中，只需调用一次promisifyAll()方法，即可实现异步API的Promise化</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &#123;promisifyAll&#125; from &quot;miniprogram-api-promise&quot;</span><br><span class="line"></span><br><span class="line">const wxp = wx.p = &#123;&#125;</span><br><span class="line"></span><br><span class="line">promisifyAll(wx,wxp)</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>4. 组件方法使用</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">async getInfo()&#123;</span><br><span class="line">  const res = await wx.p.request(&#123;</span><br><span class="line">    method:&#x27;GET&#x27;,</span><br><span class="line">    url:&#x27;https://www.escook.cn/api/get&#x27;,</span><br><span class="line">    daata:&#123;</span><br><span class="line">      name:&quot;zs&quot;,</span><br><span class="line">      age:20</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  console.log(res);</span><br><span class="line">  </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="6-全局数据共享">
+          <a href="#6-全局数据共享" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-全局数据共享" class="headerlink" title="6. 全局数据共享"></a>6. 全局数据共享</h3>
+      <p><strong>mobx-miniprogram</strong>配合<strong>mobx-miniprogram-bindings</strong>实现全局数据共享</p>
+<ul>
+<li><p>mobx-miniprogram用来创建store实例对象</p>
+</li>
+<li><p>mobx-miniprogram-bindings用来把Store中的共享数据或方法，绑定到组件或页面中使用</p>
+</li>
+</ul>
+<p><strong>1. 安装</strong></p>
+<p><code>npm install --save mobx-miniprogram@4.13.2 mobx-miniprogram-bindings@1.2.1</code></p>
+<p><strong>2.创建MobX的Store实例</strong></p>
+<p>项目根目录创建store目录–&gt;创建store.js文件</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import &#123;action, observable&#125; from &quot;mobx-miniprogram&quot;</span><br><span class="line"></span><br><span class="line">export const store = observable(&#123;</span><br><span class="line">  //数据字段</span><br><span class="line">  numA:1,</span><br><span class="line">  numB:2,</span><br><span class="line">  //计算属性（会监听值的变化自动更新此计算属性）</span><br><span class="line">  get sum()&#123;</span><br><span class="line">    return this.numA+this.numB</span><br><span class="line">  &#125;,</span><br><span class="line">  //actions方法，用来修改store中的数据</span><br><span class="line">  updateNum1:action(function(step)&#123;</span><br><span class="line">    this.numA += step</span><br><span class="line">  &#125;),</span><br><span class="line">  updateNum2:action(function(step)&#123;</span><br><span class="line">    this.numB += step</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+<p><strong><font color="green">页面使用</font></strong></p>
+<p><strong>1. 将store中的成员绑定页面中</strong></p>
+<p>js页面</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStoreBindings&#125; from &quot;mobx-miniprogram-bindings&quot;</span><br><span class="line">import &#123;store&#125; from &#x27;../../store/store&#x27;</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">    onLoad() &#123;</span><br><span class="line">    if (wx.getUserProfile) &#123;</span><br><span class="line">      this.setData(&#123;</span><br><span class="line">        canIUseGetUserProfile: true</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * @storeBindings 绑定到页面实例上，以便页面Unload时可以销毁</span><br><span class="line">     * @this 代表当前页面实例，表示将以下内容绑定到当前页面实例上</span><br><span class="line">     * @store 数据源</span><br><span class="line">     * @fields 需要将哪些字段绑定使用</span><br><span class="line">     * @actions 将那些方法绑定使用</span><br><span class="line">     */</span><br><span class="line">    this.storeBindings = createStoreBindings(this,&#123;</span><br><span class="line">      store,</span><br><span class="line">      fields:[&#x27;numA&#x27;,&#x27;numB&#x27;,&#x27;sum&#x27;],</span><br><span class="line">      actions:[&#x27;updateNum1&#x27;]</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  onUnload:function()&#123;</span><br><span class="line">    //销毁</span><br><span class="line">    this.storeBindings.destroyStoreBindings()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">)&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>2. 页面使用</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;&#123;&#123;numA&#125;&#125;+&#123;&#123;numB&#125;&#125; = &#123;&#123;sum&#125;&#125;&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">&lt;button type=&quot;primary&quot; bindtap = &quot;btnHandler&quot; data-step=&quot;&#123;&#123;1&#125;&#125;&quot;&gt;numA+1&lt;/button&gt;</span><br><span class="line">&lt;button type=&quot;warn&quot; bindtap=&quot;btnHandler&quot; data-step=&quot;&#123;&#123;-1&#125;&#125;&quot;&gt;numA-1&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">btnHandler(e)&#123;</span><br><span class="line">	this.updateNum1(e.currentTarget.dataset.step)</span><br><span class="line"></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+<p><strong><font color="green">组件使用</font></strong></p>
+<p><strong>1. js</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import &#123;storeBindingsBehavior&#125; from &quot;mobx-miniprogram-bindings&quot;</span><br><span class="line">import &#123;store&#125; from &quot;../../store/store&quot;</span><br><span class="line">// Components/numbers/numbers.js</span><br><span class="line">Component(&#123;</span><br><span class="line">  behaviors:[storeBindingsBehavior],</span><br><span class="line">  storeBindings:&#123;</span><br><span class="line">    //数据源</span><br><span class="line">    store,</span><br><span class="line">    //后面是store里面的名字，前面是提供的映射的名字(组件中使用的)</span><br><span class="line">    fields:&#123;</span><br><span class="line">    numA:&#x27;numA&#x27;,</span><br><span class="line">    numB:&#x27;numB&#x27;,</span><br><span class="line">    sum:&#x27;sum&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">    actions:&#123;</span><br><span class="line">      updateNum2:&#x27;updateNum2&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>2. wxml页面</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;&#123;&#123;numA&#125;&#125;+&#123;&#123;numB&#125;&#125; = &#123;&#123;sum&#125;&#125;&lt;/view&gt;</span><br><span class="line">&lt;button type=&quot;primary&quot; bindtap=&quot;btnHandler2&quot; data-step=&quot;&#123;&#123;1&#125;&#125;&quot;&gt;numB+1&lt;/button&gt;</span><br><span class="line">&lt;button type=&quot;warn&quot; bindtap=&quot;btnHandler2&quot; data-step=&quot;&#123;&#123;-1&#125;&#125;&quot;&gt;numB-1&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">。。。</span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">	btnHandler2(e)&#123;</span><br><span class="line">	  this.updateNum2(e.target.dataset.step)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="分包">
+          <a href="#分包" class="heading-link"><i class="fas fa-link"></i></a><a href="#分包" class="headerlink" title="分包"></a>分包</h2>
+      <p>对小程序进行分包的好处主要有以下两点</p>
+<ul>
+<li><p>可以优化小程序首次启动的下载事件</p>
+</li>
+<li><p>在多团队共同开发时可以更好的解耦操作</p>
+</li>
+</ul>
+
+        <h3 id="1-分包前项目的构成">
+          <a href="#1-分包前项目的构成" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-分包前项目的构成" class="headerlink" title="1.分包前项目的构成"></a>1.分包前项目的构成</h3>
+      <p>分包后，小程序项目由1个主包+多个分包组成</p>
+<ul>
+<li><p>主包：一般只包含项目的启动页面或TabBar页面，以及所有分包都需要用到的一些公共资源</p>
+</li>
+<li><p>分包：只包含和当前分包有关的页面和私有资源</p>
+</li>
+</ul>
+<p><strong>分包的加载规则</strong></p>
+<ul>
+<li><p>在小程序启动时，默认会下载主包并启动主包界面</p>
+<p>  tabBar页面需要放到主包中</p>
+</li>
+<li><p>当用户进入分包内某个页面时，客户端会把对应分包下载下来，下载完成后再进行展示</p>
+<p>  非tabBar页面可以按照功能的不同，划分为不同的分包之后，进行按需下载</p>
+</li>
+</ul>
+
+        <h3 id="2-分包的体积限制">
+          <a href="#2-分包的体积限制" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-分包的体积限制" class="headerlink" title="2. 分包的体积限制"></a>2. 分包的体积限制</h3>
+      <ul>
+<li><p>整个小程序所有分包大爱小不能超过20M</p>
+</li>
+<li><p>单个分包不超过2M</p>
+</li>
+</ul>
+
+        <h3 id="3-使用分包">
+          <a href="#3-使用分包" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-使用分包" class="headerlink" title="3.使用分包"></a>3.使用分包</h3>
+      <p><strong>通过subPackages节点，声明分包的结构。</strong></p>
+<p>app.json目录：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&quot;pages&quot;:[],</span><br><span class="line">&quot;subPackages&quot;: [</span><br><span class="line">	&#123;</span><br><span class="line">	  &quot;root&quot;: &quot;pkgA&quot;,//第一个分包的根目录</span><br><span class="line">      &quot;name&quot;: &quot;p1&quot;,//分包别名</span><br><span class="line">	  &quot;pages&quot;: [	//当前分包下，所有页面的相对存放路径</span><br><span class="line">	    &quot;pages/cat/cat&quot;,</span><br><span class="line">	    &quot;pages/dog/dog&quot;</span><br><span class="line">	  ]</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">	  &quot;root&quot;: &quot;pkgB&quot;,</span><br><span class="line">	  &quot;name&quot;: &quot;p2&quot;,//分包别名</span><br><span class="line">	  &quot;pages&quot;: [</span><br><span class="line">	    &quot;pages/apple/apple&quot;,</span><br><span class="line">	    &quot;pages/banana/banana&quot;</span><br><span class="line">	  ]</span><br><span class="line">	&#125;</span><br><span class="line">],</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>查看分包体积：详情–基本信息</strong></p>
+
+        <h3 id="4-打包原则">
+          <a href="#4-打包原则" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-打包原则" class="headerlink" title="4. 打包原则"></a>4. 打包原则</h3>
+      <ul>
+<li><p>小程序会按subpackages的配置进行分包。subpackages之外的目录将被打包到主包中</p>
+</li>
+<li><p>主包也可以有自己的pages(最外层的pages字段)</p>
+</li>
+<li><p>tabBar页面必须在主包内</p>
+</li>
+<li><p>分包之间不能相互嵌套</p>
+</li>
+</ul>
+
+        <h3 id="5-引用原则">
+          <a href="#5-引用原则" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-引用原则" class="headerlink" title="5. 引用原则"></a>5. 引用原则</h3>
+      <ul>
+<li><p>主包无法引用分包内的私有资源</p>
+</li>
+<li><p>分包之间不能相互引用私有资源</p>
+</li>
+<li><p>分包可以引用主包内的公共资源</p>
+</li>
+</ul>
+
+        <h3 id="6-独立分包">
+          <a href="#6-独立分包" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-独立分包" class="headerlink" title="6.独立分包"></a>6.独立分包</h3>
+      <p>独立分包本质上也是分包。只不过比较特殊可以独立于主包和其他分包而单独运行</p>
+<p>独立分包和普通分包的区别：<strong>是否依赖于主包才能运行</strong></p>
+<p><strong>配置方法：</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&quot;subPackages&quot;: [</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;root&quot;: &quot;pkgA&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;p1&quot;,</span><br><span class="line">    &quot;pages&quot;: [</span><br><span class="line">      &quot;pages/cat/cat&quot;,</span><br><span class="line">      &quot;pages/dog/dog&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;root&quot;: &quot;pkgB&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;p2&quot;,</span><br><span class="line">    &quot;pages&quot;: [</span><br><span class="line">      &quot;pages/apple/apple&quot;,</span><br><span class="line">      &quot;pages/banana/banana&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;independent&quot;: true	//添加此属性就成为独立分包</span><br><span class="line">  &#125;</span><br><span class="line">],</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>引用原则</strong></p>
+<p>独立分包和普通分包以及主包之间，是相互隔绝的，不能相互引用彼此的资源！</p>
+<ul>
+<li><p>主包无法引用独立分包内的私有资源</p>
+</li>
+<li><p>独立分包之间，不能相互引用私有资源</p>
+</li>
+<li><p>独立分包和普通分包之间，不能相互引用私有资源</p>
+</li>
+<li><p>特别注意：独立分包中不能引用主包内的公共资源</p>
+</li>
+</ul>
+
+        <h3 id="7-分包预下载">
+          <a href="#7-分包预下载" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-分包预下载" class="headerlink" title="7.分包预下载"></a>7.分包预下载</h3>
+      <p>在进入小程序的某个页面时，由框架自动预下载可能需要的分包，从而提升进入后续分包页面时的启动速度</p>
+<p><strong>配置分包预下载</strong></p>
+<p>预下载分包的行为，会在进入指定的页面时触发、在app.json中，使用preloadRule节点定义分包的预下载规则</p>
+<p>app.json</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;preloadRule&quot;: &#123; </span><br><span class="line">    &quot;pages/index/index&quot;:&#123; </span><br><span class="line">      &quot;network&quot;: &quot;wifi&quot;,</span><br><span class="line">      &quot;packages&quot;: [&quot;pkgA&quot;] </span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+<p><strong>分包预下载的限制</strong></p>
+<p>同一个分包的页面享有共同的预下载大小限额2M。</p>
+
+        <h1 id="uni-app">
+          <a href="#uni-app" class="heading-link"><i class="fas fa-link"></i></a><a href="#uni-app" class="headerlink" title="uni-app"></a>uni-app</h1>
+      <p>通过HbuilderX将项目运行到微信开发者工具</p>
+<p>1.manifest.json-微信小程序配置-添加appId</p>
+<p>2.设置-运行配置-微信开发者工具路径配置</p>
+<p>3.打开微信开发者工具。将设置-安全-服务端口打开</p>
+<p>4.hBuilder中运行到小程序模拟器</p>
+<p><strong>有时运行模拟器会卡住功能无法实现，可以先清缓存再关闭小程序开发工具重新打开。</strong></p>
+<p><strong>配置Git</strong></p>
+<ol>
+<li>根目录创建忽略文件<code>.gitignore</code></li>
+</ol>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/node_modules</span><br><span class="line">/unpackage/dist</span><br></pre></td></tr></table></div></figure>
+
+<ol start="2">
+<li><p>在unpackage中新建文件<code>.gitkeep</code>使Git不因为只有一个文件dist被忽略而不跟踪unpackage文件</p>
+</li>
+<li><p>git本地管理</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git commit -m &quot;init_project&quot;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="首页">
+          <a href="#首页" class="heading-link"><i class="fas fa-link"></i></a><a href="#首页" class="headerlink" title="首页"></a>首页</h2>
+      <p>request-miniprogram:<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://www.npmjs.com/package/@escook/request-miniprogram">https:&#x2F;&#x2F;www.npmjs.com&#x2F;package&#x2F;@escook&#x2F;request-miniprogram</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>小程序的请求不是依赖于浏览器，无法使用axios，但是本身的网络请求API比较简单。推荐使用<code>request-miniprogram</code></p>
+<p><strong>1. 安装</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br><span class="line">npm install @escook/request-miniprogram</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>2. main.js中引入</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//导入网络请求的包</span><br><span class="line">import &#123; $http &#125; from &#x27;@escook/request-miniprogram&#x27;</span><br><span class="line">uni.$http = $http</span><br><span class="line">//请求拦截器</span><br><span class="line">$http.beforeRequest = function (options) &#123;</span><br><span class="line">  // do somethimg...</span><br><span class="line">  uni.showLoading(&#123;</span><br><span class="line">  	title:&quot;数据加载中...&quot;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">//响应拦截器</span><br><span class="line">$http.afterRequest = function () &#123;</span><br><span class="line">  // do something...</span><br><span class="line">  uni.hideLoading()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h2 id="uniapp配置分包">
+          <a href="#uniapp配置分包" class="heading-link"><i class="fas fa-link"></i></a><a href="#uniapp配置分包" class="headerlink" title="uniapp配置分包"></a>uniapp配置分包</h2>
+      <ol>
+<li><p>在项目根目录中，创建分包的根目录，命名为subpkg</p>
+</li>
+<li><p>在page.json中，和pages节点平级的位置声明subPackages节点，用来定义分包相关的结构</p>
+</li>
+</ol>
+
+        <h1 id="相关问题">
+          <a href="#相关问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h1>
+      <p><strong>1. 如果uniapp中v-for循环内部还存在v-for。那么两个循环的<code>:key</code>的变量不能是一样的，否则可能报错</strong></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://planeswalker1205.github.io">ashen</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://planeswalker1205.github.io/2022/06/27/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">https://planeswalker1205.github.io/2022/06/27/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://planeswalker1205.github.io/tags/Web/">Web</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://planeswalker1205.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/07/13/web-react/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">web-react</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/06/22/TypeScript01/"><span class="paginator-prev__text">TypeScript01</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">
+          简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8E%E6%99%AE%E9%80%9A%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.1.</span> <span class="toc-text">
+          1. 小程序与普通网页开发的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-number">1.2.</span> <span class="toc-text">
+          小程序代码的构成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%96%B0%E5%BB%BA%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          1. 新建小程序页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E9%A6%96%E9%A1%B5"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2. 修改项目首页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%A1%B5%E9%9D%A2"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          3. 页面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AE%BF%E4%B8%BB%E7%8E%AF%E5%A2%83"><span class="toc-number">1.3.</span> <span class="toc-text">
+          小程序的宿主环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+          1.通信模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">
+          组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text">
+          分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%A7%86%E5%9B%BE%E5%AE%B9%E5%99%A8"><span class="toc-number">2.1.1.</span> <span class="toc-text">
+          1. 视图容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6"><span class="toc-number">2.1.2.</span> <span class="toc-text">
+          2. 基础组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6"><span class="toc-number">2.1.3.</span> <span class="toc-text">
+          3. 其他常用组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8FAPI"><span class="toc-number">2.2.</span> <span class="toc-text">
+          小程序API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%ACAPI"><span class="toc-number">2.2.1.</span> <span class="toc-text">
+          1. 事件监听API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%90%8C%E6%AD%A5API"><span class="toc-number">2.2.2.</span> <span class="toc-text">
+          2. 同步API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BC%82%E6%AD%A5API"><span class="toc-number">2.2.3.</span> <span class="toc-text">
+          3. 异步API</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">
+          模板与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">
+          模板语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-number">3.1.1.</span> <span class="toc-text">
+          1.数据绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-number">3.1.2.</span> <span class="toc-text">
+          2. 事件绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E5%8F%82%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5"><span class="toc-number">3.1.3.</span> <span class="toc-text">
+          3. 事件传参与数据同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-bindinput"><span class="toc-number">3.1.4.</span> <span class="toc-text">
+          4.bindinput</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%AE%9E%E7%8E%B0%E6%96%87%E6%9C%AC%E6%A1%86%E5%92%8Cdata%E4%B9%8B%E9%97%B4%E7%9A%84%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5"><span class="toc-number">3.1.5.</span> <span class="toc-text">
+          5. 实现文本框和data之间的数据同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%9D%A1%E4%BB%B6%E8%AF%AD%E6%B3%95"><span class="toc-number">3.1.6.</span> <span class="toc-text">
+          6. 条件语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-hidden"><span class="toc-number">3.1.7.</span> <span class="toc-text">
+          7. hidden</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93"><span class="toc-number">3.1.8.</span> <span class="toc-text">
+          8. 列表渲染</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E6%A0%B7%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">
+          模板样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-rpx"><span class="toc-number">3.2.1.</span> <span class="toc-text">
+          1.rpx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%A0%B7%E5%BC%8F%E5%AF%BC%E5%85%A5"><span class="toc-number">3.2.2.</span> <span class="toc-text">
+          2. 样式导入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-window-%E5%AF%BC%E8%88%AA%E6%A0%8F"><span class="toc-number">3.2.3.</span> <span class="toc-text">
+          3. window-导航栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0"><span class="toc-number">3.2.4.</span> <span class="toc-text">
+          4. 下拉刷新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%B8%8A%E6%8B%89%E8%A7%A6%E5%BA%95"><span class="toc-number">3.2.5.</span> <span class="toc-text">
+          5. 上拉触底</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-tabBar"><span class="toc-number">3.2.6.</span> <span class="toc-text">
+          5. tabBar</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE"><span class="toc-number">3.3.</span> <span class="toc-text">
+          页面配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82"><span class="toc-number">3.4.</span> <span class="toc-text">
+          数据请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AErequest%E5%90%88%E6%B3%95%E5%9F%9F%E5%90%8D"><span class="toc-number">3.4.1.</span> <span class="toc-text">
+          1. 配置request合法域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%91%E8%B5%B7GET%E8%AF%B7%E6%B1%82"><span class="toc-number">3.4.2.</span> <span class="toc-text">
+          2.发起GET请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8F%91%E8%B5%B7POST%E8%AF%B7%E6%B1%82"><span class="toc-number">3.4.3.</span> <span class="toc-text">
+          3. 发起POST请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%9C%A8%E9%A1%B5%E9%9D%A2%E5%88%9A%E5%8A%A0%E8%BD%BD%E6%97%B6%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE"><span class="toc-number">3.4.4.</span> <span class="toc-text">
+          4. 在页面刚加载时请求数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-request%E8%AF%B7%E6%B1%82%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">3.4.5.</span> <span class="toc-text">
+          5. request请求的注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%B7%A8%E5%9F%9F%E5%92%8Cajax"><span class="toc-number">3.4.6.</span> <span class="toc-text">
+          6. 跨域和ajax</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E4%B8%8E%E9%80%BB%E8%BE%91"><span class="toc-number">4.</span> <span class="toc-text">
+          视图与逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E5%AF%BC%E8%88%AA"><span class="toc-number">4.1.</span> <span class="toc-text">
+          页面导航</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%A3%B0%E6%98%8E%E5%BC%8F%E5%AF%BC%E8%88%AA"><span class="toc-number">4.1.1.</span> <span class="toc-text">
+          1. 声明式导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BC%96%E7%A8%8B%E5%BC%8F%E5%AF%BC%E8%88%AA"><span class="toc-number">4.1.2.</span> <span class="toc-text">
+          2.编程式导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AF%BC%E8%88%AA%E4%BC%A0%E5%8F%82"><span class="toc-number">4.1.3.</span> <span class="toc-text">
+          3. 导航传参</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.2.</span> <span class="toc-text">
+          页面事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0"><span class="toc-number">4.2.1.</span> <span class="toc-text">
+          1. 下拉刷新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%8A%E6%8B%89%E8%A7%A6%E5%BA%95"><span class="toc-number">4.2.2.</span> <span class="toc-text">
+          2. 上拉触底</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91%E6%A8%A1%E5%BC%8F"><span class="toc-number">4.2.3.</span> <span class="toc-text">
+          3. 自定义编译模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">4.3.</span> <span class="toc-text">
+          生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">4.3.1.</span> <span class="toc-text">
+          1. 生命周期的分类：*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-number">4.3.2.</span> <span class="toc-text">
+          2. 生命周期函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">4.3.3.</span> <span class="toc-text">
+          3. 生命周期函数的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%BA%94%E7%94%A8%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-number">4.3.4.</span> <span class="toc-text">
+          4. 应用的生命周期函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-number">4.3.5.</span> <span class="toc-text">
+          5. 页面的生命周期函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WXS%E8%84%9A%E6%9C%AC"><span class="toc-number">4.4.</span> <span class="toc-text">
+          WXS脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">4.4.1.</span> <span class="toc-text">
+          1. 基础语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-wxs%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">4.4.2.</span> <span class="toc-text">
+          2. wxs的特点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA"><span class="toc-number">5.</span> <span class="toc-text">
+          小程序-基础加强</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6"><span class="toc-number">5.1.</span> <span class="toc-text">
+          自定义组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6"><span class="toc-number">5.1.1.</span> <span class="toc-text">
+          1.创建组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BC%95%E7%94%A8%E7%BB%84%E4%BB%B6"><span class="toc-number">5.1.2.</span> <span class="toc-text">
+          2. 引用组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%A0%B7%E5%BC%8F"><span class="toc-number">5.1.3.</span> <span class="toc-text">
+          3.样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6-%E6%95%B0%E6%8D%AE%E3%80%81%E6%96%B9%E6%B3%95%E5%92%8C%E5%B1%9E%E6%80%A7"><span class="toc-number">5.1.4.</span> <span class="toc-text">
+          4.自定义组件-数据、方法和属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E7%9B%91%E5%90%AC%E5%99%A8"><span class="toc-number">5.1.5.</span> <span class="toc-text">
+          5. 数据监听器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E7%BA%AF%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5"><span class="toc-number">5.1.6.</span> <span class="toc-text">
+          6. 纯数据字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">5.1.7.</span> <span class="toc-text">
+          7. 组件的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E7%BB%84%E4%BB%B6%E6%89%80%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">5.1.8.</span> <span class="toc-text">
+          8. 组件所在页面的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD"><span class="toc-number">5.1.9.</span> <span class="toc-text">
+          9. 自定义组件-插槽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1"><span class="toc-number">5.1.10.</span> <span class="toc-text">
+          10.父子组件之间的通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-behaviors"><span class="toc-number">5.1.11.</span> <span class="toc-text">
+          11. behaviors</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8npm%E5%8C%85"><span class="toc-number">5.2.</span> <span class="toc-text">
+          使用npm包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Vant-Webapp"><span class="toc-number">5.2.1.</span> <span class="toc-text">
+          1.Vant Webapp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85Vant%E7%BB%84%E4%BB%B6%E5%BA%93"><span class="toc-number">5.2.2.</span> <span class="toc-text">
+          2.安装Vant组件库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8Vant%E7%BB%84%E4%BB%B6"><span class="toc-number">5.2.3.</span> <span class="toc-text">
+          3.使用Vant组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AE%9A%E5%88%B6%E5%85%A8%E5%B1%80%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F"><span class="toc-number">5.2.4.</span> <span class="toc-text">
+          4. 定制全局主题样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-API-Promise%E5%8C%96"><span class="toc-number">5.2.5.</span> <span class="toc-text">
+          5. API Promise化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%85%A8%E5%B1%80%E6%95%B0%E6%8D%AE%E5%85%B1%E4%BA%AB"><span class="toc-number">5.2.6.</span> <span class="toc-text">
+          6. 全局数据共享</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%8C%85"><span class="toc-number">5.3.</span> <span class="toc-text">
+          分包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%86%E5%8C%85%E5%89%8D%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-number">5.3.1.</span> <span class="toc-text">
+          1.分包前项目的构成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%86%E5%8C%85%E7%9A%84%E4%BD%93%E7%A7%AF%E9%99%90%E5%88%B6"><span class="toc-number">5.3.2.</span> <span class="toc-text">
+          2. 分包的体积限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8%E5%88%86%E5%8C%85"><span class="toc-number">5.3.3.</span> <span class="toc-text">
+          3.使用分包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%89%93%E5%8C%85%E5%8E%9F%E5%88%99"><span class="toc-number">5.3.4.</span> <span class="toc-text">
+          4. 打包原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%BC%95%E7%94%A8%E5%8E%9F%E5%88%99"><span class="toc-number">5.3.5.</span> <span class="toc-text">
+          5. 引用原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E7%8B%AC%E7%AB%8B%E5%88%86%E5%8C%85"><span class="toc-number">5.3.6.</span> <span class="toc-text">
+          6.独立分包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%88%86%E5%8C%85%E9%A2%84%E4%B8%8B%E8%BD%BD"><span class="toc-number">5.3.7.</span> <span class="toc-text">
+          7.分包预下载</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uni-app"><span class="toc-number">6.</span> <span class="toc-text">
+          uni-app</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E9%A1%B5"><span class="toc-number">6.1.</span> <span class="toc-text">
+          首页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uniapp%E9%85%8D%E7%BD%AE%E5%88%86%E5%8C%85"><span class="toc-number">6.2.</span> <span class="toc-text">
+          uniapp配置分包</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">
+          相关问题</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">46</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">0</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">68</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ashen</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v6.1.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
